@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hatchmoment.github.io/sitemap.xml
