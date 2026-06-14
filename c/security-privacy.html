@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security &amp; Privacy — fresh open-source · hatchmoment</title>
+<meta name="description" content="Fresh Security &amp; Privacy open-source projects caught the moment they hatch, scored for craft not stars.">
+<link rel="canonical" href="https://hatchmoment.org/c/security-privacy.html">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%230a0f1a'/&gt;&lt;text y='.9em' x='50' font-size='62' text-anchor='middle'&gt;🥚&lt;/text&gt;&lt;/svg&gt;">
+<meta property="og:title" content="Security &amp; Privacy — fresh open-source · hatchmoment">
+<meta name="theme-color" content="#0a0f1a">
+<meta property="og:description" content="Fresh Security &amp; Privacy open-source projects caught the moment they hatch, scored for craft not stars.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hatchmoment.org/c/security-privacy.html">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f1a; --bg2:#0f1626; --ink:#e8f0fb; --muted:#8aa0bd;
+  --accent:#4fc3f7; --line:rgba(79,195,247,0.15); --shell:#142338;
+  --card:#0e1524; --cardline:rgba(138,160,189,0.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:'Sora',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 70%);pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:32px 22px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* header */
+.top{display:flex;align-items:center;gap:12px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.egg-mini{width:30px;height:auto;flex-shrink:0}
+.brand{font-family:'Space Mono',monospace;font-weight:700;font-size:20px;letter-spacing:-.5px;color:var(--ink)}
+.brand .dot{color:var(--accent)}
+.brand a{color:inherit}
+.brand a:hover{text-decoration:none}
+.slogan{margin-left:auto;font-size:12.5px;color:var(--muted);font-family:'Space Mono',monospace;letter-spacing:.3px}
+
+/* breadcrumb */
+.crumb{font-size:13px;color:var(--muted);margin-bottom:18px;font-family:'Space Mono',monospace}
+.crumb a{color:var(--muted)}
+.crumb a:hover{color:var(--accent)}
+
+/* search + filters */
+.search-box{position:relative;margin:6px 0 18px}
+.search-box input{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:12px;color:var(--ink);font-family:'Sora',sans-serif;font-size:15px;padding:13px 16px 13px 42px;outline:none;transition:border-color .15s}
+.search-box input:focus{border-color:var(--accent)}
+.search-box .si{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:16px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.chip{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.3px;color:var(--muted);background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;transition:all .14s;user-select:none}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip.on{background:var(--accent);color:#04121f;border-color:var(--accent);font-weight:700}
+.sortbar{display:flex;align-items:center;gap:8px;margin:-18px 0 28px}
+.sortlbl{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)}
+.chip.sort{padding:5px 12px;font-size:11px}
+
+/* section heading */
+.sec{display:flex;align-items:baseline;justify-content:space-between;margin:30px 0 14px}
+.sec h2{font-family:'Space Mono',monospace;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.3px}
+.sec h2 .ic{margin-right:8px}
+.sec .meta{font-size:12px;color:var(--muted);font-family:'Space Mono',monospace}
+.sec .meta a{color:var(--muted)}
+.subline{display:flex;flex-wrap:wrap;gap:6px;margin:-6px 0 14px}
+.subchip{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:2px 9px;opacity:.85}
+
+/* grid + cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--cardline);border-radius:14px;padding:16px 17px;display:flex;flex-direction:column;transition:transform .16s,border-color .16s,box-shadow .16s}
+.card.archived{opacity:.55}
+.card.archived:hover{opacity:.8}
+.card .archived-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.3px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:1px 6px;text-transform:uppercase}
+.archived-notice{background:rgba(138,160,189,.08);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:20px;color:var(--muted);font-size:13.5px;line-height:1.55}
+.archived-notice strong{color:var(--ink)}
+#searchresults .sec-results h2{font-size:14px;color:var(--muted);font-weight:600}
+#searchresults .loading{text-align:center;color:var(--muted);font-family:'Space Mono',monospace;font-size:13px;padding:30px 0}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.card-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.card-name{font-family:'Space Mono',monospace;font-weight:700;font-size:15px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-name a{color:inherit}
+.nv{margin-left:auto;flex-shrink:0;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;background:var(--bg2);border:1px solid var(--line);color:var(--accent);padding:3px 9px;border-radius:999px}
+.nv.hi{background:var(--accent);color:#04121f;border-color:var(--accent)}
+.card-sum{font-size:13.5px;color:var(--ink);opacity:.92;margin:0 0 10px;line-height:1.5;flex-grow:1}
+.card-why{font-size:12.5px;color:var(--muted);font-style:italic;margin:0 0 12px;line-height:1.45}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:2px}
+.card-when{flex-shrink:0;font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);opacity:.7;white-space:nowrap}
+.tag{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2px;background:var(--bg2);color:var(--muted);border:1px solid var(--line);padding:2px 8px;border-radius:6px}
+.tag.lang{color:var(--accent)}
+.tag.sub{color:var(--ink);border-color:var(--accent);background:rgba(79,195,247,0.08)}
+
+/* project page */
+.proj-hero{margin:10px 0 26px}
+.proj-hero h1{font-family:'Space Mono',monospace;font-size:clamp(24px,5vw,34px);font-weight:700;letter-spacing:-.6px;margin-bottom:10px;word-break:break-word}
+.proj-sum{font-size:clamp(16px,2.5vw,19px);color:var(--ink);font-weight:300;max-width:60ch;margin-bottom:14px}
+.proj-badges{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.proj-badges .b{font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:6px 13px}
+.proj-details{font-size:15.5px;line-height:1.75;color:var(--ink);opacity:.94;max-width:64ch;margin-bottom:28px}
+.proj-cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#04121f;font-weight:600;font-size:15px;padding:13px 26px;border-radius:12px;transition:transform .16s,box-shadow .16s}
+.proj-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(79,195,247,.26);text-decoration:none}
+
+/* footer */
+.foot{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:8px}
+.foot .note{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.3px}
+.foot .disc{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink);opacity:.92;max-width:64ch;line-height:1.55;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:12px 15px;margin-top:6px}
+.foot .copyright{font-size:11.5px;color:var(--muted);opacity:.7;line-height:1.5;max-width:64ch;margin-top:10px}
+.foot .disc .di{flex-shrink:0;font-size:15px;line-height:1.4}
+.empty{color:var(--muted);text-align:center;padding:50px 0;font-family:'Space Mono',monospace;font-size:14px}
+.hatched{margin-bottom:34px}
+.hatched .grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.pager{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:36px}
+.pager .pg{font-family:'Space Mono',monospace;font-size:13px;border:1px solid var(--line);background:var(--bg2);border-radius:10px;padding:9px 16px}
+.pager .pg:hover{border-color:var(--accent);text-decoration:none}
+.pager .pgpos{font-family:'Space Mono',monospace;font-size:12px;color:var(--muted)}
+
+/* ЛЕНДИНГ-ВХОД (только на главной): hero, под ним сразу лента */
+/* баннер спонсора — узкая полоса над hero, явно помечена и отделена от коллекции */
+.sponsor{max-width:380px;margin:14px auto 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a0f1a;position:relative;display:block;text-decoration:none}
+.sponsor .sp-gif{display:block;width:100%;height:clamp(100px,20vw,150px);object-fit:cover;object-position:center}
+.sponsor video::-webkit-media-controls,.sponsor video::-webkit-media-controls-start-playback-button,.sponsor video::-webkit-media-controls-play-button{display:none!important;-webkit-appearance:none}
+.sponsor .sp-label{position:absolute;top:10px;left:12px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5px;color:var(--muted);background:rgba(10,15,26,.7);padding:2px 7px;border-radius:6px;text-transform:uppercase}
+.sponsor .sp-cap{position:absolute;bottom:10px;right:14px;font-family:'Space Mono',monospace;font-size:11px;color:var(--ink);opacity:.85}
+
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(24px,4vh,40px) 0 44px;position:relative}
+.hero .egg{width:clamp(120px,24vw,170px);height:auto;opacity:0;animation:rise .9s cubic-bezier(.2,.8,.2,1) .1s forwards}
+.hero h1{font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(32px,7vw,54px);letter-spacing:-1px;margin-top:26px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .35s forwards}
+.hero h1 .dot{color:var(--accent)}
+.hero .tag{font-size:clamp(16px,2.6vw,21px);color:var(--ink);font-weight:300;max-width:30ch;margin-top:16px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .5s forwards}
+.hero .kicker{font-family:'Space Mono',monospace;font-size:clamp(12px,2vw,13.5px);color:var(--accent);letter-spacing:.3px;max-width:46ch;margin-top:18px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .72s forwards}
+.hero .lede{font-size:clamp(15px,2.4vw,18px);color:var(--ink);max-width:38ch;margin-top:12px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .58s forwards}
+.hero .sub{color:var(--muted);font-size:clamp(13.5px,2.2vw,15.5px);max-width:48ch;margin-top:18px;line-height:1.65;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .68s forwards}
+.hero .sub .brand{font-weight:700;color:var(--accent)}
+.hero .pillrow{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:24px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .74s forwards}
+.hero .pill{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.5px;color:var(--accent);border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:6px 14px}
+.hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
+.hero .metrics strong{color:var(--accent);font-weight:700}
+.hero .metric-sep{opacity:.4}
+.hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
+.hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
+.hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
+.hero .metric-tip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);width:min(320px,86vw);background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-family:'Sora',sans-serif;font-size:12.5px;line-height:1.55;color:var(--ink);text-align:left;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,transform .18s,visibility .18s;z-index:30;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.hero .metric-info:hover .metric-tip,.hero .metric-info:focus .metric-tip{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+@media (max-width:640px){
+  /* На узких экранах пузырёк у иконки распирал бы страницу вправо.
+     Делаем подсказку фиксированной панелью по центру экрана (fixed не влияет
+     на ширину документа), перекрывающей нижнюю часть текста. */
+  .hero .metric-tip{position:fixed;left:50%;right:auto;bottom:auto;top:50%;
+    transform:translate(-50%,-50%) scale(.98);width:min(360px,90vw);max-width:90vw;
+    padding:16px 18px;font-size:13.5px}
+  .hero .metric-info:hover .metric-tip,.hero .metric-info:focus .metric-tip{
+    transform:translate(-50%,-50%) scale(1)}
+}
+.eggwrap{transform-box:fill-box;transform-origin:50% 95%;animation:hatch 4.2s ease-in-out 1.1s infinite}
+@keyframes hatch{0%,55%{transform:translateY(0) rotate(0)}58%{transform:translateY(-5px) rotate(-3.2deg)}61%{transform:translateY(0) rotate(2.6deg)}64%{transform:translateY(-7px) rotate(-2deg)}67%{transform:translateY(0) rotate(3deg)}70%{transform:translateY(-4px) rotate(-2.8deg)}73%{transform:translateY(0) rotate(1.8deg)}76%{transform:translateY(-2px) rotate(-1deg)}80%,100%{transform:translateY(0) rotate(0)}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
+</style>
+
+<script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <svg class="egg-mini" viewBox="0 0 130 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="hatchmoment logo">
+ <g transform="translate(5,5)">
+  <path d="M60 6 C92 6 116 40 124 92 C131 138 116 210 60 210 C4 210 -11 138 -4 92 C4 40 28 6 60 6 Z" transform="scale(0.96,1) translate(2,0)" fill="var(--shell)" stroke="var(--accent)" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M40 70 L40 158" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M82 70 L82 158" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M40 114 L50 114 M72 114 L82 114" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+  <rect x="50" y="104" width="22" height="20" rx="3" stroke="var(--accent)" stroke-width="2.4" fill="none"/>
+  <path d="M40 70 L40 52 M82 70 L82 52" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="40" cy="50" r="3.2" fill="var(--accent)"/><circle cx="82" cy="50" r="3.2" fill="var(--accent)"/>
+  <path d="M40 158 L40 176 M82 158 L82 176" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="40" cy="178" r="3.2" fill="var(--accent)"/><circle cx="82" cy="178" r="3.2" fill="var(--accent)"/>
+ </g>
+</svg>
+    <span class="brand"><a href="https://hatchmoment.org">hatchmoment<span class="dot">.</span></a></span>
+    <span class="slogan">scored by care · not by stars</span>
+  </header>
+  <nav class="crumb"><a href="https://hatchmoment.org">home</a> / Security &amp; Privacy</nav>
+  <div class="proj-hero">
+    <h1>🔐 Security &amp; Privacy</h1>
+    <p class="proj-sum">28 fresh security &amp; privacy projects, scored by craft.</p>
+  </div>
+
+  <div class="search-box">
+    <span class="si">⌕</span>
+    <input id="q" type="text" placeholder="Search: 'cli parser', 'local ai', 'rust'…" autocomplete="off">
+  </div>
+  <div class="filters" id="filters">
+    <span class="chip on" data-filter="lang" data-val="">All languages</span>
+    <span class="chip" data-filter="lang" data-val="c">C</span><span class="chip" data-filter="lang" data-val="go">Go</span><span class="chip" data-filter="lang" data-val="java">Java</span><span class="chip" data-filter="lang" data-val="javascript">JavaScript</span><span class="chip" data-filter="lang" data-val="python">Python</span><span class="chip" data-filter="lang" data-val="rust">Rust</span>
+    <span class="chip" data-filter="novelty" data-val="7">rare finds</span>
+  </div>
+  <div class="sortbar">
+    <span class="sortlbl">sort:</span>
+    <span class="chip sort on" data-sort="best">★ Best</span>
+    <span class="chip sort " data-sort="newest">◷ Newest</span>
+  </div>
+
+  <div id="searchresults" style="display:none"></div>
+  <div id="noresults" class="empty" style="display:none">Nothing matches — try a different search.</div>
+  <section data-section>
+
+    <div class="grid">
+    <article class="card" data-lang="zig" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-13" data-msgid="791" data-search="myzonerocks/libsignal-zig myzonerocks libsignal zig zig signal protocol library with c api for cross‑language use zero‑runtime, portable signal crypto without rust zig security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/myzonerocks__libsignal-zig.html">libsignal-zig</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Zig Signal Protocol library with C API for cross‑language use</p>
+      <p class="card-why">Zero‑runtime, portable Signal crypto without Rust</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Zig</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="go" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="501" data-search="shieldnet-360/secure-edge-dlp shieldnet 360 secure edge dlp privacy‑first ai dlp agent that blocks secrets on desktop in seconds zero‑data, real‑time secret detection go security &amp; privacy  ai-security browser-extension data-loss-prevention dlp electron endpoint-security golang llm-security privacy security">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/shieldnet-360__secure-edge-dlp.html">secure-edge-dlp</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Privacy‑first AI DLP agent that blocks secrets on desktop in seconds</p>
+      <p class="card-why">Zero‑data, real‑time secret detection</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Go</span><span class="tag">ai-security</span><span class="tag">browser-extension</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-27" data-msgid="273" data-search="yui9696/sqisign-cabpn-artifact yui9696 sqisign cabpn artifact ca-bpn: cache-aware batch-size policy improves constant-time normalization  security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/yui9696__sqisign-cabpn-artifact.html">sqisign-cabpn-artifact</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">CA-BPN: Cache-Aware Batch-Size Policy</p>
+      <p class="card-why">Improves constant-time normalization</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="python" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-24" data-msgid="165" data-search="deadrootsec/ghostgate deadrootsec ghostgate ghostgate: a local mcp security gateway that blocks risky ai tool calls real-time policy, audit, and redaction for ai agents python security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/deadrootsec__ghostgate.html">ghostgate</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Ghostgate: a local MCP security gateway that blocks risky AI tool calls</p>
+      <p class="card-why">Real-time policy, audit, and redaction for AI agents</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="java" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-14" data-msgid="812" data-search="ma3s1r0/vouchq ma3s1r0 vouchq vouchq – self‑hosted trust registry that pins ai tool definitions and detects drift ensures ai tools stay unchanged, flags tampering java security &amp; privacy  agent-governance ai-agent-security mcp model-context-protocol postgresql rug-pull self-hosted spring-boot supply-chain-security tool-poisoning">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ma3s1r0__vouchq.html">Vouchq</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Vouchq – self‑hosted trust registry that pins AI tool definitions and detects drift</p>
+      <p class="card-why">Ensures AI tools stay unchanged, flags tampering</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Java</span><span class="tag">agent-governance</span><span class="tag">ai-agent-security</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-11" data-msgid="762" data-search="ensombl/oauth-redirect-worker ensombl oauth redirect worker cloudflare worker that validates oauth redirect uris ensures safe oauth callbacks, prevents open redirects typescript security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ensombl__oauth-redirect-worker.html">oauth-redirect-worker</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Cloudflare Worker that validates OAuth redirect URIs</p>
+      <p class="card-why">Ensures safe OAuth callbacks, prevents open redirects</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">3d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-07" data-msgid="702" data-search="pnms2026/shadowrepo-shield pnms2026 shadowrepo shield local-first web3 repo scanner detecting malicious scripts and solidity risks runs locally, no data upload, anchors proofs on-chain rust security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/pnms2026__shadowrepo-shield.html">shadowrepo-shield</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Local-first Web3 repo scanner detecting malicious scripts and Solidity risks</p>
+      <p class="card-why">Runs locally, no data upload, anchors proofs on-chain</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Rust</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-06" data-msgid="653" data-search="jaradat13/aegis jaradat13 aegis aegis ir: offline incident response tool for air‑gapped socs works without network, signs audit logs python security &amp; privacy  air-gapped dfir forensic-triage incident-response offline-first python-cli security-automation security-tools">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/jaradat13__aegis.html">aegis</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Aegis IR: offline incident response tool for air‑gapped SOCs</p>
+      <p class="card-why">Works without network, signs audit logs</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">air-gapped</span><span class="tag">dfir</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-06" data-msgid="675" data-search="huzaifaisavailable/orchsec-hackathon huzaifaisavailable orchsec hackathon orchsec: runtime firewall that blocks unsafe ai agent actions enforces policies before any real-world effect python security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/huzaifaisavailable__orchsec-hackathon.html">orchsec-hackathon</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">OrchSec: runtime firewall that blocks unsafe AI agent actions</p>
+      <p class="card-why">Enforces policies before any real-world effect</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-06" data-msgid="676" data-search="mizcausevic-dev/watermark-robustness-lab mizcausevic dev watermark robustness lab interactive web lab visualizing ai watermark robustness client‑side simulation, no backend, shows watermark fragility typescript security &amp; privacy  ai-governance ai-provenance ai-safety c2pa content-credentials educational react trust-and-safety vite watermarking">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/mizcausevic-dev__watermark-robustness-lab.html">watermark-robustness-lab</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Interactive web lab visualizing AI watermark robustness</p>
+      <p class="card-why">Client‑side simulation, no backend, shows watermark fragility</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag">ai-governance</span><span class="tag">ai-provenance</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="java" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-04" data-msgid="626" data-search="rotlqe/kalidroid rotlqe kalidroid kali linux terminal emulator for android, runs full kali environment via proot real terminal app with c/c++ pty engine, apt support, and sudo java security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/rotlqe__kalidroid.html">KaliDroid</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Kali Linux terminal emulator for Android, runs full Kali environment via proot</p>
+      <p class="card-why">Real terminal app with C/C++ PTY engine, apt support, and sudo</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Java</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="497" data-search="iammalath/smart-honeypot iammalath smart honeypot smart honeypot capturing attacker http behavior with mitre mapping full request logs, deterministic classification, live dashboard  security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/iammalath__smart-honeypot.html">smart-honeypot</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Smart honeypot capturing attacker HTTP behavior with MITRE mapping</p>
+      <p class="card-why">Full request logs, deterministic classification, live dashboard</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="551" data-search="aashish-thapa/lanscope aashish thapa lanscope passive ebpf-powered lan device fingerprinting and anomaly detection real-time device id and anomaly alerts rust security &amp; privacy  anomaly-detection ebpf iot-device-fingerprinting">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/aashish-thapa__lanscope.html">lanscope</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Passive eBPF-powered LAN device fingerprinting and anomaly detection</p>
+      <p class="card-why">Real-time device ID and anomaly alerts</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Rust</span><span class="tag">anomaly-detection</span><span class="tag">ebpf</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="go" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-30" data-msgid="421" data-search="allod-solutions/go-wam allod solutions go wam pure‑go library for silent azure ad token acquisition via windows wam no cgo, direct winrt calls go security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/allod-solutions__go-wam.html">go-wam</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Pure‑Go library for silent Azure AD token acquisition via Windows WAM</p>
+      <p class="card-why">No CGO, direct WinRT calls</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Go</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-30" data-msgid="452" data-search="c3t3lina/ios-vm-research-1 c3t3lina ios vm research 1 ios vm toolchain for parsing, mutating, and patching apple device trees cli utilities for device‑tree hacking in qemu c security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/c3t3lina__ios-vm-research-1.html">ios-vm-research-1</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">iOS VM toolchain for parsing, mutating, and patching Apple Device Trees</p>
+      <p class="card-why">CLI utilities for device‑tree hacking in QEMU</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-29" data-msgid="393" data-search="tocconsulting/ec2-security-scanner tocconsulting ec2 security scanner aws ec2 security scanner with multi‑threaded checks and compliance reports comprehensive, ready‑to‑run tool for ec2 hardening python security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/tocconsulting__ec2-security-scanner.html">ec2-security-scanner</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">AWS EC2 security scanner with multi‑threaded checks and compliance reports</p>
+      <p class="card-why">Comprehensive, ready‑to‑run tool for EC2 hardening</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-28" data-msgid="297" data-search="n-frederic/fedrap n frederic fedrap federated access control framework solves real-world access control challenges in federated environments, clearly defined use case, and tangible value.  security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/n-frederic__fedrap.html">FedRAP</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Federated access control framework</p>
+      <p class="card-why">Solves real-world access control challenges in federated environments, clearly defined use case, and tangible value.</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="shell" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-12" data-msgid="775" data-search="xyzmean/m9-routes xyzmean m9 routes wireguard routing helper scripts for policy‑based traffic splits automates nft set updates for selective vpn routing shell security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/xyzmean__m9-routes.html">m9-routes</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">WireGuard routing helper scripts for policy‑based traffic splits</p>
+      <p class="card-why">Automates nft set updates for selective VPN routing</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Shell</span></div>
+        <span class="card-when">2d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-08" data-msgid="713" data-search="x1a0q1sx/github-security-monitor x1a0q1sx github security monitor github security monitor – auto‑track cves and repo activity via actions runs on github actions, no server needed python security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/x1a0q1sx__github-security-monitor.html">github-security-monitor</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">GitHub Security Monitor – auto‑track CVEs and repo activity via Actions</p>
+      <p class="card-why">Runs on GitHub Actions, no server needed</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">6d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-07" data-msgid="699" data-search="dhirajnyse/answerseal dhirajnyse answerseal security questionnaire copilot that seals answers to approved evidence streamlines enterprise deal processes by linking answers to verified sources javascript security &amp; privacy  ai-copilot b2b-saas compliance evidence iso27001 security-questionnaire soc2 vendor-security">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/dhirajnyse__answerseal.html">answerseal</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Security questionnaire copilot that seals answers to approved evidence</p>
+      <p class="card-why">Streamlines enterprise deal processes by linking answers to verified sources</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">JavaScript</span><span class="tag">ai-copilot</span><span class="tag">b2b-saas</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="go" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-01" data-msgid="561" data-search="fortresscommunity/fortress-ws fortresscommunity fortress ws enterprise websocket gateway with rust threat detection combines go routing with rust scanning for secure websockets go security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/fortresscommunity__fortress-ws.html">fortress-ws</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Enterprise WebSocket gateway with Rust threat detection</p>
+      <p class="card-why">Combines Go routing with Rust scanning for secure websockets</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Go</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="479" data-search="hhoangsonnw/c2detector hhoangsonnw c2detector c2detector: dfir tool that extracts c2 traffic from pcap files detects havoc/nimplant c2, auto-decrypts payloads  security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/hhoangsonnw__c2detector.html">C2Detector</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">C2Detector: DFIR tool that extracts C2 traffic from PCAP files</p>
+      <p class="card-why">Detects Havoc/Nimplant C2, auto-decrypts payloads</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="rust" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="546" data-search="aronpaaul/compotprotector aronpaaul compotprotector rust-based windows pe protector with encryption and virtualization provides layered obfuscation and anti‑analysis for windows binaries rust security &amp; privacy  anti-debug obfuscation packer pe protector reverse-engineering rust virtualization windows">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/aronpaaul__compotprotector.html">CompotProtector</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Rust-based Windows PE protector with encryption and virtualization</p>
+      <p class="card-why">Provides layered obfuscation and anti‑analysis for Windows binaries</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Rust</span><span class="tag">anti-debug</span><span class="tag">obfuscation</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-30" data-msgid="418" data-search="radejumo/security-architecture radejumo security architecture cloud security architecture designs enterprise-grade security  security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/radejumo__security-architecture.html">Security-Architecture</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Cloud security architecture designs</p>
+      <p class="card-why">Enterprise-grade security</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-30" data-msgid="423" data-search="batban18/ban-compliance-audit batban18 ban compliance audit compliance audit tool simplifies compliance  security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/batban18__ban-compliance-audit.html">ban-compliance-audit</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Compliance audit tool</p>
+      <p class="card-why">Simplifies compliance</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="go" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-29" data-msgid="370" data-search="s-tech-labs/dmarc-inspector s tech labs dmarc inspector dmarc-inspector parses dmarc xml reports into readable tables cli turns dmarc aggregates into clear tables go security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/s-tech-labs__dmarc-inspector.html">dmarc-inspector</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">dmarc-inspector parses DMARC XML reports into readable tables</p>
+      <p class="card-why">CLI turns DMARC aggregates into clear tables</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Go</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-28" data-msgid="318" data-search="redsecurityfr/shoposint redsecurityfr shoposint shoposint extracts merchant info from payment links silently automates osint on stripe, sumup, revolut, lydia  security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/redsecurityfr__shoposint.html">ShopOSINT</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">ShopOSINT extracts merchant info from payment links silently</p>
+      <p class="card-why">Automates OSINT on Stripe, SumUp, Revolut, Lydia</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-25" data-msgid="195" data-search="mcrich23/lakebed-proxy mcrich23 lakebed proxy lakebed proxy tool for mac: route traffic via lakebed with auto-deployment and wi-fi setup auto-deploys lakebed capsules rotates traffic configures wi-fi proxy javascript security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/mcrich23__lakebed-proxy.html">lakebed-proxy</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Lakebed proxy tool for Mac: route traffic via Lakebed with auto-deployment and Wi-Fi setup</p>
+      <p class="card-why">Auto-deploys Lakebed capsules rotates traffic configures Wi-Fi proxy</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">JavaScript</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    </div>
+  </section>
+<script>
+(function(){
+  var q=document.getElementById('q');
+  var chips=[].slice.call(document.querySelectorAll('#filters .chip'));
+  var sortChips=[].slice.call(document.querySelectorAll('.chip.sort'));
+  var cards=[].slice.call(document.querySelectorAll('[data-section] .card'));
+  var sections=[].slice.call(document.querySelectorAll('[data-section]'));
+  var results=document.getElementById('searchresults');
+  var noresults=document.getElementById('noresults');
+  var state={text:'',lang:'',novelty:0,sort:'best'};
+  var INDEX=null;   // загруженный search.json (ленивая загрузка при первом поиске)
+
+  function cmp(a,b){
+    if(state.sort==='newest'){
+      var da=(a.dataset.date||''),db=(b.dataset.date||'');
+      if(da!==db)return da<db?1:-1;
+      return (parseInt(b.dataset.msgid||'0',10))-(parseInt(a.dataset.msgid||'0',10));
+    }
+    var na=parseInt(a.dataset.novelty||'0',10),nb=parseInt(b.dataset.novelty||'0',10);
+    if(na!==nb)return nb-na;
+    var da2=(a.dataset.date||''),db2=(b.dataset.date||'');
+    return da2<db2?1:(da2>db2?-1:0);
+  }
+  function reorder(){
+    document.querySelectorAll('[data-section] .grid').forEach(function(g){
+      var items=[].slice.call(g.querySelectorAll('.card'));
+      items.sort(cmp).forEach(function(c){g.appendChild(c);});
+    });
+  }
+
+  // --- режим обычного просмотра: фильтр по языку/novelty на карточках главной ---
+  function applyFilters(){
+    var shown=0;
+    cards.forEach(function(c){
+      var okL=!state.lang || c.dataset.lang===state.lang;
+      var okN=!state.novelty || (parseInt(c.dataset.novelty||'0',10)>=state.novelty);
+      var ok=okL&&okN;
+      c.style.display=ok?'':'none';
+      if(ok)shown++;
+    });
+    sections.forEach(function(s){
+      var vis=s.querySelectorAll('.card:not([style*="none"])').length;
+      s.style.display=vis?'':'none';
+    });
+    if(noresults)noresults.style.display=shown?'none':'block';
+  }
+
+  // --- режим поиска: ищем по ВСЕЙ базе из search.json ---
+  var LINKBASE='../search.json'.replace('search.json','');  // '' на главной, '../' в /c/
+  function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function renderResults(items){
+    if(!items.length){
+      results.innerHTML='';
+      if(noresults)noresults.style.display='block';
+      return;
+    }
+    if(noresults)noresults.style.display='none';
+    var html='<div class="grid">'+items.map(function(it){
+      var tags='<span class="tag lang">'+esc(it.lang)+'</span>';
+      return '<article class="card">'
+        +'<div class="card-head"><span class="card-name"><a href="'+LINKBASE+it.url+'">'+esc(it.name)+'</a></span>'
+        +'<span class="nv">'+esc(it.badge)+'</span></div>'
+        +'<p class="card-sum">'+esc(it.summary)+'</p>'
+        +(it.why?'<p class="card-why">'+esc(it.why)+'</p>':'')
+        +'<div class="card-foot"><div class="card-tags">'+(it.lang?tags:'')+'</div></div>'
+        +'</article>';
+    }).join('')+'</div>';
+    results.innerHTML='<section class="sec-results"><div class="sec"><h2>'
+      +items.length+' result'+(items.length>1?'s':'')+'</h2></div>'+html+'</section>';
+  }
+  function runSearch(){
+    var t=state.text;
+    var matched=INDEX.items.filter(function(it){
+      if(t && (it.q||'').indexOf(t)===-1) return false;
+      if(state.lang && (it.lang||'').toLowerCase()!==state.lang) return false;
+      if(state.novelty && (it.novelty||0)<state.novelty) return false;
+      return true;
+    });
+    renderResults(matched);
+  }
+
+  function update(){
+    var searching=!!state.text;
+    document.body.classList.toggle('searching', searching);
+    if(searching){
+      // показываем контейнер результатов, прячем обычные секции
+      results.style.display='';
+      sections.forEach(function(s){s.style.display='none';});
+      if(INDEX){ runSearch(); }
+      else {
+        results.innerHTML='<p class="loading">searching…</p>';
+        fetch('../search.json').then(function(r){return r.json();}).then(function(d){
+          INDEX=d; runSearch();
+        }).catch(function(){
+          results.innerHTML='<p class="loading">search unavailable</p>';
+        });
+      }
+    } else {
+      // обычный вид: прячем результаты, показываем секции с фильтрами
+      results.style.display='none';
+      results.innerHTML='';
+      sections.forEach(function(s){s.style.display='';});
+      applyFilters();
+    }
+  }
+
+  q.addEventListener('input',function(){
+    state.text=q.value.trim().toLowerCase().replace(/[-_]+/g,' ');
+    update();
+  });
+  chips.forEach(function(ch){
+    ch.addEventListener('click',function(){
+      var f=ch.dataset.filter,v=ch.dataset.val;
+      if(f==='lang'){
+        chips.filter(function(x){return x.dataset.filter==='lang';}).forEach(function(x){x.classList.remove('on');});
+        ch.classList.add('on');state.lang=v;
+      } else if(f==='novelty'){
+        ch.classList.toggle('on');
+        state.novelty=ch.classList.contains('on')?parseInt(v,10):0;
+      }
+      if(state.text){ runSearch(); } else { applyFilters(); }
+    });
+  });
+  sortChips.forEach(function(ch){
+    ch.addEventListener('click',function(){
+      sortChips.forEach(function(x){x.classList.remove('on');});
+      ch.classList.add('on');
+      state.sort=ch.dataset.sort;
+      reorder();
+    });
+  });
+  if(state.sort==='newest')reorder();
+})();
+</script>
+  <footer class="foot">
+    <div class="note">quality over hype · craft over clout</div>
+    <div>Fresh open-source, caught the moment it hatches. Follow on <a href="https://t.me/hatchmoment">Telegram</a> · partnerships &amp; advertising: <a href="mailto:hatchmoment@mailfence.com">hatchmoment@mailfence.com</a></div>
+    <div class="disc"><span class="di">⚠</span><span><strong>hatchmoment doesn't audit or run any code.</strong> Projects are surfaced by structural signals (tests, docs, CI, structure) and an AI read of the README — not a security review. Always inspect a project yourself before using it.</span></div>
+    <div class="copyright">© 2026 hatchmoment · All rights reserved. Listed projects link to their original repositories and remain the property of their respective authors.</div>
+  </footer>
+</div>
+</body>
+</html>

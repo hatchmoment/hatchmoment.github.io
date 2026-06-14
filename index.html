@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hatchmoment — discover fresh open-source before it gets stars</title>
+<meta name="description" content="Discover new and unknown open-source GitHub projects the moment they appear — an AI curator scores each on engineering signals (tests, docs, CI) and surfaces hidden gems before they get stars. A searchable catalog of quality open-source, picked for craft, not hype.">
+<link rel="canonical" href="https://hatchmoment.org/index.html">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%230a0f1a'/&gt;&lt;text y='.9em' x='50' font-size='62' text-anchor='middle'&gt;🥚&lt;/text&gt;&lt;/svg&gt;">
+<meta property="og:title" content="hatchmoment — discover fresh open-source before it gets stars">
+<meta name="theme-color" content="#0a0f1a">
+<meta property="og:description" content="Discover new and unknown open-source GitHub projects the moment they appear — an AI curator scores each on engineering signals (tests, docs, CI) and surfaces hidden gems before they get stars. A searchable catalog of quality open-source, picked for craft, not hype.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hatchmoment.org/index.html">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f1a; --bg2:#0f1626; --ink:#e8f0fb; --muted:#8aa0bd;
+  --accent:#4fc3f7; --line:rgba(79,195,247,0.15); --shell:#142338;
+  --card:#0e1524; --cardline:rgba(138,160,189,0.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:'Sora',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 70%);pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:32px 22px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* header */
+.top{display:flex;align-items:center;gap:12px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.egg-mini{width:30px;height:auto;flex-shrink:0}
+.brand{font-family:'Space Mono',monospace;font-weight:700;font-size:20px;letter-spacing:-.5px;color:var(--ink)}
+.brand .dot{color:var(--accent)}
+.brand a{color:inherit}
+.brand a:hover{text-decoration:none}
+.slogan{margin-left:auto;font-size:12.5px;color:var(--muted);font-family:'Space Mono',monospace;letter-spacing:.3px}
+
+/* breadcrumb */
+.crumb{font-size:13px;color:var(--muted);margin-bottom:18px;font-family:'Space Mono',monospace}
+.crumb a{color:var(--muted)}
+.crumb a:hover{color:var(--accent)}
+
+/* search + filters */
+.search-box{position:relative;margin:6px 0 18px}
+.search-box input{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:12px;color:var(--ink);font-family:'Sora',sans-serif;font-size:15px;padding:13px 16px 13px 42px;outline:none;transition:border-color .15s}
+.search-box input:focus{border-color:var(--accent)}
+.search-box .si{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:16px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.chip{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.3px;color:var(--muted);background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;transition:all .14s;user-select:none}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip.on{background:var(--accent);color:#04121f;border-color:var(--accent);font-weight:700}
+.sortbar{display:flex;align-items:center;gap:8px;margin:-18px 0 28px}
+.sortlbl{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)}
+.chip.sort{padding:5px 12px;font-size:11px}
+
+/* section heading */
+.sec{display:flex;align-items:baseline;justify-content:space-between;margin:30px 0 14px}
+.sec h2{font-family:'Space Mono',monospace;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.3px}
+.sec h2 .ic{margin-right:8px}
+.sec .meta{font-size:12px;color:var(--muted);font-family:'Space Mono',monospace}
+.sec .meta a{color:var(--muted)}
+.subline{display:flex;flex-wrap:wrap;gap:6px;margin:-6px 0 14px}
+.subchip{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:2px 9px;opacity:.85}
+
+/* grid + cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--cardline);border-radius:14px;padding:16px 17px;display:flex;flex-direction:column;transition:transform .16s,border-color .16s,box-shadow .16s}
+.card.archived{opacity:.55}
+.card.archived:hover{opacity:.8}
+.card .archived-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.3px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:1px 6px;text-transform:uppercase}
+.archived-notice{background:rgba(138,160,189,.08);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:20px;color:var(--muted);font-size:13.5px;line-height:1.55}
+.archived-notice strong{color:var(--ink)}
+#searchresults .sec-results h2{font-size:14px;color:var(--muted);font-weight:600}
+#searchresults .loading{text-align:center;color:var(--muted);font-family:'Space Mono',monospace;font-size:13px;padding:30px 0}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.card-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.card-name{font-family:'Space Mono',monospace;font-weight:700;font-size:15px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-name a{color:inherit}
+.nv{margin-left:auto;flex-shrink:0;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;background:var(--bg2);border:1px solid var(--line);color:var(--accent);padding:3px 9px;border-radius:999px}
+.nv.hi{background:var(--accent);color:#04121f;border-color:var(--accent)}
+.card-sum{font-size:13.5px;color:var(--ink);opacity:.92;margin:0 0 10px;line-height:1.5;flex-grow:1}
+.card-why{font-size:12.5px;color:var(--muted);font-style:italic;margin:0 0 12px;line-height:1.45}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:2px}
+.card-when{flex-shrink:0;font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);opacity:.7;white-space:nowrap}
+.tag{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2px;background:var(--bg2);color:var(--muted);border:1px solid var(--line);padding:2px 8px;border-radius:6px}
+.tag.lang{color:var(--accent)}
+.tag.sub{color:var(--ink);border-color:var(--accent);background:rgba(79,195,247,0.08)}
+
+/* project page */
+.proj-hero{margin:10px 0 26px}
+.proj-hero h1{font-family:'Space Mono',monospace;font-size:clamp(24px,5vw,34px);font-weight:700;letter-spacing:-.6px;margin-bottom:10px;word-break:break-word}
+.proj-sum{font-size:clamp(16px,2.5vw,19px);color:var(--ink);font-weight:300;max-width:60ch;margin-bottom:14px}
+.proj-badges{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.proj-badges .b{font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:6px 13px}
+.proj-details{font-size:15.5px;line-height:1.75;color:var(--ink);opacity:.94;max-width:64ch;margin-bottom:28px}
+.proj-cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#04121f;font-weight:600;font-size:15px;padding:13px 26px;border-radius:12px;transition:transform .16s,box-shadow .16s}
+.proj-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(79,195,247,.26);text-decoration:none}
+
+/* footer */
+.foot{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:8px}
+.foot .note{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.3px}
+.foot .disc{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink);opacity:.92;max-width:64ch;line-height:1.55;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:12px 15px;margin-top:6px}
+.foot .copyright{font-size:11.5px;color:var(--muted);opacity:.7;line-height:1.5;max-width:64ch;margin-top:10px}
+.foot .disc .di{flex-shrink:0;font-size:15px;line-height:1.4}
+.empty{color:var(--muted);text-align:center;padding:50px 0;font-family:'Space Mono',monospace;font-size:14px}
+.hatched{margin-bottom:34px}
+.hatched .grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.pager{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:36px}
+.pager .pg{font-family:'Space Mono',monospace;font-size:13px;border:1px solid var(--line);background:var(--bg2);border-radius:10px;padding:9px 16px}
+.pager .pg:hover{border-color:var(--accent);text-decoration:none}
+.pager .pgpos{font-family:'Space Mono',monospace;font-size:12px;color:var(--muted)}
+
+/* ЛЕНДИНГ-ВХОД (только на главной): hero, под ним сразу лента */
+/* баннер спонсора — узкая полоса над hero, явно помечена и отделена от коллекции */
+.sponsor{max-width:380px;margin:14px auto 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a0f1a;position:relative;display:block;text-decoration:none}
+.sponsor .sp-gif{display:block;width:100%;height:clamp(100px,20vw,150px);object-fit:cover;object-position:center}
+.sponsor video::-webkit-media-controls,.sponsor video::-webkit-media-controls-start-playback-button,.sponsor video::-webkit-media-controls-play-button{display:none!important;-webkit-appearance:none}
+.sponsor .sp-label{position:absolute;top:10px;left:12px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5px;color:var(--muted);background:rgba(10,15,26,.7);padding:2px 7px;border-radius:6px;text-transform:uppercase}
+.sponsor .sp-cap{position:absolute;bottom:10px;right:14px;font-family:'Space Mono',monospace;font-size:11px;color:var(--ink);opacity:.85}
+
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(24px,4vh,40px) 0 44px;position:relative}
+.hero .egg{width:clamp(120px,24vw,170px);height:auto;opacity:0;animation:rise .9s cubic-bezier(.2,.8,.2,1) .1s forwards}
+.hero h1{font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(32px,7vw,54px);letter-spacing:-1px;margin-top:26px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .35s forwards}
+.hero h1 .dot{color:var(--accent)}
+.hero .tag{font-size:clamp(16px,2.6vw,21px);color:var(--ink);font-weight:300;max-width:30ch;margin-top:16px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .5s forwards}
+.hero .kicker{font-family:'Space Mono',monospace;font-size:clamp(12px,2vw,13.5px);color:var(--accent);letter-spacing:.3px;max-width:46ch;margin-top:18px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .72s forwards}
+.hero .lede{font-size:clamp(15px,2.4vw,18px);color:var(--ink);max-width:38ch;margin-top:12px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .58s forwards}
+.hero .sub{color:var(--muted);font-size:clamp(13.5px,2.2vw,15.5px);max-width:48ch;margin-top:18px;line-height:1.65;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .68s forwards}
+.hero .sub .brand{font-weight:700;color:var(--accent)}
+.hero .pillrow{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:24px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .74s forwards}
+.hero .pill{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.5px;color:var(--accent);border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:6px 14px}
+.hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
+.hero .metrics strong{color:var(--accent);font-weight:700}
+.hero .metric-sep{opacity:.4}
+.hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
+.hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
+.hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
+.hero .metric-tip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);width:min(320px,86vw);background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-family:'Sora',sans-serif;font-size:12.5px;line-height:1.55;color:var(--ink);text-align:left;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,transform .18s,visibility .18s;z-index:30;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.hero .metric-info:hover .metric-tip,.hero .metric-info:focus .metric-tip{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+@media (max-width:640px){
+  /* На узких экранах пузырёк у иконки распирал бы страницу вправо.
+     Делаем подсказку фиксированной панелью по центру экрана (fixed не влияет
+     на ширину документа), перекрывающей нижнюю часть текста. */
+  .hero .metric-tip{position:fixed;left:50%;right:auto;bottom:auto;top:50%;
+    transform:translate(-50%,-50%) scale(.98);width:min(360px,90vw);max-width:90vw;
+    padding:16px 18px;font-size:13.5px}
+  .hero .metric-info:hover .metric-tip,.hero .metric-info:focus .metric-tip{
+    transform:translate(-50%,-50%) scale(1)}
+}
+.eggwrap{transform-box:fill-box;transform-origin:50% 95%;animation:hatch 4.2s ease-in-out 1.1s infinite}
+@keyframes hatch{0%,55%{transform:translateY(0) rotate(0)}58%{transform:translateY(-5px) rotate(-3.2deg)}61%{transform:translateY(0) rotate(2.6deg)}64%{transform:translateY(-7px) rotate(-2deg)}67%{transform:translateY(0) rotate(3deg)}70%{transform:translateY(-4px) rotate(-2.8deg)}73%{transform:translateY(0) rotate(1.8deg)}76%{transform:translateY(-2px) rotate(-1deg)}80%,100%{transform:translateY(0) rotate(0)}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
+</style>
+
+<script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="sponsor" href="https://vimathic.com" target="_blank" rel="noopener sponsored">
+    <img class="sp-gif" src="assets/vimathic.gif" alt="vimathic" loading="lazy">
+    <span class="sp-label">Sponsored</span>
+    <span class="sp-cap">vimathic.com</span>
+  </a>
+  <section class="hero">
+    <svg class="egg" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="hatchmoment logo: a microchip egg about to hatch">
+ <defs><filter id="neon" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2.6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+ <g class="eggwrap"><g transform="translate(70,40)">
+  <path d="M60 6 C92 6 116 40 124 92 C131 138 116 210 60 210 C4 210 -11 138 -4 92 C4 40 28 6 60 6 Z" transform="scale(0.96,1) translate(2,0)" fill="var(--shell)" stroke="var(--accent)" stroke-width="3.5" stroke-linejoin="round" filter="url(#neon)"/>
+  <g filter="url(#neon)">
+   <path d="M40 70 L40 158" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+   <path d="M82 70 L82 158" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+   <path d="M40 114 L50 114 M72 114 L82 114" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+   <rect x="50" y="104" width="22" height="20" rx="3" stroke="var(--accent)" stroke-width="2.4" fill="none"/>
+   <path d="M55 104 L55 99 M61 104 L61 99 M67 104 L67 99 M55 124 L55 129 M61 124 L61 129 M67 124 L67 129" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round"/>
+   <path d="M40 70 L40 52 M82 70 L82 52" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+   <circle cx="40" cy="50" r="3.2" fill="var(--accent)"/><circle cx="82" cy="50" r="3.2" fill="var(--accent)"/>
+   <path d="M40 158 L40 176 M82 158 L82 176" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+   <circle cx="40" cy="178" r="3.2" fill="var(--accent)"/><circle cx="82" cy="178" r="3.2" fill="var(--accent)"/>
+   <path d="M40 92 L24 92" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/><circle cx="22" cy="92" r="2.4" fill="var(--accent)"/>
+   <path d="M82 136 L98 136" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/><circle cx="100" cy="136" r="2.4" fill="var(--accent)"/>
+  </g>
+ </g></g>
+</svg>
+    <h1>hatchmoment<span class="dot">.</span></h1>
+    <p class="tag">Fresh open-source, caught the moment it hatches.</p>
+    <p class="lede">Be the first to discover standout open-source projects — before anyone else does.</p>
+    <p class="sub">More than 230 new repositories appear on GitHub every minute — almost none ever get seen. <strong class="brand">hatchmoment</strong> is a fully autonomous AI curator that watches for one specific moment: when a project, built in private, is opened to the world — polished, but not yet discovered. It scores each one on engineering signals — tests, docs, CI, structure. The ones that clear the bar for substance, it reads, writes a plain-language summary for, and publishes to a growing, searchable catalog. Only real projects make it in — no demos, no tutorials, no empty shells. No ads in the catalog. The labels are one curator's judgment, not a score you can game.</p>
+    <p class="kicker">Every repository the agent has gathered is open and fully searchable.</p>
+    <div class="pillrow">
+      <span class="pill">picked for craft</span>
+      <span class="pill">not for hype</span>
+      <span class="pill">no ads in the catalog</span>
+    </div>
+    <div class="metrics">
+      <span class="metric"><strong>3,562</strong> scanned</span><span class="metric-sep">→</span><span class="metric"><strong>610</strong> published</span><span class="metric-info" tabindex="0" role="button" aria-label="How these numbers work">ⓘ<span class="metric-tip">Why not millions? The “230 new repos/minute” figure counts every push on GitHub — mostly forks, re-uploads, private mirrors and throwaways. hatchmoment watches only brand-new public repositories as they first appear, de-duplicates them, and scores each for engineering signals. “scanned” is the count of unique fresh repos it actually looked at; “published” is the few that cleared the bar.</span></span>
+    </div>
+    <div class="metrics metrics-since">
+      <span class="metric">scanning GitHub since 23 May 2026, 00:00 UTC</span>
+    </div>
+  </section>  <section class="hatched">
+    <div class="sec">
+      <h2><span class="ic">🐣</span>Just hatched</h2>
+      <span class="meta"><a href="feed.html">full feed →</a></span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-14" data-msgid="814" data-search="benleiber/labeldrop benleiber labeldrop labeldrop: lan fastapi server to print png/pdf labels on a munbyn itpp130b printer simple local print service for label files python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/benleiber__labeldrop.html">labeldrop</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">LabelDrop: LAN FastAPI server to print PNG/PDF labels on a MUNBYN ITPP130B printer</p>
+      <p class="card-why">Simple local print service for label files</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="go" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-14" data-msgid="813" data-search="mike-diff/sesh mike diff sesh sesh: a minimal go ai coding agent for llm‑driven code tasks zero‑dependency, extensible go cli for ai coding go ai &amp; ml  agent-harness agentic-coding agentic-workflow ai-agent code-generation coding-agent llm">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/mike-diff__sesh.html">sesh</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">sesh: a minimal Go AI coding agent for LLM‑driven code tasks</p>
+      <p class="card-why">Zero‑dependency, extensible Go CLI for AI coding</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Go</span><span class="tag">agent-harness</span><span class="tag">agentic-coding</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="java" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-14" data-msgid="812" data-search="ma3s1r0/vouchq ma3s1r0 vouchq vouchq – self‑hosted trust registry that pins ai tool definitions and detects drift ensures ai tools stay unchanged, flags tampering java security &amp; privacy  agent-governance ai-agent-security mcp model-context-protocol postgresql rug-pull self-hosted spring-boot supply-chain-security tool-poisoning">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ma3s1r0__vouchq.html">Vouchq</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Vouchq – self‑hosted trust registry that pins AI tool definitions and detects drift</p>
+      <p class="card-why">Ensures AI tools stay unchanged, flags tampering</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Java</span><span class="tag">agent-governance</span><span class="tag">ai-agent-security</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-14" data-msgid="811" data-search="ravindranshanmugam/finance-agent-clean ravindranshanmugam finance agent clean local ai finance tracker that converts bank pdfs into a chat‑able spreadsheet runs offline, turns statements into actionable data python apps &amp; productivity  python-ollama-ai-agent-fintech">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ravindranshanmugam__finance-agent-clean.html">finance-agent-clean</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Local AI finance tracker that converts bank PDFs into a chat‑able spreadsheet</p>
+      <p class="card-why">Runs offline, turns statements into actionable data</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">python-ollama-ai-agent-fintech</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="kotlin" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-14" data-msgid="810" data-search="pawix25/slop-calendar pawix25 slop calendar android home-screen calendar widget showing a timeline agenda integrates jetpack glance, compose, material you kotlin apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/pawix25__slop-calendar.html">Slop-Calendar</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Android home-screen calendar widget showing a timeline agenda</p>
+      <p class="card-why">Integrates Jetpack Glance, Compose, Material You</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Kotlin</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-14" data-msgid="809" data-search="dayne6666/every_agent dayne6666 every agent langgraph-based ai agent framework with sandbox execution manages sandbox lifecycle, integrates web search &amp; file upload python ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/dayne6666__every_agent.html">every_agent</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">LangGraph-based AI agent framework with sandbox execution</p>
+      <p class="card-why">Manages sandbox lifecycle, integrates web search &amp; file upload</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    </div>
+  </section>
+  <div class="search-box">
+    <span class="si">⌕</span>
+    <input id="q" type="text" placeholder="Search: 'cli parser', 'local ai', 'rust'…" autocomplete="off">
+  </div>
+  <div class="filters" id="filters">
+    <span class="chip on" data-filter="lang" data-val="">All languages</span>
+    <span class="chip" data-filter="lang" data-val="python">Python</span><span class="chip" data-filter="lang" data-val="typescript">TypeScript</span><span class="chip" data-filter="lang" data-val="javascript">JavaScript</span><span class="chip" data-filter="lang" data-val="go">Go</span><span class="chip" data-filter="lang" data-val="html">HTML</span><span class="chip" data-filter="lang" data-val="shell">Shell</span>
+    <span class="chip" data-filter="novelty" data-val="7">rare finds</span>
+  </div>
+  <div class="sortbar">
+    <span class="sortlbl">sort:</span>
+    <span class="chip sort on" data-sort="best">★ Best</span>
+    <span class="chip sort " data-sort="newest">◷ Newest</span>
+  </div>
+<div id="searchresults" style="display:none"></div>
+<div id="noresults" class="empty" style="display:none">Nothing matches — try a different search.</div>
+  <section data-section>
+    <div class="sec">
+      <h2><span class="ic">🧠</span><a href="c/ai-ml.html" style="color:inherit">AI &amp; ML</a></h2>
+      <span class="meta">71 projects <a href="c/ai-ml.html">all 71 →</a></span>
+    </div>
+    <div class="subline"><span class="subchip">LLM apps &amp; agents</span></div>
+    <div class="grid">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-07" data-msgid="707" data-search="ritvikmaini/financial-metric-forecasting ritvikmaini financial metric forecasting leakage‑aware backtesting framework for financial metric forecasting ensures point‑in‑time validation on public finance data python ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ritvikmaini__financial-metric-forecasting.html">financial-metric-forecasting</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Leakage‑aware backtesting framework for financial metric forecasting</p>
+      <p class="card-why">Ensures point‑in‑time validation on public finance data</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="rust" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-01" data-msgid="581" data-search="v-code01/phantom v code01 phantom phantom: zero-copy multi-agent llm kv-cache serving on apple silicon unified memory optimizes llm inference by sharing kv-cache across agents without copying rust ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/v-code01__phantom.html">phantom</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">PHANTOM: Zero-copy multi-agent LLM KV-cache serving on Apple Silicon Unified Memory</p>
+      <p class="card-why">Optimizes LLM inference by sharing KV-cache across agents without copying</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Rust</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-31" data-msgid="538" data-search="lightending/autospire lightending autospire ai mod for slay the spire 2 automates gameplay  ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/lightending__autospire.html">autoSpire</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">AI mod for Slay the Spire 2</p>
+      <p class="card-why">automates gameplay</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-29" data-msgid="367" data-search="itristaoo/rag-knowledge-base itristaoo rag knowledge base rag pipeline for clinic info accurate answers  ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/itristaoo__rag-knowledge-base.html">rag-knowledge-base</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">RAG pipeline for clinic info</p>
+      <p class="card-why">accurate answers</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="javascript" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-26" data-msgid="225" data-search="scriptedalchemy/open-claude-in-chrome scriptedalchemy open claude in chrome a functional open-source implementation of claude for seamless browser integration. offers reliable, customizable ai tools without restrictions. javascript ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/scriptedalchemy__open-claude-in-chrome.html">open-claude-in-chrome</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">A functional open-source implementation of Claude for seamless browser integration.</p>
+      <p class="card-why">Offers reliable, customizable AI tools without restrictions.</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">JavaScript</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-26" data-msgid="241" data-search="gonglz/pems-gnn-traffic-forecasting gonglz pems gnn traffic forecasting end‑to‑end gnn traffic forecasting on pems sensor data full pipeline, multi‑gpu training, reproducible results python ai &amp; ml  distributed-training graph-neural-networks pems pytorch-geometric traffic-forecasting">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/gonglz__pems-gnn-traffic-forecasting.html">pems-gnn-traffic-forecasting</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">End‑to‑end GNN traffic forecasting on PeMS sensor data</p>
+      <p class="card-why">Full pipeline, multi‑GPU training, reproducible results</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">distributed-training</span><span class="tag">graph-neural-networks</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section data-section>
+    <div class="sec">
+      <h2><span class="ic">🛠</span><a href="c/developer-tools.html" style="color:inherit">Developer Tools</a></h2>
+      <span class="meta">77 projects <a href="c/developer-tools.html">all 77 →</a></span>
+    </div>
+    
+    <div class="grid">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="493" data-search="teamcache-dev/teamcache teamcache dev teamcache shared ai context cache saves tokens python developer tools ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/teamcache-dev__teamcache.html">teamcache</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Shared AI context cache</p>
+      <p class="card-why">Saves tokens</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="swift" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-05-26" data-msgid="220" data-search="appsent-co/react-native-watchos appsent co react native watchos build watchos apps with react, rendered as native swiftui. native swiftui rendering via jsi. swift developer tools ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/appsent-co__react-native-watchos.html">react-native-watchos</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Build watchOS apps with React, rendered as native SwiftUI.</p>
+      <p class="card-why">Native SwiftUI rendering via JSI.</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Swift</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-05-24" data-msgid="180" data-search="enricai/centella enricai centella centella: deterministic task orchestrator for claude code runs claude tasks in isolated worktrees, no api key python developer tools ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/enricai__centella.html">centella</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Centella: deterministic task orchestrator for Claude Code</p>
+      <p class="card-why">Runs Claude tasks in isolated worktrees, no API key</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-14" data-msgid="800" data-search="doclight-lab/sdk-core doclight lab sdk core doclight core sdk – lightweight observability for ai agents typed event schema &amp; async queue for agent telemetry typescript developer tools ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/doclight-lab__sdk-core.html">sdk-core</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Doclight Core SDK – lightweight observability for AI agents</p>
+      <p class="card-why">Typed event schema &amp; async queue for agent telemetry</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-13" data-msgid="784" data-search="samuelz12/prtokens samuelz12 prtokens cli to attribute ai coding token usage to github prs and post cost summary shows token counts and cost directly in pr comments typescript developer tools ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/samuelz12__prtokens.html">prtokens</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">CLI to attribute AI coding token usage to GitHub PRs and post cost summary</p>
+      <p class="card-why">Shows token counts and cost directly in PR comments</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-13" data-msgid="798" data-search="omry/stale-buffer-guard omry stale buffer guard vs code extension warns when your unsaved buffer is older than the file on disk prevents lost edits from external file changes javascript developer tools ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/omry__stale-buffer-guard.html">stale-buffer-guard</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">VS Code extension warns when your unsaved buffer is older than the file on disk</p>
+      <p class="card-why">Prevents lost edits from external file changes</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">JavaScript</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section data-section>
+    <div class="sec">
+      <h2><span class="ic">🌐</span><a href="c/web-frontend.html" style="color:inherit">Web &amp; Frontend</a></h2>
+      <span class="meta">98 projects <a href="c/web-frontend.html">all 98 →</a></span>
+    </div>
+    
+    <div class="grid">
+    <article class="card" data-lang="html" data-novelty="8" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-05-25" data-msgid="187" data-search="kris-o/kalkulator-obligacji-2026 kris o kalkulator obligacji 2026 a specialized financial calculator precise tool for bond obligation analysis html web &amp; frontend ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/kris-o__kalkulator-obligacji-2026.html">kalkulator-obligacji-2026</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">A specialized financial calculator</p>
+      <p class="card-why">Precise tool for bond obligation analysis</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">HTML</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="8" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-05-24" data-msgid="145" data-search="nkcodec/pipal-a2a nkcodec pipal a2a p2p multi-agent orchestration with crash-safe sqlite persistence and real-time streaming crash recovery and smart routing for distributed systems typescript web &amp; frontend ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/nkcodec__pipal-a2a.html">pipal-a2a</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">P2P multi-agent orchestration with crash-safe SQLite persistence and real-time streaming</p>
+      <p class="card-why">Crash recovery and smart routing for distributed systems</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-06-14" data-msgid="806" data-search="centro-de-estudios-populi/nuestro-mundo-en-datos centro de estudios populi nuestro mundo en datos interactive spanish-language world data atlas for visualizing global indicators spanish visualizations of global statistics python web &amp; frontend ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/centro-de-estudios-populi__nuestro-mundo-en-datos.html">nuestro-mundo-en-datos</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Interactive Spanish-language world data atlas for visualizing global indicators</p>
+      <p class="card-why">Spanish visualizations of global statistics</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-06-12" data-msgid="778" data-search="delorali/tidal-diagrams delorali tidal diagrams tidal diagrams – a browser‑based diagram builder in tidal design system style live editing, mermaid import, local storage, no backend typescript web &amp; frontend ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/delorali__tidal-diagrams.html">tidal-diagrams</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Tidal Diagrams – a browser‑based diagram builder in Tidal Design System style</p>
+      <p class="card-why">Live editing, Mermaid import, local storage, no backend</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">2d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-06-10" data-msgid="745" data-search="luminis-foundation/mycosense luminis foundation mycosense mycosense: react dashboard for real-time mycelium sensor data live biosensor visualization with mock mode javascript web &amp; frontend ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/luminis-foundation__mycosense.html">mycosense</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">MycoSense: React dashboard for real-time mycelium sensor data</p>
+      <p class="card-why">Live biosensor visualization with mock mode</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">JavaScript</span></div>
+        <span class="card-when">4d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-06-08" data-msgid="716" data-search="motion-script/motion-script motion script motion script motion script: typescript library for creating browser‑based motion graphics declarative animation with jsx, skia rendering, and live preview typescript web &amp; frontend ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/motion-script__motion-script.html">motion-script</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Motion Script: TypeScript library for creating browser‑based motion graphics</p>
+      <p class="card-why">Declarative animation with JSX, Skia rendering, and live preview</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">6d ago</span>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section data-section>
+    <div class="sec">
+      <h2><span class="ic">⚙</span><a href="c/backend-apis.html" style="color:inherit">Backend &amp; APIs</a></h2>
+      <span class="meta">43 projects <a href="c/backend-apis.html">all 43 →</a></span>
+    </div>
+    
+    <div class="grid">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-13" data-msgid="788" data-search="paulin011/mensa-koeln paulin011 mensa koeln flask api &amp; pwa for browsing cologne mensa menus live menu, diet filters, ratings, offline access python backend &amp; apis ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/paulin011__mensa-koeln.html">mensa-koeln</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Flask API &amp; PWA for browsing Cologne Mensa menus</p>
+      <p class="card-why">Live menu, diet filters, ratings, offline access</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-10" data-msgid="747" data-search="stablerails/stablerails stablerails stablerails self-hosted non-custodial stablecoin payment server zero-key server, secure on-chain payments typescript backend &amp; apis ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/stablerails__stablerails.html">stablerails</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Self-hosted non-custodial stablecoin payment server</p>
+      <p class="card-why">Zero-key server, secure on-chain payments</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">4d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-07" data-msgid="685" data-search="goulartfelipe618-beep/transporte-executivo goulartfelipe618 beep transporte executivo fastapi reservation engine for transport partners full-featured booking system with api and admin ui python backend &amp; apis ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/goulartfelipe618-beep__transporte-executivo.html">transporte-executivo</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">FastAPI reservation engine for transport partners</p>
+      <p class="card-why">Full-featured booking system with API and admin UI</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-07" data-msgid="700" data-search="polytom868-pixel/siglab polytom868 pixel siglab siglab: on-chain finance research &amp; paper‑trading platform integrates market data, risk scoring, and interactive ui python backend &amp; apis ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/polytom868-pixel__siglab.html">siglab</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">SigLab: on-chain finance research &amp; paper‑trading platform</p>
+      <p class="card-why">Integrates market data, risk scoring, and interactive UI</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="swift" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-05" data-msgid="632" data-search="giautm/vision-ocr giautm vision ocr swift ocr microservice using vision for on-device text extraction self‑hosted macos ocr with api, metrics, and graceful shutdown swift backend &amp; apis ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/giautm__vision-ocr.html">vision-ocr</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Swift OCR microservice using Vision for on-device text extraction</p>
+      <p class="card-why">Self‑hosted macOS OCR with API, metrics, and graceful shutdown</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Swift</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-01" data-msgid="576" data-search="uberbyte1805/poolprox2 uberbyte1805 poolprox2 self‑hosted proxy that pools multiple ai accounts behind an openai‑compatible api turns many provider accounts into one unified endpoint typescript backend &amp; apis ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/uberbyte1805__poolprox2.html">poolprox2</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Self‑hosted proxy that pools multiple AI accounts behind an OpenAI‑compatible API</p>
+      <p class="card-why">Turns many provider accounts into one unified endpoint</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section data-section>
+    <div class="sec">
+      <h2><span class="ic">🗄</span><a href="c/data-databases.html" style="color:inherit">Data &amp; Databases</a></h2>
+      <span class="meta">29 projects <a href="c/data-databases.html">all 29 →</a></span>
+    </div>
+    
+    <div class="grid">
+    <article class="card" data-lang="" data-novelty="8" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-30" data-msgid="430" data-search="leen01/mimic_iv leen01 mimic iv clinical data science workflow for icu sepsis patients improves mortality outcome analysis  data &amp; databases ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/leen01__mimic_iv.html">mimic_iv</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Clinical data science workflow for ICU sepsis patients</p>
+      <p class="card-why">Improves mortality outcome analysis</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="8" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-29" data-msgid="337" data-search="kdwmeet/document-chunking-pipeline kdwmeet document chunking pipeline ai-powered document chunking pipeline for rag systems with quality guardrails efficient, context-aware chunking with gpt-5.4-nano reduces costs while maintaining data integrity  data &amp; databases ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/kdwmeet__document-chunking-pipeline.html">document-chunking-pipeline</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">AI-powered document chunking pipeline for RAG systems with quality guardrails</p>
+      <p class="card-why">Efficient, context-aware chunking with gpt-5.4-nano reduces costs while maintaining data integrity</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="jupyter notebook" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-12" data-msgid="768" data-search="usepancake/polymarket-history usepancake polymarket history point-in-time polymarket market dataset for research and analysis clean, versioned parquet data with timestamps jupyter notebook data &amp; databases  dataset parquet point-in-time polymarket prediction-markets">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/usepancake__polymarket-history.html">polymarket-history</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Point-in-time Polymarket market dataset for research and analysis</p>
+      <p class="card-why">Clean, versioned parquet data with timestamps</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Jupyter Notebook</span><span class="tag">dataset</span><span class="tag">parquet</span></div>
+        <span class="card-when">2d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-02" data-msgid="596" data-search="tomoto0/economic-data-dashboard-2 tomoto0 economic data dashboard 2 economic data dashboard with ai insights, live data from world bank api, and interactive charts combines multiple data sources, ai-generated insights, and user-friendly interface typescript data &amp; databases  manus">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/tomoto0__economic-data-dashboard-2.html">economic-data-dashboard-2</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Economic data dashboard with AI insights, live data from World Bank API, and interactive charts</p>
+      <p class="card-why">Combines multiple data sources, AI-generated insights, and user-friendly interface</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag">manus</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-31" data-msgid="533" data-search="sinanotc/btp-datapipeline sinanotc btp datapipeline sap sac monitoring data pipeline loading usage stats into sap datasphere automates extract‑transform‑load with robust error handling python data &amp; databases ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/sinanotc__btp-datapipeline.html">btp-datapipeline</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">SAP SAC monitoring data pipeline loading usage stats into SAP Datasphere</p>
+      <p class="card-why">Automates extract‑transform‑load with robust error handling</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-14" data-msgid="803" data-search="martianmobile/strategy-evaluation martianmobile strategy evaluation cli tool that evaluates trading‑strategy backtest sweeps and decides to ship, iterate or kill deterministic convergence metrics for quant researchers python data &amp; databases  algorithmic-trading backtesting claude-code claude-code-plugin convergence quant">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/martianmobile__strategy-evaluation.html">strategy-evaluation</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">CLI tool that evaluates trading‑strategy backtest sweeps and decides to ship, iterate or kill</p>
+      <p class="card-why">Deterministic convergence metrics for quant researchers</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">algorithmic-trading</span><span class="tag">backtesting</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section data-section>
+    <div class="sec">
+      <h2><span class="ic">📦</span><a href="c/devops-infra.html" style="color:inherit">DevOps &amp; Infra</a></h2>
+      <span class="meta">37 projects <a href="c/devops-infra.html">all 37 →</a></span>
+    </div>
+    
+    <div class="grid">
+    <article class="card" data-lang="javascript" data-novelty="8" data-cat="DevOps &amp; Infra" data-sub="" data-date="2026-06-10" data-msgid="744" data-search="fabio-kumahost/logwatch-panel fabio kumahost logwatch panel self‑hosted log collection panel with go agent for centralized search &amp; alerts works out‑of‑the‑box, supports many sources &amp; alert channels javascript devops &amp; infra ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/fabio-kumahost__logwatch-panel.html">logwatch-panel</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Self‑hosted log collection panel with Go agent for centralized search &amp; alerts</p>
+      <p class="card-why">Works out‑of‑the‑box, supports many sources &amp; alert channels</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">JavaScript</span></div>
+        <span class="card-when">4d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="DevOps &amp; Infra" data-sub="" data-date="2026-06-14" data-msgid="805" data-search="makentenza/osc-openshift-console-plugin makentenza osc openshift console plugin openshift console plugin for managing sandboxed containers adds ui to monitor and control kata workloads typescript devops &amp; infra ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/makentenza__osc-openshift-console-plugin.html">osc-openshift-console-plugin</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">OpenShift console plugin for managing sandboxed containers</p>
+      <p class="card-why">Adds UI to monitor and control Kata workloads</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="shell" data-novelty="7" data-cat="DevOps &amp; Infra" data-sub="" data-date="2026-06-12" data-msgid="770" data-search="georgeharker/gh-quarto-publish georgeharker gh quarto publish reusable github action to render quarto docs and publish via rsync secure, token‑free docs deployment shell devops &amp; infra ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/georgeharker__gh-quarto-publish.html">gh-quarto-publish</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Reusable GitHub Action to render Quarto docs and publish via rsync</p>
+      <p class="card-why">Secure, token‑free docs deployment</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Shell</span></div>
+        <span class="card-when">2d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="DevOps &amp; Infra" data-sub="" data-date="2026-06-11" data-msgid="755" data-search="ldogg123/wevtail ldogg123 wevtail wevtail – tail‑f for windows event logs, live streaming with colors push‑based live log follow, no polling rust devops &amp; infra ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ldogg123__wevtail.html">wevtail</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">wevtail – tail‑f for Windows event logs, live streaming with colors</p>
+      <p class="card-why">Push‑based live log follow, no polling</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Rust</span></div>
+        <span class="card-when">3d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="shell" data-novelty="7" data-cat="DevOps &amp; Infra" data-sub="" data-date="2026-06-08" data-msgid="717" data-search="berkeley-humanoids/bar_buildfarm berkeley humanoids bar buildfarm conda buildfarm for bar robotics packages automates building and publishing ros2 conda packages shell devops &amp; infra ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/berkeley-humanoids__bar_buildfarm.html">bar_buildfarm</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Conda buildfarm for BAR robotics packages</p>
+      <p class="card-why">Automates building and publishing ROS2 conda packages</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Shell</span></div>
+        <span class="card-when">6d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="7" data-cat="DevOps &amp; Infra" data-sub="" data-date="2026-06-07" data-msgid="708" data-search="neanc/shutdownnotice_cpp neanc shutdownnotice cpp windows event log monitor that pushes shutdown/reboot alerts via serverchan/dingtalk lightweight, static‑linked tool for instant system event notifications c++ devops &amp; infra ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/neanc__shutdownnotice_cpp.html">ShutdownNotice_Cpp</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Windows event log monitor that pushes shutdown/reboot alerts via Serverchan/DingTalk</p>
+      <p class="card-why">Lightweight, static‑linked tool for instant system event notifications</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section data-section>
+    <div class="sec">
+      <h2><span class="ic">🔌</span><a href="c/hardware-embedded.html" style="color:inherit">Hardware &amp; Embedded</a></h2>
+      <span class="meta">20 projects <a href="c/hardware-embedded.html">all 20 →</a></span>
+    </div>
+    
+    <div class="grid">
+    <article class="card" data-lang="c" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-13" data-msgid="783" data-search="pangin/ezflash-air-emulator pangin ezflash air emulator headless ez-flash air emulator for testing gba kernels runs hardware tests without a physical cartridge c hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/pangin__ezflash-air-emulator.html">ezflash-air-emulator</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Headless EZ-FLASH Air emulator for testing GBA kernels</p>
+      <p class="card-why">Runs hardware tests without a physical cartridge</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-02" data-msgid="592" data-search="norxs-tech/tsn-zonal-backbone norxs tech tsn zonal backbone asil-d tsn zonal backbone for nxp i.mx8x with network calculus latency verification production-grade, hard real-time network scheduling ip stack for sdv zonal architectures c++ hardware &amp; embedded  autosar ieee-802-1qbv macsec network-calculus nxp-imx8x tsn">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/norxs-tech__tsn-zonal-backbone.html">tsn-zonal-backbone</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">ASIL-D TSN Zonal Backbone for NXP i.MX8X with Network Calculus latency verification</p>
+      <p class="card-why">Production-grade, hard real-time network scheduling IP stack for SDV Zonal Architectures</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span><span class="tag">autosar</span><span class="tag">ieee-802-1qbv</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-26" data-msgid="243" data-search="dmellok/tesserae-esp32-bin-client dmellok tesserae esp32 bin client battery‑powered esp32 firmware that pulls .bin frames via mqtt and paints a 13.3&quot; e‑paper panel low‑power, mqtt‑driven display for long‑term battery life c hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/dmellok__tesserae-esp32-bin-client.html">tesserae-esp32-bin-client</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Battery‑powered ESP32 firmware that pulls .bin frames via MQTT and paints a 13.3&quot; e‑paper panel</p>
+      <p class="card-why">Low‑power, MQTT‑driven display for long‑term battery life</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-24" data-msgid="173" data-search="bingliangwithbots/thermalright-ai-hydronous-r1-screen-customizer bingliangwithbots thermalright ai hydronous r1 screen customizer linux usb driver &amp; screen customizer for thermalright ai hydronous r1 enables low‑power video playback on niche usb lcd python hardware &amp; embedded  hardware hydronous lcd linux mini-display thermalright usb usbdisplay">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/bingliangwithbots__thermalright-ai-hydronous-r1-screen-customizer.html">thermalright-ai-hydronous-r1-screen-customizer</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Linux USB driver &amp; screen customizer for ThermalRight AI HydroNous R1</p>
+      <p class="card-why">Enables low‑power video playback on niche USB LCD</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">hardware</span><span class="tag">hydronous</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-24" data-msgid="179" data-search="mokouliszt/fre800slmp mokouliszt fre800slmp python slmp client for mitsubishi freqrol‑e800 inverters zero‑dependency, high‑level api for bit/word access python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/mokouliszt__fre800slmp.html">fre800slmp</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Python SLMP client for Mitsubishi FREQROL‑E800 inverters</p>
+      <p class="card-why">Zero‑dependency, high‑level API for bit/word access</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="html" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-06" data-msgid="659" data-search="skermiebrotech/rotorsketch skermiebrotech rotorsketch fpv build planner – web app for wiring diagrams, bom &amp; health checks offline, single-file tool for drone build planning html hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/skermiebrotech__rotorsketch.html">RotorSketch</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">FPV Build Planner – web app for wiring diagrams, BOM &amp; health checks</p>
+      <p class="card-why">Offline, single-file tool for drone build planning</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">HTML</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section data-section>
+    <div class="sec">
+      <h2><span class="ic">🔐</span><a href="c/security-privacy.html" style="color:inherit">Security &amp; Privacy</a></h2>
+      <span class="meta">28 projects <a href="c/security-privacy.html">all 28 →</a></span>
+    </div>
+    
+    <div class="grid">
+    <article class="card" data-lang="zig" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-13" data-msgid="791" data-search="myzonerocks/libsignal-zig myzonerocks libsignal zig zig signal protocol library with c api for cross‑language use zero‑runtime, portable signal crypto without rust zig security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/myzonerocks__libsignal-zig.html">libsignal-zig</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Zig Signal Protocol library with C API for cross‑language use</p>
+      <p class="card-why">Zero‑runtime, portable Signal crypto without Rust</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Zig</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="go" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="501" data-search="shieldnet-360/secure-edge-dlp shieldnet 360 secure edge dlp privacy‑first ai dlp agent that blocks secrets on desktop in seconds zero‑data, real‑time secret detection go security &amp; privacy  ai-security browser-extension data-loss-prevention dlp electron endpoint-security golang llm-security privacy security">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/shieldnet-360__secure-edge-dlp.html">secure-edge-dlp</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Privacy‑first AI DLP agent that blocks secrets on desktop in seconds</p>
+      <p class="card-why">Zero‑data, real‑time secret detection</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Go</span><span class="tag">ai-security</span><span class="tag">browser-extension</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-27" data-msgid="273" data-search="yui9696/sqisign-cabpn-artifact yui9696 sqisign cabpn artifact ca-bpn: cache-aware batch-size policy improves constant-time normalization  security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/yui9696__sqisign-cabpn-artifact.html">sqisign-cabpn-artifact</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">CA-BPN: Cache-Aware Batch-Size Policy</p>
+      <p class="card-why">Improves constant-time normalization</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="python" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-24" data-msgid="165" data-search="deadrootsec/ghostgate deadrootsec ghostgate ghostgate: a local mcp security gateway that blocks risky ai tool calls real-time policy, audit, and redaction for ai agents python security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/deadrootsec__ghostgate.html">ghostgate</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Ghostgate: a local MCP security gateway that blocks risky AI tool calls</p>
+      <p class="card-why">Real-time policy, audit, and redaction for AI agents</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="java" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-14" data-msgid="812" data-search="ma3s1r0/vouchq ma3s1r0 vouchq vouchq – self‑hosted trust registry that pins ai tool definitions and detects drift ensures ai tools stay unchanged, flags tampering java security &amp; privacy  agent-governance ai-agent-security mcp model-context-protocol postgresql rug-pull self-hosted spring-boot supply-chain-security tool-poisoning">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ma3s1r0__vouchq.html">Vouchq</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Vouchq – self‑hosted trust registry that pins AI tool definitions and detects drift</p>
+      <p class="card-why">Ensures AI tools stay unchanged, flags tampering</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Java</span><span class="tag">agent-governance</span><span class="tag">ai-agent-security</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-11" data-msgid="762" data-search="ensombl/oauth-redirect-worker ensombl oauth redirect worker cloudflare worker that validates oauth redirect uris ensures safe oauth callbacks, prevents open redirects typescript security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ensombl__oauth-redirect-worker.html">oauth-redirect-worker</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Cloudflare Worker that validates OAuth redirect URIs</p>
+      <p class="card-why">Ensures safe OAuth callbacks, prevents open redirects</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">3d ago</span>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section data-section>
+    <div class="sec">
+      <h2><span class="ic">✦</span><a href="c/apps-productivity.html" style="color:inherit">Apps &amp; Productivity</a></h2>
+      <span class="meta">200 projects <a href="c/apps-productivity.html">all 200 →</a></span>
+    </div>
+    
+    <div class="grid">
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-14" data-msgid="801" data-search="kazehana99k/paper-agent kazehana99k paper agent local ai-powered writing workspace integrating overleaf and multi‑agent tools combines latex, overleaf sync, and ai assistants in one ui javascript apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/kazehana99k__paper-agent.html">paper-agent</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Local AI-powered writing workspace integrating Overleaf and multi‑agent tools</p>
+      <p class="card-why">Combines LaTeX, Overleaf sync, and AI assistants in one UI</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">JavaScript</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-14" data-msgid="807" data-search="blackgoldenticked/carrier-pigeon blackgoldenticked carrier pigeon carrier pigeon: chrome new‑tab extension to send a single prompt to multiple ai services unified ai prompt dispatch from the new‑tab page typescript apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/blackgoldenticked__carrier-pigeon.html">carrier-pigeon</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Carrier Pigeon: Chrome new‑tab extension to send a single prompt to multiple AI services</p>
+      <p class="card-why">Unified AI prompt dispatch from the new‑tab page</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-13" data-msgid="782" data-search="silvertreestudios/ttrpg-sim silvertreestudios ttrpg sim interactive d&amp;d 5.5e dpr calculator and combat optimizer accurate damage curves &amp; break‑even analysis for builds typescript apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/silvertreestudios__ttrpg-sim.html">ttrpg-sim</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Interactive D&amp;D 5.5e DPR calculator and combat optimizer</p>
+      <p class="card-why">Accurate damage curves &amp; break‑even analysis for builds</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    <article class="card" data-lang="php" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-13" data-msgid="794" data-search="abitlea/sharegate-nextcloud abitlea sharegate nextcloud paid file sharing plugin for nextcloud enabling monetized downloads adds payment flow to nextcloud shares php apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/abitlea__sharegate-nextcloud.html">sharegate-nextcloud</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Paid file sharing plugin for Nextcloud enabling monetized downloads</p>
+      <p class="card-why">Adds payment flow to Nextcloud shares</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">PHP</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-12" data-msgid="779" data-search="dolphin-electric/master-cli dolphin electric master cli master-cli: offline audio mixing and mastering command‑line tool batch‑ready cli for repeatable mastering python apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/dolphin-electric__master-cli.html">master-cli</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">master-cli: offline audio mixing and mastering command‑line tool</p>
+      <p class="card-why">Batch‑ready CLI for repeatable mastering</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-11" data-msgid="758" data-search="lluzi/aily lluzi aily aily: obsidian‑native knowledge management with ai‑driven workflows integrates source ingestion, fastapi backend, and obsidian plugin typescript apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/lluzi__aily.html">aily</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Aily: Obsidian‑native knowledge management with AI‑driven workflows</p>
+      <p class="card-why">Integrates source ingestion, FastAPI backend, and Obsidian plugin</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">3d ago</span>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section data-section>
+    <div class="sec">
+      <h2><span class="ic">✦</span><a href="c/other.html" style="color:inherit">Other</a></h2>
+      <span class="meta">7 projects <a href="c/other.html">all 7 →</a></span>
+    </div>
+    
+    <div class="grid">
+    <article class="card archived" data-lang="python" data-novelty="7" data-cat="Other" data-sub="" data-date="2026-05-24" data-msgid="146" data-search="vevetin/forgotten-opulence-pipeline vevetin forgotten opulence pipeline autonomous video pipeline for decayed luxury aesthetics automates niche vertical video creation python other ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/vevetin__forgotten-opulence-pipeline.html">forgotten-opulence-pipeline</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Autonomous video pipeline for decayed luxury aesthetics</p>
+      <p class="card-why">Automates niche vertical video creation</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Other" data-sub="" data-date="2026-05-23" data-msgid="132" data-search="bharth2003/adversarial-embodied-ai bharth2003 adversarial embodied ai adversarial red‑team/blue‑team framework for ai2‑thor embodied agents evaluates llm‑driven robot safety against prompt attacks python other ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/bharth2003__adversarial-embodied-ai.html">adversarial-embodied-ai</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Adversarial red‑team/blue‑team framework for AI2‑THOR embodied agents</p>
+      <p class="card-why">Evaluates LLM‑driven robot safety against prompt attacks</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="5" data-cat="Other" data-sub="" data-date="2026-05-24" data-msgid="148" data-search="heleleleoyuncu/mucuk-bot heleleleoyuncu mucuk bot mucuk bot: instagram automation with games, ai chat, and scoring provides interactive games and ai replies within instagram python other ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/heleleleoyuncu__mucuk-bot.html">mucuk-bot</a></span>
+        <span class="nv">worth a look</span>
+      </div>
+      <p class="card-sum">Mucuk Bot: Instagram automation with games, AI chat, and scoring</p>
+      <p class="card-why">Provides interactive games and AI replies within Instagram</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="java" data-novelty="5" data-cat="Other" data-sub="" data-date="2026-05-24" data-msgid="151" data-search="dcjvliet/mcrelay-mod dcjvliet mcrelay mod fabric mod enabling discord-minecraft server communication allows seamless messaging between discord channels and minecraft server java other ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/dcjvliet__mcrelay-mod.html">MCRelay-Mod</a></span>
+        <span class="nv">worth a look</span>
+      </div>
+      <p class="card-sum">Fabric mod enabling Discord-Minecraft server communication</p>
+      <p class="card-why">Allows seamless messaging between Discord channels and Minecraft server</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Java</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="5" data-cat="Other" data-sub="" data-date="2026-05-23" data-msgid="136" data-search="muniprioritise/muniprioritise muniprioritise muniprioritise equity-aware municipal service request management app combines service routing with socioeconomic weighting  other ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/muniprioritise__muniprioritise.html">MuniPrioritise</a></span>
+        <span class="nv">worth a look</span>
+      </div>
+      <p class="card-sum">Equity-aware municipal service request management app</p>
+      <p class="card-why">Combines service routing with socioeconomic weighting</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c#" data-novelty="5" data-cat="Other" data-sub="" data-date="2026-05-23" data-msgid="140" data-search="razameerahmed/pdf-editor-mvp razameerahmed pdf editor mvp pdf editor web application with backend, document engine, and react ui provides end‑to‑end pdf editing and processing stack c# other ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/razameerahmed__pdf-editor-mvp.html">PDF-Editor-MVP</a></span>
+        <span class="nv">worth a look</span>
+      </div>
+      <p class="card-sum">PDF Editor web application with backend, document engine, and React UI</p>
+      <p class="card-why">Provides end‑to‑end PDF editing and processing stack</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C#</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    </div>
+  </section>
+<script>
+(function(){
+  var q=document.getElementById('q');
+  var chips=[].slice.call(document.querySelectorAll('#filters .chip'));
+  var sortChips=[].slice.call(document.querySelectorAll('.chip.sort'));
+  var cards=[].slice.call(document.querySelectorAll('[data-section] .card'));
+  var sections=[].slice.call(document.querySelectorAll('[data-section]'));
+  var results=document.getElementById('searchresults');
+  var noresults=document.getElementById('noresults');
+  var state={text:'',lang:'',novelty:0,sort:'best'};
+  var INDEX=null;   // загруженный search.json (ленивая загрузка при первом поиске)
+
+  function cmp(a,b){
+    if(state.sort==='newest'){
+      var da=(a.dataset.date||''),db=(b.dataset.date||'');
+      if(da!==db)return da<db?1:-1;
+      return (parseInt(b.dataset.msgid||'0',10))-(parseInt(a.dataset.msgid||'0',10));
+    }
+    var na=parseInt(a.dataset.novelty||'0',10),nb=parseInt(b.dataset.novelty||'0',10);
+    if(na!==nb)return nb-na;
+    var da2=(a.dataset.date||''),db2=(b.dataset.date||'');
+    return da2<db2?1:(da2>db2?-1:0);
+  }
+  function reorder(){
+    document.querySelectorAll('[data-section] .grid').forEach(function(g){
+      var items=[].slice.call(g.querySelectorAll('.card'));
+      items.sort(cmp).forEach(function(c){g.appendChild(c);});
+    });
+  }
+
+  // --- режим обычного просмотра: фильтр по языку/novelty на карточках главной ---
+  function applyFilters(){
+    var shown=0;
+    cards.forEach(function(c){
+      var okL=!state.lang || c.dataset.lang===state.lang;
+      var okN=!state.novelty || (parseInt(c.dataset.novelty||'0',10)>=state.novelty);
+      var ok=okL&&okN;
+      c.style.display=ok?'':'none';
+      if(ok)shown++;
+    });
+    sections.forEach(function(s){
+      var vis=s.querySelectorAll('.card:not([style*="none"])').length;
+      s.style.display=vis?'':'none';
+    });
+    if(noresults)noresults.style.display=shown?'none':'block';
+  }
+
+  // --- режим поиска: ищем по ВСЕЙ базе из search.json ---
+  var LINKBASE='search.json'.replace('search.json','');  // '' на главной, '../' в /c/
+  function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function renderResults(items){
+    if(!items.length){
+      results.innerHTML='';
+      if(noresults)noresults.style.display='block';
+      return;
+    }
+    if(noresults)noresults.style.display='none';
+    var html='<div class="grid">'+items.map(function(it){
+      var tags='<span class="tag lang">'+esc(it.lang)+'</span>';
+      return '<article class="card">'
+        +'<div class="card-head"><span class="card-name"><a href="'+LINKBASE+it.url+'">'+esc(it.name)+'</a></span>'
+        +'<span class="nv">'+esc(it.badge)+'</span></div>'
+        +'<p class="card-sum">'+esc(it.summary)+'</p>'
+        +(it.why?'<p class="card-why">'+esc(it.why)+'</p>':'')
+        +'<div class="card-foot"><div class="card-tags">'+(it.lang?tags:'')+'</div></div>'
+        +'</article>';
+    }).join('')+'</div>';
+    results.innerHTML='<section class="sec-results"><div class="sec"><h2>'
+      +items.length+' result'+(items.length>1?'s':'')+'</h2></div>'+html+'</section>';
+  }
+  function runSearch(){
+    var t=state.text;
+    var matched=INDEX.items.filter(function(it){
+      if(t && (it.q||'').indexOf(t)===-1) return false;
+      if(state.lang && (it.lang||'').toLowerCase()!==state.lang) return false;
+      if(state.novelty && (it.novelty||0)<state.novelty) return false;
+      return true;
+    });
+    renderResults(matched);
+  }
+
+  function update(){
+    var searching=!!state.text;
+    document.body.classList.toggle('searching', searching);
+    if(searching){
+      // показываем контейнер результатов, прячем обычные секции
+      results.style.display='';
+      sections.forEach(function(s){s.style.display='none';});
+      if(INDEX){ runSearch(); }
+      else {
+        results.innerHTML='<p class="loading">searching…</p>';
+        fetch('search.json').then(function(r){return r.json();}).then(function(d){
+          INDEX=d; runSearch();
+        }).catch(function(){
+          results.innerHTML='<p class="loading">search unavailable</p>';
+        });
+      }
+    } else {
+      // обычный вид: прячем результаты, показываем секции с фильтрами
+      results.style.display='none';
+      results.innerHTML='';
+      sections.forEach(function(s){s.style.display='';});
+      applyFilters();
+    }
+  }
+
+  q.addEventListener('input',function(){
+    state.text=q.value.trim().toLowerCase().replace(/[-_]+/g,' ');
+    update();
+  });
+  chips.forEach(function(ch){
+    ch.addEventListener('click',function(){
+      var f=ch.dataset.filter,v=ch.dataset.val;
+      if(f==='lang'){
+        chips.filter(function(x){return x.dataset.filter==='lang';}).forEach(function(x){x.classList.remove('on');});
+        ch.classList.add('on');state.lang=v;
+      } else if(f==='novelty'){
+        ch.classList.toggle('on');
+        state.novelty=ch.classList.contains('on')?parseInt(v,10):0;
+      }
+      if(state.text){ runSearch(); } else { applyFilters(); }
+    });
+  });
+  sortChips.forEach(function(ch){
+    ch.addEventListener('click',function(){
+      sortChips.forEach(function(x){x.classList.remove('on');});
+      ch.classList.add('on');
+      state.sort=ch.dataset.sort;
+      reorder();
+    });
+  });
+  if(state.sort==='newest')reorder();
+})();
+</script>
+  <footer class="foot">
+    <div class="note">quality over hype · craft over clout</div>
+    <div>Fresh open-source, caught the moment it hatches. Follow on <a href="https://t.me/hatchmoment">Telegram</a> · partnerships &amp; advertising: <a href="mailto:hatchmoment@mailfence.com">hatchmoment@mailfence.com</a></div>
+    <div class="disc"><span class="di">⚠</span><span><strong>hatchmoment doesn't audit or run any code.</strong> Projects are surfaced by structural signals (tests, docs, CI, structure) and an AI read of the README — not a security review. Always inspect a project yourself before using it.</span></div>
+    <div class="copyright">© 2026 hatchmoment · All rights reserved. Listed projects link to their original repositories and remain the property of their respective authors.</div>
+  </footer>
+</div>
+</body>
+</html>
