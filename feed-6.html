@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Just hatched — fresh open-source feed · hatchmoment (page 6)</title>
+<meta name="description" content="The full chronological feed of fresh open-source projects caught the moment they hatch on GitHub.">
+<link rel="canonical" href="https://hatchmoment.org/feed-6.html">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%230a0f1a'/&gt;&lt;text y='.9em' x='50' font-size='62' text-anchor='middle'&gt;🥚&lt;/text&gt;&lt;/svg&gt;">
+<meta property="og:title" content="Just hatched — fresh open-source feed · hatchmoment (page 6)">
+<meta name="theme-color" content="#0a0f1a">
+<meta property="og:description" content="The full chronological feed of fresh open-source projects caught the moment they hatch on GitHub.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hatchmoment.org/feed-6.html">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f1a; --bg2:#0f1626; --ink:#e8f0fb; --muted:#8aa0bd;
+  --accent:#4fc3f7; --line:rgba(79,195,247,0.15); --shell:#142338;
+  --card:#0e1524; --cardline:rgba(138,160,189,0.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:'Sora',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 70%);pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:32px 22px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* header */
+.top{display:flex;align-items:center;gap:12px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.egg-mini{width:30px;height:auto;flex-shrink:0}
+.brand{font-family:'Space Mono',monospace;font-weight:700;font-size:20px;letter-spacing:-.5px;color:var(--ink)}
+.brand .dot{color:var(--accent)}
+.brand a{color:inherit}
+.brand a:hover{text-decoration:none}
+.slogan{margin-left:auto;font-size:12.5px;color:var(--muted);font-family:'Space Mono',monospace;letter-spacing:.3px}
+
+/* breadcrumb */
+.crumb{font-size:13px;color:var(--muted);margin-bottom:18px;font-family:'Space Mono',monospace}
+.crumb a{color:var(--muted)}
+.crumb a:hover{color:var(--accent)}
+
+/* search + filters */
+.search-box{position:relative;margin:6px 0 18px}
+.search-box input{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:12px;color:var(--ink);font-family:'Sora',sans-serif;font-size:15px;padding:13px 16px 13px 42px;outline:none;transition:border-color .15s}
+.search-box input:focus{border-color:var(--accent)}
+.search-box .si{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:16px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.chip{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.3px;color:var(--muted);background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;transition:all .14s;user-select:none}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip.on{background:var(--accent);color:#04121f;border-color:var(--accent);font-weight:700}
+.sortbar{display:flex;align-items:center;gap:8px;margin:-18px 0 28px}
+.sortlbl{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)}
+.chip.sort{padding:5px 12px;font-size:11px}
+
+/* section heading */
+.sec{display:flex;align-items:baseline;justify-content:space-between;margin:30px 0 14px}
+.sec h2{font-family:'Space Mono',monospace;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.3px}
+.sec h2 .ic{margin-right:8px}
+.sec .meta{font-size:12px;color:var(--muted);font-family:'Space Mono',monospace}
+.sec .meta a{color:var(--muted)}
+.subline{display:flex;flex-wrap:wrap;gap:6px;margin:-6px 0 14px}
+.subchip{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:2px 9px;opacity:.85}
+
+/* grid + cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--cardline);border-radius:14px;padding:16px 17px;display:flex;flex-direction:column;transition:transform .16s,border-color .16s,box-shadow .16s}
+.card.archived{opacity:.55}
+.card.archived:hover{opacity:.8}
+.card .archived-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.3px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:1px 6px;text-transform:uppercase}
+.archived-notice{background:rgba(138,160,189,.08);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:20px;color:var(--muted);font-size:13.5px;line-height:1.55}
+.archived-notice strong{color:var(--ink)}
+#searchresults .sec-results h2{font-size:14px;color:var(--muted);font-weight:600}
+#searchresults .loading{text-align:center;color:var(--muted);font-family:'Space Mono',monospace;font-size:13px;padding:30px 0}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.card-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.card-name{font-family:'Space Mono',monospace;font-weight:700;font-size:15px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-name a{color:inherit}
+.nv{margin-left:auto;flex-shrink:0;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;background:var(--bg2);border:1px solid var(--line);color:var(--accent);padding:3px 9px;border-radius:999px}
+.nv.hi{background:var(--accent);color:#04121f;border-color:var(--accent)}
+.card-sum{font-size:13.5px;color:var(--ink);opacity:.92;margin:0 0 10px;line-height:1.5;flex-grow:1}
+.card-why{font-size:12.5px;color:var(--muted);font-style:italic;margin:0 0 12px;line-height:1.45}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:2px}
+.card-when{flex-shrink:0;font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);opacity:.7;white-space:nowrap}
+.tag{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2px;background:var(--bg2);color:var(--muted);border:1px solid var(--line);padding:2px 8px;border-radius:6px}
+.tag.lang{color:var(--accent)}
+.tag.sub{color:var(--ink);border-color:var(--accent);background:rgba(79,195,247,0.08)}
+
+/* project page */
+.proj-hero{margin:10px 0 26px}
+.proj-hero h1{font-family:'Space Mono',monospace;font-size:clamp(24px,5vw,34px);font-weight:700;letter-spacing:-.6px;margin-bottom:10px;word-break:break-word}
+.proj-sum{font-size:clamp(16px,2.5vw,19px);color:var(--ink);font-weight:300;max-width:60ch;margin-bottom:14px}
+.proj-badges{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.proj-badges .b{font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:6px 13px}
+.proj-details{font-size:15.5px;line-height:1.75;color:var(--ink);opacity:.94;max-width:64ch;margin-bottom:28px}
+.proj-cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#04121f;font-weight:600;font-size:15px;padding:13px 26px;border-radius:12px;transition:transform .16s,box-shadow .16s}
+.proj-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(79,195,247,.26);text-decoration:none}
+
+/* footer */
+.foot{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:8px}
+.foot .note{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.3px}
+.foot .disc{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink);opacity:.92;max-width:64ch;line-height:1.55;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:12px 15px;margin-top:6px}
+.foot .copyright{font-size:11.5px;color:var(--muted);opacity:.7;line-height:1.5;max-width:64ch;margin-top:10px}
+.foot .disc .di{flex-shrink:0;font-size:15px;line-height:1.4}
+.empty{color:var(--muted);text-align:center;padding:50px 0;font-family:'Space Mono',monospace;font-size:14px}
+.hatched{margin-bottom:34px}
+.hatched .grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.pager{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:36px}
+.pager .pg{font-family:'Space Mono',monospace;font-size:13px;border:1px solid var(--line);background:var(--bg2);border-radius:10px;padding:9px 16px}
+.pager .pg:hover{border-color:var(--accent);text-decoration:none}
+.pager .pgpos{font-family:'Space Mono',monospace;font-size:12px;color:var(--muted)}
+
+/* ЛЕНДИНГ-ВХОД (только на главной): hero, под ним сразу лента */
+/* баннер спонсора — узкая полоса над hero, явно помечена и отделена от коллекции */
+.sponsor{max-width:380px;margin:14px auto 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a0f1a;position:relative;display:block;text-decoration:none}
+.sponsor .sp-gif{display:block;width:100%;height:clamp(100px,20vw,150px);object-fit:cover;object-position:center}
+.sponsor video::-webkit-media-controls,.sponsor video::-webkit-media-controls-start-playback-button,.sponsor video::-webkit-media-controls-play-button{display:none!important;-webkit-appearance:none}
+.sponsor .sp-label{position:absolute;top:10px;left:12px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5px;color:var(--muted);background:rgba(10,15,26,.7);padding:2px 7px;border-radius:6px;text-transform:uppercase}
+.sponsor .sp-cap{position:absolute;bottom:10px;right:14px;font-family:'Space Mono',monospace;font-size:11px;color:var(--ink);opacity:.85}
+
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(24px,4vh,40px) 0 44px;position:relative}
+.hero .egg{width:clamp(120px,24vw,170px);height:auto;opacity:0;animation:rise .9s cubic-bezier(.2,.8,.2,1) .1s forwards}
+.hero h1{font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(32px,7vw,54px);letter-spacing:-1px;margin-top:26px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .35s forwards}
+.hero h1 .dot{color:var(--accent)}
+.hero .tag{font-size:clamp(16px,2.6vw,21px);color:var(--ink);font-weight:300;max-width:30ch;margin-top:16px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .5s forwards}
+.hero .kicker{font-family:'Space Mono',monospace;font-size:clamp(12px,2vw,13.5px);color:var(--accent);letter-spacing:.3px;max-width:46ch;margin-top:18px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .72s forwards}
+.hero .lede{font-size:clamp(15px,2.4vw,18px);color:var(--ink);max-width:38ch;margin-top:12px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .58s forwards}
+.hero .sub{color:var(--muted);font-size:clamp(13.5px,2.2vw,15.5px);max-width:48ch;margin-top:18px;line-height:1.65;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .68s forwards}
+.hero .sub .brand{font-weight:700;color:var(--accent)}
+.hero .pillrow{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:24px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .74s forwards}
+.hero .pill{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.5px;color:var(--accent);border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:6px 14px}
+.hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
+.hero .metrics strong{color:var(--accent);font-weight:700}
+.hero .metric-sep{opacity:.4}
+.hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
+.hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
+.hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
+.hero .metric-tip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);width:min(320px,86vw);background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-family:'Sora',sans-serif;font-size:12.5px;line-height:1.55;color:var(--ink);text-align:left;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,transform .18s,visibility .18s;z-index:30;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.hero .metric-info:hover .metric-tip,.hero .metric-info:focus .metric-tip{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+@media (max-width:640px){
+  /* На узких экранах пузырёк у иконки распирал бы страницу вправо.
+     Делаем подсказку фиксированной панелью по центру экрана (fixed не влияет
+     на ширину документа), перекрывающей нижнюю часть текста. */
+  .hero .metric-tip{position:fixed;left:50%;right:auto;bottom:auto;top:50%;
+    transform:translate(-50%,-50%) scale(.98);width:min(360px,90vw);max-width:90vw;
+    padding:16px 18px;font-size:13.5px}
+  .hero .metric-info:hover .metric-tip,.hero .metric-info:focus .metric-tip{
+    transform:translate(-50%,-50%) scale(1)}
+}
+.eggwrap{transform-box:fill-box;transform-origin:50% 95%;animation:hatch 4.2s ease-in-out 1.1s infinite}
+@keyframes hatch{0%,55%{transform:translateY(0) rotate(0)}58%{transform:translateY(-5px) rotate(-3.2deg)}61%{transform:translateY(0) rotate(2.6deg)}64%{transform:translateY(-7px) rotate(-2deg)}67%{transform:translateY(0) rotate(3deg)}70%{transform:translateY(-4px) rotate(-2.8deg)}73%{transform:translateY(0) rotate(1.8deg)}76%{transform:translateY(-2px) rotate(-1deg)}80%,100%{transform:translateY(0) rotate(0)}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
+</style>
+
+<script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <svg class="egg-mini" viewBox="0 0 130 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="hatchmoment logo">
+ <g transform="translate(5,5)">
+  <path d="M60 6 C92 6 116 40 124 92 C131 138 116 210 60 210 C4 210 -11 138 -4 92 C4 40 28 6 60 6 Z" transform="scale(0.96,1) translate(2,0)" fill="var(--shell)" stroke="var(--accent)" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M40 70 L40 158" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M82 70 L82 158" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M40 114 L50 114 M72 114 L82 114" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+  <rect x="50" y="104" width="22" height="20" rx="3" stroke="var(--accent)" stroke-width="2.4" fill="none"/>
+  <path d="M40 70 L40 52 M82 70 L82 52" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="40" cy="50" r="3.2" fill="var(--accent)"/><circle cx="82" cy="50" r="3.2" fill="var(--accent)"/>
+  <path d="M40 158 L40 176 M82 158 L82 176" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="40" cy="178" r="3.2" fill="var(--accent)"/><circle cx="82" cy="178" r="3.2" fill="var(--accent)"/>
+ </g>
+</svg>
+    <span class="brand"><a href="https://hatchmoment.org">hatchmoment<span class="dot">.</span></a></span>
+    <span class="slogan">scored by care · not by stars</span>
+  </header>
+<nav class="crumb"><a href="https://hatchmoment.org">home</a> / feed</nav>
+  <div class="proj-hero">
+    <h1>🐣 Just hatched</h1>
+    <p class="proj-sum">Every project in the order it hatched — newest first. 841 and counting.</p>
+  </div>
+  <section data-section><div class="grid">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-27" data-msgid="925" data-search="whoashish115/cube-cracker whoashish115 cube cracker interactive 3d rubik&#x27;s cube simulator in python shows cube mechanics with real-time opengl rendering python apps &amp; productivity  3d-graphics computer-graphics opengl pygame pyopengl python rubiks-cube simulation">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/whoashish115__cube-cracker.html">cube-cracker</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Interactive 3D Rubik&#x27;s Cube simulator in Python</p>
+      <p class="card-why">Shows cube mechanics with real-time OpenGL rendering</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">3d-graphics</span><span class="tag">computer-graphics</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="zig" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-06-27" data-msgid="924" data-search="xirasm/zasmg-runtime-asm xirasm zasmg runtime asm runtime assembler turning assembly strings into callable machine code enables jit assembly without external toolchains zig developer tools  assembler-x86 codegen dynamic-code-generation jit machine-code riscv runtime-assembler spirv x86-64 zig">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/xirasm__zasmg-runtime-asm.html">zasmg-runtime-asm</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Runtime assembler turning assembly strings into callable machine code</p>
+      <p class="card-why">Enables JIT assembly without external toolchains</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Zig</span><span class="tag">assembler-x86</span><span class="tag">codegen</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-27" data-msgid="923" data-search="spoon-fed-programmer/composeusageaudit spoon fed programmer composeusageaudit static analyzer that tracks android compose component usage generates csv reports and a web viewer for component stats javascript developer tools ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/spoon-fed-programmer__composeusageaudit.html">ComposeUsageAudit</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Static analyzer that tracks Android Compose component usage</p>
+      <p class="card-why">Generates CSV reports and a web viewer for component stats</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">JavaScript</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="go" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-27" data-msgid="922" data-search="shzygq/chrome-portable shzygq chrome portable portable chrome launcher for windows, bundles chrome with profile data runs chrome from a single folder without installation go apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/shzygq__chrome-portable.html">chrome-portable</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Portable Chrome launcher for Windows, bundles Chrome with profile data</p>
+      <p class="card-why">Runs Chrome from a single folder without installation</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Go</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="DevOps &amp; Infra" data-sub="" data-date="2026-06-27" data-msgid="921" data-search="liukaidev/weaknet-ai-diagnostics liukaidev weaknet ai diagnostics linux network diagnostics tool with dbus and ebpf monitoring real-time interface, rtt and loss metrics via dbus c++ devops &amp; infra ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/liukaidev__weaknet-ai-diagnostics.html">WeakNet-AI-Diagnostics</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Linux network diagnostics tool with DBus and eBPF monitoring</p>
+      <p class="card-why">Real-time interface, RTT and loss metrics via DBus</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-27" data-msgid="920" data-search="danko1122q/ladybird danko1122q ladybird ladybird – an independent, multi-process web browser works as a full-featured browser built from scratch  apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/danko1122q__ladybird.html">ladybird</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Ladybird – an independent, multi-process web browser</p>
+      <p class="card-why">Works as a full-featured browser built from scratch</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-27" data-msgid="919" data-search="ksj0104/myainote ksj0104 myainote a browser‑based hacking simulation game teaching unix commands interactive terminal game for learning security basics javascript security &amp; privacy ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ksj0104__myainote.html">MyAINote</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">A browser‑based hacking simulation game teaching Unix commands</p>
+      <p class="card-why">Interactive terminal game for learning security basics</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">JavaScript</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-06-27" data-msgid="918" data-search="yvrwwq9bgt-ai/campusmarket yvrwwq9bgt ai campusmarket campusmarket: a student‑focused web marketplace for buying and selling textbooks and gear provides a ready‑to‑run front‑end for campus‑wide trading typescript web &amp; frontend ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/yvrwwq9bgt-ai__campusmarket.html">CampusMarket</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">CampusMarket: a student‑focused web marketplace for buying and selling textbooks and gear</p>
+      <p class="card-why">Provides a ready‑to‑run front‑end for campus‑wide trading</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-27" data-msgid="917" data-search="magomedcoder/stt-pipeline magomedcoder stt pipeline offline speech-to-text and speaker diarization pipeline combines vosk and speechbrain for batch audio processing python ai &amp; ml  diarization python speechbrain stt vosk">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/magomedcoder__stt-pipeline.html">stt-pipeline</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Offline speech-to-text and speaker diarization pipeline</p>
+      <p class="card-why">Combines Vosk and SpeechBrain for batch audio processing</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">diarization</span><span class="tag">python</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-27" data-msgid="916" data-search="eak1mov/webtiles-cpp eak1mov webtiles cpp c++ library for webtiles format, enabling fast tile storage and conversion provides native c++ api and cli converters for map tiles c++ data &amp; databases ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/eak1mov__webtiles-cpp.html">webtiles-cpp</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">C++ library for WebTiles format, enabling fast tile storage and conversion</p>
+      <p class="card-why">Provides native C++ API and CLI converters for map tiles</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-27" data-msgid="915" data-search="news-labs/labs-core news labs labs core shared platform of reusable backend packages for saas products ready‑made auth, billing, cloudflare, and more typescript backend &amp; apis ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/news-labs__labs-core.html">labs-core</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Shared platform of reusable backend packages for SaaS products</p>
+      <p class="card-why">Ready‑made auth, billing, cloudflare, and more</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-06-27" data-msgid="914" data-search="alibuildsx/lepicure-restaurant-website alibuildsx lepicure restaurant website luxury restaurant website with cinematic intro animation polished ui and interactive reveal for fine‑dining sites typescript web &amp; frontend ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/alibuildsx__lepicure-restaurant-website.html">lepicure-restaurant-website</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Luxury restaurant website with cinematic intro animation</p>
+      <p class="card-why">Polished UI and interactive reveal for fine‑dining sites</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="php" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-27" data-msgid="913" data-search="tnsk/vulnweb tnsk vulnweb deliberately vulnerable php app for owasp security training hands‑on labs with graded difficulty and diff view php security &amp; privacy  hacking-tool owasp owasp-top-10 training">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/tnsk__vulnweb.html">vulnweb</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Deliberately vulnerable PHP app for OWASP security training</p>
+      <p class="card-why">Hands‑on labs with graded difficulty and diff view</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">PHP</span><span class="tag">hacking-tool</span><span class="tag">owasp</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-27" data-msgid="912" data-search="inth3shadows/terse inth3shadows terse lossless-first compression layer for ai tool json outputs reduces token usage while keeping data readable python developer tools ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/inth3shadows__terse.html">terse</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Lossless-first compression layer for AI tool JSON outputs</p>
+      <p class="card-why">Reduces token usage while keeping data readable</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-06-27" data-msgid="911" data-search="gieexe/operation-architecture gieexe operation architecture next.js site cataloging architecture patterns for 23 frameworks searchable, comparative blueprints for project structures typescript web &amp; frontend ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/gieexe__operation-architecture.html">Operation-Architecture</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Next.js site cataloging architecture patterns for 23 frameworks</p>
+      <p class="card-why">Searchable, comparative blueprints for project structures</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-27" data-msgid="910" data-search="vortishopco-stack/loyalty-rewards-platform vortishopco stack loyalty rewards platform white‑label restaurant loyalty &amp; rewards platform with games and admin panel full‑stack, ready‑to‑deploy, customizable typescript apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/vortishopco-stack__loyalty-rewards-platform.html">loyalty-rewards-platform</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">White‑label restaurant loyalty &amp; rewards platform with games and admin panel</p>
+      <p class="card-why">Full‑stack, ready‑to‑deploy, customizable</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="rust" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-27" data-msgid="909" data-search="faangbait/rbp-train faangbait rbp train rust toolkit for optimal poker strategies and ai training fast hand evaluator and mccfr solver for poker ai rust ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/faangbait__rbp-train.html">rbp-train</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Rust toolkit for optimal poker strategies and AI training</p>
+      <p class="card-why">Fast hand evaluator and MCCFR solver for poker AI</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Rust</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="shell" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-27" data-msgid="908" data-search="betmoar/cc-status-plugin betmoar cc status plugin cc-status: compose claude code plugin statusline into a single bar auto-discovers and joins plugin segments without manual edits shell developer tools  claude-code claude-code-plugin framework plugin statusline">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/betmoar__cc-status-plugin.html">cc-status-plugin</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">cc-status: compose Claude Code plugin statusline into a single bar</p>
+      <p class="card-why">Auto-discovers and joins plugin segments without manual edits</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Shell</span><span class="tag">claude-code</span><span class="tag">claude-code-plugin</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-27" data-msgid="907" data-search="szymontex/protel99-to-kicad szymontex protel99 to kicad convert legacy protel 99 se pcb files to kicad pure‑python parser, zero dependencies, cli conversion python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/szymontex__protel99-to-kicad.html">protel99-to-kicad</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Convert legacy Protel 99 SE PCB files to KiCad</p>
+      <p class="card-why">Pure‑Python parser, zero dependencies, CLI conversion</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-26" data-msgid="906" data-search="stechlab/content-annotation-app stechlab content annotation app streamlit app for collaborative annotation of bluesky posts simple, self‑hosted annotation tool python apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/stechlab__content-annotation-app.html">content-annotation-app</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Streamlit app for collaborative annotation of Bluesky posts</p>
+      <p class="card-why">Simple, self‑hosted annotation tool</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">4w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-26" data-msgid="905" data-search="kreshuklab/diff_detect kreshuklab diff detect streamlit app for annotating butterfly wing images ready-to-use study ui with supabase backend python apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/kreshuklab__diff_detect.html">diff_detect</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Streamlit app for annotating butterfly wing images</p>
+      <p class="card-why">Ready-to-use study UI with Supabase backend</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">4w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="DevOps &amp; Infra" data-sub="" data-date="2026-06-26" data-msgid="904" data-search="vmynick/rmt_sysmon_ntfy vmynick rmt sysmon ntfy remote system monitor that pushes status to ntfy.sh lightweight python daemon for instant alerts python devops &amp; infra ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/vmynick__rmt_sysmon_ntfy.html">rmt_sysmon_ntfy</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Remote system monitor that pushes status to ntfy.sh</p>
+      <p class="card-why">Lightweight Python daemon for instant alerts</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">4w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-25" data-msgid="903" data-search="mjfwebb/zed-color-syntax-picker mjfwebb zed color syntax picker zed extension adding inline color swatches for hex literals shows and edits non‑css color codes directly javascript developer tools ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/mjfwebb__zed-color-syntax-picker.html">zed-color-syntax-picker</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Zed extension adding inline color swatches for hex literals</p>
+      <p class="card-why">Shows and edits non‑CSS color codes directly</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">JavaScript</span></div>
+        <span class="card-when">4w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-25" data-msgid="902" data-search="aydi-kh/ger2-cmms aydi kh ger2 cmms full-featured cmms for medical centers with api, ui, and ai agents integrated backend, frontend, and ai agents for maintenance python apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/aydi-kh__ger2-cmms.html">ger2-cmms</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Full-featured CMMS for medical centers with API, UI, and AI agents</p>
+      <p class="card-why">Integrated backend, frontend, and AI agents for maintenance</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">4w ago</span>
+      </div>
+    </article>
+  </div></section>
+  <div class="pager"><a class="pg" href="feed-5.html">← newer</a><span class="pgpos">page 6 / 36</span><a class="pg" href="feed-7.html">older →</a></div>
+  <footer class="foot">
+    <div class="note">quality over hype · craft over clout</div>
+    <div>Fresh open-source, caught the moment it hatches. Follow on <a href="https://t.me/hatchmoment">Telegram</a> · partnerships &amp; advertising: <a href="mailto:hatchmoment@mailfence.com">hatchmoment@mailfence.com</a></div>
+    <div class="disc"><span class="di">⚠</span><span><strong>hatchmoment doesn't audit or run any code.</strong> Projects are surfaced by structural signals (tests, docs, CI, structure) and an AI read of the README — not a security review. Always inspect a project yourself before using it.</span></div>
+    <div class="copyright">© 2026 hatchmoment · All rights reserved. Listed projects link to their original repositories and remain the property of their respective authors.</div>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hardware &amp; Embedded — fresh open-source · hatchmoment</title>
+<meta name="description" content="Fresh Hardware &amp; Embedded open-source projects caught the moment they hatch, scored for craft not stars.">
+<link rel="canonical" href="https://hatchmoment.org/c/hardware-embedded.html">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%230a0f1a'/&gt;&lt;text y='.9em' x='50' font-size='62' text-anchor='middle'&gt;🥚&lt;/text&gt;&lt;/svg&gt;">
+<meta property="og:title" content="Hardware &amp; Embedded — fresh open-source · hatchmoment">
+<meta name="theme-color" content="#0a0f1a">
+<meta property="og:description" content="Fresh Hardware &amp; Embedded open-source projects caught the moment they hatch, scored for craft not stars.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hatchmoment.org/c/hardware-embedded.html">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f1a; --bg2:#0f1626; --ink:#e8f0fb; --muted:#8aa0bd;
+  --accent:#4fc3f7; --line:rgba(79,195,247,0.15); --shell:#142338;
+  --card:#0e1524; --cardline:rgba(138,160,189,0.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:'Sora',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 70%);pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:32px 22px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* header */
+.top{display:flex;align-items:center;gap:12px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.egg-mini{width:30px;height:auto;flex-shrink:0}
+.brand{font-family:'Space Mono',monospace;font-weight:700;font-size:20px;letter-spacing:-.5px;color:var(--ink)}
+.brand .dot{color:var(--accent)}
+.brand a{color:inherit}
+.brand a:hover{text-decoration:none}
+.slogan{margin-left:auto;font-size:12.5px;color:var(--muted);font-family:'Space Mono',monospace;letter-spacing:.3px}
+
+/* breadcrumb */
+.crumb{font-size:13px;color:var(--muted);margin-bottom:18px;font-family:'Space Mono',monospace}
+.crumb a{color:var(--muted)}
+.crumb a:hover{color:var(--accent)}
+
+/* search + filters */
+.search-box{position:relative;margin:6px 0 18px}
+.search-box input{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:12px;color:var(--ink);font-family:'Sora',sans-serif;font-size:15px;padding:13px 16px 13px 42px;outline:none;transition:border-color .15s}
+.search-box input:focus{border-color:var(--accent)}
+.search-box .si{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:16px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.chip{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.3px;color:var(--muted);background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;transition:all .14s;user-select:none}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip.on{background:var(--accent);color:#04121f;border-color:var(--accent);font-weight:700}
+.sortbar{display:flex;align-items:center;gap:8px;margin:-18px 0 28px}
+.sortlbl{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)}
+.chip.sort{padding:5px 12px;font-size:11px}
+
+/* section heading */
+.sec{display:flex;align-items:baseline;justify-content:space-between;margin:30px 0 14px}
+.sec h2{font-family:'Space Mono',monospace;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.3px}
+.sec h2 .ic{margin-right:8px}
+.sec .meta{font-size:12px;color:var(--muted);font-family:'Space Mono',monospace}
+.sec .meta a{color:var(--muted)}
+.subline{display:flex;flex-wrap:wrap;gap:6px;margin:-6px 0 14px}
+.subchip{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:2px 9px;opacity:.85}
+
+/* grid + cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--cardline);border-radius:14px;padding:16px 17px;display:flex;flex-direction:column;transition:transform .16s,border-color .16s,box-shadow .16s}
+.card.archived{opacity:.55}
+.card.archived:hover{opacity:.8}
+.card .archived-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.3px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:1px 6px;text-transform:uppercase}
+.archived-notice{background:rgba(138,160,189,.08);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:20px;color:var(--muted);font-size:13.5px;line-height:1.55}
+.archived-notice strong{color:var(--ink)}
+#searchresults .sec-results h2{font-size:14px;color:var(--muted);font-weight:600}
+#searchresults .loading{text-align:center;color:var(--muted);font-family:'Space Mono',monospace;font-size:13px;padding:30px 0}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.card-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.card-name{font-family:'Space Mono',monospace;font-weight:700;font-size:15px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-name a{color:inherit}
+.nv{margin-left:auto;flex-shrink:0;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;background:var(--bg2);border:1px solid var(--line);color:var(--accent);padding:3px 9px;border-radius:999px}
+.nv.hi{background:var(--accent);color:#04121f;border-color:var(--accent)}
+.card-sum{font-size:13.5px;color:var(--ink);opacity:.92;margin:0 0 10px;line-height:1.5;flex-grow:1}
+.card-why{font-size:12.5px;color:var(--muted);font-style:italic;margin:0 0 12px;line-height:1.45}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:2px}
+.card-when{flex-shrink:0;font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);opacity:.7;white-space:nowrap}
+.tag{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2px;background:var(--bg2);color:var(--muted);border:1px solid var(--line);padding:2px 8px;border-radius:6px}
+.tag.lang{color:var(--accent)}
+.tag.sub{color:var(--ink);border-color:var(--accent);background:rgba(79,195,247,0.08)}
+
+/* project page */
+.proj-hero{margin:10px 0 26px}
+.proj-hero h1{font-family:'Space Mono',monospace;font-size:clamp(24px,5vw,34px);font-weight:700;letter-spacing:-.6px;margin-bottom:10px;word-break:break-word}
+.proj-sum{font-size:clamp(16px,2.5vw,19px);color:var(--ink);font-weight:300;max-width:60ch;margin-bottom:14px}
+.proj-badges{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.proj-badges .b{font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:6px 13px}
+.proj-details{font-size:15.5px;line-height:1.75;color:var(--ink);opacity:.94;max-width:64ch;margin-bottom:28px}
+.proj-cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#04121f;font-weight:600;font-size:15px;padding:13px 26px;border-radius:12px;transition:transform .16s,box-shadow .16s}
+.proj-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(79,195,247,.26);text-decoration:none}
+
+/* footer */
+.foot{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:8px}
+.foot .note{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.3px}
+.foot .disc{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink);opacity:.92;max-width:64ch;line-height:1.55;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:12px 15px;margin-top:6px}
+.foot .copyright{font-size:11.5px;color:var(--muted);opacity:.7;line-height:1.5;max-width:64ch;margin-top:10px}
+.foot .disc .di{flex-shrink:0;font-size:15px;line-height:1.4}
+.empty{color:var(--muted);text-align:center;padding:50px 0;font-family:'Space Mono',monospace;font-size:14px}
+.hatched{margin-bottom:34px}
+.hatched .grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.pager{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:36px}
+.pager .pg{font-family:'Space Mono',monospace;font-size:13px;border:1px solid var(--line);background:var(--bg2);border-radius:10px;padding:9px 16px}
+.pager .pg:hover{border-color:var(--accent);text-decoration:none}
+.pager .pgpos{font-family:'Space Mono',monospace;font-size:12px;color:var(--muted)}
+
+/* ЛЕНДИНГ-ВХОД (только на главной): hero, под ним сразу лента */
+/* баннер спонсора — узкая полоса над hero, явно помечена и отделена от коллекции */
+.sponsor{max-width:380px;margin:14px auto 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a0f1a;position:relative;display:block;text-decoration:none}
+.sponsor .sp-gif{display:block;width:100%;height:clamp(100px,20vw,150px);object-fit:cover;object-position:center}
+.sponsor video::-webkit-media-controls,.sponsor video::-webkit-media-controls-start-playback-button,.sponsor video::-webkit-media-controls-play-button{display:none!important;-webkit-appearance:none}
+.sponsor .sp-label{position:absolute;top:10px;left:12px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5px;color:var(--muted);background:rgba(10,15,26,.7);padding:2px 7px;border-radius:6px;text-transform:uppercase}
+.sponsor .sp-cap{position:absolute;bottom:10px;right:14px;font-family:'Space Mono',monospace;font-size:11px;color:var(--ink);opacity:.85}
+
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(24px,4vh,40px) 0 44px;position:relative}
+.hero .egg{width:clamp(120px,24vw,170px);height:auto;opacity:0;animation:rise .9s cubic-bezier(.2,.8,.2,1) .1s forwards}
+.hero h1{font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(32px,7vw,54px);letter-spacing:-1px;margin-top:26px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .35s forwards}
+.hero h1 .dot{color:var(--accent)}
+.hero .tag{font-size:clamp(16px,2.6vw,21px);color:var(--ink);font-weight:300;max-width:30ch;margin-top:16px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .5s forwards}
+.hero .kicker{font-family:'Space Mono',monospace;font-size:clamp(12px,2vw,13.5px);color:var(--accent);letter-spacing:.3px;max-width:46ch;margin-top:18px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .72s forwards}
+.hero .lede{font-size:clamp(15px,2.4vw,18px);color:var(--ink);max-width:38ch;margin-top:12px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .58s forwards}
+.hero .sub{color:var(--muted);font-size:clamp(13.5px,2.2vw,15.5px);max-width:48ch;margin-top:18px;line-height:1.65;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .68s forwards}
+.hero .sub .brand{font-weight:700;color:var(--accent)}
+.hero .pillrow{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:24px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .74s forwards}
+.hero .pill{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.5px;color:var(--accent);border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:6px 14px}
+.hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
+.hero .metrics strong{color:var(--accent);font-weight:700}
+.hero .metric-sep{opacity:.4}
+.hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
+.hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
+.hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
+.hero .metric-tip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);width:min(320px,86vw);background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-family:'Sora',sans-serif;font-size:12.5px;line-height:1.55;color:var(--ink);text-align:left;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,transform .18s,visibility .18s;z-index:30;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.hero .metric-info:hover .metric-tip,.hero .metric-info:focus .metric-tip{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+@media (max-width:640px){
+  /* На узких экранах пузырёк у иконки распирал бы страницу вправо.
+     Делаем подсказку фиксированной панелью по центру экрана (fixed не влияет
+     на ширину документа), перекрывающей нижнюю часть текста. */
+  .hero .metric-tip{position:fixed;left:50%;right:auto;bottom:auto;top:50%;
+    transform:translate(-50%,-50%) scale(.98);width:min(360px,90vw);max-width:90vw;
+    padding:16px 18px;font-size:13.5px}
+  .hero .metric-info:hover .metric-tip,.hero .metric-info:focus .metric-tip{
+    transform:translate(-50%,-50%) scale(1)}
+}
+.eggwrap{transform-box:fill-box;transform-origin:50% 95%;animation:hatch 4.2s ease-in-out 1.1s infinite}
+@keyframes hatch{0%,55%{transform:translateY(0) rotate(0)}58%{transform:translateY(-5px) rotate(-3.2deg)}61%{transform:translateY(0) rotate(2.6deg)}64%{transform:translateY(-7px) rotate(-2deg)}67%{transform:translateY(0) rotate(3deg)}70%{transform:translateY(-4px) rotate(-2.8deg)}73%{transform:translateY(0) rotate(1.8deg)}76%{transform:translateY(-2px) rotate(-1deg)}80%,100%{transform:translateY(0) rotate(0)}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
+</style>
+
+<script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <svg class="egg-mini" viewBox="0 0 130 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="hatchmoment logo">
+ <g transform="translate(5,5)">
+  <path d="M60 6 C92 6 116 40 124 92 C131 138 116 210 60 210 C4 210 -11 138 -4 92 C4 40 28 6 60 6 Z" transform="scale(0.96,1) translate(2,0)" fill="var(--shell)" stroke="var(--accent)" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M40 70 L40 158" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M82 70 L82 158" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M40 114 L50 114 M72 114 L82 114" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+  <rect x="50" y="104" width="22" height="20" rx="3" stroke="var(--accent)" stroke-width="2.4" fill="none"/>
+  <path d="M40 70 L40 52 M82 70 L82 52" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="40" cy="50" r="3.2" fill="var(--accent)"/><circle cx="82" cy="50" r="3.2" fill="var(--accent)"/>
+  <path d="M40 158 L40 176 M82 158 L82 176" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="40" cy="178" r="3.2" fill="var(--accent)"/><circle cx="82" cy="178" r="3.2" fill="var(--accent)"/>
+ </g>
+</svg>
+    <span class="brand"><a href="https://hatchmoment.org">hatchmoment<span class="dot">.</span></a></span>
+    <span class="slogan">scored by care · not by stars</span>
+  </header>
+  <nav class="crumb"><a href="https://hatchmoment.org">home</a> / Hardware &amp; Embedded</nav>
+  <div class="proj-hero">
+    <h1>🔌 Hardware &amp; Embedded</h1>
+    <p class="proj-sum">33 fresh hardware &amp; embedded projects, scored by craft.</p>
+  </div>
+
+  <div class="search-box">
+    <span class="si">⌕</span>
+    <input id="q" type="text" placeholder="Search: 'cli parser', 'local ai', 'rust'…" autocomplete="off">
+  </div>
+  <div class="filters" id="filters">
+    <span class="chip on" data-filter="lang" data-val="">All languages</span>
+    <span class="chip" data-filter="lang" data-val="c">C</span><span class="chip" data-filter="lang" data-val="c++">C++</span><span class="chip" data-filter="lang" data-val="html">HTML</span><span class="chip" data-filter="lang" data-val="jupyter notebook">Jupyter Notebook</span><span class="chip" data-filter="lang" data-val="python">Python</span><span class="chip" data-filter="lang" data-val="shell">Shell</span>
+    <span class="chip" data-filter="novelty" data-val="7">rare finds</span>
+  </div>
+  <div class="sortbar">
+    <span class="sortlbl">sort:</span>
+    <span class="chip sort on" data-sort="best">★ Best</span>
+    <span class="chip sort " data-sort="newest">◷ Newest</span>
+  </div>
+
+  <div id="searchresults" style="display:none"></div>
+  <div id="noresults" class="empty" style="display:none">Nothing matches — try a different search.</div>
+  <section data-section>
+
+    <div class="grid">
+    <article class="card" data-lang="c" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-13" data-msgid="783" data-search="pangin/ezflash-air-emulator pangin ezflash air emulator headless ez-flash air emulator for testing gba kernels runs hardware tests without a physical cartridge c hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/pangin__ezflash-air-emulator.html">ezflash-air-emulator</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Headless EZ-FLASH Air emulator for testing GBA kernels</p>
+      <p class="card-why">Runs hardware tests without a physical cartridge</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C</span></div>
+        <span class="card-when">2026-06-13</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-02" data-msgid="592" data-search="norxs-tech/tsn-zonal-backbone norxs tech tsn zonal backbone asil-d tsn zonal backbone for nxp i.mx8x with network calculus latency verification production-grade, hard real-time network scheduling ip stack for sdv zonal architectures c++ hardware &amp; embedded  autosar ieee-802-1qbv macsec network-calculus nxp-imx8x tsn">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/norxs-tech__tsn-zonal-backbone.html">tsn-zonal-backbone</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">ASIL-D TSN Zonal Backbone for NXP i.MX8X with Network Calculus latency verification</p>
+      <p class="card-why">Production-grade, hard real-time network scheduling IP stack for SDV Zonal Architectures</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span><span class="tag">autosar</span><span class="tag">ieee-802-1qbv</span></div>
+        <span class="card-when">2026-06-02</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-26" data-msgid="243" data-search="dmellok/tesserae-esp32-bin-client dmellok tesserae esp32 bin client battery‑powered esp32 firmware that pulls .bin frames via mqtt and paints a 13.3&quot; e‑paper panel low‑power, mqtt‑driven display for long‑term battery life c hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/dmellok__tesserae-esp32-bin-client.html">tesserae-esp32-bin-client</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Battery‑powered ESP32 firmware that pulls .bin frames via MQTT and paints a 13.3&quot; e‑paper panel</p>
+      <p class="card-why">Low‑power, MQTT‑driven display for long‑term battery life</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C</span></div>
+        <span class="card-when">2026-05-26</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-24" data-msgid="173" data-search="bingliangwithbots/thermalright-ai-hydronous-r1-screen-customizer bingliangwithbots thermalright ai hydronous r1 screen customizer linux usb driver &amp; screen customizer for thermalright ai hydronous r1 enables low‑power video playback on niche usb lcd python hardware &amp; embedded  hardware hydronous lcd linux mini-display thermalright usb usbdisplay">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/bingliangwithbots__thermalright-ai-hydronous-r1-screen-customizer.html">thermalright-ai-hydronous-r1-screen-customizer</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Linux USB driver &amp; screen customizer for ThermalRight AI HydroNous R1</p>
+      <p class="card-why">Enables low‑power video playback on niche USB LCD</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">hardware</span><span class="tag">hydronous</span></div>
+        <span class="card-when">2026-05-24</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-24" data-msgid="179" data-search="mokouliszt/fre800slmp mokouliszt fre800slmp python slmp client for mitsubishi freqrol‑e800 inverters zero‑dependency, high‑level api for bit/word access python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/mokouliszt__fre800slmp.html">fre800slmp</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Python SLMP client for Mitsubishi FREQROL‑E800 inverters</p>
+      <p class="card-why">Zero‑dependency, high‑level API for bit/word access</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2026-05-24</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-23" data-msgid="1042" data-search="swaroopsahoo4908/wyvern-e swaroopsahoo4908 wyvern e raspberry pi pico‑based active thrust‑vector control for hobby rockets embedded tvc firmware with simulations and docs python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/swaroopsahoo4908__wyvern-e.html">WYVERN-E</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Raspberry Pi Pico‑based active thrust‑vector control for hobby rockets</p>
+      <p class="card-why">Embedded TVC firmware with simulations and docs</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-18" data-msgid="1028" data-search="openkeiko/openkeiko-fw openkeiko openkeiko fw openkeiko firmware: open-source micropython firmware for dual rp2040 hardware control ready‑to‑flash firmware for experimental hardware python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/openkeiko__openkeiko-fw.html">openkeiko-fw</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">OpenKeiko Firmware: open-source MicroPython firmware for dual RP2040 hardware control</p>
+      <p class="card-why">Ready‑to‑flash firmware for experimental hardware</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">6d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="shell" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-14" data-msgid="1014" data-search="soc-labs/kria-260 soc labs kria 260 kr260 board recovery scripts for headless boot and reboot fixes practical fixes and automated recovery for amd kr260 boards shell hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/soc-labs__kria-260.html">Kria-260</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">KR260 board recovery scripts for headless boot and reboot fixes</p>
+      <p class="card-why">Practical fixes and automated recovery for AMD KR260 boards</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Shell</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-05" data-msgid="982" data-search="alexherington/flipper-nfc alexherington flipper nfc cli to read/write nfc tags via flipper zero over usb enables nfc tag ops without using flipper&#x27;s ui python hardware &amp; embedded  cli flipper-zero nfc python usb">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/alexherington__flipper-nfc.html">flipper-nfc</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">CLI to read/write NFC tags via Flipper Zero over USB</p>
+      <p class="card-why">Enables NFC tag ops without using Flipper&#x27;s UI</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">cli</span><span class="tag">flipper-zero</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-04" data-msgid="967" data-search="fredmessinger2/xtce-sim fredmessinger2 xtce sim python cli that simulates ccsds satellite telemetry from xtce files runs a full ccsds packet simulator from a single xtce definition python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/fredmessinger2__xtce-sim.html">xtce-sim</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Python CLI that simulates CCSDS satellite telemetry from XTCE files</p>
+      <p class="card-why">Runs a full CCSDS packet simulator from a single XTCE definition</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-27" data-msgid="907" data-search="szymontex/protel99-to-kicad szymontex protel99 to kicad convert legacy protel 99 se pcb files to kicad pure‑python parser, zero dependencies, cli conversion python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/szymontex__protel99-to-kicad.html">protel99-to-kicad</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Convert legacy Protel 99 SE PCB files to KiCad</p>
+      <p class="card-why">Pure‑Python parser, zero dependencies, CLI conversion</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-21" data-msgid="879" data-search="gurnoorssandhu/vision_modal gurnoorssandhu vision modal real-time vision-based obstacle detection &amp; avoidance for laptop and raspberry pi physics‑informed pipeline with low‑latency detection python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/gurnoorssandhu__vision_modal.html">vision_modal</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Real-time vision-based obstacle detection &amp; avoidance for laptop and Raspberry Pi</p>
+      <p class="card-why">Physics‑informed pipeline with low‑latency detection</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2026-06-21</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-18" data-msgid="851" data-search="xiaopaoya/jellyframe xiaopaoya jellyframe compact c++ html/css/js ui runtime for low‑power embedded and wearable devices browser‑like ui without heavyweight browser overhead c++ hardware &amp; embedded  browser-engine cpp css embedded framebuffer html javascript jerryscript source-available ui-runtime wearable">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/xiaopaoya__jellyframe.html">JellyFrame</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Compact C++ HTML/CSS/JS UI runtime for low‑power embedded and wearable devices</p>
+      <p class="card-why">Browser‑like UI without heavyweight browser overhead</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span><span class="tag">browser-engine</span><span class="tag">cpp</span></div>
+        <span class="card-when">2026-06-18</span>
+      </div>
+    </article>
+    <article class="card" data-lang="html" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-06" data-msgid="659" data-search="skermiebrotech/rotorsketch skermiebrotech rotorsketch fpv build planner – web app for wiring diagrams, bom &amp; health checks offline, single-file tool for drone build planning html hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/skermiebrotech__rotorsketch.html">RotorSketch</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">FPV Build Planner – web app for wiring diagrams, BOM &amp; health checks</p>
+      <p class="card-why">Offline, single-file tool for drone build planning</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">HTML</span></div>
+        <span class="card-when">2026-06-06</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-15" data-msgid="1017" data-search="ilidar-tof/ilidar-ros2 ilidar tof ilidar ros2 ros 2 drivers for ilidar itfs and itfs‑lite sensors ready‑to‑use ros 2 nodes delivering images and point clouds c++ hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ilidar-tof__ilidar-ros2.html">ilidar-ros2</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">ROS 2 drivers for iLidar iTFS and iTFS‑LITE sensors</p>
+      <p class="card-why">Ready‑to‑use ROS 2 nodes delivering images and point clouds</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-01" data-msgid="946" data-search="oldskool205/progress-claw-machine oldskool205 progress claw machine raspberry‑pi backend for arduino‑driven claw machines safety‑first controller with mock mode and api python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/oldskool205__progress-claw-machine.html">progress-claw-machine</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Raspberry‑Pi backend for Arduino‑driven claw machines</p>
+      <p class="card-why">Safety‑first controller with mock mode and API</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-30" data-msgid="941" data-search="tlibot-cn/tl_sdk tlibot cn tl sdk c++/c sdk for remote control of tl robot arm full tcp/ip control with examples and python bindings c++ hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/tlibot-cn__tl_sdk.html">tl_sdk</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">C++/C SDK for remote control of TL robot arm</p>
+      <p class="card-why">Full TCP/IP control with examples and Python bindings</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">3w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-18" data-msgid="847" data-search="nexora-solution/embedded_code nexora solution embedded code esp32s3 firmware for nexbell door sensor and audio streaming ready‑to‑flash iot firmware with mqtt integration c++ hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/nexora-solution__embedded_code.html">embedded_code</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">ESP32S3 firmware for NexBell door sensor and audio streaming</p>
+      <p class="card-why">Ready‑to‑flash IoT firmware with MQTT integration</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span></div>
+        <span class="card-when">2026-06-18</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-15" data-msgid="830" data-search="fajarainda/xiaozhi fajarainda xiaozhi esp32‑powered ai chatbot with voice interaction and device control runs locally on esp32, integrates llms via mcp c++ hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/fajarainda__xiaozhi.html">xiaozhi</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">ESP32‑powered AI chatbot with voice interaction and device control</p>
+      <p class="card-why">Runs locally on ESP32, integrates LLMs via MCP</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span></div>
+        <span class="card-when">2026-06-15</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-14" data-msgid="814" data-search="benleiber/labeldrop benleiber labeldrop labeldrop: lan fastapi server to print png/pdf labels on a munbyn itpp130b printer simple local print service for label files python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/benleiber__labeldrop.html">labeldrop</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">LabelDrop: LAN FastAPI server to print PNG/PDF labels on a MUNBYN ITPP130B printer</p>
+      <p class="card-why">Simple local print service for label files</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2026-06-14</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-09" data-msgid="728" data-search="akhilvanka/kalman-filter akhilvanka kalman filter 9-state ekf for inertial navigation fusing gps, imu, and barometer stack‑only implementation with no heap allocation c++ hardware &amp; embedded  aerospace cpp kalman-filter navigation">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/akhilvanka__kalman-filter.html">kalman-filter</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">9-state EKF for inertial navigation fusing GPS, IMU, and barometer</p>
+      <p class="card-why">Stack‑only implementation with no heap allocation</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span><span class="tag">aerospace</span><span class="tag">cpp</span></div>
+        <span class="card-when">2026-06-09</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-07" data-msgid="693" data-search="aining0608-afk/cqu-2026-four-wheel-camera-team aining0608 afk cqu 2026 four wheel camera team four-wheel camera smart car firmware for infineon tc264 complete embedded control code for line‑following robot c hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/aining0608-afk__cqu-2026-four-wheel-camera-team.html">CQU-2026-Four-Wheel-Camera-Team</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Four-wheel camera smart car firmware for Infineon TC264</p>
+      <p class="card-why">Complete embedded control code for line‑following robot</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C</span></div>
+        <span class="card-when">2026-06-07</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-06" data-msgid="643" data-search="dasylva950-creator/hc-sr04_alarm_shield dasylva950 creator hc sr04 alarm shield arduino uno r3 proximity alarm shield with custom kicad pcb layout combines ultrasonic sensor, buzzer, and led for proximity alerts c++ hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/dasylva950-creator__hc-sr04_alarm_shield.html">HC-SR04_Alarm_Shield</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Arduino UNO R3 proximity alarm shield with custom KiCAD PCB layout</p>
+      <p class="card-why">Combines ultrasonic sensor, buzzer, and LED for proximity alerts</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span></div>
+        <span class="card-when">2026-06-06</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="shell" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-06" data-msgid="650" data-search="echocard/echocard-mcu-525-flash echocard echocard mcu 525 flash flash utility and firmware binaries for echocard mcu 525 ready-to-use scripts to flash firmware on echocard boards shell hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/echocard__echocard-mcu-525-flash.html">EchoCard-MCU-525-Flash</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Flash utility and firmware binaries for EchoCard MCU 525</p>
+      <p class="card-why">Ready-to-use scripts to flash firmware on EchoCard boards</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Shell</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">2026-06-06</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-30" data-msgid="410" data-search="djgringoboy2003/pandabreath-u1-bridge djgringoboy2003 pandabreath u1 bridge host‑side bridge for pandabreath and snapmaker u1, automating chamber heating real, working python tool for 3d printer owners python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/djgringoboy2003__pandabreath-u1-bridge.html">pandabreath-u1-bridge</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Host‑side bridge for PandaBreath and Snapmaker U1, automating chamber heating</p>
+      <p class="card-why">Real, working Python tool for 3D printer owners</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2026-05-30</span>
+      </div>
+    </article>
+    <article class="card" data-lang="jupyter notebook" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-29" data-msgid="398" data-search="pitt-pekker-group/chainjpa pitt pekker group chainjpa simulation toolkit for realistic single‑port jpas provides physics‑accurate jpa models with imperfections jupyter notebook hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/pitt-pekker-group__chainjpa.html">chainJPA</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Simulation toolkit for realistic single‑port JPAs</p>
+      <p class="card-why">Provides physics‑accurate JPA models with imperfections</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Jupyter Notebook</span></div>
+        <span class="card-when">2026-05-29</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-28" data-msgid="310" data-search="nitro2k01/hash-bench-gb-asm nitro2k01 hash bench gb asm gameboy hash benchmark asm optimization  hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/nitro2k01__hash-bench-gb-asm.html">hash-bench-gb-asm</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Gameboy hash benchmark</p>
+      <p class="card-why">asm optimization</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2026-05-28</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-27" data-msgid="276" data-search="ssupt/drmcru ssupt drmcru linux drm/kms custom resolution utility solves custom mode issues  hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ssupt__drmcru.html">drmcru</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Linux DRM/KMS custom resolution utility</p>
+      <p class="card-why">Solves custom mode issues</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2026-05-27</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-27" data-msgid="278" data-search="yeahnoah/homerig yeahnoah homerig homerig: web app to schedule antminer mining cycles and control eve plug combines miner grpc control with homebridge smart plug  hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/yeahnoah__homerig.html">HomeRig</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">HomeRig: web app to schedule Antminer mining cycles and control Eve plug</p>
+      <p class="card-why">Combines miner gRPC control with Homebridge smart plug</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2026-05-27</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-26" data-msgid="245" data-search="ajvaghasiya/modbus-rtu-tcp-gateway ajvaghasiya modbus rtu tcp gateway modbus rtu/tcp gateway bridging serial and ethernet devices ready‑to‑run bridge for sbcs and legacy equipment c hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ajvaghasiya__modbus-rtu-tcp-gateway.html">Modbus-rtu-tcp-gateway</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Modbus RTU/TCP gateway bridging serial and Ethernet devices</p>
+      <p class="card-why">Ready‑to‑run bridge for SBCs and legacy equipment</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C</span></div>
+        <span class="card-when">2026-05-26</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-25" data-msgid="202" data-search="ththarkonen/web-spectrometer-device ththarkonen web spectrometer device raspberry pi‑based spectrometer service for remote spectrum capture turns a pi + camera into a networked spectrometer python hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ththarkonen__web-spectrometer-device.html">web-spectrometer-device</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Raspberry Pi‑based spectrometer service for remote spectrum capture</p>
+      <p class="card-why">Turns a Pi + camera into a networked spectrometer</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2026-05-25</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c" data-novelty="5" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-30" data-msgid="400" data-search="xyurt/object-pool xyurt object pool c89 object pool library for fast, allocation‑free reuse provides o(1) allocation without heap fragmentation c hardware &amp; embedded  allocator arena c c89 data-structures embedded game-development heap-management low-latency low-level memory-management memory-pool networking object-pool performance real-time systems-programming zero-allocation">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/xyurt__object-pool.html">object-pool</a></span>
+        <span class="nv">worth a look</span>
+      </div>
+      <p class="card-sum">C89 object pool library for fast, allocation‑free reuse</p>
+      <p class="card-why">Provides O(1) allocation without heap fragmentation</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C</span><span class="tag">allocator</span><span class="tag">arena</span></div>
+        <span class="card-when">2026-05-30</span>
+      </div>
+    </article>
+    <article class="card" data-lang="" data-novelty="5" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-29" data-msgid="376" data-search="danielmw484/inventor-hoist-pulley-block danielmw484 inventor hoist pulley block hoist pulley block cad model useful mechanical design  hardware &amp; embedded ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/danielmw484__inventor-hoist-pulley-block.html">inventor-hoist-pulley-block</a></span>
+        <span class="nv">worth a look</span>
+      </div>
+      <p class="card-sum">Hoist pulley block CAD model</p>
+      <p class="card-why">useful mechanical design</p>
+      <div class="card-foot">
+        <div class="card-tags"></div>
+        <span class="card-when">2026-05-29</span>
+      </div>
+    </article>
+    </div>
+  </section>
+<script>
+(function(){
+  var q=document.getElementById('q');
+  var chips=[].slice.call(document.querySelectorAll('#filters .chip'));
+  var sortChips=[].slice.call(document.querySelectorAll('.chip.sort'));
+  var cards=[].slice.call(document.querySelectorAll('[data-section] .card'));
+  var sections=[].slice.call(document.querySelectorAll('[data-section]'));
+  var results=document.getElementById('searchresults');
+  var noresults=document.getElementById('noresults');
+  var state={text:'',lang:'',novelty:0,sort:'best'};
+  var INDEX=null;   // загруженный search.json (ленивая загрузка при первом поиске)
+
+  function cmp(a,b){
+    if(state.sort==='newest'){
+      var da=(a.dataset.date||''),db=(b.dataset.date||'');
+      if(da!==db)return da<db?1:-1;
+      return (parseInt(b.dataset.msgid||'0',10))-(parseInt(a.dataset.msgid||'0',10));
+    }
+    var na=parseInt(a.dataset.novelty||'0',10),nb=parseInt(b.dataset.novelty||'0',10);
+    if(na!==nb)return nb-na;
+    var da2=(a.dataset.date||''),db2=(b.dataset.date||'');
+    return da2<db2?1:(da2>db2?-1:0);
+  }
+  function reorder(){
+    document.querySelectorAll('[data-section] .grid').forEach(function(g){
+      var items=[].slice.call(g.querySelectorAll('.card'));
+      items.sort(cmp).forEach(function(c){g.appendChild(c);});
+    });
+  }
+
+  // --- режим обычного просмотра: фильтр по языку/novelty на карточках главной ---
+  function applyFilters(){
+    var shown=0;
+    cards.forEach(function(c){
+      var okL=!state.lang || c.dataset.lang===state.lang;
+      var okN=!state.novelty || (parseInt(c.dataset.novelty||'0',10)>=state.novelty);
+      var ok=okL&&okN;
+      c.style.display=ok?'':'none';
+      if(ok)shown++;
+    });
+    sections.forEach(function(s){
+      var vis=s.querySelectorAll('.card:not([style*="none"])').length;
+      s.style.display=vis?'':'none';
+    });
+    if(noresults)noresults.style.display=shown?'none':'block';
+  }
+
+  // --- режим поиска: ищем по ВСЕЙ базе из search.json ---
+  var LINKBASE='../search.json'.replace('search.json','');  // '' на главной, '../' в /c/
+  function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function renderResults(items){
+    if(!items.length){
+      results.innerHTML='';
+      if(noresults)noresults.style.display='block';
+      return;
+    }
+    if(noresults)noresults.style.display='none';
+    var html='<div class="grid">'+items.map(function(it){
+      var tags='<span class="tag lang">'+esc(it.lang)+'</span>';
+      return '<article class="card">'
+        +'<div class="card-head"><span class="card-name"><a href="'+LINKBASE+it.url+'">'+esc(it.name)+'</a></span>'
+        +'<span class="nv">'+esc(it.badge)+'</span></div>'
+        +'<p class="card-sum">'+esc(it.summary)+'</p>'
+        +(it.why?'<p class="card-why">'+esc(it.why)+'</p>':'')
+        +'<div class="card-foot"><div class="card-tags">'+(it.lang?tags:'')+'</div></div>'
+        +'</article>';
+    }).join('')+'</div>';
+    results.innerHTML='<section class="sec-results"><div class="sec"><h2>'
+      +items.length+' result'+(items.length>1?'s':'')+'</h2></div>'+html+'</section>';
+  }
+  function runSearch(){
+    var t=state.text;
+    var matched=INDEX.items.filter(function(it){
+      if(t && (it.q||'').indexOf(t)===-1) return false;
+      if(state.lang && (it.lang||'').toLowerCase()!==state.lang) return false;
+      if(state.novelty && (it.novelty||0)<state.novelty) return false;
+      return true;
+    });
+    renderResults(matched);
+  }
+
+  function update(){
+    var searching=!!state.text;
+    document.body.classList.toggle('searching', searching);
+    if(searching){
+      // показываем контейнер результатов, прячем обычные секции
+      results.style.display='';
+      sections.forEach(function(s){s.style.display='none';});
+      if(INDEX){ runSearch(); }
+      else {
+        results.innerHTML='<p class="loading">searching…</p>';
+        fetch('../search.json').then(function(r){return r.json();}).then(function(d){
+          INDEX=d; runSearch();
+        }).catch(function(){
+          results.innerHTML='<p class="loading">search unavailable</p>';
+        });
+      }
+    } else {
+      // обычный вид: прячем результаты, показываем секции с фильтрами
+      results.style.display='none';
+      results.innerHTML='';
+      sections.forEach(function(s){s.style.display='';});
+      applyFilters();
+    }
+  }
+
+  q.addEventListener('input',function(){
+    state.text=q.value.trim().toLowerCase().replace(/[-_]+/g,' ');
+    update();
+  });
+  chips.forEach(function(ch){
+    ch.addEventListener('click',function(){
+      var f=ch.dataset.filter,v=ch.dataset.val;
+      if(f==='lang'){
+        chips.filter(function(x){return x.dataset.filter==='lang';}).forEach(function(x){x.classList.remove('on');});
+        ch.classList.add('on');state.lang=v;
+      } else if(f==='novelty'){
+        ch.classList.toggle('on');
+        state.novelty=ch.classList.contains('on')?parseInt(v,10):0;
+      }
+      if(state.text){ runSearch(); } else { applyFilters(); }
+    });
+  });
+  sortChips.forEach(function(ch){
+    ch.addEventListener('click',function(){
+      sortChips.forEach(function(x){x.classList.remove('on');});
+      ch.classList.add('on');
+      state.sort=ch.dataset.sort;
+      reorder();
+    });
+  });
+  if(state.sort==='newest')reorder();
+})();
+</script>
+  <footer class="foot">
+    <div class="note">quality over hype · craft over clout</div>
+    <div>Fresh open-source, caught the moment it hatches. Follow on <a href="https://t.me/hatchmoment">Telegram</a> · partnerships &amp; advertising: <a href="mailto:hatchmoment@mailfence.com">hatchmoment@mailfence.com</a></div>
+    <div class="disc"><span class="di">⚠</span><span><strong>hatchmoment doesn't audit or run any code.</strong> Projects are surfaced by structural signals (tests, docs, CI, structure) and an AI read of the README — not a security review. Always inspect a project yourself before using it.</span></div>
+    <div class="copyright">© 2026 hatchmoment · All rights reserved. Listed projects link to their original repositories and remain the property of their respective authors.</div>
+  </footer>
+</div>
+</body>
+</html>

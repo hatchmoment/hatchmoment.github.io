@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Just hatched — fresh open-source feed · hatchmoment (page 8)</title>
+<meta name="description" content="The full chronological feed of fresh open-source projects caught the moment they hatch on GitHub.">
+<link rel="canonical" href="https://hatchmoment.org/feed-8.html">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%230a0f1a'/&gt;&lt;text y='.9em' x='50' font-size='62' text-anchor='middle'&gt;🥚&lt;/text&gt;&lt;/svg&gt;">
+<meta property="og:title" content="Just hatched — fresh open-source feed · hatchmoment (page 8)">
+<meta name="theme-color" content="#0a0f1a">
+<meta property="og:description" content="The full chronological feed of fresh open-source projects caught the moment they hatch on GitHub.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hatchmoment.org/feed-8.html">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f1a; --bg2:#0f1626; --ink:#e8f0fb; --muted:#8aa0bd;
+  --accent:#4fc3f7; --line:rgba(79,195,247,0.15); --shell:#142338;
+  --card:#0e1524; --cardline:rgba(138,160,189,0.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:'Sora',system-ui,sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 20%,transparent 70%);pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:32px 22px 80px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* header */
+.top{display:flex;align-items:center;gap:12px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.egg-mini{width:30px;height:auto;flex-shrink:0}
+.brand{font-family:'Space Mono',monospace;font-weight:700;font-size:20px;letter-spacing:-.5px;color:var(--ink)}
+.brand .dot{color:var(--accent)}
+.brand a{color:inherit}
+.brand a:hover{text-decoration:none}
+.slogan{margin-left:auto;font-size:12.5px;color:var(--muted);font-family:'Space Mono',monospace;letter-spacing:.3px}
+
+/* breadcrumb */
+.crumb{font-size:13px;color:var(--muted);margin-bottom:18px;font-family:'Space Mono',monospace}
+.crumb a{color:var(--muted)}
+.crumb a:hover{color:var(--accent)}
+
+/* search + filters */
+.search-box{position:relative;margin:6px 0 18px}
+.search-box input{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:12px;color:var(--ink);font-family:'Sora',sans-serif;font-size:15px;padding:13px 16px 13px 42px;outline:none;transition:border-color .15s}
+.search-box input:focus{border-color:var(--accent)}
+.search-box .si{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:16px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.chip{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.3px;color:var(--muted);background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;transition:all .14s;user-select:none}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip.on{background:var(--accent);color:#04121f;border-color:var(--accent);font-weight:700}
+.sortbar{display:flex;align-items:center;gap:8px;margin:-18px 0 28px}
+.sortlbl{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)}
+.chip.sort{padding:5px 12px;font-size:11px}
+
+/* section heading */
+.sec{display:flex;align-items:baseline;justify-content:space-between;margin:30px 0 14px}
+.sec h2{font-family:'Space Mono',monospace;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.3px}
+.sec h2 .ic{margin-right:8px}
+.sec .meta{font-size:12px;color:var(--muted);font-family:'Space Mono',monospace}
+.sec .meta a{color:var(--muted)}
+.subline{display:flex;flex-wrap:wrap;gap:6px;margin:-6px 0 14px}
+.subchip{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:2px 9px;opacity:.85}
+
+/* grid + cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--cardline);border-radius:14px;padding:16px 17px;display:flex;flex-direction:column;transition:transform .16s,border-color .16s,box-shadow .16s}
+.card.archived{opacity:.55}
+.card.archived:hover{opacity:.8}
+.card .archived-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.3px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:1px 6px;text-transform:uppercase}
+.archived-notice{background:rgba(138,160,189,.08);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:20px;color:var(--muted);font-size:13.5px;line-height:1.55}
+.archived-notice strong{color:var(--ink)}
+#searchresults .sec-results h2{font-size:14px;color:var(--muted);font-weight:600}
+#searchresults .loading{text-align:center;color:var(--muted);font-family:'Space Mono',monospace;font-size:13px;padding:30px 0}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.card-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.card-name{font-family:'Space Mono',monospace;font-weight:700;font-size:15px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-name a{color:inherit}
+.nv{margin-left:auto;flex-shrink:0;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;background:var(--bg2);border:1px solid var(--line);color:var(--accent);padding:3px 9px;border-radius:999px}
+.nv.hi{background:var(--accent);color:#04121f;border-color:var(--accent)}
+.card-sum{font-size:13.5px;color:var(--ink);opacity:.92;margin:0 0 10px;line-height:1.5;flex-grow:1}
+.card-why{font-size:12.5px;color:var(--muted);font-style:italic;margin:0 0 12px;line-height:1.45}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:2px}
+.card-when{flex-shrink:0;font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);opacity:.7;white-space:nowrap}
+.tag{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.2px;background:var(--bg2);color:var(--muted);border:1px solid var(--line);padding:2px 8px;border-radius:6px}
+.tag.lang{color:var(--accent)}
+.tag.sub{color:var(--ink);border-color:var(--accent);background:rgba(79,195,247,0.08)}
+
+/* project page */
+.proj-hero{margin:10px 0 26px}
+.proj-hero h1{font-family:'Space Mono',monospace;font-size:clamp(24px,5vw,34px);font-weight:700;letter-spacing:-.6px;margin-bottom:10px;word-break:break-word}
+.proj-sum{font-size:clamp(16px,2.5vw,19px);color:var(--ink);font-weight:300;max-width:60ch;margin-bottom:14px}
+.proj-badges{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.proj-badges .b{font-family:'Space Mono',monospace;font-size:12px;color:var(--accent);border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:6px 13px}
+.proj-details{font-size:15.5px;line-height:1.75;color:var(--ink);opacity:.94;max-width:64ch;margin-bottom:28px}
+.proj-cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#04121f;font-weight:600;font-size:15px;padding:13px 26px;border-radius:12px;transition:transform .16s,box-shadow .16s}
+.proj-cta:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(79,195,247,.26);text-decoration:none}
+
+/* footer */
+.foot{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;flex-direction:column;gap:8px}
+.foot .note{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.3px}
+.foot .disc{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink);opacity:.92;max-width:64ch;line-height:1.55;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:12px 15px;margin-top:6px}
+.foot .copyright{font-size:11.5px;color:var(--muted);opacity:.7;line-height:1.5;max-width:64ch;margin-top:10px}
+.foot .disc .di{flex-shrink:0;font-size:15px;line-height:1.4}
+.empty{color:var(--muted);text-align:center;padding:50px 0;font-family:'Space Mono',monospace;font-size:14px}
+.hatched{margin-bottom:34px}
+.hatched .grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.pager{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:36px}
+.pager .pg{font-family:'Space Mono',monospace;font-size:13px;border:1px solid var(--line);background:var(--bg2);border-radius:10px;padding:9px 16px}
+.pager .pg:hover{border-color:var(--accent);text-decoration:none}
+.pager .pgpos{font-family:'Space Mono',monospace;font-size:12px;color:var(--muted)}
+
+/* ЛЕНДИНГ-ВХОД (только на главной): hero, под ним сразу лента */
+/* баннер спонсора — узкая полоса над hero, явно помечена и отделена от коллекции */
+.sponsor{max-width:380px;margin:14px auto 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a0f1a;position:relative;display:block;text-decoration:none}
+.sponsor .sp-gif{display:block;width:100%;height:clamp(100px,20vw,150px);object-fit:cover;object-position:center}
+.sponsor video::-webkit-media-controls,.sponsor video::-webkit-media-controls-start-playback-button,.sponsor video::-webkit-media-controls-play-button{display:none!important;-webkit-appearance:none}
+.sponsor .sp-label{position:absolute;top:10px;left:12px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.5px;color:var(--muted);background:rgba(10,15,26,.7);padding:2px 7px;border-radius:6px;text-transform:uppercase}
+.sponsor .sp-cap{position:absolute;bottom:10px;right:14px;font-family:'Space Mono',monospace;font-size:11px;color:var(--ink);opacity:.85}
+
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(24px,4vh,40px) 0 44px;position:relative}
+.hero .egg{width:clamp(120px,24vw,170px);height:auto;opacity:0;animation:rise .9s cubic-bezier(.2,.8,.2,1) .1s forwards}
+.hero h1{font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(32px,7vw,54px);letter-spacing:-1px;margin-top:26px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .35s forwards}
+.hero h1 .dot{color:var(--accent)}
+.hero .tag{font-size:clamp(16px,2.6vw,21px);color:var(--ink);font-weight:300;max-width:30ch;margin-top:16px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .5s forwards}
+.hero .kicker{font-family:'Space Mono',monospace;font-size:clamp(12px,2vw,13.5px);color:var(--accent);letter-spacing:.3px;max-width:46ch;margin-top:18px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .72s forwards}
+.hero .lede{font-size:clamp(15px,2.4vw,18px);color:var(--ink);max-width:38ch;margin-top:12px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .58s forwards}
+.hero .sub{color:var(--muted);font-size:clamp(13.5px,2.2vw,15.5px);max-width:48ch;margin-top:18px;line-height:1.65;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .68s forwards}
+.hero .sub .brand{font-weight:700;color:var(--accent)}
+.hero .pillrow{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:24px;opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .74s forwards}
+.hero .pill{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.5px;color:var(--accent);border:1px solid var(--line);background:var(--bg2);border-radius:999px;padding:6px 14px}
+.hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
+.hero .metrics strong{color:var(--accent);font-weight:700}
+.hero .metric-sep{opacity:.4}
+.hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
+.hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
+.hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
+.hero .metric-tip{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);width:min(320px,86vw);background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-family:'Sora',sans-serif;font-size:12.5px;line-height:1.55;color:var(--ink);text-align:left;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s,transform .18s,visibility .18s;z-index:30;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.hero .metric-info:hover .metric-tip,.hero .metric-info:focus .metric-tip{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+@media (max-width:640px){
+  /* На узких экранах пузырёк у иконки распирал бы страницу вправо.
+     Делаем подсказку фиксированной панелью по центру экрана (fixed не влияет
+     на ширину документа), перекрывающей нижнюю часть текста. */
+  .hero .metric-tip{position:fixed;left:50%;right:auto;bottom:auto;top:50%;
+    transform:translate(-50%,-50%) scale(.98);width:min(360px,90vw);max-width:90vw;
+    padding:16px 18px;font-size:13.5px}
+  .hero .metric-info:hover .metric-tip,.hero .metric-info:focus .metric-tip{
+    transform:translate(-50%,-50%) scale(1)}
+}
+.eggwrap{transform-box:fill-box;transform-origin:50% 95%;animation:hatch 4.2s ease-in-out 1.1s infinite}
+@keyframes hatch{0%,55%{transform:translateY(0) rotate(0)}58%{transform:translateY(-5px) rotate(-3.2deg)}61%{transform:translateY(0) rotate(2.6deg)}64%{transform:translateY(-7px) rotate(-2deg)}67%{transform:translateY(0) rotate(3deg)}70%{transform:translateY(-4px) rotate(-2.8deg)}73%{transform:translateY(0) rotate(1.8deg)}76%{transform:translateY(-2px) rotate(-1deg)}80%,100%{transform:translateY(0) rotate(0)}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
+</style>
+
+<script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <svg class="egg-mini" viewBox="0 0 130 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="hatchmoment logo">
+ <g transform="translate(5,5)">
+  <path d="M60 6 C92 6 116 40 124 92 C131 138 116 210 60 210 C4 210 -11 138 -4 92 C4 40 28 6 60 6 Z" transform="scale(0.96,1) translate(2,0)" fill="var(--shell)" stroke="var(--accent)" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M40 70 L40 158" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M82 70 L82 158" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M40 114 L50 114 M72 114 L82 114" stroke="var(--accent)" stroke-width="3.2" stroke-linecap="round"/>
+  <rect x="50" y="104" width="22" height="20" rx="3" stroke="var(--accent)" stroke-width="2.4" fill="none"/>
+  <path d="M40 70 L40 52 M82 70 L82 52" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="40" cy="50" r="3.2" fill="var(--accent)"/><circle cx="82" cy="50" r="3.2" fill="var(--accent)"/>
+  <path d="M40 158 L40 176 M82 158 L82 176" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="40" cy="178" r="3.2" fill="var(--accent)"/><circle cx="82" cy="178" r="3.2" fill="var(--accent)"/>
+ </g>
+</svg>
+    <span class="brand"><a href="https://hatchmoment.org">hatchmoment<span class="dot">.</span></a></span>
+    <span class="slogan">scored by care · not by stars</span>
+  </header>
+<nav class="crumb"><a href="https://hatchmoment.org">home</a> / feed</nav>
+  <div class="proj-hero">
+    <h1>🐣 Just hatched</h1>
+    <p class="proj-sum">Every project in the order it hatched — newest first. 841 and counting.</p>
+  </div>
+  <section data-section><div class="grid">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-21" data-msgid="877" data-search="rusih100/our-money rusih100 our money desktop app for fast keyboard-driven annotation of bank csv statements keyboard‑first ui, auto‑save, export enriched csv typescript apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/rusih100__our-money.html">our-money</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Desktop app for fast keyboard-driven annotation of bank CSV statements</p>
+      <p class="card-why">Keyboard‑first UI, auto‑save, export enriched CSV</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">2026-06-21</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-21" data-msgid="876" data-search="nuffin/hermes-skill-graph nuffin hermes skill graph hermes skill-graph plugin adds searchable knowledge graph for agent skills typed relationships improve skill discovery python ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/nuffin__hermes-skill-graph.html">hermes-skill-graph</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Hermes skill-graph plugin adds searchable knowledge graph for agent skills</p>
+      <p class="card-why">Typed relationships improve skill discovery</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2026-06-21</span>
+      </div>
+    </article>
+    <article class="card" data-lang="plpgsql" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-21" data-msgid="875" data-search="voiceofz-prog/personal-dashboard voiceofz prog personal dashboard personal dashboard pwa for tracking english learning and fitness works offline, syncs via supabase, ready for iphone plpgsql apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/voiceofz-prog__personal-dashboard.html">personal-dashboard</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Personal dashboard PWA for tracking English learning and fitness</p>
+      <p class="card-why">Works offline, syncs via Supabase, ready for iPhone</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">PLpgSQL</span></div>
+        <span class="card-when">2026-06-21</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-21" data-msgid="874" data-search="spynos/next-chart spynos next chart nextchart: open‑source local emr desktop app for korean clinics local, encrypted medical chart tool typescript apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/spynos__next-chart.html">next-chart</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">NextChart: Open‑source local EMR desktop app for Korean clinics</p>
+      <p class="card-why">Local, encrypted medical chart tool</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">2026-06-21</span>
+      </div>
+    </article>
+    <article class="card" data-lang="java" data-novelty="8" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-21" data-msgid="873" data-search="sch1z0ed/quiz-arena-telegram sch1z0ed quiz arena telegram telegram quiz bot for solo, group, and duel games with elo rankings feature‑rich, self‑hosted quiz bot with stats and leaderboards java apps &amp; productivity  flyway gradle java java-21 postgresql quiz quiz-bot redis spring-boot telegram-bot">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/sch1z0ed__quiz-arena-telegram.html">quiz-arena-telegram</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Telegram quiz bot for solo, group, and duel games with ELO rankings</p>
+      <p class="card-why">Feature‑rich, self‑hosted quiz bot with stats and leaderboards</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Java</span><span class="tag">flyway</span><span class="tag">gradle</span></div>
+        <span class="card-when">2026-06-21</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-20" data-msgid="872" data-search="john-iles/ytanalyser john iles ytanalyser llm-powered web app for natural-language q&amp;a on youtube channel data secure llm queries via cloudflare worker, static react ui typescript ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/john-iles__ytanalyser.html">YTAnalyser</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">LLM-powered web app for natural-language Q&amp;A on YouTube channel data</p>
+      <p class="card-why">Secure LLM queries via Cloudflare Worker, static React UI</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-20" data-msgid="871" data-search="seqizz/nocruft seqizz nocruft nocruft – cli to trace and list files created by nix-shell shows exact paths created, enabling easy cleanup rust developer tools  ebpf nix-shell">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/seqizz__nocruft.html">nocruft</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">nocruft – CLI to trace and list files created by nix-shell</p>
+      <p class="card-why">Shows exact paths created, enabling easy cleanup</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Rust</span><span class="tag">ebpf</span><span class="tag">nix-shell</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c#" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-20" data-msgid="870" data-search="williamsmithedward/mud.ai williamsmithedward mud.ai wpf mud client that uses a local llm to play arctic mud integrates telnet, ansi, and ai for autonomous gameplay c# apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/williamsmithedward__mud.ai.html">mud.AI</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">WPF MUD client that uses a local LLM to play Arctic MUD</p>
+      <p class="card-why">Integrates telnet, ANSI, and AI for autonomous gameplay</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C#</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-20" data-msgid="869" data-search="tidyhf/lostworlds-mightyquest tidyhf lostworlds mightyquest standalone private server for the mighty quest game enables playing after official servers shut down c++ backend &amp; apis ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/tidyhf__lostworlds-mightyquest.html">lostworlds-mightyquest</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Standalone private server for The Mighty Quest game</p>
+      <p class="card-why">Enables playing after official servers shut down</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-20" data-msgid="868" data-search="habiboffdev/oqim-platform-review habiboffdev oqim platform review ai-driven multi-tenant commerce platform for chat‑based sales agents autonomous sales bots with human‑style chat and owner approval python ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/habiboffdev__oqim-platform-review.html">oqim-platform-review</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">AI-driven multi-tenant commerce platform for chat‑based sales agents</p>
+      <p class="card-why">Autonomous sales bots with human‑style chat and owner approval</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="java" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-20" data-msgid="867" data-search="snapsnake/comfyui-android-remote snapsnake comfyui android remote android app that loads a desktop comfyui interface via webview provides quick mobile access to comfyui without native port java apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/snapsnake__comfyui-android-remote.html">comfyui-android-remote</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Android app that loads a desktop ComfyUI interface via WebView</p>
+      <p class="card-why">Provides quick mobile access to ComfyUI without native port</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Java</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="rust" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-20" data-msgid="866" data-search="vondrakk/stplr vondrakk stplr a self-managing, horizontally‑scaling distributed key/value store fast binary protocol, easy shard‑based scaling rust data &amp; databases  database distributed-systems key-value-store lmdb rust">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/vondrakk__stplr.html">stplr</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">A self-managing, horizontally‑scaling distributed key/value store</p>
+      <p class="card-why">Fast binary protocol, easy shard‑based scaling</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Rust</span><span class="tag">database</span><span class="tag">distributed-systems</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-20" data-msgid="865" data-search="ajmscherer/viva ajmscherer viva viva: a dsl to model and simulate future cash flow streams human‑friendly language for stochastic financial planning python apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ajmscherer__viva.html">viva</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Viva: a DSL to model and simulate future cash flow streams</p>
+      <p class="card-why">Human‑friendly language for stochastic financial planning</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-20" data-msgid="864" data-search="mikatachan/laplace mikatachan laplace admission control &amp; idle model reaper for shared local llm servers manages memory, priorities, and external tenants python ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/mikatachan__laplace.html">laplace</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Admission control &amp; idle model reaper for shared local LLM servers</p>
+      <p class="card-why">Manages memory, priorities, and external tenants</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="php" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-06-20" data-msgid="863" data-search="robothead-eu/woocommerce-conditional-shipping-fields robothead eu woocommerce conditional shipping fields woocommerce plugin that hides irrelevant checkout fields based on shipping method reduces checkout friction by auto‑hiding unused address fields php web &amp; frontend  checkout woocommerce wordpress">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/robothead-eu__woocommerce-conditional-shipping-fields.html">WooCommerce-Conditional-Shipping-Fields</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">WooCommerce plugin that hides irrelevant checkout fields based on shipping method</p>
+      <p class="card-why">Reduces checkout friction by auto‑hiding unused address fields</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">PHP</span><span class="tag">checkout</span><span class="tag">woocommerce</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-20" data-msgid="862" data-search="sadeqnotion1/svgpicker sadeqnotion1 svgpicker svgpicker extracts icons from codebases and suggests replacements from popular libraries quickly finds and swaps icons via iconify api typescript developer tools ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/sadeqnotion1__svgpicker.html">SVGpicker</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">SVGpicker extracts icons from codebases and suggests replacements from popular libraries</p>
+      <p class="card-why">Quickly finds and swaps icons via Iconify API</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-20" data-msgid="861" data-search="jajuangarrett-ctrl/fjg-note-navigator-toolbar jajuangarrett ctrl fjg note navigator toolbar obsidian plugin adding a compact navigation toolbar for notes and folders quick folder, recent, and bookmark navigation typescript apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/jajuangarrett-ctrl__fjg-note-navigator-toolbar.html">fjg-note-navigator-toolbar</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Obsidian plugin adding a compact navigation toolbar for notes and folders</p>
+      <p class="card-why">Quick folder, recent, and bookmark navigation</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-20" data-msgid="860" data-search="mmattar18/foot_predict mmattar18 foot predict explainable ai football match predictor with chain‑of‑thought reasoning provides transparent predictions with data‑driven reasoning python ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/mmattar18__foot_predict.html">foot_predict</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Explainable AI football match predictor with chain‑of‑thought reasoning</p>
+      <p class="card-why">Provides transparent predictions with data‑driven reasoning</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="r" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-20" data-msgid="859" data-search="shuaiwang619-bot/sepsis-antibiotic-timing-tte shuaiwang619 bot sepsis antibiotic timing tte reproducible scripts for sepsis antibiotic timing trial using mimic‑iv enables transparent replication of a critical icu study r data &amp; databases ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/shuaiwang619-bot__sepsis-antibiotic-timing-tte.html">sepsis-antibiotic-timing-tte</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Reproducible scripts for sepsis antibiotic timing trial using MIMIC‑IV</p>
+      <p class="card-why">Enables transparent replication of a critical ICU study</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">R</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-20" data-msgid="858" data-search="abbycrm/project-c abbycrm project c secure self‑hosted console for ai image generation &amp; composio integration encrypts api keys server‑side, google sso, ready‑to‑run typescript ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/abbycrm__project-c.html">PROJECT-C</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Secure self‑hosted console for AI image generation &amp; Composio integration</p>
+      <p class="card-why">Encrypts API keys server‑side, Google SSO, ready‑to‑run</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="shell" data-novelty="6" data-cat="DevOps &amp; Infra" data-sub="" data-date="2026-06-20" data-msgid="857" data-search="uesugitorachiyo/ao-command uesugitorachiyo ao command read‑only cli for inspecting ao forge release readiness unified read‑only view of ao forge evidence shell devops &amp; infra  ao-stack cli evidence governed-agents operator-tools production-readiness">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/uesugitorachiyo__ao-command.html">ao-command</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Read‑only CLI for inspecting AO Forge release readiness</p>
+      <p class="card-why">Unified read‑only view of AO Forge evidence</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Shell</span><span class="tag">ao-stack</span><span class="tag">cli</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-19" data-msgid="856" data-search="ubeydkaya/microgrid_energy_management_system ubeydkaya microgrid energy management system desktop microgrid simulator balancing renewable generation, battery, and grid provides real‑time energy balance with gui python apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ubeydkaya__microgrid_energy_management_system.html">Microgrid_Energy_Management_System</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Desktop microgrid simulator balancing renewable generation, battery, and grid</p>
+      <p class="card-why">Provides real‑time energy balance with GUI</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2026-06-19</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-19" data-msgid="855" data-search="yoannfradin-sudo/tabcl-gui yoannfradin sudo tabcl gui desktop gui for tabicl to train and forecast tabular models easy visual interface for tabicl with llm constraints python ai &amp; ml ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/yoannfradin-sudo__tabcl-gui.html">Tabcl-Gui</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Desktop GUI for TabICL to train and forecast tabular models</p>
+      <p class="card-why">Easy visual interface for TabICL with LLM constraints</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span></div>
+        <span class="card-when">2026-06-19</span>
+      </div>
+    </article>
+    <article class="card archived" data-lang="swift" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-06-19" data-msgid="854" data-search="artemsvit/tlkng artemsvit tlkng tlkng: macos app for private on-device speech‑to‑text and translation local whisper transcription, no cloud, bilingual support swift apps &amp; productivity ">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/artemsvit__tlkng.html">TLKNG</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">TLKNG: macOS app for private on-device speech‑to‑text and translation</p>
+      <p class="card-why">Local Whisper transcription, no cloud, bilingual support</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Swift</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">2026-06-19</span>
+      </div>
+    </article>
+  </div></section>
+  <div class="pager"><a class="pg" href="feed-7.html">← newer</a><span class="pgpos">page 8 / 36</span><a class="pg" href="feed-9.html">older →</a></div>
+  <footer class="foot">
+    <div class="note">quality over hype · craft over clout</div>
+    <div>Fresh open-source, caught the moment it hatches. Follow on <a href="https://t.me/hatchmoment">Telegram</a> · partnerships &amp; advertising: <a href="mailto:hatchmoment@mailfence.com">hatchmoment@mailfence.com</a></div>
+    <div class="disc"><span class="di">⚠</span><span><strong>hatchmoment doesn't audit or run any code.</strong> Projects are surfaced by structural signals (tests, docs, CI, structure) and an AI read of the README — not a security review. Always inspect a project yourself before using it.</span></div>
+    <div class="copyright">© 2026 hatchmoment · All rights reserved. Listed projects link to their original repositories and remain the property of their respective authors.</div>
+  </footer>
+</div>
+</body>
+</html>
