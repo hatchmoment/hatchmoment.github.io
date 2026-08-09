@@ -214,7 +214,7 @@ a:hover{text-decoration:underline}
       <p class="card-why">All assets generated at runtime, no external files</p>
       <div class="card-foot">
         <div class="card-tags"><span class="tag lang">JavaScript</span></div>
-        <span class="card-when">4d ago</span>
+        <span class="card-when">5d ago</span>
       </div>
     </article>
     <article class="card" data-lang="typescript" data-novelty="8" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-07-19" data-msgid="1033" data-search="ytrofr/ellaz ytrofr ellaz ellaz is a cross‑device pwa for casual games with a modular sdk and offline support. modular sdk, pure-logic games, pwa offline play. typescript web &amp; frontend ">
@@ -226,7 +226,7 @@ a:hover{text-decoration:underline}
       <p class="card-why">Modular SDK, pure-logic games, PWA offline play.</p>
       <div class="card-foot">
         <div class="card-tags"><span class="tag lang">TypeScript</span></div>
-        <span class="card-when">2w ago</span>
+        <span class="card-when">3w ago</span>
       </div>
     </article>
     <article class="card archived" data-lang="typescript" data-novelty="8" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-06-22" data-msgid="887" data-search="jdvorsky/creator-surface jdvorsky creator surface in-browser world editor for designing and editing scene graphs live synchronized views with validation typescript web &amp; frontend ">
@@ -274,7 +274,7 @@ a:hover{text-decoration:underline}
       <p class="card-why">No service‑account keys, uses Workload Identity</p>
       <div class="card-foot">
         <div class="card-tags"><span class="tag lang">PHP</span><span class="tag">gcs</span><span class="tag">gke</span></div>
-        <span class="card-when">yesterday</span>
+        <span class="card-when">2d ago</span>
       </div>
     </article>
     <article class="card" data-lang="html" data-novelty="7" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-07-27" data-msgid="1051" data-search="cloakyard/kerr cloakyard kerr browser-based kerr black hole visualizer with geodesic raymarching and generative score. accurate kerr spacetime visualization with generative pipe-organ score. html web &amp; frontend ">
@@ -298,7 +298,7 @@ a:hover{text-decoration:underline}
       <p class="card-why">Host‑agnostic chart runtime and dataset shape profiling</p>
       <div class="card-foot">
         <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag">charting-library</span><span class="tag">charts</span></div>
-        <span class="card-when">1w ago</span>
+        <span class="card-when">2w ago</span>
       </div>
     </article>
     <article class="card" data-lang="python" data-novelty="7" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-07-25" data-msgid="1047" data-search="ops324/sinkscope ops324 sinkscope web gis for ground subsidence monitoring and sewer inspection triage merges public satellite data with gis to prioritize inspections python web &amp; frontend ">
@@ -526,7 +526,7 @@ a:hover{text-decoration:underline}
       <p class="card-why">Ready UI kit with Tailwind tokens</p>
       <div class="card-foot">
         <div class="card-tags"><span class="tag lang">TypeScript</span></div>
-        <span class="card-when">yesterday</span>
+        <span class="card-when">2d ago</span>
       </div>
     </article>
     <article class="card" data-lang="python" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-08-07" data-msgid="1094" data-search="jehadoumer/augsburg-flats jehadoumer augsburg flats static site that scrapes augsburg apartment listings and syncs via github pages provides up‑to‑date flat listings without manual effort python web &amp; frontend ">
@@ -538,7 +538,7 @@ a:hover{text-decoration:underline}
       <p class="card-why">Provides up‑to‑date flat listings without manual effort</p>
       <div class="card-foot">
         <div class="card-tags"><span class="tag lang">Python</span></div>
-        <span class="card-when">yesterday</span>
+        <span class="card-when">2d ago</span>
       </div>
     </article>
     <article class="card" data-lang="typescript" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-08-03" data-msgid="1063" data-search="jmfrnsn/ornament-catalog jmfrnsn ornament catalog next.js catalog site for historical ornament research searchable, admin‑managed ornament database typescript web &amp; frontend ">
@@ -550,7 +550,7 @@ a:hover{text-decoration:underline}
       <p class="card-why">Searchable, admin‑managed ornament database</p>
       <div class="card-foot">
         <div class="card-tags"><span class="tag lang">TypeScript</span></div>
-        <span class="card-when">5d ago</span>
+        <span class="card-when">6d ago</span>
       </div>
     </article>
     <article class="card archived" data-lang="typescript" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-07-24" data-msgid="1045" data-search="yinalb/chess-2.0_final yinalb chess 2.0 final a web‑based chess 2.0 game with customizable piece variants unique variant selection plus multiple ai opponents typescript web &amp; frontend ">
@@ -1733,6 +1733,23 @@ a:hover{text-decoration:underline}
   // --- режим поиска: ищем по ВСЕЙ базе из search.json ---
   var LINKBASE='../search.json'.replace('search.json','');  // '' на главной, '../' в /c/
   function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+  // search.json намеренно худой — в нём только то, что нельзя вычислить.
+  // Имя, ссылку, ярлык и строку поиска собираем здесь, при загрузке индекса.
+  // Правила обязаны совпадать с build_site.py: slug(), project_slug(), novelty_badge().
+  function jslug(t){ return (String(t).replace(/[^a-zA-Z0-9._-]+/g,'-').replace(/^-+|-+$/g,'').toLowerCase())||'x'; }
+  function badgeOf(n){ n=n||0; return n>=8?'rare find':(n>=6?'notable':'worth a look'); }
+  function hydrate(it){
+    var repo=it.r||'', parts=repo.split('/'), owner=parts[0]||'', name=parts[1]||repo;
+    var flat=repo.replace(/[-_\/]+/g,' ');
+    return {
+      repo:repo, name:name,
+      summary:it.s||'', why:it.w||'', lang:it.l||'', novelty:it.n||0,
+      badge:badgeOf(it.n),
+      url:'p/'+jslug(owner)+'__'+jslug(name)+'.html',
+      q:(repo+' '+flat+' '+(it.s||'')+' '+(it.w||'')+' '+(it.l||'')+' '+(it.x||'')).toLowerCase()
+    };
+  }
   function renderResults(items){
     if(!items.length){
       results.innerHTML='';
@@ -1775,7 +1792,7 @@ a:hover{text-decoration:underline}
       else {
         results.innerHTML='<p class="loading">searching…</p>';
         fetch('../search.json').then(function(r){return r.json();}).then(function(d){
-          INDEX=d; runSearch();
+          INDEX={count:d.count, items:d.items.map(hydrate)}; runSearch();
         }).catch(function(){
           results.innerHTML='<p class="loading">search unavailable</p>';
         });

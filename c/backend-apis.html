@@ -214,7 +214,7 @@ a:hover{text-decoration:underline}
       <p class="card-why">Adds durable, retryable jobs without extra infra</p>
       <div class="card-foot">
         <div class="card-tags"><span class="tag lang">Ruby</span><span class="tag">activejob</span><span class="tag">background-jobs</span></div>
-        <span class="card-when">today</span>
+        <span class="card-when">yesterday</span>
       </div>
     </article>
     <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-08-08" data-msgid="1130" data-search="shani-suthar/pyadmanager shani suthar pyadmanager python client for google ad manager rest api, simplifies data retrieval typed, auto‑paginated, retry‑enabled reads for gam python backend &amp; apis  google-ad-manager google-ad-manager-api python python3 rest-api">
@@ -226,7 +226,7 @@ a:hover{text-decoration:underline}
       <p class="card-why">Typed, auto‑paginated, retry‑enabled reads for GAM</p>
       <div class="card-foot">
         <div class="card-tags"><span class="tag lang">Python</span><span class="tag">google-ad-manager</span><span class="tag">google-ad-manager-api</span></div>
-        <span class="card-when">today</span>
+        <span class="card-when">yesterday</span>
       </div>
     </article>
     <article class="card" data-lang="kotlin" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-08-08" data-msgid="1131" data-search="youndie/kmp-smtp-client youndie kmp smtp client kotlin multiplatform smtp client for sending email from kotlin/native services enables native email sending without a jvm kotlin backend &amp; apis ">
@@ -238,7 +238,7 @@ a:hover{text-decoration:underline}
       <p class="card-why">Enables native email sending without a JVM</p>
       <div class="card-foot">
         <div class="card-tags"><span class="tag lang">Kotlin</span></div>
-        <span class="card-when">today</span>
+        <span class="card-when">yesterday</span>
       </div>
     </article>
     <article class="card" data-lang="php" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-08-06" data-msgid="1069" data-search="tune-lab/laravel-stripe-payments tune lab laravel stripe payments production-ready laravel stripe payments module with idempotency, webhook verification, and queue processing handles real production concerns like duplicate charges, race conditions, and fake webhooks php backend &amp; apis ">
@@ -250,7 +250,7 @@ a:hover{text-decoration:underline}
       <p class="card-why">Handles real production concerns like duplicate charges, race conditions, and fake webhooks</p>
       <div class="card-foot">
         <div class="card-tags"><span class="tag lang">PHP</span></div>
-        <span class="card-when">2d ago</span>
+        <span class="card-when">3d ago</span>
       </div>
     </article>
     <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-07-07" data-msgid="1001" data-search="informatik-aargau/openwebui_retentionguard informatik aargau openwebui retentionguard automated cleanup service for openwebui users, chats, and files auditable retention enforcement for openwebui python backend &amp; apis ">
@@ -394,7 +394,7 @@ a:hover{text-decoration:underline}
       <p class="card-why">Deterministic, language‑aware plans from alerts</p>
       <div class="card-foot">
         <div class="card-tags"><span class="tag lang">Python</span><span class="tag">bilingual</span><span class="tag">emergency-preparedness</span></div>
-        <span class="card-when">today</span>
+        <span class="card-when">yesterday</span>
       </div>
     </article>
     <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-07-03" data-msgid="962" data-search="rakincik/derece-muro rakincik derece muro muro lms backend api – multi‑tenant education platform full‑featured .net 8 api with auth, caching, health checks typescript backend &amp; apis ">
@@ -929,6 +929,23 @@ a:hover{text-decoration:underline}
   // --- режим поиска: ищем по ВСЕЙ базе из search.json ---
   var LINKBASE='../search.json'.replace('search.json','');  // '' на главной, '../' в /c/
   function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+  // search.json намеренно худой — в нём только то, что нельзя вычислить.
+  // Имя, ссылку, ярлык и строку поиска собираем здесь, при загрузке индекса.
+  // Правила обязаны совпадать с build_site.py: slug(), project_slug(), novelty_badge().
+  function jslug(t){ return (String(t).replace(/[^a-zA-Z0-9._-]+/g,'-').replace(/^-+|-+$/g,'').toLowerCase())||'x'; }
+  function badgeOf(n){ n=n||0; return n>=8?'rare find':(n>=6?'notable':'worth a look'); }
+  function hydrate(it){
+    var repo=it.r||'', parts=repo.split('/'), owner=parts[0]||'', name=parts[1]||repo;
+    var flat=repo.replace(/[-_\/]+/g,' ');
+    return {
+      repo:repo, name:name,
+      summary:it.s||'', why:it.w||'', lang:it.l||'', novelty:it.n||0,
+      badge:badgeOf(it.n),
+      url:'p/'+jslug(owner)+'__'+jslug(name)+'.html',
+      q:(repo+' '+flat+' '+(it.s||'')+' '+(it.w||'')+' '+(it.l||'')+' '+(it.x||'')).toLowerCase()
+    };
+  }
   function renderResults(items){
     if(!items.length){
       results.innerHTML='';
@@ -971,7 +988,7 @@ a:hover{text-decoration:underline}
       else {
         results.innerHTML='<p class="loading">searching…</p>';
         fetch('../search.json').then(function(r){return r.json();}).then(function(d){
-          INDEX=d; runSearch();
+          INDEX={count:d.count, items:d.items.map(hydrate)}; runSearch();
         }).catch(function(){
           results.innerHTML='<p class="loading">search unavailable</p>';
         });

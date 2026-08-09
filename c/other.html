@@ -341,6 +341,23 @@ a:hover{text-decoration:underline}
   // --- режим поиска: ищем по ВСЕЙ базе из search.json ---
   var LINKBASE='../search.json'.replace('search.json','');  // '' на главной, '../' в /c/
   function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+  // search.json намеренно худой — в нём только то, что нельзя вычислить.
+  // Имя, ссылку, ярлык и строку поиска собираем здесь, при загрузке индекса.
+  // Правила обязаны совпадать с build_site.py: slug(), project_slug(), novelty_badge().
+  function jslug(t){ return (String(t).replace(/[^a-zA-Z0-9._-]+/g,'-').replace(/^-+|-+$/g,'').toLowerCase())||'x'; }
+  function badgeOf(n){ n=n||0; return n>=8?'rare find':(n>=6?'notable':'worth a look'); }
+  function hydrate(it){
+    var repo=it.r||'', parts=repo.split('/'), owner=parts[0]||'', name=parts[1]||repo;
+    var flat=repo.replace(/[-_\/]+/g,' ');
+    return {
+      repo:repo, name:name,
+      summary:it.s||'', why:it.w||'', lang:it.l||'', novelty:it.n||0,
+      badge:badgeOf(it.n),
+      url:'p/'+jslug(owner)+'__'+jslug(name)+'.html',
+      q:(repo+' '+flat+' '+(it.s||'')+' '+(it.w||'')+' '+(it.l||'')+' '+(it.x||'')).toLowerCase()
+    };
+  }
   function renderResults(items){
     if(!items.length){
       results.innerHTML='';
@@ -383,7 +400,7 @@ a:hover{text-decoration:underline}
       else {
         results.innerHTML='<p class="loading">searching…</p>';
         fetch('../search.json').then(function(r){return r.json();}).then(function(d){
-          INDEX=d; runSearch();
+          INDEX={count:d.count, items:d.items.map(hydrate)}; runSearch();
         }).catch(function(){
           results.innerHTML='<p class="loading">search unavailable</p>';
         });
