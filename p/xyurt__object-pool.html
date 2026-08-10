@@ -137,6 +137,9 @@ a:hover{text-decoration:underline}
 .hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
 .hero .metrics strong{color:var(--accent);font-weight:700}
 .hero .metric-sep{opacity:.4}
+.hero .metric-note{opacity:.55;font-size:11px}
+.filters-sub{margin-top:6px}
+.chip .chip-n{opacity:.5;font-size:10px;margin-left:3px}
 .hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
 .hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
 .hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
@@ -157,7 +160,7 @@ a:hover{text-decoration:underline}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "object-pool", "codeRepository": "https://github.com/xyurt/object-pool", "description": "C89 object pool library for fast, allocation‑free reuse", "programmingLanguage": "C", "applicationCategory": "Hardware \u0026 Embedded", "keywords": "allocator, arena, c, c89, data-structures, embedded, game-development, heap-management, low-latency, low-level, memory-management, memory-pool, networking, object-pool, performance, real-time, systems-programming, zero-allocation"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "object-pool", "codeRepository": "https://github.com/xyurt/object-pool", "description": "C89 object pool library for fast, allocation‑free reuse", "programmingLanguage": "C", "applicationCategory": "Hardware \u0026 Embedded / IoT", "keywords": "allocator, arena, c, c89, data-structures, embedded, game-development, heap-management, low-latency, low-level, memory-management, memory-pool, networking, object-pool, performance, real-time, systems-programming, zero-allocation"}</script>
 <script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -183,7 +186,7 @@ a:hover{text-decoration:underline}
   <div class="proj-hero">
     <h1>object-pool</h1>
     <p class="proj-sum">C89 object pool library for fast, allocation‑free reuse</p>
-    <div class="proj-badges"><span class="b">worth a look</span><span class="b">C</span><span class="b"><a href="../c/hardware-embedded.html" style="color:inherit">🔌 Hardware &amp; Embedded</a></span></div>
+    <div class="proj-badges"><span class="b">worth a look</span><span class="b">C</span><span class="b"><a href="../c/hardware-embedded.html" style="color:inherit">🔌 Hardware &amp; Embedded · IoT</a></span></div>
   </div>
   
   <p class="proj-details">It solves the problem of frequent dynamic allocations by pre‑allocating a fixed number of objects and reusing them via push/pop. The library is pure C89, with a tiny API and example programs, making it suitable for game engines, networking, or embedded systems where predictable performance matters. It avoids heap fragmentation and offers constant‑time operations, which many generic allocators lack. Its small footprint and clear code make it a handy tool for low‑level projects.</p>

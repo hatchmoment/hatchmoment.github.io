@@ -137,6 +137,9 @@ a:hover{text-decoration:underline}
 .hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
 .hero .metrics strong{color:var(--accent);font-weight:700}
 .hero .metric-sep{opacity:.4}
+.hero .metric-note{opacity:.55;font-size:11px}
+.filters-sub{margin-top:6px}
+.chip .chip-n{opacity:.5;font-size:10px;margin-left:3px}
 .hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
 .hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
 .hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
@@ -185,7 +188,7 @@ a:hover{text-decoration:underline}
     <p class="proj-sum">Every project in the order it hatched — newest first. 960 and counting.</p>
   </div>
   <section data-section><div class="grid">
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-08-07" data-msgid="1085" data-search="tricksuniversity/prompt-vault tricksuniversity prompt vault self‑hosted prompt library for managing ai prompts locally dockerized, offline, full crud without auth typescript apps &amp; productivity ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-08-07" data-msgid="1085">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tricksuniversity__prompt-vault.html">prompt-vault</a></span>
         <span class="nv">notable</span>
@@ -197,7 +200,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-08-07" data-msgid="1084" data-search="shushuzn/zhihu-ask shushuzn zhihu ask zhihu research and answer generation pipeline — from question to publishable answer provides a complete workflow for deep research, report generation, and answer drafting python apps &amp; productivity ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-08-07" data-msgid="1084">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/shushuzn__zhihu-ask.html">zhihu-ask</a></span>
         <span class="nv">notable</span>
@@ -209,7 +212,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-08-07" data-msgid="1083" data-search="mentorfy-team/mentorfy-ds mentorfy team mentorfy ds react design system with components and live docs ready ui kit with tailwind tokens typescript web &amp; frontend ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="More" data-date="2026-08-07" data-msgid="1083">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mentorfy-team__mentorfy-ds.html">mentorfy-ds</a></span>
         <span class="nv">notable</span>
@@ -221,7 +224,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-08-07" data-msgid="1082" data-search="sunwon12/obsidian-task-manager sunwon12 obsidian task manager taskmaster: obsidian plugin that syncs jira issues into a local kanban board local‑first kanban with jira sync, no vendor lock‑in typescript apps &amp; productivity ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-08-07" data-msgid="1082">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/sunwon12__obsidian-task-manager.html">obsidian-task-manager</a></span>
         <span class="nv">notable</span>
@@ -233,7 +236,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="c++" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-08-07" data-msgid="1081" data-search="forgevolt/hexapod forgevolt hexapod esp32‑s3 powered hexapod robot firmware for 18 dynamixel servos full‑featured walking robot with ik, gaits, self‑levelling c++ hardware &amp; embedded  arduino-ide easyeda-pro esp32 fusion360 hexapod robot">
+    <article class="card" data-lang="c++" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="IoT" data-date="2026-08-07" data-msgid="1081">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/forgevolt__hexapod.html">Hexapod</a></span>
         <span class="nv">notable</span>
@@ -241,11 +244,11 @@ a:hover{text-decoration:underline}
       <p class="card-sum">ESP32‑S3 powered hexapod robot firmware for 18 Dynamixel servos</p>
       <p class="card-why">Full‑featured walking robot with IK, gaits, self‑levelling</p>
       <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">C++</span><span class="tag">arduino-ide</span><span class="tag">easyeda-pro</span></div>
+        <div class="card-tags"><span class="tag lang">C++</span><span class="tag sub">IoT</span><span class="tag">arduino-ide</span><span class="tag">easyeda-pro</span></div>
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-07" data-msgid="1080" data-search="backblaze-b2-samples/clam-wsi-feature-extraction backblaze b2 samples clam wsi feature extraction b2-backed pipeline that tiles, segments, and embeds whole‑slide pathology images runs clam‑style feature extraction on cpu, storing all data in b2 typescript ai &amp; ml  b2-labs backblaze-b2 cloudstorage computational-pathology digital-pathology embeddings fastapi feature-extraction histopathology medical-imaging multiple-instance-learning nextjs object-storage openslide python pytorch s3 sample-app whole-slide-imaging">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="RAG &amp; search" data-date="2026-08-07" data-msgid="1080">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/backblaze-b2-samples__clam-wsi-feature-extraction.html">clam-wsi-feature-extraction</a></span>
         <span class="nv">notable</span>
@@ -253,11 +256,11 @@ a:hover{text-decoration:underline}
       <p class="card-sum">B2-backed pipeline that tiles, segments, and embeds whole‑slide pathology images</p>
       <p class="card-why">Runs CLAM‑style feature extraction on CPU, storing all data in B2</p>
       <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag">b2-labs</span><span class="tag">backblaze-b2</span></div>
+        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag sub">RAG &amp; search</span><span class="tag">b2-labs</span><span class="tag">backblaze-b2</span></div>
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-08-07" data-msgid="1079" data-search="zaibuddinexcite/compass-job-finder- zaibuddinexcite compass job finder  compass – a web app that helps job seekers discover and evaluate roles combines automated job scraping with ai profile matching javascript apps &amp; productivity ">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-08-07" data-msgid="1079">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/zaibuddinexcite__compass-job-finder.html">Compass-job-finder-</a></span>
         <span class="nv">notable</span>
@@ -269,7 +272,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-08-07" data-msgid="1078" data-search="briar-systems/mach-shader briar systems mach shader mach shader math library mapping functions to spir-v glsl.std.450 ops direct spir-v instruction mapping for shader code  developer tools ">
+    <article class="card" data-lang="" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-08-07" data-msgid="1078">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/briar-systems__mach-shader.html">mach-shader</a></span>
         <span class="nv hi">rare find</span>
@@ -281,7 +284,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="makefile" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-07" data-msgid="1077" data-search="theenglishcore/eng theenglishcore eng engling is a rust‑based interpreter that lets you code in plain english. executes english‑like scripts via a fast bytecode vm with repl and optional gui. makefile developer tools ">
+    <article class="card" data-lang="makefile" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-07" data-msgid="1077">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/theenglishcore__eng.html">eng</a></span>
         <span class="nv">notable</span>
@@ -293,7 +296,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-07" data-msgid="1076" data-search="rux-eth/rumpy-execution rux eth rumpy execution rust crypto portfolio optimizer &amp; backtester with cost-aware socp integrates realistic transaction costs into fast rust backtests rust developer tools  backtesting convex-optimization portfolio-optimization quantitative-finance rust trading">
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-07" data-msgid="1076">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/rux-eth__rumpy-execution.html">rumpy-execution</a></span>
         <span class="nv">notable</span>
@@ -305,7 +308,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-07" data-msgid="1075" data-search="cstwist/codelens-wasm cstwist codelens wasm browser‑based ast visualizer that parses code via rust‑wasm fast, offline, no‑cdn ast viewer with monaco editor typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-07" data-msgid="1075">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/cstwist__codelens-wasm.html">CodeLens-Wasm</a></span>
         <span class="nv">notable</span>
@@ -317,7 +320,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-07" data-msgid="1074" data-search="jreyenga/ebf jreyenga ebf elliptical basis function interpolation library for smooth fits to scattered data learns per-node anisotropic distance metrics python ai &amp; ml  interpolation radial-basis-function regression scattered-data-interpolation surrogate-models tensorflow">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="Model training" data-date="2026-08-07" data-msgid="1074">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jreyenga__ebf.html">EBF</a></span>
         <span class="nv">notable</span>
@@ -325,11 +328,11 @@ a:hover{text-decoration:underline}
       <p class="card-sum">Elliptical Basis Function interpolation library for smooth fits to scattered data</p>
       <p class="card-why">Learns per-node anisotropic distance metrics</p>
       <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">interpolation</span><span class="tag">radial-basis-function</span></div>
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">Model training</span><span class="tag">interpolation</span><span class="tag">radial-basis-function</span></div>
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="8" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-08-07" data-msgid="1073" data-search="nicco-b/ppmgauge nicco b ppmgauge cloudflare‑hosted coffee water chemistry calculator and logbook live, self‑calibrating, ai‑enhanced brew tool typescript apps &amp; productivity ">
+    <article class="card" data-lang="typescript" data-novelty="8" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-08-07" data-msgid="1073">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nicco-b__ppmgauge.html">ppmgauge</a></span>
         <span class="nv hi">rare find</span>
@@ -341,7 +344,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-08-07" data-msgid="1072" data-search="clementchapalain/ici-ou-la clementchapalain ici ou la a daily french geolocation game that scrapes news and challenges players to locate places automates article selection, geocoding, and daily site updates python apps &amp; productivity ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-08-07" data-msgid="1072">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/clementchapalain__ici-ou-la.html">ici-ou-la</a></span>
         <span class="nv">notable</span>
@@ -353,7 +356,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="php" data-novelty="7" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-08-07" data-msgid="1071" data-search="ledoent/anvil-media-gcs ledoent anvil media gcs keyless wordpress media offload to google cloud storage no service‑account keys, uses workload identity php web &amp; frontend  gcs gke google-cloud-storage kubernetes media-offload php wordpress workload-identity">
+    <article class="card" data-lang="php" data-novelty="7" data-cat="Web &amp; Frontend" data-sub="More" data-date="2026-08-07" data-msgid="1071">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ledoent__anvil-media-gcs.html">anvil-media-gcs</a></span>
         <span class="nv">notable</span>
@@ -365,7 +368,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-08-06" data-msgid="1070" data-search="cosi12/aiquantlab cosi12 aiquantlab aiquantlab: a correctness‑first framework for ingesting and validating market data ensures clean, reproducible datasets for quantitative research python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-08-06" data-msgid="1070">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/cosi12__aiquantlab.html">AIQuantLab</a></span>
         <span class="nv">notable</span>
@@ -377,7 +380,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">4d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="php" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-08-06" data-msgid="1069" data-search="tune-lab/laravel-stripe-payments tune lab laravel stripe payments production-ready laravel stripe payments module with idempotency, webhook verification, and queue processing handles real production concerns like duplicate charges, race conditions, and fake webhooks php backend &amp; apis ">
+    <article class="card" data-lang="php" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-08-06" data-msgid="1069">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tune-lab__laravel-stripe-payments.html">Laravel-Stripe-Payments</a></span>
         <span class="nv">notable</span>
@@ -389,7 +392,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">4d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-08-06" data-msgid="1068" data-search="gredrah/dragons-carer gredrah dragons carer discord bot automating torn revive storefront with fair reviver assignment handles requests, assignment, and role syncing automatically python apps &amp; productivity ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-08-06" data-msgid="1068">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/gredrah__dragons-carer.html">dragons-carer</a></span>
         <span class="nv">notable</span>
@@ -401,7 +404,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">4d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="7" data-cat="DevOps &amp; Infra" data-sub="" data-date="2026-08-05" data-msgid="1067" data-search="aman7554/api-monitoring aman7554 api monitoring pulsewatch: production‑grade api monitoring and observability platform full‑stack monitoring with workers, redis queue, prometheus metrics go devops &amp; infra ">
+    <article class="card" data-lang="go" data-novelty="7" data-cat="DevOps &amp; Infra" data-sub="More" data-date="2026-08-05" data-msgid="1067">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/aman7554__api-monitoring.html">api-monitoring</a></span>
         <span class="nv">notable</span>
@@ -413,7 +416,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">5d ago</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-04" data-msgid="1066" data-search="jessfrt/tnu jessfrt tnu deterministic, explainable multilingual translation via numeric ontology provides traceable semantic matches across languages python ai &amp; ml ">
+    <article class="card archived" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-04" data-msgid="1066">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jessfrt__tnu.html">TNU</a></span>
         <span class="nv">notable</span>
@@ -425,7 +428,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">6d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-04" data-msgid="1065" data-search="tan-o/vscode-manim-notebook tan o vscode manim notebook vs code extension for editing and rendering manim notebooks seamless manim animation workflow inside .manim.ipynb files typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-04" data-msgid="1065">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tan-o__vscode-manim-notebook.html">vscode-manim-notebook</a></span>
         <span class="nv">notable</span>
@@ -437,7 +440,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">6d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="8" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-08-04" data-msgid="1064" data-search="gillworks/red-sands gillworks red sands procedurally generated open‑world western game that runs fully in a browser all assets generated at runtime, no external files javascript web &amp; frontend ">
+    <article class="card" data-lang="javascript" data-novelty="8" data-cat="Web &amp; Frontend" data-sub="More" data-date="2026-08-04" data-msgid="1064">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/gillworks__red-sands.html">red-sands</a></span>
         <span class="nv hi">rare find</span>
@@ -449,7 +452,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">6d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-08-03" data-msgid="1063" data-search="jmfrnsn/ornament-catalog jmfrnsn ornament catalog next.js catalog site for historical ornament research searchable, admin‑managed ornament database typescript web &amp; frontend ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="More" data-date="2026-08-03" data-msgid="1063">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jmfrnsn__ornament-catalog.html">ornament-catalog</a></span>
         <span class="nv">notable</span>
@@ -461,7 +464,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">1w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-08-03" data-msgid="1062" data-search="gavinzanejesses/qq-group-assistant gavinzanejesses qq group assistant a configurable qq group management assistant for automated moderation automates group rules, audits, and ai q&amp;a python apps &amp; productivity ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-08-03" data-msgid="1062">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/gavinzanejesses__qq-group-assistant.html">qq-group-assistant</a></span>
         <span class="nv">notable</span>

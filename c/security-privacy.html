@@ -137,6 +137,9 @@ a:hover{text-decoration:underline}
 .hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
 .hero .metrics strong{color:var(--accent);font-weight:700}
 .hero .metric-sep{opacity:.4}
+.hero .metric-note{opacity:.55;font-size:11px}
+.filters-sub{margin-top:6px}
+.chip .chip-n{opacity:.5;font-size:10px;margin-left:3px}
 .hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
 .hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
 .hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
@@ -191,8 +194,14 @@ a:hover{text-decoration:underline}
   </div>
   <div class="filters" id="filters">
     <span class="chip on" data-filter="lang" data-val="">All languages</span>
-    <span class="chip" data-filter="lang" data-val="c">C</span><span class="chip" data-filter="lang" data-val="go">Go</span><span class="chip" data-filter="lang" data-val="java">Java</span><span class="chip" data-filter="lang" data-val="javascript">JavaScript</span><span class="chip" data-filter="lang" data-val="php">PHP</span><span class="chip" data-filter="lang" data-val="python">Python</span>
+    <span class="chip" data-filter="lang" data-val="python">Python</span><span class="chip" data-filter="lang" data-val="go">Go</span><span class="chip" data-filter="lang" data-val="javascript">JavaScript</span><span class="chip" data-filter="lang" data-val="rust">Rust</span><span class="chip" data-filter="lang" data-val="swift">Swift</span><span class="chip" data-filter="lang" data-val="typescript">TypeScript</span>
     <span class="chip" data-filter="novelty" data-val="7">rare finds</span>
+  </div>
+  <div class="filters filters-sub" id="subfilters">
+    <span class="chip on" data-filter="sub" data-val="">All kinds</span>
+    <span class="chip" data-filter="sub" data-val="Privacy tools">Privacy tools <span class="chip-n">1</span></span>
+    <span class="chip" data-filter="sub" data-val="Scanning &amp; audit">Scanning &amp; audit <span class="chip-n">1</span></span>
+    <span class="chip" data-filter="sub" data-val="More">More <span class="chip-n">38</span></span>
   </div>
   <div class="sortbar">
     <span class="sortlbl">sort:</span>
@@ -203,9 +212,50 @@ a:hover{text-decoration:underline}
   <div id="searchresults" style="display:none"></div>
   <div id="noresults" class="empty" style="display:none">Nothing matches — try a different search.</div>
   <section data-section>
-
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">Privacy tools</h2>
+      <span class="meta">1</span>
+    </div>
     <div class="grid">
-    <article class="card" data-lang="zig" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-13" data-msgid="791" data-search="myzonerocks/libsignal-zig myzonerocks libsignal zig zig signal protocol library with c api for cross‑language use zero‑runtime, portable signal crypto without rust zig security &amp; privacy ">
+    <article class="card archived" data-lang="go" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="Privacy tools" data-date="2026-05-31" data-msgid="501">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/shieldnet-360__secure-edge-dlp.html">secure-edge-dlp</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Privacy‑first AI DLP agent that blocks secrets on desktop in seconds</p>
+      <p class="card-why">Zero‑data, real‑time secret detection</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Go</span><span class="tag sub">Privacy tools</span><span class="tag">ai-security</span><span class="tag">browser-extension</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">2026-05-31</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">Scanning &amp; audit</h2>
+      <span class="meta">1</span>
+    </div>
+    <div class="grid">
+    <article class="card archived" data-lang="python" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="Scanning &amp; audit" data-date="2026-06-15" data-msgid="828">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ocelotbr-decobr__pentest-ai-guardian.html">pentest-ai-guardian</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Open-source security guardian that scans, audits, and hardens multi‑stack code</p>
+      <p class="card-why">Combines Semgrep rules, fixtures, anti‑drift checks, and DAST</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">Scanning &amp; audit</span><span class="tag">appsec</span><span class="tag">cwe</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">2026-06-15</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">More</h2>
+      <span class="meta">38</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="zig" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-13" data-msgid="791">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/myzonerocks__libsignal-zig.html">libsignal-zig</a></span>
         <span class="nv hi">rare find</span>
@@ -217,19 +267,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-13</span>
       </div>
     </article>
-    <article class="card archived" data-lang="go" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="501" data-search="shieldnet-360/secure-edge-dlp shieldnet 360 secure edge dlp privacy‑first ai dlp agent that blocks secrets on desktop in seconds zero‑data, real‑time secret detection go security &amp; privacy  ai-security browser-extension data-loss-prevention dlp electron endpoint-security golang llm-security privacy security">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/shieldnet-360__secure-edge-dlp.html">secure-edge-dlp</a></span>
-        <span class="nv hi">rare find</span>
-      </div>
-      <p class="card-sum">Privacy‑first AI DLP agent that blocks secrets on desktop in seconds</p>
-      <p class="card-why">Zero‑data, real‑time secret detection</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Go</span><span class="tag">ai-security</span><span class="tag">browser-extension</span><span class="archived-tag">archived</span></div>
-        <span class="card-when">2026-05-31</span>
-      </div>
-    </article>
-    <article class="card" data-lang="" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-27" data-msgid="273" data-search="yui9696/sqisign-cabpn-artifact yui9696 sqisign cabpn artifact ca-bpn: cache-aware batch-size policy improves constant-time normalization  security &amp; privacy ">
+    <article class="card" data-lang="" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-27" data-msgid="273">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/yui9696__sqisign-cabpn-artifact.html">sqisign-cabpn-artifact</a></span>
         <span class="nv hi">rare find</span>
@@ -241,7 +279,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-27</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-24" data-msgid="165" data-search="deadrootsec/ghostgate deadrootsec ghostgate ghostgate: a local mcp security gateway that blocks risky ai tool calls real-time policy, audit, and redaction for ai agents python security &amp; privacy ">
+    <article class="card archived" data-lang="python" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-24" data-msgid="165">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/deadrootsec__ghostgate.html">ghostgate</a></span>
         <span class="nv hi">rare find</span>
@@ -253,7 +291,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-08-10" data-msgid="1178" data-search="marker-inc-korea/sessionsleuth marker inc korea sessionsleuth sessionsleuth: forensic audit tool for ai coding agents&#x27; sessions verifies ai agent actions and completions python security &amp; privacy  ai-agent claude-code code-review codex developer-tools forensics python security">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-08-10" data-msgid="1178">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/marker-inc-korea__sessionsleuth.html">sessionsleuth</a></span>
         <span class="nv">notable</span>
@@ -265,7 +303,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">today</span>
       </div>
     </article>
-    <article class="card" data-lang="swift" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-08-09" data-msgid="1147" data-search="ul0gic/swift-mitm ul0gic swift mitm embeddable swift tls interception proxy for traffic inspection ready‑made mitm engine for swift developers swift security &amp; privacy  proxy security-testing swift swift-nio tls">
+    <article class="card" data-lang="swift" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-08-09" data-msgid="1147">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ul0gic__swift-mitm.html">swift-mitm</a></span>
         <span class="nv">notable</span>
@@ -277,7 +315,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-08-09" data-msgid="1167" data-search="echoomegaprime/echo-vault echoomegaprime echo vault secure, self‑hosted secrets vault with signed clients and tamper‑evident audit. aes‑256‑gcm, replay‑proof, audit chain. python security &amp; privacy  aes-gcm devops fastapi secrets-management security self-hosted sqlite zero-trust">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-08-09" data-msgid="1167">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/echoomegaprime__echo-vault.html">echo-vault</a></span>
         <span class="nv">notable</span>
@@ -289,7 +327,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-08-07" data-msgid="1102" data-search="skonuru8/aadhaar-validation skonuru8 aadhaar validation local aadhaar card validator that checks qr code and ocr consistency offline verifies id authenticity without sending data python security &amp; privacy ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-08-07" data-msgid="1102">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/skonuru8__aadhaar-validation.html">aadhaar-validation</a></span>
         <span class="nv">notable</span>
@@ -301,7 +339,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-07-04" data-msgid="979" data-search="yan4q/leakguard yan4q leakguard leakguard: fastapi &amp; telegram bot for domain data‑leak checks combines multiple leak sources with a simple ui python security &amp; privacy ">
+    <article class="card archived" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-07-04" data-msgid="979">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/yan4q__leakguard.html">leakguard</a></span>
         <span class="nv">notable</span>
@@ -313,7 +351,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-04</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-30" data-msgid="939" data-search="segfo/xera-osint-framework segfo xera osint framework xera osint framework automates passive web and dark‑web investigations integrates llm, tor, and search apis for end‑to‑end osint python security &amp; privacy ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-30" data-msgid="939">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/segfo__xera-osint-framework.html">XERA-OSINT-Framework</a></span>
         <span class="nv">notable</span>
@@ -325,7 +363,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-30</span>
       </div>
     </article>
-    <article class="card" data-lang="php" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-27" data-msgid="913" data-search="tnsk/vulnweb tnsk vulnweb deliberately vulnerable php app for owasp security training hands‑on labs with graded difficulty and diff view php security &amp; privacy  hacking-tool owasp owasp-top-10 training">
+    <article class="card" data-lang="php" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-27" data-msgid="913">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tnsk__vulnweb.html">vulnweb</a></span>
         <span class="nv">notable</span>
@@ -337,7 +375,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-27</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-22" data-msgid="889" data-search="fazalrshah/airlock fazalrshah airlock airlock: deterministic egress gate for locked‑down llm agents enforces single‑domain, fail‑closed browsing for ai agents python security &amp; privacy  agent-security ai-safety llm-agents local-first mcp model-context-protocol playwright">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-22" data-msgid="889">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/fazalrshah__airlock.html">airlock</a></span>
         <span class="nv">notable</span>
@@ -349,7 +387,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-22</span>
       </div>
     </article>
-    <article class="card" data-lang="java" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-14" data-msgid="812" data-search="ma3s1r0/vouchq ma3s1r0 vouchq vouchq – self‑hosted trust registry that pins ai tool definitions and detects drift ensures ai tools stay unchanged, flags tampering java security &amp; privacy  agent-governance ai-agent-security mcp model-context-protocol postgresql rug-pull self-hosted spring-boot supply-chain-security tool-poisoning">
+    <article class="card" data-lang="java" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-14" data-msgid="812">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ma3s1r0__vouchq.html">Vouchq</a></span>
         <span class="nv">notable</span>
@@ -361,7 +399,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-14</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-11" data-msgid="762" data-search="ensombl/oauth-redirect-worker ensombl oauth redirect worker cloudflare worker that validates oauth redirect uris ensures safe oauth callbacks, prevents open redirects typescript security &amp; privacy ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-11" data-msgid="762">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ensombl__oauth-redirect-worker.html">oauth-redirect-worker</a></span>
         <span class="nv">notable</span>
@@ -373,7 +411,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-11</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-07" data-msgid="702" data-search="pnms2026/shadowrepo-shield pnms2026 shadowrepo shield local-first web3 repo scanner detecting malicious scripts and solidity risks runs locally, no data upload, anchors proofs on-chain rust security &amp; privacy ">
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-07" data-msgid="702">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/pnms2026__shadowrepo-shield.html">shadowrepo-shield</a></span>
         <span class="nv">notable</span>
@@ -385,7 +423,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-06" data-msgid="653" data-search="jaradat13/aegis jaradat13 aegis aegis ir: offline incident response tool for air‑gapped socs works without network, signs audit logs python security &amp; privacy  air-gapped dfir forensic-triage incident-response offline-first python-cli security-automation security-tools">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-06" data-msgid="653">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jaradat13__aegis.html">aegis</a></span>
         <span class="nv">notable</span>
@@ -397,7 +435,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-06" data-msgid="675" data-search="huzaifaisavailable/orchsec-hackathon huzaifaisavailable orchsec hackathon orchsec: runtime firewall that blocks unsafe ai agent actions enforces policies before any real-world effect python security &amp; privacy ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-06" data-msgid="675">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/huzaifaisavailable__orchsec-hackathon.html">orchsec-hackathon</a></span>
         <span class="nv">notable</span>
@@ -409,7 +447,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-06" data-msgid="676" data-search="mizcausevic-dev/watermark-robustness-lab mizcausevic dev watermark robustness lab interactive web lab visualizing ai watermark robustness client‑side simulation, no backend, shows watermark fragility typescript security &amp; privacy  ai-governance ai-provenance ai-safety c2pa content-credentials educational react trust-and-safety vite watermarking">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-06" data-msgid="676">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mizcausevic-dev__watermark-robustness-lab.html">watermark-robustness-lab</a></span>
         <span class="nv">notable</span>
@@ -421,7 +459,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="497" data-search="iammalath/smart-honeypot iammalath smart honeypot smart honeypot capturing attacker http behavior with mitre mapping full request logs, deterministic classification, live dashboard  security &amp; privacy ">
+    <article class="card" data-lang="" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-31" data-msgid="497">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/iammalath__smart-honeypot.html">smart-honeypot</a></span>
         <span class="nv">notable</span>
@@ -433,7 +471,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="551" data-search="aashish-thapa/lanscope aashish thapa lanscope passive ebpf-powered lan device fingerprinting and anomaly detection real-time device id and anomaly alerts rust security &amp; privacy  anomaly-detection ebpf iot-device-fingerprinting">
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-31" data-msgid="551">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/aashish-thapa__lanscope.html">lanscope</a></span>
         <span class="nv">notable</span>
@@ -445,7 +483,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-30" data-msgid="421" data-search="allod-solutions/go-wam allod solutions go wam pure‑go library for silent azure ad token acquisition via windows wam no cgo, direct winrt calls go security &amp; privacy ">
+    <article class="card" data-lang="go" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-30" data-msgid="421">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/allod-solutions__go-wam.html">go-wam</a></span>
         <span class="nv">notable</span>
@@ -457,7 +495,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="c" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-30" data-msgid="452" data-search="c3t3lina/ios-vm-research-1 c3t3lina ios vm research 1 ios vm toolchain for parsing, mutating, and patching apple device trees cli utilities for device‑tree hacking in qemu c security &amp; privacy ">
+    <article class="card" data-lang="c" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-30" data-msgid="452">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/c3t3lina__ios-vm-research-1.html">ios-vm-research-1</a></span>
         <span class="nv">notable</span>
@@ -469,7 +507,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-29" data-msgid="393" data-search="tocconsulting/ec2-security-scanner tocconsulting ec2 security scanner aws ec2 security scanner with multi‑threaded checks and compliance reports comprehensive, ready‑to‑run tool for ec2 hardening python security &amp; privacy ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-29" data-msgid="393">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tocconsulting__ec2-security-scanner.html">ec2-security-scanner</a></span>
         <span class="nv">notable</span>
@@ -481,7 +519,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-08-08" data-msgid="1119" data-search="xeqmfoundation/xeqm-wallet xeqmfoundation xeqm wallet xeqm wallet – a non‑custodial desktop wallet for the xeqm privacy network provides secure, self‑hosted crypto management javascript security &amp; privacy  cryptocurrency desktop-wallet documentation non-costodial privacy-coin stealt-addresses wallet wxeq xeqm xeqm-labs xeqm-wallet xeqmwallet">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-08-08" data-msgid="1119">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/xeqmfoundation__xeqm-wallet.html">XEQM-Wallet</a></span>
         <span class="nv">notable</span>
@@ -493,7 +531,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-08-08" data-msgid="1124" data-search="adjent-dev/adjent adjent dev adjent adjent: cli for mcp server conformance and signed log verification fast, zero-dep go tool for secure agent logs go security &amp; privacy  agent-infrastructure ai-agents conformance golang mcp model-context-protocol oauth2 rfc8707 rfc9728 security">
+    <article class="card" data-lang="go" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-08-08" data-msgid="1124">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/adjent-dev__adjent.html">adjent</a></span>
         <span class="nv">notable</span>
@@ -505,7 +543,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="swift" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-08-07" data-msgid="1095" data-search="seemoo-lab/magiccode seemoo lab magiccode ios app to generate and scan apple watch pairing magic codes via private visualpairing framework demonstrates and tests apple watch pairing security vulnerabilities swift security &amp; privacy ">
+    <article class="card" data-lang="swift" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-08-07" data-msgid="1095">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/seemoo-lab__magiccode.html">magiccode</a></span>
         <span class="nv">notable</span>
@@ -517,7 +555,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-27" data-msgid="919" data-search="ksj0104/myainote ksj0104 myainote a browser‑based hacking simulation game teaching unix commands interactive terminal game for learning security basics javascript security &amp; privacy ">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-27" data-msgid="919">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ksj0104__myainote.html">MyAINote</a></span>
         <span class="nv">notable</span>
@@ -529,7 +567,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-27</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-16" data-msgid="835" data-search="nikoxkx/siem-lite nikoxkx siem lite lightweight siem for real-time log correlation and alerting ready‑to‑run siem with dashboard and built‑in rules python security &amp; privacy ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-16" data-msgid="835">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nikoxkx__siem-lite.html">SIEM-LITE</a></span>
         <span class="nv">notable</span>
@@ -541,19 +579,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-16</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-15" data-msgid="828" data-search="ocelotbr-decobr/pentest-ai-guardian ocelotbr decobr pentest ai guardian open-source security guardian that scans, audits, and hardens multi‑stack code combines semgrep rules, fixtures, anti‑drift checks, and dast python security &amp; privacy  appsec cwe defensive-security devsecops fastapi llm-security mcp nextjs owasp prompt-injection sast security semgrep static-analysis vibecoding">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/ocelotbr-decobr__pentest-ai-guardian.html">pentest-ai-guardian</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Open-source security guardian that scans, audits, and hardens multi‑stack code</p>
-      <p class="card-why">Combines Semgrep rules, fixtures, anti‑drift checks, and DAST</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">appsec</span><span class="tag">cwe</span><span class="archived-tag">archived</span></div>
-        <span class="card-when">2026-06-15</span>
-      </div>
-    </article>
-    <article class="card" data-lang="shell" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-12" data-msgid="775" data-search="xyzmean/m9-routes xyzmean m9 routes wireguard routing helper scripts for policy‑based traffic splits automates nft set updates for selective vpn routing shell security &amp; privacy ">
+    <article class="card" data-lang="shell" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-12" data-msgid="775">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/xyzmean__m9-routes.html">m9-routes</a></span>
         <span class="nv">notable</span>
@@ -565,7 +591,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-12</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-08" data-msgid="713" data-search="x1a0q1sx/github-security-monitor x1a0q1sx github security monitor github security monitor – auto‑track cves and repo activity via actions runs on github actions, no server needed python security &amp; privacy ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-08" data-msgid="713">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/x1a0q1sx__github-security-monitor.html">github-security-monitor</a></span>
         <span class="nv">notable</span>
@@ -577,7 +603,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-08</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-07" data-msgid="699" data-search="dhirajnyse/answerseal dhirajnyse answerseal security questionnaire copilot that seals answers to approved evidence streamlines enterprise deal processes by linking answers to verified sources javascript security &amp; privacy  ai-copilot b2b-saas compliance evidence iso27001 security-questionnaire soc2 vendor-security">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-07" data-msgid="699">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/dhirajnyse__answerseal.html">answerseal</a></span>
         <span class="nv">notable</span>
@@ -589,7 +615,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-06-01" data-msgid="561" data-search="fortresscommunity/fortress-ws fortresscommunity fortress ws enterprise websocket gateway with rust threat detection combines go routing with rust scanning for secure websockets go security &amp; privacy ">
+    <article class="card" data-lang="go" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-06-01" data-msgid="561">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/fortresscommunity__fortress-ws.html">fortress-ws</a></span>
         <span class="nv">notable</span>
@@ -601,7 +627,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-01</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="479" data-search="hhoangsonnw/c2detector hhoangsonnw c2detector c2detector: dfir tool that extracts c2 traffic from pcap files detects havoc/nimplant c2, auto-decrypts payloads  security &amp; privacy ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-31" data-msgid="479">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/hhoangsonnw__c2detector.html">C2Detector</a></span>
         <span class="nv">notable</span>
@@ -613,7 +639,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="546" data-search="aronpaaul/compotprotector aronpaaul compotprotector rust-based windows pe protector with encryption and virtualization provides layered obfuscation and anti‑analysis for windows binaries rust security &amp; privacy  anti-debug obfuscation packer pe protector reverse-engineering rust virtualization windows">
+    <article class="card" data-lang="rust" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-31" data-msgid="546">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/aronpaaul__compotprotector.html">CompotProtector</a></span>
         <span class="nv">notable</span>
@@ -625,7 +651,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-30" data-msgid="418" data-search="radejumo/security-architecture radejumo security architecture cloud security architecture designs enterprise-grade security  security &amp; privacy ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-30" data-msgid="418">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/radejumo__security-architecture.html">Security-Architecture</a></span>
         <span class="nv">notable</span>
@@ -637,7 +663,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-30" data-msgid="423" data-search="batban18/ban-compliance-audit batban18 ban compliance audit compliance audit tool simplifies compliance  security &amp; privacy ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-30" data-msgid="423">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/batban18__ban-compliance-audit.html">ban-compliance-audit</a></span>
         <span class="nv">notable</span>
@@ -649,7 +675,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-29" data-msgid="370" data-search="s-tech-labs/dmarc-inspector s tech labs dmarc inspector dmarc-inspector parses dmarc xml reports into readable tables cli turns dmarc aggregates into clear tables go security &amp; privacy ">
+    <article class="card" data-lang="go" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-29" data-msgid="370">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/s-tech-labs__dmarc-inspector.html">dmarc-inspector</a></span>
         <span class="nv">notable</span>
@@ -661,7 +687,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-28" data-msgid="318" data-search="redsecurityfr/shoposint redsecurityfr shoposint shoposint extracts merchant info from payment links silently automates osint on stripe, sumup, revolut, lydia  security &amp; privacy ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-28" data-msgid="318">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/redsecurityfr__shoposint.html">ShopOSINT</a></span>
         <span class="nv">notable</span>
@@ -673,7 +699,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-25" data-msgid="195" data-search="mcrich23/lakebed-proxy mcrich23 lakebed proxy lakebed proxy tool for mac: route traffic via lakebed with auto-deployment and wi-fi setup auto-deploys lakebed capsules rotates traffic configures wi-fi proxy javascript security &amp; privacy ">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-25" data-msgid="195">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mcrich23__lakebed-proxy.html">lakebed-proxy</a></span>
         <span class="nv">notable</span>
@@ -690,13 +716,13 @@ a:hover{text-decoration:underline}
 <script>
 (function(){
   var q=document.getElementById('q');
-  var chips=[].slice.call(document.querySelectorAll('#filters .chip'));
+  var chips=[].slice.call(document.querySelectorAll('#filters .chip,#subfilters .chip'));
   var sortChips=[].slice.call(document.querySelectorAll('.chip.sort'));
   var cards=[].slice.call(document.querySelectorAll('[data-section] .card'));
   var sections=[].slice.call(document.querySelectorAll('[data-section]'));
   var results=document.getElementById('searchresults');
   var noresults=document.getElementById('noresults');
-  var state={text:'',lang:'',novelty:0,sort:'best'};
+  var state={text:'',lang:'',sub:'',novelty:0,sort:'best'};
   var INDEX=null;   // загруженный search.json (ленивая загрузка при первом поиске)
 
   function cmp(a,b){
@@ -723,7 +749,8 @@ a:hover{text-decoration:underline}
     cards.forEach(function(c){
       var okL=!state.lang || c.dataset.lang===state.lang;
       var okN=!state.novelty || (parseInt(c.dataset.novelty||'0',10)>=state.novelty);
-      var ok=okL&&okN;
+      var okS=!state.sub || c.dataset.sub===state.sub;
+      var ok=okL&&okN&&okS;
       c.style.display=ok?'':'none';
       if(ok)shown++;
     });
@@ -751,6 +778,7 @@ a:hover{text-decoration:underline}
       summary:it.s||'', why:it.w||'', lang:it.l||'', novelty:it.n||0,
       badge:badgeOf(it.n),
       url:'p/'+jslug(owner)+'__'+jslug(name)+'.html',
+      x:(it.x||'').toLowerCase(),
       q:(repo+' '+flat+' '+(it.s||'')+' '+(it.w||'')+' '+(it.l||'')+' '+(it.x||'')).toLowerCase()
     };
   }
@@ -779,6 +807,7 @@ a:hover{text-decoration:underline}
     var matched=INDEX.items.filter(function(it){
       if(t && (it.q||'').indexOf(t)===-1) return false;
       if(state.lang && (it.lang||'').toLowerCase()!==state.lang) return false;
+      if(state.sub && (it.x||'').indexOf(state.sub.toLowerCase())<0) return false;
       if(state.novelty && (it.novelty||0)<state.novelty) return false;
       return true;
     });
@@ -820,6 +849,9 @@ a:hover{text-decoration:underline}
       if(f==='lang'){
         chips.filter(function(x){return x.dataset.filter==='lang';}).forEach(function(x){x.classList.remove('on');});
         ch.classList.add('on');state.lang=v;
+      } else if(f==='sub'){
+        chips.filter(function(x){return x.dataset.filter==='sub';}).forEach(function(x){x.classList.remove('on');});
+        ch.classList.add('on');state.sub=v;
       } else if(f==='novelty'){
         ch.classList.toggle('on');
         state.novelty=ch.classList.contains('on')?parseInt(v,10):0;

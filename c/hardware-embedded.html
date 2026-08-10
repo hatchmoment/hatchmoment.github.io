@@ -137,6 +137,9 @@ a:hover{text-decoration:underline}
 .hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
 .hero .metrics strong{color:var(--accent);font-weight:700}
 .hero .metric-sep{opacity:.4}
+.hero .metric-note{opacity:.55;font-size:11px}
+.filters-sub{margin-top:6px}
+.chip .chip-n{opacity:.5;font-size:10px;margin-left:3px}
 .hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
 .hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
 .hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
@@ -191,8 +194,14 @@ a:hover{text-decoration:underline}
   </div>
   <div class="filters" id="filters">
     <span class="chip on" data-filter="lang" data-val="">All languages</span>
-    <span class="chip" data-filter="lang" data-val="c">C</span><span class="chip" data-filter="lang" data-val="c++">C++</span><span class="chip" data-filter="lang" data-val="html">HTML</span><span class="chip" data-filter="lang" data-val="javascript">JavaScript</span><span class="chip" data-filter="lang" data-val="jupyter notebook">Jupyter Notebook</span><span class="chip" data-filter="lang" data-val="python">Python</span>
+    <span class="chip" data-filter="lang" data-val="python">Python</span><span class="chip" data-filter="lang" data-val="c++">C++</span><span class="chip" data-filter="lang" data-val="c">C</span><span class="chip" data-filter="lang" data-val="shell">Shell</span><span class="chip" data-filter="lang" data-val="html">HTML</span><span class="chip" data-filter="lang" data-val="javascript">JavaScript</span>
     <span class="chip" data-filter="novelty" data-val="7">rare finds</span>
+  </div>
+  <div class="filters filters-sub" id="subfilters">
+    <span class="chip on" data-filter="sub" data-val="">All kinds</span>
+    <span class="chip" data-filter="sub" data-val="IoT">IoT <span class="chip-n">5</span></span>
+    <span class="chip" data-filter="sub" data-val="Robotics">Robotics <span class="chip-n">2</span></span>
+    <span class="chip" data-filter="sub" data-val="More">More <span class="chip-n">36</span></span>
   </div>
   <div class="sortbar">
     <span class="sortlbl">sort:</span>
@@ -203,9 +212,12 @@ a:hover{text-decoration:underline}
   <div id="searchresults" style="display:none"></div>
   <div id="noresults" class="empty" style="display:none">Nothing matches — try a different search.</div>
   <section data-section>
-
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">IoT</h2>
+      <span class="meta">5</span>
+    </div>
     <div class="grid">
-    <article class="card" data-lang="c" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-08-09" data-msgid="1163" data-search="n30nex/neonpocketmc-rc52 n30nex neonpocketmc rc52 ble companion firmware with neonpocket ui for heltec rc52 devices ready‑to‑flash ui and ble for a niche hardware platform c hardware &amp; embedded  bluetooth-le embedded meshcore neonpocket nrf52840 radiocore rc52 sx1262">
+    <article class="card" data-lang="c" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="IoT" data-date="2026-08-09" data-msgid="1163">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/n30nex__neonpocketmc-rc52.html">NeonPocketMC-RC52</a></span>
         <span class="nv hi">rare find</span>
@@ -213,11 +225,97 @@ a:hover{text-decoration:underline}
       <p class="card-sum">BLE companion firmware with NeonPocket UI for Heltec RC52 devices</p>
       <p class="card-why">Ready‑to‑flash UI and BLE for a niche hardware platform</p>
       <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">C</span><span class="tag">bluetooth-le</span><span class="tag">embedded</span></div>
+        <div class="card-tags"><span class="tag lang">C</span><span class="tag sub">IoT</span><span class="tag">bluetooth-le</span><span class="tag">embedded</span></div>
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-08-08" data-msgid="1133" data-search="mcjelcom/ha-audio-control mcjelcom ha audio control home assistant integration to control rs232/network audio gear supports dozens of amps via profiles, no custom code needed python hardware &amp; embedded  amplifier audio hacs home-assistant home-automation homeassistant multi-zone rs232 serial">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="IoT" data-date="2026-08-08" data-msgid="1138">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/lucas-hochmann-rosa__garden-monitor-web.html">garden-monitor-web</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Garden Monitor Web – real-time IoT dashboard for garden sensor data</p>
+      <p class="card-why">Next.js UI wired to live ESP8266 readings</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag sub">IoT</span><span class="tag">automation</span><span class="tag">esp8266</span></div>
+        <span class="card-when">2d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="IoT" data-date="2026-08-07" data-msgid="1081">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/forgevolt__hexapod.html">Hexapod</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">ESP32‑S3 powered hexapod robot firmware for 18 Dynamixel servos</p>
+      <p class="card-why">Full‑featured walking robot with IK, gaits, self‑levelling</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span><span class="tag sub">IoT</span><span class="tag">arduino-ide</span><span class="tag">easyeda-pro</span></div>
+        <span class="card-when">3d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c++" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="IoT" data-date="2026-06-18" data-msgid="851">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/xiaopaoya__jellyframe.html">JellyFrame</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Compact C++ HTML/CSS/JS UI runtime for low‑power embedded and wearable devices</p>
+      <p class="card-why">Browser‑like UI without heavyweight browser overhead</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C++</span><span class="tag sub">IoT</span><span class="tag">browser-engine</span><span class="tag">cpp</span></div>
+        <span class="card-when">2026-06-18</span>
+      </div>
+    </article>
+    <article class="card" data-lang="c" data-novelty="5" data-cat="Hardware &amp; Embedded" data-sub="IoT" data-date="2026-05-30" data-msgid="400">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/xyurt__object-pool.html">object-pool</a></span>
+        <span class="nv">worth a look</span>
+      </div>
+      <p class="card-sum">C89 object pool library for fast, allocation‑free reuse</p>
+      <p class="card-why">Provides O(1) allocation without heap fragmentation</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">C</span><span class="tag sub">IoT</span><span class="tag">allocator</span><span class="tag">arena</span></div>
+        <span class="card-when">2026-05-30</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">Robotics</h2>
+      <span class="meta">2</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="Robotics" data-date="2026-08-08" data-msgid="1106">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/gksgpals__vision60-autonomy.html">vision60-autonomy</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">ROS2 autonomy stack for Vision60 disaster-response robot</p>
+      <p class="card-why">Integrates safety, perception, and communication recovery</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">Robotics</span><span class="tag">autonomous-robot</span><span class="tag">gazebo</span></div>
+        <span class="card-when">2d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="Robotics" data-date="2026-08-08" data-msgid="1134">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/michaelfowler1__autonomous-drone-sim.html">autonomous-drone-sim</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Autonomous drone simulator that maps environments and obeys English commands</p>
+      <p class="card-why">Local LLM‑driven navigation without external data</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">Robotics</span><span class="tag">autonomous-navigation</span><span class="tag">computer-vision</span></div>
+        <span class="card-when">2d ago</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">More</h2>
+      <span class="meta">36</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-08-08" data-msgid="1133">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mcjelcom__ha-audio-control.html">ha-audio-control</a></span>
         <span class="nv hi">rare find</span>
@@ -229,7 +327,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="c" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-13" data-msgid="783" data-search="pangin/ezflash-air-emulator pangin ezflash air emulator headless ez-flash air emulator for testing gba kernels runs hardware tests without a physical cartridge c hardware &amp; embedded ">
+    <article class="card" data-lang="c" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-13" data-msgid="783">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/pangin__ezflash-air-emulator.html">ezflash-air-emulator</a></span>
         <span class="nv hi">rare find</span>
@@ -241,7 +339,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-13</span>
       </div>
     </article>
-    <article class="card" data-lang="c++" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-02" data-msgid="592" data-search="norxs-tech/tsn-zonal-backbone norxs tech tsn zonal backbone asil-d tsn zonal backbone for nxp i.mx8x with network calculus latency verification production-grade, hard real-time network scheduling ip stack for sdv zonal architectures c++ hardware &amp; embedded  autosar ieee-802-1qbv macsec network-calculus nxp-imx8x tsn">
+    <article class="card" data-lang="c++" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-02" data-msgid="592">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/norxs-tech__tsn-zonal-backbone.html">tsn-zonal-backbone</a></span>
         <span class="nv hi">rare find</span>
@@ -253,7 +351,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-02</span>
       </div>
     </article>
-    <article class="card" data-lang="c" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-26" data-msgid="243" data-search="dmellok/tesserae-esp32-bin-client dmellok tesserae esp32 bin client battery‑powered esp32 firmware that pulls .bin frames via mqtt and paints a 13.3&quot; e‑paper panel low‑power, mqtt‑driven display for long‑term battery life c hardware &amp; embedded ">
+    <article class="card" data-lang="c" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-05-26" data-msgid="243">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/dmellok__tesserae-esp32-bin-client.html">tesserae-esp32-bin-client</a></span>
         <span class="nv hi">rare find</span>
@@ -265,7 +363,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-26</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-24" data-msgid="173" data-search="bingliangwithbots/thermalright-ai-hydronous-r1-screen-customizer bingliangwithbots thermalright ai hydronous r1 screen customizer linux usb driver &amp; screen customizer for thermalright ai hydronous r1 enables low‑power video playback on niche usb lcd python hardware &amp; embedded  hardware hydronous lcd linux mini-display thermalright usb usbdisplay">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-05-24" data-msgid="173">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/bingliangwithbots__thermalright-ai-hydronous-r1-screen-customizer.html">thermalright-ai-hydronous-r1-screen-customizer</a></span>
         <span class="nv hi">rare find</span>
@@ -277,7 +375,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-24" data-msgid="179" data-search="mokouliszt/fre800slmp mokouliszt fre800slmp python slmp client for mitsubishi freqrol‑e800 inverters zero‑dependency, high‑level api for bit/word access python hardware &amp; embedded ">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-05-24" data-msgid="179">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mokouliszt__fre800slmp.html">fre800slmp</a></span>
         <span class="nv hi">rare find</span>
@@ -289,7 +387,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-08-09" data-msgid="1156" data-search="kaibuildsai/kindle-for-whoop kaibuildsai kindle for whoop kindle whoop dashboard: turns a spare kindle into a low-power health monitor provides live whoop stats on e‑ink without exposing credentials javascript hardware &amp; embedded  e-ink health-dashboard kindle nodejs oauth2 self-hosted whoop">
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-08-09" data-msgid="1156">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/kaibuildsai__kindle-for-whoop.html">kindle-for-whoop</a></span>
         <span class="nv">notable</span>
@@ -301,43 +399,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-08-08" data-msgid="1106" data-search="gksgpals/vision60-autonomy gksgpals vision60 autonomy ros2 autonomy stack for vision60 disaster-response robot integrates safety, perception, and communication recovery python hardware &amp; embedded  autonomous-robot gazebo nav2 robotics ros2 vision60">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/gksgpals__vision60-autonomy.html">vision60-autonomy</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">ROS2 autonomy stack for Vision60 disaster-response robot</p>
-      <p class="card-why">Integrates safety, perception, and communication recovery</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">autonomous-robot</span><span class="tag">gazebo</span></div>
-        <span class="card-when">2d ago</span>
-      </div>
-    </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-08-08" data-msgid="1134" data-search="michaelfowler1/autonomous-drone-sim michaelfowler1 autonomous drone sim autonomous drone simulator that maps environments and obeys english commands local llm‑driven navigation without external data python hardware &amp; embedded  autonomous-navigation computer-vision drone llm occupancy-grid ollama path-planning pybullet quadrotor robotics simulation slam">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/michaelfowler1__autonomous-drone-sim.html">autonomous-drone-sim</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Autonomous drone simulator that maps environments and obeys English commands</p>
-      <p class="card-why">Local LLM‑driven navigation without external data</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">autonomous-navigation</span><span class="tag">computer-vision</span></div>
-        <span class="card-when">2d ago</span>
-      </div>
-    </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-08-08" data-msgid="1138" data-search="lucas-hochmann-rosa/garden-monitor-web lucas hochmann rosa garden monitor web garden monitor web – real-time iot dashboard for garden sensor data next.js ui wired to live esp8266 readings typescript hardware &amp; embedded  automation esp8266 garden iot neon nextjs ph postgresql react tailwindcss vercel">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/lucas-hochmann-rosa__garden-monitor-web.html">garden-monitor-web</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Garden Monitor Web – real-time IoT dashboard for garden sensor data</p>
-      <p class="card-why">Next.js UI wired to live ESP8266 readings</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag">automation</span><span class="tag">esp8266</span></div>
-        <span class="card-when">2d ago</span>
-      </div>
-    </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-08-08" data-msgid="1145" data-search="anoosantoos-creator/pc-fan-airflow-guide anoosantoos creator pc fan airflow guide parametric 3d printable airflow guides for 120 mm pc fans with cfd validation ready-to-print cad plus cfd analysis for fan airflow improvement python hardware &amp; embedded ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-08-08" data-msgid="1145">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/anoosantoos-creator__pc-fan-airflow-guide.html">PC-Fan-Airflow-Guide</a></span>
         <span class="nv">notable</span>
@@ -349,19 +411,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="c++" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-08-07" data-msgid="1081" data-search="forgevolt/hexapod forgevolt hexapod esp32‑s3 powered hexapod robot firmware for 18 dynamixel servos full‑featured walking robot with ik, gaits, self‑levelling c++ hardware &amp; embedded  arduino-ide easyeda-pro esp32 fusion360 hexapod robot">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/forgevolt__hexapod.html">Hexapod</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">ESP32‑S3 powered hexapod robot firmware for 18 Dynamixel servos</p>
-      <p class="card-why">Full‑featured walking robot with IK, gaits, self‑levelling</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">C++</span><span class="tag">arduino-ide</span><span class="tag">easyeda-pro</span></div>
-        <span class="card-when">3d ago</span>
-      </div>
-    </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-08-07" data-msgid="1090" data-search="slac-ml/agentic-runs slac ml agentic runs tool to parse and visualize slac accelerator tuning runs for reproducible research turns raw optimizer data into ready‑to‑publish figures python hardware &amp; embedded ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-08-07" data-msgid="1090">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/slac-ml__agentic-runs.html">agentic-runs</a></span>
         <span class="nv">notable</span>
@@ -373,7 +423,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-23" data-msgid="1042" data-search="swaroopsahoo4908/wyvern-e swaroopsahoo4908 wyvern e raspberry pi pico‑based active thrust‑vector control for hobby rockets embedded tvc firmware with simulations and docs python hardware &amp; embedded ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-07-23" data-msgid="1042">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/swaroopsahoo4908__wyvern-e.html">WYVERN-E</a></span>
         <span class="nv">notable</span>
@@ -385,7 +435,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-18" data-msgid="1028" data-search="openkeiko/openkeiko-fw openkeiko openkeiko fw openkeiko firmware: open-source micropython firmware for dual rp2040 hardware control ready‑to‑flash firmware for experimental hardware python hardware &amp; embedded ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-07-18" data-msgid="1028">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/openkeiko__openkeiko-fw.html">openkeiko-fw</a></span>
         <span class="nv">notable</span>
@@ -397,7 +447,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="shell" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-14" data-msgid="1014" data-search="soc-labs/kria-260 soc labs kria 260 kr260 board recovery scripts for headless boot and reboot fixes practical fixes and automated recovery for amd kr260 boards shell hardware &amp; embedded ">
+    <article class="card" data-lang="shell" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-07-14" data-msgid="1014">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/soc-labs__kria-260.html">Kria-260</a></span>
         <span class="nv">notable</span>
@@ -409,7 +459,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-05" data-msgid="982" data-search="alexherington/flipper-nfc alexherington flipper nfc cli to read/write nfc tags via flipper zero over usb enables nfc tag ops without using flipper&#x27;s ui python hardware &amp; embedded  cli flipper-zero nfc python usb">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-07-05" data-msgid="982">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/alexherington__flipper-nfc.html">flipper-nfc</a></span>
         <span class="nv">notable</span>
@@ -421,7 +471,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-05</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-04" data-msgid="967" data-search="fredmessinger2/xtce-sim fredmessinger2 xtce sim python cli that simulates ccsds satellite telemetry from xtce files runs a full ccsds packet simulator from a single xtce definition python hardware &amp; embedded ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-07-04" data-msgid="967">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/fredmessinger2__xtce-sim.html">xtce-sim</a></span>
         <span class="nv">notable</span>
@@ -433,7 +483,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-04</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-27" data-msgid="907" data-search="szymontex/protel99-to-kicad szymontex protel99 to kicad convert legacy protel 99 se pcb files to kicad pure‑python parser, zero dependencies, cli conversion python hardware &amp; embedded ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-27" data-msgid="907">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/szymontex__protel99-to-kicad.html">protel99-to-kicad</a></span>
         <span class="nv">notable</span>
@@ -445,7 +495,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-27</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-21" data-msgid="879" data-search="gurnoorssandhu/vision_modal gurnoorssandhu vision modal real-time vision-based obstacle detection &amp; avoidance for laptop and raspberry pi physics‑informed pipeline with low‑latency detection python hardware &amp; embedded ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-21" data-msgid="879">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/gurnoorssandhu__vision_modal.html">vision_modal</a></span>
         <span class="nv">notable</span>
@@ -457,19 +507,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-21</span>
       </div>
     </article>
-    <article class="card" data-lang="c++" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-18" data-msgid="851" data-search="xiaopaoya/jellyframe xiaopaoya jellyframe compact c++ html/css/js ui runtime for low‑power embedded and wearable devices browser‑like ui without heavyweight browser overhead c++ hardware &amp; embedded  browser-engine cpp css embedded framebuffer html javascript jerryscript source-available ui-runtime wearable">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/xiaopaoya__jellyframe.html">JellyFrame</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Compact C++ HTML/CSS/JS UI runtime for low‑power embedded and wearable devices</p>
-      <p class="card-why">Browser‑like UI without heavyweight browser overhead</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">C++</span><span class="tag">browser-engine</span><span class="tag">cpp</span></div>
-        <span class="card-when">2026-06-18</span>
-      </div>
-    </article>
-    <article class="card" data-lang="html" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-06" data-msgid="659" data-search="skermiebrotech/rotorsketch skermiebrotech rotorsketch fpv build planner – web app for wiring diagrams, bom &amp; health checks offline, single-file tool for drone build planning html hardware &amp; embedded ">
+    <article class="card" data-lang="html" data-novelty="7" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-06" data-msgid="659">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/skermiebrotech__rotorsketch.html">RotorSketch</a></span>
         <span class="nv">notable</span>
@@ -481,7 +519,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="c" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-08-08" data-msgid="1107" data-search="longqt-sea/kundervolt longqt sea kundervolt kernel module to undervolt intel cpus even with secure boot enabled enables safe undervolting via sysfs c hardware &amp; embedded ">
+    <article class="card" data-lang="c" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-08-08" data-msgid="1107">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/longqt-sea__kundervolt.html">kundervolt</a></span>
         <span class="nv">notable</span>
@@ -493,7 +531,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-15" data-msgid="1017" data-search="ilidar-tof/ilidar-ros2 ilidar tof ilidar ros2 ros 2 drivers for ilidar itfs and itfs‑lite sensors ready‑to‑use ros 2 nodes delivering images and point clouds c++ hardware &amp; embedded ">
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-07-15" data-msgid="1017">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ilidar-tof__ilidar-ros2.html">ilidar-ros2</a></span>
         <span class="nv">notable</span>
@@ -505,7 +543,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-07-01" data-msgid="946" data-search="oldskool205/progress-claw-machine oldskool205 progress claw machine raspberry‑pi backend for arduino‑driven claw machines safety‑first controller with mock mode and api python hardware &amp; embedded ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-07-01" data-msgid="946">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/oldskool205__progress-claw-machine.html">progress-claw-machine</a></span>
         <span class="nv">notable</span>
@@ -517,7 +555,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-01</span>
       </div>
     </article>
-    <article class="card archived" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-30" data-msgid="941" data-search="tlibot-cn/tl_sdk tlibot cn tl sdk c++/c sdk for remote control of tl robot arm full tcp/ip control with examples and python bindings c++ hardware &amp; embedded ">
+    <article class="card archived" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-30" data-msgid="941">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tlibot-cn__tl_sdk.html">tl_sdk</a></span>
         <span class="nv">notable</span>
@@ -529,7 +567,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-30</span>
       </div>
     </article>
-    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-18" data-msgid="847" data-search="nexora-solution/embedded_code nexora solution embedded code esp32s3 firmware for nexbell door sensor and audio streaming ready‑to‑flash iot firmware with mqtt integration c++ hardware &amp; embedded ">
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-18" data-msgid="847">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nexora-solution__embedded_code.html">embedded_code</a></span>
         <span class="nv">notable</span>
@@ -541,7 +579,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-18</span>
       </div>
     </article>
-    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-15" data-msgid="830" data-search="fajarainda/xiaozhi fajarainda xiaozhi esp32‑powered ai chatbot with voice interaction and device control runs locally on esp32, integrates llms via mcp c++ hardware &amp; embedded ">
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-15" data-msgid="830">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/fajarainda__xiaozhi.html">xiaozhi</a></span>
         <span class="nv">notable</span>
@@ -553,7 +591,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-15</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-14" data-msgid="814" data-search="benleiber/labeldrop benleiber labeldrop labeldrop: lan fastapi server to print png/pdf labels on a munbyn itpp130b printer simple local print service for label files python hardware &amp; embedded ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-14" data-msgid="814">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/benleiber__labeldrop.html">labeldrop</a></span>
         <span class="nv">notable</span>
@@ -565,7 +603,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-14</span>
       </div>
     </article>
-    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-09" data-msgid="728" data-search="akhilvanka/kalman-filter akhilvanka kalman filter 9-state ekf for inertial navigation fusing gps, imu, and barometer stack‑only implementation with no heap allocation c++ hardware &amp; embedded  aerospace cpp kalman-filter navigation">
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-09" data-msgid="728">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/akhilvanka__kalman-filter.html">kalman-filter</a></span>
         <span class="nv">notable</span>
@@ -577,7 +615,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-09</span>
       </div>
     </article>
-    <article class="card" data-lang="c" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-07" data-msgid="693" data-search="aining0608-afk/cqu-2026-four-wheel-camera-team aining0608 afk cqu 2026 four wheel camera team four-wheel camera smart car firmware for infineon tc264 complete embedded control code for line‑following robot c hardware &amp; embedded ">
+    <article class="card" data-lang="c" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-07" data-msgid="693">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/aining0608-afk__cqu-2026-four-wheel-camera-team.html">CQU-2026-Four-Wheel-Camera-Team</a></span>
         <span class="nv">notable</span>
@@ -589,7 +627,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-06" data-msgid="643" data-search="dasylva950-creator/hc-sr04_alarm_shield dasylva950 creator hc sr04 alarm shield arduino uno r3 proximity alarm shield with custom kicad pcb layout combines ultrasonic sensor, buzzer, and led for proximity alerts c++ hardware &amp; embedded ">
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-06" data-msgid="643">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/dasylva950-creator__hc-sr04_alarm_shield.html">HC-SR04_Alarm_Shield</a></span>
         <span class="nv">notable</span>
@@ -601,7 +639,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card archived" data-lang="shell" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-06-06" data-msgid="650" data-search="echocard/echocard-mcu-525-flash echocard echocard mcu 525 flash flash utility and firmware binaries for echocard mcu 525 ready-to-use scripts to flash firmware on echocard boards shell hardware &amp; embedded ">
+    <article class="card archived" data-lang="shell" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-06-06" data-msgid="650">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/echocard__echocard-mcu-525-flash.html">EchoCard-MCU-525-Flash</a></span>
         <span class="nv">notable</span>
@@ -613,7 +651,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-30" data-msgid="410" data-search="djgringoboy2003/pandabreath-u1-bridge djgringoboy2003 pandabreath u1 bridge host‑side bridge for pandabreath and snapmaker u1, automating chamber heating real, working python tool for 3d printer owners python hardware &amp; embedded ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-05-30" data-msgid="410">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/djgringoboy2003__pandabreath-u1-bridge.html">pandabreath-u1-bridge</a></span>
         <span class="nv">notable</span>
@@ -625,7 +663,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="jupyter notebook" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-29" data-msgid="398" data-search="pitt-pekker-group/chainjpa pitt pekker group chainjpa simulation toolkit for realistic single‑port jpas provides physics‑accurate jpa models with imperfections jupyter notebook hardware &amp; embedded ">
+    <article class="card" data-lang="jupyter notebook" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-05-29" data-msgid="398">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/pitt-pekker-group__chainjpa.html">chainJPA</a></span>
         <span class="nv">notable</span>
@@ -637,7 +675,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-28" data-msgid="310" data-search="nitro2k01/hash-bench-gb-asm nitro2k01 hash bench gb asm gameboy hash benchmark asm optimization  hardware &amp; embedded ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-05-28" data-msgid="310">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nitro2k01__hash-bench-gb-asm.html">hash-bench-gb-asm</a></span>
         <span class="nv">notable</span>
@@ -649,7 +687,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-27" data-msgid="276" data-search="ssupt/drmcru ssupt drmcru linux drm/kms custom resolution utility solves custom mode issues  hardware &amp; embedded ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-05-27" data-msgid="276">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ssupt__drmcru.html">drmcru</a></span>
         <span class="nv">notable</span>
@@ -661,7 +699,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-27</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-27" data-msgid="278" data-search="yeahnoah/homerig yeahnoah homerig homerig: web app to schedule antminer mining cycles and control eve plug combines miner grpc control with homebridge smart plug  hardware &amp; embedded ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-05-27" data-msgid="278">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/yeahnoah__homerig.html">HomeRig</a></span>
         <span class="nv">notable</span>
@@ -673,7 +711,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-27</span>
       </div>
     </article>
-    <article class="card" data-lang="c" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-26" data-msgid="245" data-search="ajvaghasiya/modbus-rtu-tcp-gateway ajvaghasiya modbus rtu tcp gateway modbus rtu/tcp gateway bridging serial and ethernet devices ready‑to‑run bridge for sbcs and legacy equipment c hardware &amp; embedded ">
+    <article class="card" data-lang="c" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-05-26" data-msgid="245">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ajvaghasiya__modbus-rtu-tcp-gateway.html">Modbus-rtu-tcp-gateway</a></span>
         <span class="nv">notable</span>
@@ -685,7 +723,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-26</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-25" data-msgid="202" data-search="ththarkonen/web-spectrometer-device ththarkonen web spectrometer device raspberry pi‑based spectrometer service for remote spectrum capture turns a pi + camera into a networked spectrometer python hardware &amp; embedded ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-05-25" data-msgid="202">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ththarkonen__web-spectrometer-device.html">web-spectrometer-device</a></span>
         <span class="nv">notable</span>
@@ -697,19 +735,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-25</span>
       </div>
     </article>
-    <article class="card" data-lang="c" data-novelty="5" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-30" data-msgid="400" data-search="xyurt/object-pool xyurt object pool c89 object pool library for fast, allocation‑free reuse provides o(1) allocation without heap fragmentation c hardware &amp; embedded  allocator arena c c89 data-structures embedded game-development heap-management low-latency low-level memory-management memory-pool networking object-pool performance real-time systems-programming zero-allocation">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/xyurt__object-pool.html">object-pool</a></span>
-        <span class="nv">worth a look</span>
-      </div>
-      <p class="card-sum">C89 object pool library for fast, allocation‑free reuse</p>
-      <p class="card-why">Provides O(1) allocation without heap fragmentation</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">C</span><span class="tag">allocator</span><span class="tag">arena</span></div>
-        <span class="card-when">2026-05-30</span>
-      </div>
-    </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="Hardware &amp; Embedded" data-sub="" data-date="2026-05-29" data-msgid="376" data-search="danielmw484/inventor-hoist-pulley-block danielmw484 inventor hoist pulley block hoist pulley block cad model useful mechanical design  hardware &amp; embedded ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="Hardware &amp; Embedded" data-sub="More" data-date="2026-05-29" data-msgid="376">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/danielmw484__inventor-hoist-pulley-block.html">inventor-hoist-pulley-block</a></span>
         <span class="nv">worth a look</span>
@@ -726,13 +752,13 @@ a:hover{text-decoration:underline}
 <script>
 (function(){
   var q=document.getElementById('q');
-  var chips=[].slice.call(document.querySelectorAll('#filters .chip'));
+  var chips=[].slice.call(document.querySelectorAll('#filters .chip,#subfilters .chip'));
   var sortChips=[].slice.call(document.querySelectorAll('.chip.sort'));
   var cards=[].slice.call(document.querySelectorAll('[data-section] .card'));
   var sections=[].slice.call(document.querySelectorAll('[data-section]'));
   var results=document.getElementById('searchresults');
   var noresults=document.getElementById('noresults');
-  var state={text:'',lang:'',novelty:0,sort:'best'};
+  var state={text:'',lang:'',sub:'',novelty:0,sort:'best'};
   var INDEX=null;   // загруженный search.json (ленивая загрузка при первом поиске)
 
   function cmp(a,b){
@@ -759,7 +785,8 @@ a:hover{text-decoration:underline}
     cards.forEach(function(c){
       var okL=!state.lang || c.dataset.lang===state.lang;
       var okN=!state.novelty || (parseInt(c.dataset.novelty||'0',10)>=state.novelty);
-      var ok=okL&&okN;
+      var okS=!state.sub || c.dataset.sub===state.sub;
+      var ok=okL&&okN&&okS;
       c.style.display=ok?'':'none';
       if(ok)shown++;
     });
@@ -787,6 +814,7 @@ a:hover{text-decoration:underline}
       summary:it.s||'', why:it.w||'', lang:it.l||'', novelty:it.n||0,
       badge:badgeOf(it.n),
       url:'p/'+jslug(owner)+'__'+jslug(name)+'.html',
+      x:(it.x||'').toLowerCase(),
       q:(repo+' '+flat+' '+(it.s||'')+' '+(it.w||'')+' '+(it.l||'')+' '+(it.x||'')).toLowerCase()
     };
   }
@@ -815,6 +843,7 @@ a:hover{text-decoration:underline}
     var matched=INDEX.items.filter(function(it){
       if(t && (it.q||'').indexOf(t)===-1) return false;
       if(state.lang && (it.lang||'').toLowerCase()!==state.lang) return false;
+      if(state.sub && (it.x||'').indexOf(state.sub.toLowerCase())<0) return false;
       if(state.novelty && (it.novelty||0)<state.novelty) return false;
       return true;
     });
@@ -856,6 +885,9 @@ a:hover{text-decoration:underline}
       if(f==='lang'){
         chips.filter(function(x){return x.dataset.filter==='lang';}).forEach(function(x){x.classList.remove('on');});
         ch.classList.add('on');state.lang=v;
+      } else if(f==='sub'){
+        chips.filter(function(x){return x.dataset.filter==='sub';}).forEach(function(x){x.classList.remove('on');});
+        ch.classList.add('on');state.sub=v;
       } else if(f==='novelty'){
         ch.classList.toggle('on');
         state.novelty=ch.classList.contains('on')?parseInt(v,10):0;

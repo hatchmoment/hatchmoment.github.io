@@ -137,6 +137,9 @@ a:hover{text-decoration:underline}
 .hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
 .hero .metrics strong{color:var(--accent);font-weight:700}
 .hero .metric-sep{opacity:.4}
+.hero .metric-note{opacity:.55;font-size:11px}
+.filters-sub{margin-top:6px}
+.chip .chip-n{opacity:.5;font-size:10px;margin-left:3px}
 .hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
 .hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
 .hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
@@ -185,7 +188,7 @@ a:hover{text-decoration:underline}
     <p class="proj-sum">Every project in the order it hatched — newest first. 960 and counting.</p>
   </div>
   <section data-section><div class="grid">
-    <article class="card" data-lang="typescript" data-novelty="5" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-05-31" data-msgid="506" data-search="feryri/todo-web feryri todo web react‑based task manager for students, tracking progress and deadlines full stack with firebase auth and postgresql backend typescript web &amp; frontend ">
+    <article class="card" data-lang="typescript" data-novelty="5" data-cat="Web &amp; Frontend" data-sub="More" data-date="2026-05-31" data-msgid="506">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/feryri__todo-web.html">Todo-web</a></span>
         <span class="nv">worth a look</span>
@@ -197,7 +200,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-05-31" data-msgid="505" data-search="huybitvvt/cnpm-it2 huybitvvt cnpm it2 online learning management system solves education needs javascript apps &amp; productivity ">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-05-31" data-msgid="505">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/huybitvvt__cnpm-it2.html">CNPM-IT2</a></span>
         <span class="nv">notable</span>
@@ -209,7 +212,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card archived" data-lang="javascript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-31" data-msgid="504" data-search="roins-hub/campus-relay-server roins hub campus relay server campus relay server handling auth, device pairing, and websocket messaging provides ready‑to‑run backend for eduhermes devices javascript backend &amp; apis ">
+    <article class="card archived" data-lang="javascript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-31" data-msgid="504">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/roins-hub__campus-relay-server.html">campus-relay-server</a></span>
         <span class="nv">notable</span>
@@ -221,7 +224,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="503" data-search="scu-maker-org/scumaker-wiki scu maker org scumaker wiki static site generator for scu maker wiki documentation generates a deployable html wiki from markdown python developer tools ">
+    <article class="card" data-lang="python" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-31" data-msgid="503">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/scu-maker-org__scumaker-wiki.html">scumaker-wiki</a></span>
         <span class="nv">worth a look</span>
@@ -233,7 +236,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="502" data-search="gramaziokohler/lamcp gramaziokohler lamcp lamcp – bridge letting llms control grasshopper in real time enables ai agents to manipulate rhino/grasshopper live python developer tools ">
+    <article class="card" data-lang="python" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-31" data-msgid="502">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/gramaziokohler__lamcp.html">lamcp</a></span>
         <span class="nv">worth a look</span>
@@ -245,7 +248,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card archived" data-lang="go" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="501" data-search="shieldnet-360/secure-edge-dlp shieldnet 360 secure edge dlp privacy‑first ai dlp agent that blocks secrets on desktop in seconds zero‑data, real‑time secret detection go security &amp; privacy  ai-security browser-extension data-loss-prevention dlp electron endpoint-security golang llm-security privacy security">
+    <article class="card archived" data-lang="go" data-novelty="8" data-cat="Security &amp; Privacy" data-sub="Privacy tools" data-date="2026-05-31" data-msgid="501">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/shieldnet-360__secure-edge-dlp.html">secure-edge-dlp</a></span>
         <span class="nv hi">rare find</span>
@@ -253,11 +256,11 @@ a:hover{text-decoration:underline}
       <p class="card-sum">Privacy‑first AI DLP agent that blocks secrets on desktop in seconds</p>
       <p class="card-why">Zero‑data, real‑time secret detection</p>
       <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Go</span><span class="tag">ai-security</span><span class="tag">browser-extension</span><span class="archived-tag">archived</span></div>
+        <div class="card-tags"><span class="tag lang">Go</span><span class="tag sub">Privacy tools</span><span class="tag">ai-security</span><span class="tag">browser-extension</span><span class="archived-tag">archived</span></div>
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card archived" data-lang="" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="" data-date="2026-05-31" data-msgid="500" data-search="trustin326/creator-verse trustin326 creator verse social media platform monetization features  web &amp; frontend ">
+    <article class="card archived" data-lang="" data-novelty="6" data-cat="Web &amp; Frontend" data-sub="More" data-date="2026-05-31" data-msgid="500">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/trustin326__creator-verse.html">Creator-Verse</a></span>
         <span class="nv">notable</span>
@@ -269,7 +272,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-05-31" data-msgid="499" data-search="dbventureholdings/wsb-briefing dbventureholdings wsb briefing wsb morning briefing simplifies market analysis  apps &amp; productivity ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-05-31" data-msgid="499">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/dbventureholdings__wsb-briefing.html">wsb-briefing</a></span>
         <span class="nv">notable</span>
@@ -281,7 +284,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-05-31" data-msgid="498" data-search="wandresonviana/portf-lio2 wandresonviana portf lio2 portfólio html for showcasing projects it presents a real working web portfolio with a focus on personal branding and project display, fitting the developer tools category.  apps &amp; productivity ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-05-31" data-msgid="498">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/wandresonviana__portf-lio2.html">Portf-lio2</a></span>
         <span class="nv">worth a look</span>
@@ -293,7 +296,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="497" data-search="iammalath/smart-honeypot iammalath smart honeypot smart honeypot capturing attacker http behavior with mitre mapping full request logs, deterministic classification, live dashboard  security &amp; privacy ">
+    <article class="card" data-lang="" data-novelty="7" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-31" data-msgid="497">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/iammalath__smart-honeypot.html">smart-honeypot</a></span>
         <span class="nv">notable</span>
@@ -305,7 +308,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="496" data-search="hhrhhrhhr/bamboo-cli hhrhhrhhr bamboo cli bamboo cli wraps ai coding tools, centralizing login and credentials unified credential handling for claude and codex typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-31" data-msgid="496">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/hhrhhrhhr__bamboo-cli.html">bamboo-cli</a></span>
         <span class="nv">worth a look</span>
@@ -317,7 +320,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-31" data-msgid="494" data-search="pigman-labs/pigman pigman labs pigman jepa-based world-model agent scaffold for ai research end‑to‑end training and evaluation of a jepa world model python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-31" data-msgid="494">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/pigman-labs__pigman.html">pigman</a></span>
         <span class="nv">notable</span>
@@ -329,7 +332,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="493" data-search="teamcache-dev/teamcache teamcache dev teamcache shared ai context cache saves tokens python developer tools ">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-05-31" data-msgid="493">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/teamcache-dev__teamcache.html">teamcache</a></span>
         <span class="nv hi">rare find</span>
@@ -341,7 +344,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="glsl" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-05-31" data-msgid="492" data-search="cinemore/anime4k-metal cinemore anime4k metal swift cli &amp; library for metal‑accelerated anime4k image upscaling ready‑to‑use metal‑based super‑resolution on macos glsl apps &amp; productivity ">
+    <article class="card" data-lang="glsl" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-05-31" data-msgid="492">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/cinemore__anime4k-metal.html">anime4k-metal</a></span>
         <span class="nv">notable</span>
@@ -353,7 +356,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-05-31" data-msgid="480" data-search="hunhee-joung/bnk_prs hunhee joung bnk prs digital presentation evaluation system for financial institutions with real-time scoring and audit trails solves paper-based evaluation forms with offline-capable flutter app and compliance features  apps &amp; productivity ">
+    <article class="card" data-lang="" data-novelty="7" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-05-31" data-msgid="480">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/hunhee-joung__bnk_prs.html">BNK_PRS</a></span>
         <span class="nv">notable</span>
@@ -365,7 +368,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="" data-date="2026-05-31" data-msgid="479" data-search="hhoangsonnw/c2detector hhoangsonnw c2detector c2detector: dfir tool that extracts c2 traffic from pcap files detects havoc/nimplant c2, auto-decrypts payloads  security &amp; privacy ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Security &amp; Privacy" data-sub="More" data-date="2026-05-31" data-msgid="479">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/hhoangsonnw__c2detector.html">C2Detector</a></span>
         <span class="nv">notable</span>
@@ -377,7 +380,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-31" data-msgid="477" data-search="qfhu0ng/agentic-rl-rollout qfhu0ng agentic rl rollout an innovative approach to agentic llm systems. demonstrates practical implementation of ai-driven decision-making.  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-31" data-msgid="477">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/qfhu0ng__agentic-rl-rollout.html">agentic-rl-rollout</a></span>
         <span class="nv">worth a look</span>
@@ -389,7 +392,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card archived" data-lang="html" data-novelty="5" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-31" data-msgid="476" data-search="meher1294/magnus-radar meher1294 magnus radar a solution for optimizing urban traffic flow addresses real-world congestion with data-driven insights and efficient routing. html ai &amp; ml ">
+    <article class="card archived" data-lang="html" data-novelty="5" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-31" data-msgid="476">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/meher1294__magnus-radar.html">magnus-radar</a></span>
         <span class="nv">worth a look</span>
@@ -401,7 +404,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="4" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-31" data-msgid="475" data-search="yvzgcd4v6h-collab/spartanburg-feeds yvzgcd4v6h collab spartanburg feeds automated civic feed aggregator that pulls rss and social feeds for spartanburg simple script to collect and output feeds python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="4" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-31" data-msgid="475">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/yvzgcd4v6h-collab__spartanburg-feeds.html">spartanburg-feeds</a></span>
         <span class="nv">worth a look</span>
@@ -413,7 +416,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="5" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-05-31" data-msgid="474" data-search="dbello2907/finanzas-daniela dbello2907 finanzas daniela personal finance web app for tracking income, expenses, and budgets simple react+supabase tool for managing money javascript apps &amp; productivity ">
+    <article class="card" data-lang="javascript" data-novelty="5" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-05-31" data-msgid="474">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/dbello2907__finanzas-daniela.html">finanzas-daniela</a></span>
         <span class="nv">worth a look</span>
@@ -425,7 +428,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-31" data-msgid="473" data-search="edwinjhlee/awesome-meme edwinjhlee awesome meme ai meme generator for agents with 30 templates easy integration for ai humor python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-31" data-msgid="473">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/edwinjhlee__awesome-meme.html">awesome-meme</a></span>
         <span class="nv">notable</span>
@@ -437,7 +440,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="6" data-cat="DevOps &amp; Infra" data-sub="" data-date="2026-05-31" data-msgid="472" data-search="telemetryflow/telemetryflow-deployment telemetryflow telemetryflow deployment production-ready deployment configs for telemetryflow observability platform ready-to-use helm, ansible, and operator setups go devops &amp; infra  ansible devops devopscorner github-actions gitlab-ci helm helm-charts opentelemetry opentelemetry-agent opentelemetry-collector opentelemetry-sdk operator otel otel-agent otel-collector otel-collector-contrib telemetryflow telemetryflow-platform">
+    <article class="card" data-lang="go" data-novelty="6" data-cat="DevOps &amp; Infra" data-sub="Infrastructure as code" data-date="2026-05-31" data-msgid="472">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/telemetryflow__telemetryflow-deployment.html">telemetryflow-deployment</a></span>
         <span class="nv">notable</span>
@@ -445,11 +448,11 @@ a:hover{text-decoration:underline}
       <p class="card-sum">Production-ready deployment configs for TelemetryFlow observability platform</p>
       <p class="card-why">Ready-to-use Helm, Ansible, and Operator setups</p>
       <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Go</span><span class="tag">ansible</span><span class="tag">devops</span></div>
+        <div class="card-tags"><span class="tag lang">Go</span><span class="tag sub">Infrastructure as code</span><span class="tag">ansible</span><span class="tag">devops</span></div>
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="Apps &amp; Productivity" data-sub="" data-date="2026-05-30" data-msgid="471" data-search="mithulpranav24/scripts mithulpranav24 scripts utility scripts for pdf page extraction, folder tree generation, and line‑deletion shortcuts simple, ready‑to‑use tools for everyday tasks  apps &amp; productivity ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="Apps &amp; Productivity" data-sub="More" data-date="2026-05-30" data-msgid="471">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mithulpranav24__scripts.html">scripts</a></span>
         <span class="nv">worth a look</span>
@@ -461,7 +464,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-30" data-msgid="470" data-search="lemmaiot-tech/aeoncrypt-bot lemmaiot tech aeoncrypt bot ai chatbot with real‑time rag for pdfs and docs fastapi, websocket, faiss, groq  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-30" data-msgid="470">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/lemmaiot-tech__aeoncrypt-bot.html">AeonCrypt-Bot</a></span>
         <span class="nv">worth a look</span>

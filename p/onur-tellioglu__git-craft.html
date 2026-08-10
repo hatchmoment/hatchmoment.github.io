@@ -137,6 +137,9 @@ a:hover{text-decoration:underline}
 .hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
 .hero .metrics strong{color:var(--accent);font-weight:700}
 .hero .metric-sep{opacity:.4}
+.hero .metric-note{opacity:.55;font-size:11px}
+.filters-sub{margin-top:6px}
+.chip .chip-n{opacity:.5;font-size:10px;margin-left:3px}
 .hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
 .hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
 .hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
@@ -157,7 +160,7 @@ a:hover{text-decoration:underline}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "git-craft", "codeRepository": "https://github.com/onur-tellioglu/git-craft", "description": "A Rust-based voxel engine delivering Minecraft‑style worlds on modern GPUs", "programmingLanguage": "Rust", "applicationCategory": "Apps \u0026 Productivity", "keywords": "ai-agents, community-driven, game-engine, gamedev, graphics, minecraft, open-source, rust, rust-gamedev, sandbox, voxel, voxel-engine, webgpu, wgpu"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "git-craft", "codeRepository": "https://github.com/onur-tellioglu/git-craft", "description": "A Rust-based voxel engine delivering Minecraft‑style worlds on modern GPUs", "programmingLanguage": "Rust", "applicationCategory": "Apps \u0026 Productivity / Creative \u0026 media", "keywords": "ai-agents, community-driven, game-engine, gamedev, graphics, minecraft, open-source, rust, rust-gamedev, sandbox, voxel, voxel-engine, webgpu, wgpu"}</script>
 <script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -183,7 +186,7 @@ a:hover{text-decoration:underline}
   <div class="proj-hero">
     <h1>git-craft</h1>
     <p class="proj-sum">A Rust-based voxel engine delivering Minecraft‑style worlds on modern GPUs</p>
-    <div class="proj-badges"><span class="b">notable</span><span class="b">Rust</span><span class="b"><a href="../c/apps-productivity.html" style="color:inherit">✦ Apps &amp; Productivity</a></span></div>
+    <div class="proj-badges"><span class="b">notable</span><span class="b">Rust</span><span class="b"><a href="../c/apps-productivity.html" style="color:inherit">✦ Apps &amp; Productivity · Creative &amp; media</a></span></div>
   </div>
   
   <p class="proj-details">git-craft provides a full‑featured, performance‑focused voxel sandbox written in Rust using wgpu. It implements greedy meshing, infinite streaming worldgen, advanced lighting, and modern post‑processing effects, targeting high frame rates on Apple Silicon. The engine is intended for gamers and developers who want an open, extensible alternative to proprietary voxel games, offering better control and community‑driven evolution than typical closed‑source clones. Its Rust implementation and GPU‑centric design give it a performance edge over many hobbyist engines.</p>

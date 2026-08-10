@@ -137,6 +137,9 @@ a:hover{text-decoration:underline}
 .hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
 .hero .metrics strong{color:var(--accent);font-weight:700}
 .hero .metric-sep{opacity:.4}
+.hero .metric-note{opacity:.55;font-size:11px}
+.filters-sub{margin-top:6px}
+.chip .chip-n{opacity:.5;font-size:10px;margin-left:3px}
 .hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
 .hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
 .hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
@@ -157,7 +160,7 @@ a:hover{text-decoration:underline}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "llm-safe-sql", "codeRepository": "https://github.com/hyuga611/llm-safe-sql", "description": "Safely runs LLM‑generated UPDATE/DELETE statements, shows real before‑after diffs", "programmingLanguage": "TypeScript", "applicationCategory": "Data \u0026 Databases", "keywords": "ai-safety, database, dry-run, guardrails, human-in-the-loop, llm, llm-agent, mcp, mcp-server, mysql, postgresql, rollback, sql, typescript"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "llm-safe-sql", "codeRepository": "https://github.com/hyuga611/llm-safe-sql", "description": "Safely runs LLM‑generated UPDATE/DELETE statements, shows real before‑after diffs", "programmingLanguage": "TypeScript", "applicationCategory": "Data \u0026 Databases / Databases \u0026 engines", "keywords": "ai-safety, database, dry-run, guardrails, human-in-the-loop, llm, llm-agent, mcp, mcp-server, mysql, postgresql, rollback, sql, typescript"}</script>
 <script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -183,7 +186,7 @@ a:hover{text-decoration:underline}
   <div class="proj-hero">
     <h1>llm-safe-sql</h1>
     <p class="proj-sum">Safely runs LLM‑generated UPDATE/DELETE statements, shows real before‑after diffs</p>
-    <div class="proj-badges"><span class="b">notable</span><span class="b">TypeScript</span><span class="b"><a href="../c/data-databases.html" style="color:inherit">🗄 Data &amp; Databases</a></span></div>
+    <div class="proj-badges"><span class="b">notable</span><span class="b">TypeScript</span><span class="b"><a href="../c/data-databases.html" style="color:inherit">🗄 Data &amp; Databases · Databases &amp; engines</a></span></div>
   </div>
   
   <p class="proj-details">The library lets a language model propose data‑modifying SQL, then executes it inside a transaction to capture exact before and after values before rolling back. Humans review the measured changes, ensuring the model’s intent matches reality before any permanent commit. It works with MySQL and PostgreSQL, requires no runtime dependencies, and isolates the approval step in a separate process for security. This approach prevents hidden side‑effects that static analysis can miss, making AI‑driven database agents safer.</p>

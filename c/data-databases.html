@@ -137,6 +137,9 @@ a:hover{text-decoration:underline}
 .hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
 .hero .metrics strong{color:var(--accent);font-weight:700}
 .hero .metric-sep{opacity:.4}
+.hero .metric-note{opacity:.55;font-size:11px}
+.filters-sub{margin-top:6px}
+.chip .chip-n{opacity:.5;font-size:10px;margin-left:3px}
 .hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
 .hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
 .hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
@@ -191,8 +194,14 @@ a:hover{text-decoration:underline}
   </div>
   <div class="filters" id="filters">
     <span class="chip on" data-filter="lang" data-val="">All languages</span>
-    <span class="chip" data-filter="lang" data-val="c++">C++</span><span class="chip" data-filter="lang" data-val="common lisp">Common Lisp</span><span class="chip" data-filter="lang" data-val="go">Go</span><span class="chip" data-filter="lang" data-val="javascript">JavaScript</span><span class="chip" data-filter="lang" data-val="jupyter notebook">Jupyter Notebook</span><span class="chip" data-filter="lang" data-val="matlab">MATLAB</span>
+    <span class="chip" data-filter="lang" data-val="python">Python</span><span class="chip" data-filter="lang" data-val="typescript">TypeScript</span><span class="chip" data-filter="lang" data-val="jupyter notebook">Jupyter Notebook</span><span class="chip" data-filter="lang" data-val="r">R</span><span class="chip" data-filter="lang" data-val="rust">Rust</span><span class="chip" data-filter="lang" data-val="c++">C++</span>
     <span class="chip" data-filter="novelty" data-val="7">rare finds</span>
+  </div>
+  <div class="filters filters-sub" id="subfilters">
+    <span class="chip on" data-filter="sub" data-val="">All kinds</span>
+    <span class="chip" data-filter="sub" data-val="Databases &amp; engines">Databases &amp; engines <span class="chip-n">4</span></span>
+    <span class="chip" data-filter="sub" data-val="Pipelines &amp; ETL">Pipelines &amp; ETL <span class="chip-n">1</span></span>
+    <span class="chip" data-filter="sub" data-val="More">More <span class="chip-n">39</span></span>
   </div>
   <div class="sortbar">
     <span class="sortlbl">sort:</span>
@@ -203,9 +212,12 @@ a:hover{text-decoration:underline}
   <div id="searchresults" style="display:none"></div>
   <div id="noresults" class="empty" style="display:none">Nothing matches — try a different search.</div>
   <section data-section>
-
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">Databases &amp; engines</h2>
+      <span class="meta">4</span>
+    </div>
     <div class="grid">
-    <article class="card" data-lang="rust" data-novelty="8" data-cat="Data &amp; Databases" data-sub="" data-date="2026-08-09" data-msgid="1157" data-search="thiagomontozo/forgekv thiagomontozo forgekv forgekv: a rust persistent key-value store with wal, replication, and metrics feature‑rich, zero‑unsafe, high‑performance kv engine rust data &amp; databases  concurrency database key-value key-value-store persistence rust systems-programming tcp tokio wal">
+    <article class="card" data-lang="rust" data-novelty="8" data-cat="Data &amp; Databases" data-sub="Databases &amp; engines" data-date="2026-08-09" data-msgid="1157">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/thiagomontozo__forgekv.html">forgekv</a></span>
         <span class="nv hi">rare find</span>
@@ -213,11 +225,73 @@ a:hover{text-decoration:underline}
       <p class="card-sum">ForgeKV: a Rust persistent key-value store with WAL, replication, and metrics</p>
       <p class="card-why">Feature‑rich, zero‑unsafe, high‑performance KV engine</p>
       <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Rust</span><span class="tag">concurrency</span><span class="tag">database</span></div>
+        <div class="card-tags"><span class="tag lang">Rust</span><span class="tag sub">Databases &amp; engines</span><span class="tag">concurrency</span><span class="tag">database</span></div>
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="8" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-30" data-msgid="430" data-search="leen01/mimic_iv leen01 mimic iv clinical data science workflow for icu sepsis patients improves mortality outcome analysis  data &amp; databases ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Data &amp; Databases" data-sub="Databases &amp; engines" data-date="2026-08-09" data-msgid="1148">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/hyuga611__llm-safe-sql.html">llm-safe-sql</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Safely runs LLM‑generated UPDATE/DELETE statements, shows real before‑after diffs</p>
+      <p class="card-why">Real‑world verification of AI‑written SQL</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag sub">Databases &amp; engines</span><span class="tag">ai-safety</span><span class="tag">database</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="Databases &amp; engines" data-date="2026-06-18" data-msgid="846">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/aimfirst-vn__mariadb-mysql-fast-clone-fork-same-instance.html">mariadb-mysql-fast-clone-fork-same-instance</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Fast MariaDB clone pool for parallel CI tests</p>
+      <p class="card-why">Creates 200 pristine clones in seconds via snapshots</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">Databases &amp; engines</span><span class="tag">btrfs</span><span class="tag">ci-cd</span></div>
+        <span class="card-when">2026-06-18</span>
+      </div>
+    </article>
+    <article class="card" data-lang="rust" data-novelty="6" data-cat="Data &amp; Databases" data-sub="Databases &amp; engines" data-date="2026-06-20" data-msgid="866">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/vondrakk__stplr.html">stplr</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">A self-managing, horizontally‑scaling distributed key/value store</p>
+      <p class="card-why">Fast binary protocol, easy shard‑based scaling</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Rust</span><span class="tag sub">Databases &amp; engines</span><span class="tag">database</span><span class="tag">distributed-systems</span></div>
+        <span class="card-when">2026-06-20</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">Pipelines &amp; ETL</h2>
+      <span class="meta">1</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="Pipelines &amp; ETL" data-date="2026-08-07" data-msgid="1089">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/gabrafur__customer-engagement-data-platform.html">customer-engagement-data-platform</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Data engineering platform for synthetic customer engagement pipelines</p>
+      <p class="card-why">Full-featured, testable Spark pipelines with Delta Lake</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">Pipelines &amp; ETL</span><span class="tag">apache-spark</span><span class="tag">data-engineering</span></div>
+        <span class="card-when">3d ago</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">More</h2>
+      <span class="meta">39</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="" data-novelty="8" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-30" data-msgid="430">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/leen01__mimic_iv.html">mimic_iv</a></span>
         <span class="nv hi">rare find</span>
@@ -229,7 +303,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="8" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-29" data-msgid="337" data-search="kdwmeet/document-chunking-pipeline kdwmeet document chunking pipeline ai-powered document chunking pipeline for rag systems with quality guardrails efficient, context-aware chunking with gpt-5.4-nano reduces costs while maintaining data integrity  data &amp; databases ">
+    <article class="card" data-lang="" data-novelty="8" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-29" data-msgid="337">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/kdwmeet__document-chunking-pipeline.html">document-chunking-pipeline</a></span>
         <span class="nv hi">rare find</span>
@@ -241,7 +315,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-08-10" data-msgid="1180" data-search="ashwinsathian/better-auth-mongoose ashwinsathian better auth mongoose mongoose adapter for better auth, enabling native models and populate removes raw mongodb dependency and schema mismatches typescript data &amp; databases  authentication better-auth mongodb mongoose mongoose-adapter nodejs typescript">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-08-10" data-msgid="1180">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ashwinsathian__better-auth-mongoose.html">better-auth-mongoose</a></span>
         <span class="nv">notable</span>
@@ -253,19 +327,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">today</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-08-09" data-msgid="1148" data-search="hyuga611/llm-safe-sql hyuga611 llm safe sql safely runs llm‑generated update/delete statements, shows real before‑after diffs real‑world verification of ai‑written sql typescript data &amp; databases  ai-safety database dry-run guardrails human-in-the-loop llm llm-agent mcp mcp-server mysql postgresql rollback sql typescript">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/hyuga611__llm-safe-sql.html">llm-safe-sql</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Safely runs LLM‑generated UPDATE/DELETE statements, shows real before‑after diffs</p>
-      <p class="card-why">Real‑world verification of AI‑written SQL</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag">ai-safety</span><span class="tag">database</span></div>
-        <span class="card-when">yesterday</span>
-      </div>
-    </article>
-    <article class="card" data-lang="common lisp" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-08-08" data-msgid="1136" data-search="clickhouse/clicklisp clickhouse clicklisp clicklisp: lisp-powered query compiler and udf runtime for clickhouse turns lisp forms into clickhouse sql, runs as a single binary common lisp data &amp; databases ">
+    <article class="card" data-lang="common lisp" data-novelty="7" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-08-08" data-msgid="1136">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/clickhouse__clicklisp.html">clicklisp</a></span>
         <span class="nv">notable</span>
@@ -277,7 +339,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-08-08" data-msgid="1143" data-search="jmagomez/ibov-spx-pe-dashboard jmagomez ibov spx pe dashboard automated pipeline generating daily p/e ratios for ibovespa and s&amp;p 500 provides reproducible, gap-aware valuation metrics python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-08-08" data-msgid="1143">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jmagomez__ibov-spx-pe-dashboard.html">ibov-spx-pe-dashboard</a></span>
         <span class="nv">notable</span>
@@ -289,19 +351,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-08-07" data-msgid="1089" data-search="gabrafur/customer-engagement-data-platform gabrafur customer engagement data platform data engineering platform for synthetic customer engagement pipelines full-featured, testable spark pipelines with delta lake python data &amp; databases  apache-spark data-engineering data-pipeline data-platform databricks delta-lake etl github-actions pyspark pytest python sql">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/gabrafur__customer-engagement-data-platform.html">customer-engagement-data-platform</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Data engineering platform for synthetic customer engagement pipelines</p>
-      <p class="card-why">Full-featured, testable Spark pipelines with Delta Lake</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">apache-spark</span><span class="tag">data-engineering</span></div>
-        <span class="card-when">3d ago</span>
-      </div>
-    </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-08-06" data-msgid="1070" data-search="cosi12/aiquantlab cosi12 aiquantlab aiquantlab: a correctness‑first framework for ingesting and validating market data ensures clean, reproducible datasets for quantitative research python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-08-06" data-msgid="1070">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/cosi12__aiquantlab.html">AIQuantLab</a></span>
         <span class="nv">notable</span>
@@ -313,7 +363,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">4d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-07-05" data-msgid="983" data-search="geomaticscaminosupm/fancyfolium geomaticscaminosupm fancyfolium fancyfolium: enhanced folium maps with panels, legends, and stats adds ui controls, live histograms, and raster conversion python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-07-05" data-msgid="983">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/geomaticscaminosupm__fancyfolium.html">FancyFolium</a></span>
         <span class="nv">notable</span>
@@ -325,7 +375,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-05</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-22" data-msgid="890" data-search="buschbrian/attachment-loader-arcpy buschbrian attachment loader arcpy arcgis pro tool to batch attach files to feature layer records automates attachment matching and loading for gis data python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-22" data-msgid="890">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/buschbrian__attachment-loader-arcpy.html">attachment-loader-arcpy</a></span>
         <span class="nv">notable</span>
@@ -337,19 +387,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-22</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-18" data-msgid="846" data-search="aimfirst-vn/mariadb-mysql-fast-clone-fork-same-instance aimfirst vn mariadb mysql fast clone fork same instance fast mariadb clone pool for parallel ci tests creates 200 pristine clones in seconds via snapshots python data &amp; databases  btrfs ci-cd clone database docker fixtures fork integration-tests mariadb mysql parallel-testing parity-testing testing tmpfs">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/aimfirst-vn__mariadb-mysql-fast-clone-fork-same-instance.html">mariadb-mysql-fast-clone-fork-same-instance</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Fast MariaDB clone pool for parallel CI tests</p>
-      <p class="card-why">Creates 200 pristine clones in seconds via snapshots</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">btrfs</span><span class="tag">ci-cd</span></div>
-        <span class="card-when">2026-06-18</span>
-      </div>
-    </article>
-    <article class="card" data-lang="jupyter notebook" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-12" data-msgid="768" data-search="usepancake/polymarket-history usepancake polymarket history point-in-time polymarket market dataset for research and analysis clean, versioned parquet data with timestamps jupyter notebook data &amp; databases  dataset parquet point-in-time polymarket prediction-markets">
+    <article class="card" data-lang="jupyter notebook" data-novelty="7" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-12" data-msgid="768">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/usepancake__polymarket-history.html">polymarket-history</a></span>
         <span class="nv">notable</span>
@@ -361,7 +399,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-12</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-02" data-msgid="596" data-search="tomoto0/economic-data-dashboard-2 tomoto0 economic data dashboard 2 economic data dashboard with ai insights, live data from world bank api, and interactive charts combines multiple data sources, ai-generated insights, and user-friendly interface typescript data &amp; databases  manus">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-02" data-msgid="596">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tomoto0__economic-data-dashboard-2.html">economic-data-dashboard-2</a></span>
         <span class="nv">notable</span>
@@ -373,7 +411,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-02</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-31" data-msgid="533" data-search="sinanotc/btp-datapipeline sinanotc btp datapipeline sap sac monitoring data pipeline loading usage stats into sap datasphere automates extract‑transform‑load with robust error handling python data &amp; databases ">
+    <article class="card archived" data-lang="python" data-novelty="7" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-31" data-msgid="533">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/sinanotc__btp-datapipeline.html">btp-datapipeline</a></span>
         <span class="nv">notable</span>
@@ -385,7 +423,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-07-20" data-msgid="1035" data-search="yankhaing-cmyk/bursatekka yankhaing cmyk bursatekka automated bursa malaysia stock screener sending daily telegram alerts provides ready‑to‑run daily stock signals via telegram python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-07-20" data-msgid="1035">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/yankhaing-cmyk__bursatekka.html">BursaTekka</a></span>
         <span class="nv">notable</span>
@@ -397,7 +435,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3w ago</span>
       </div>
     </article>
-    <article class="card archived" data-lang="javascript" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-07-12" data-msgid="1010" data-search="openraga/ragamala-data openraga ragamala data a curated json dataset of hindustani ragas for music research provides ready‑to‑use, validated ragas data javascript data &amp; databases ">
+    <article class="card archived" data-lang="javascript" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-07-12" data-msgid="1010">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/openraga__ragamala-data.html">ragamala-data</a></span>
         <span class="nv">notable</span>
@@ -409,7 +447,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">4w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="c++" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-27" data-msgid="916" data-search="eak1mov/webtiles-cpp eak1mov webtiles cpp c++ library for webtiles format, enabling fast tile storage and conversion provides native c++ api and cli converters for map tiles c++ data &amp; databases ">
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-27" data-msgid="916">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/eak1mov__webtiles-cpp.html">webtiles-cpp</a></span>
         <span class="nv">notable</span>
@@ -421,7 +459,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-27</span>
       </div>
     </article>
-    <article class="card" data-lang="r" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-20" data-msgid="859" data-search="shuaiwang619-bot/sepsis-antibiotic-timing-tte shuaiwang619 bot sepsis antibiotic timing tte reproducible scripts for sepsis antibiotic timing trial using mimic‑iv enables transparent replication of a critical icu study r data &amp; databases ">
+    <article class="card" data-lang="r" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-20" data-msgid="859">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/shuaiwang619-bot__sepsis-antibiotic-timing-tte.html">sepsis-antibiotic-timing-tte</a></span>
         <span class="nv">notable</span>
@@ -433,19 +471,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-20</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-20" data-msgid="866" data-search="vondrakk/stplr vondrakk stplr a self-managing, horizontally‑scaling distributed key/value store fast binary protocol, easy shard‑based scaling rust data &amp; databases  database distributed-systems key-value-store lmdb rust">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/vondrakk__stplr.html">stplr</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">A self-managing, horizontally‑scaling distributed key/value store</p>
-      <p class="card-why">Fast binary protocol, easy shard‑based scaling</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Rust</span><span class="tag">database</span><span class="tag">distributed-systems</span></div>
-        <span class="card-when">2026-06-20</span>
-      </div>
-    </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-15" data-msgid="824" data-search="relatasql/n8n-nodes-relatasql relatasql n8n nodes relatasql n8n node for relatasql – run queries and manage writes via api provides ready‑to‑use relatasql actions in n8n typescript data &amp; databases ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-15" data-msgid="824">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/relatasql__n8n-nodes-relatasql.html">n8n-nodes-relatasql</a></span>
         <span class="nv">notable</span>
@@ -457,7 +483,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-15</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-14" data-msgid="803" data-search="martianmobile/strategy-evaluation martianmobile strategy evaluation cli tool that evaluates trading‑strategy backtest sweeps and decides to ship, iterate or kill deterministic convergence metrics for quant researchers python data &amp; databases  algorithmic-trading backtesting claude-code claude-code-plugin convergence quant">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-14" data-msgid="803">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/martianmobile__strategy-evaluation.html">strategy-evaluation</a></span>
         <span class="nv">notable</span>
@@ -469,7 +495,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-14</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-13" data-msgid="796" data-search="hybridecompriceplatform/dbt-transformations hybridecompriceplatform dbt transformations dbt transformation layer for e‑commerce price analytics ready‑to‑run dbt models for cleaning and aggregating price data  data &amp; databases ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-13" data-msgid="796">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/hybridecompriceplatform__dbt-transformations.html">dbt-transformations</a></span>
         <span class="nv">notable</span>
@@ -481,7 +507,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-13</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-12" data-msgid="767" data-search="ramdhavepreetam/airbrx-databricks-app ramdhavepreetam airbrx databricks app databricks cost‑optimization app delivering in‑workspace usage reports privacy‑preserving cost insights directly inside databricks python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-12" data-msgid="767">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ramdhavepreetam__airbrx-databricks-app.html">airbrx-databricks-app</a></span>
         <span class="nv">notable</span>
@@ -493,7 +519,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-12</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-12" data-msgid="773" data-search="shuo1104/canshu_db shuo1104 canshu db excel-to-mysql import tool with searchable web ui ready-to-use import and keyword search python data &amp; databases ">
+    <article class="card archived" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-12" data-msgid="773">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/shuo1104__canshu_db.html">canshu_db</a></span>
         <span class="nv">notable</span>
@@ -505,7 +531,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-12</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-10" data-msgid="739" data-search="patrickjreed/rarecell patrickjreed rarecell rarecell: reproducible isolation of rare single‑cell populations llm‑guided pipeline with provenance tracking python data &amp; databases  agentic-ai anthropic-claude bioinformatics computational-biology llm-agent mcp scanpy scrna-seq single-cell">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-10" data-msgid="739">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/patrickjreed__rarecell.html">rarecell</a></span>
         <span class="nv">notable</span>
@@ -517,7 +543,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-10</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-09" data-msgid="737" data-search="langli7/go-database langli7 go database unified database middleware/api for multiple db types supports 6 db engines with unified rest api and admin dashboard go data &amp; databases ">
+    <article class="card" data-lang="go" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-09" data-msgid="737">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/langli7__go-database.html">go-database</a></span>
         <span class="nv">notable</span>
@@ -529,7 +555,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-09</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-07" data-msgid="680" data-search="tsvetoslavtsachev/etf-rotationradar tsvetoslavtsachev etf rotationradar etf rotation radar – daily dashboard for etf momentum &amp; fundamentals automated, category‑ranked etf analysis python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-07" data-msgid="680">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tsvetoslavtsachev__etf-rotationradar.html">ETF-rotationradar</a></span>
         <span class="nv">notable</span>
@@ -541,7 +567,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-07" data-msgid="683" data-search="c-j8/cs2-tactical-analytics c j8 cs2 tactical analytics cs2 tactical analytics catalog builder for esports match data config-driven pipeline to compile match metadata python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-07" data-msgid="683">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/c-j8__cs2-tactical-analytics.html">cs2-tactical-analytics</a></span>
         <span class="nv">notable</span>
@@ -553,7 +579,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="r" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-06" data-msgid="652" data-search="bikgya/rumex_phylogeography_hhm bikgya rumex phylogeography hhm phylogeographic analysis pipeline for rumex hastatus using angsd and sdm combines snp calling, diversity metrics, and sdm r data &amp; databases ">
+    <article class="card" data-lang="r" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-06" data-msgid="652">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/bikgya__rumex_phylogeography_hhm.html">Rumex_phylogeography_HHM</a></span>
         <span class="nv">notable</span>
@@ -565,7 +591,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="matlab" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-06" data-msgid="657" data-search="jrenne/ggnr_codes jrenne ggnr codes replication package to reproduce the shadow-rate model results runs r pipeline and matlab scripts to regenerate paper figures matlab data &amp; databases ">
+    <article class="card" data-lang="matlab" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-06" data-msgid="657">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jrenne__ggnr_codes.html">GGNR_Codes</a></span>
         <span class="nv">notable</span>
@@ -577,7 +603,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-06-05" data-msgid="638" data-search="yashvajifdar/quant-intelligence yashvajifdar quant intelligence quantitative intelligence project for data analysis organized structure suggests a complex data processing or financial analysis tool python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-06-05" data-msgid="638">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/yashvajifdar__quant-intelligence.html">quant-intelligence</a></span>
         <span class="nv">notable</span>
@@ -589,7 +615,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-05</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-31" data-msgid="532" data-search="nomi96/tapmad_case_study nomi96 tapmad case study etl pipeline that reconciles partner billing with internal subscription data provides audit‑ready, end‑to‑end reconciliation without needing spark python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-31" data-msgid="532">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nomi96__tapmad_case_study.html">Tapmad_Case_Study</a></span>
         <span class="nv">notable</span>
@@ -601,7 +627,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="jupyter notebook" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-30" data-msgid="412" data-search="ios-ioe/nepali-bias-language-dataset ios ioe nepali bias language dataset nepali bias language dataset helps detect bias jupyter notebook data &amp; databases ">
+    <article class="card" data-lang="jupyter notebook" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-30" data-msgid="412">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ios-ioe__nepali-bias-language-dataset.html">Nepali-Bias-Language-Dataset</a></span>
         <span class="nv">notable</span>
@@ -613,7 +639,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-29" data-msgid="340" data-search="92vc/vaultviz 92vc vaultviz vaultviz: local desktop data‑visualization tool for parquet files runs locally, no server, visualizes large datasets typescript data &amp; databases ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-29" data-msgid="340">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/92vc__vaultviz.html">VaultViz</a></span>
         <span class="nv">notable</span>
@@ -625,7 +651,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-29" data-msgid="385" data-search="aikawa9376/connector.nvim aikawa9376 connector.nvim neovim plugin for interactive database queries with rust backend integrates db work directly in neovim  data &amp; databases ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-29" data-msgid="385">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/aikawa9376__connector.nvim.html">connector.nvim</a></span>
         <span class="nv">notable</span>
@@ -637,7 +663,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-28" data-msgid="306" data-search="emmannnuell/sql-project emmannnuell sql project sql data analysis for e-book platform useful insights  data &amp; databases ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-28" data-msgid="306">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/emmannnuell__sql-project.html">SQL-PROJECT</a></span>
         <span class="nv">notable</span>
@@ -649,7 +675,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-24" data-msgid="168" data-search="saleem-latif/duka-data saleem latif duka data python tool that pulls and compiles dukascopy tick data into ohlc bars no api key, pure python, easy to use python data &amp; databases  algorithmic-trading backtesting candlestick dukascopy finance forex forex-data fx historical-data market-data ohlc python quantitative-finance tick-data trading">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-24" data-msgid="168">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/saleem-latif__duka-data.html">duka-data</a></span>
         <span class="nv">notable</span>
@@ -661,7 +687,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-30" data-msgid="442" data-search="nhuy5602/multi-dimensional-data-visualization nhuy5602 multi dimensional data visualization python script that turns climate csvs into ready‑made charts fast, reproducible visualizations for weather data  data &amp; databases ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-30" data-msgid="442">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nhuy5602__multi-dimensional-data-visualization.html">multi-dimensional-data-visualization</a></span>
         <span class="nv">worth a look</span>
@@ -673,7 +699,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="5" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-30" data-msgid="465" data-search="townsite-urban-farm/tuf-irrigation-data townsite urban farm tuf irrigation data urban farm irrigation dataset with analysis scripts real-world irrigation data ready for use python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="5" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-30" data-msgid="465">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/townsite-urban-farm__tuf-irrigation-data.html">tuf-irrigation-data</a></span>
         <span class="nv">worth a look</span>
@@ -685,7 +711,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-29" data-msgid="364" data-search="kbankowski-econ/2026-05_fm-kb-outreach-warsaw kbankowski econ 2026 05 fm kb outreach warsaw automated pipeline that turns economic data into presentation charts creates reproducible charts from multiple sources  data &amp; databases ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-29" data-msgid="364">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/kbankowski-econ__2026-05_fm-kb-outreach-warsaw.html">2026-05_FM-KB-outreach-Warsaw</a></span>
         <span class="nv">worth a look</span>
@@ -697,7 +723,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="4" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-31" data-msgid="475" data-search="yvzgcd4v6h-collab/spartanburg-feeds yvzgcd4v6h collab spartanburg feeds automated civic feed aggregator that pulls rss and social feeds for spartanburg simple script to collect and output feeds python data &amp; databases ">
+    <article class="card" data-lang="python" data-novelty="4" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-31" data-msgid="475">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/yvzgcd4v6h-collab__spartanburg-feeds.html">spartanburg-feeds</a></span>
         <span class="nv">worth a look</span>
@@ -709,7 +735,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="4" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-29" data-msgid="332" data-search="laweadelcoso/fotos-museo-nacional-de-antropologia laweadelcoso fotos museo nacional de antropologia a museum data repository for cultural insights it organizes visual data for research  data &amp; databases ">
+    <article class="card" data-lang="" data-novelty="4" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-29" data-msgid="332">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/laweadelcoso__fotos-museo-nacional-de-antropologia.html">Fotos-Museo-Nacional-de-Antropologia</a></span>
         <span class="nv">worth a look</span>
@@ -721,7 +747,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="plpgsql" data-novelty="4" data-cat="Data &amp; Databases" data-sub="" data-date="2026-05-24" data-msgid="166" data-search="ie103-nhom5/silkroad_database ie103 nhom5 silkroad database silkroad db: a ready‑to‑run postgresql schema for multi‑channel fashion retail full sql scripts, seed data, supabase support plpgsql data &amp; databases ">
+    <article class="card" data-lang="plpgsql" data-novelty="4" data-cat="Data &amp; Databases" data-sub="More" data-date="2026-05-24" data-msgid="166">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ie103-nhom5__silkroad_database.html">Silkroad_database</a></span>
         <span class="nv">worth a look</span>
@@ -738,13 +764,13 @@ a:hover{text-decoration:underline}
 <script>
 (function(){
   var q=document.getElementById('q');
-  var chips=[].slice.call(document.querySelectorAll('#filters .chip'));
+  var chips=[].slice.call(document.querySelectorAll('#filters .chip,#subfilters .chip'));
   var sortChips=[].slice.call(document.querySelectorAll('.chip.sort'));
   var cards=[].slice.call(document.querySelectorAll('[data-section] .card'));
   var sections=[].slice.call(document.querySelectorAll('[data-section]'));
   var results=document.getElementById('searchresults');
   var noresults=document.getElementById('noresults');
-  var state={text:'',lang:'',novelty:0,sort:'best'};
+  var state={text:'',lang:'',sub:'',novelty:0,sort:'best'};
   var INDEX=null;   // загруженный search.json (ленивая загрузка при первом поиске)
 
   function cmp(a,b){
@@ -771,7 +797,8 @@ a:hover{text-decoration:underline}
     cards.forEach(function(c){
       var okL=!state.lang || c.dataset.lang===state.lang;
       var okN=!state.novelty || (parseInt(c.dataset.novelty||'0',10)>=state.novelty);
-      var ok=okL&&okN;
+      var okS=!state.sub || c.dataset.sub===state.sub;
+      var ok=okL&&okN&&okS;
       c.style.display=ok?'':'none';
       if(ok)shown++;
     });
@@ -799,6 +826,7 @@ a:hover{text-decoration:underline}
       summary:it.s||'', why:it.w||'', lang:it.l||'', novelty:it.n||0,
       badge:badgeOf(it.n),
       url:'p/'+jslug(owner)+'__'+jslug(name)+'.html',
+      x:(it.x||'').toLowerCase(),
       q:(repo+' '+flat+' '+(it.s||'')+' '+(it.w||'')+' '+(it.l||'')+' '+(it.x||'')).toLowerCase()
     };
   }
@@ -827,6 +855,7 @@ a:hover{text-decoration:underline}
     var matched=INDEX.items.filter(function(it){
       if(t && (it.q||'').indexOf(t)===-1) return false;
       if(state.lang && (it.lang||'').toLowerCase()!==state.lang) return false;
+      if(state.sub && (it.x||'').indexOf(state.sub.toLowerCase())<0) return false;
       if(state.novelty && (it.novelty||0)<state.novelty) return false;
       return true;
     });
@@ -868,6 +897,9 @@ a:hover{text-decoration:underline}
       if(f==='lang'){
         chips.filter(function(x){return x.dataset.filter==='lang';}).forEach(function(x){x.classList.remove('on');});
         ch.classList.add('on');state.lang=v;
+      } else if(f==='sub'){
+        chips.filter(function(x){return x.dataset.filter==='sub';}).forEach(function(x){x.classList.remove('on');});
+        ch.classList.add('on');state.sub=v;
       } else if(f==='novelty'){
         ch.classList.toggle('on');
         state.novelty=ch.classList.contains('on')?parseInt(v,10):0;

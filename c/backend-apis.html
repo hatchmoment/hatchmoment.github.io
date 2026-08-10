@@ -137,6 +137,9 @@ a:hover{text-decoration:underline}
 .hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
 .hero .metrics strong{color:var(--accent);font-weight:700}
 .hero .metric-sep{opacity:.4}
+.hero .metric-note{opacity:.55;font-size:11px}
+.filters-sub{margin-top:6px}
+.chip .chip-n{opacity:.5;font-size:10px;margin-left:3px}
 .hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
 .hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
 .hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
@@ -191,8 +194,14 @@ a:hover{text-decoration:underline}
   </div>
   <div class="filters" id="filters">
     <span class="chip on" data-filter="lang" data-val="">All languages</span>
-    <span class="chip" data-filter="lang" data-val="blade">Blade</span><span class="chip" data-filter="lang" data-val="c#">C#</span><span class="chip" data-filter="lang" data-val="c++">C++</span><span class="chip" data-filter="lang" data-val="go">Go</span><span class="chip" data-filter="lang" data-val="java">Java</span><span class="chip" data-filter="lang" data-val="javascript">JavaScript</span>
+    <span class="chip" data-filter="lang" data-val="python">Python</span><span class="chip" data-filter="lang" data-val="typescript">TypeScript</span><span class="chip" data-filter="lang" data-val="php">PHP</span><span class="chip" data-filter="lang" data-val="go">Go</span><span class="chip" data-filter="lang" data-val="java">Java</span><span class="chip" data-filter="lang" data-val="javascript">JavaScript</span>
     <span class="chip" data-filter="novelty" data-val="7">rare finds</span>
+  </div>
+  <div class="filters filters-sub" id="subfilters">
+    <span class="chip on" data-filter="sub" data-val="">All kinds</span>
+    <span class="chip" data-filter="sub" data-val="Web frameworks">Web frameworks <span class="chip-n">1</span></span>
+    <span class="chip" data-filter="sub" data-val="API gateways">API gateways <span class="chip-n">2</span></span>
+    <span class="chip" data-filter="sub" data-val="More">More <span class="chip-n">54</span></span>
   </div>
   <div class="sortbar">
     <span class="sortlbl">sort:</span>
@@ -203,9 +212,62 @@ a:hover{text-decoration:underline}
   <div id="searchresults" style="display:none"></div>
   <div id="noresults" class="empty" style="display:none">Nothing matches — try a different search.</div>
   <section data-section>
-
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">Web frameworks</h2>
+      <span class="meta">1</span>
+    </div>
     <div class="grid">
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-08-10" data-msgid="1181" data-search="kegelmeier/spliit-mcp-cloudflare kegelmeier spliit mcp cloudflare secure spliit mcp server on cloudflare workers encrypted, self‑hosted group expense api typescript backend &amp; apis  cloudflare-workers mcp-server model-context-protocol spliit typescript">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="Web frameworks" data-date="2026-08-08" data-msgid="1122">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/nexicturbo__creekready-iris-hacks-iv.html">creekready-iris-hacks-iv</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Flask app that turns emergency alerts into household action plans</p>
+      <p class="card-why">Deterministic, language‑aware plans from alerts</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">Web frameworks</span><span class="tag">bilingual</span><span class="tag">emergency-preparedness</span></div>
+        <span class="card-when">2d ago</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">API gateways</h2>
+      <span class="meta">2</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="php" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="API gateways" data-date="2026-06-25" data-msgid="896">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/runapi-ai__suno-php.html">suno-php</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">PHP SDK for RunAPI Suno, simplifying music‑generation API calls</p>
+      <p class="card-why">Ready‑to‑use client with task handling helpers</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">PHP</span><span class="tag sub">API gateways</span><span class="tag">api</span><span class="tag">composer</span></div>
+        <span class="card-when">2026-06-25</span>
+      </div>
+    </article>
+    <article class="card" data-lang="php" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="API gateways" data-date="2026-06-25" data-msgid="897">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/runapi-ai__wan-php.html">wan-php</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">PHP SDK for RunAPI Wan, simplifying AI video generation calls</p>
+      <p class="card-why">Easy integration of Wan AI models in PHP</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">PHP</span><span class="tag sub">API gateways</span><span class="tag">api</span><span class="tag">composer</span></div>
+        <span class="card-when">2026-06-25</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">More</h2>
+      <span class="meta">54</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-08-10" data-msgid="1181">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/kegelmeier__spliit-mcp-cloudflare.html">spliit-mcp-cloudflare</a></span>
         <span class="nv">notable</span>
@@ -217,7 +279,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">today</span>
       </div>
     </article>
-    <article class="card" data-lang="ruby" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-08-08" data-msgid="1120" data-search="bmorton/activejob-temporal bmorton activejob temporal activejob adapter using temporal for reliable background jobs adds durable, retryable jobs without extra infra ruby backend &amp; apis  activejob background-jobs rails ruby temporal">
+    <article class="card" data-lang="ruby" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-08-08" data-msgid="1120">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/bmorton__activejob-temporal.html">activejob-temporal</a></span>
         <span class="nv">notable</span>
@@ -229,7 +291,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-08-08" data-msgid="1130" data-search="shani-suthar/pyadmanager shani suthar pyadmanager python client for google ad manager rest api, simplifies data retrieval typed, auto‑paginated, retry‑enabled reads for gam python backend &amp; apis  google-ad-manager google-ad-manager-api python python3 rest-api">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-08-08" data-msgid="1130">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/shani-suthar__pyadmanager.html">pyadmanager</a></span>
         <span class="nv">notable</span>
@@ -241,7 +303,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="kotlin" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-08-08" data-msgid="1131" data-search="youndie/kmp-smtp-client youndie kmp smtp client kotlin multiplatform smtp client for sending email from kotlin/native services enables native email sending without a jvm kotlin backend &amp; apis ">
+    <article class="card" data-lang="kotlin" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-08-08" data-msgid="1131">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/youndie__kmp-smtp-client.html">kmp-smtp-client</a></span>
         <span class="nv">notable</span>
@@ -253,7 +315,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="php" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-08-06" data-msgid="1069" data-search="tune-lab/laravel-stripe-payments tune lab laravel stripe payments production-ready laravel stripe payments module with idempotency, webhook verification, and queue processing handles real production concerns like duplicate charges, race conditions, and fake webhooks php backend &amp; apis ">
+    <article class="card" data-lang="php" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-08-06" data-msgid="1069">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tune-lab__laravel-stripe-payments.html">Laravel-Stripe-Payments</a></span>
         <span class="nv">notable</span>
@@ -265,7 +327,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">4d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-07-07" data-msgid="1001" data-search="informatik-aargau/openwebui_retentionguard informatik aargau openwebui retentionguard automated cleanup service for openwebui users, chats, and files auditable retention enforcement for openwebui python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-07-07" data-msgid="1001">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/informatik-aargau__openwebui_retentionguard.html">OpenWebUI_RetentionGuard</a></span>
         <span class="nv">notable</span>
@@ -277,7 +339,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-07</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-07-04" data-msgid="974" data-search="nnjjss/thesis-snapshot-api nnjjss thesis snapshot api thesis snapshot api validates investment theses with llm and web research llm-powered thesis verification with caching and compliance checks python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-07-04" data-msgid="974">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nnjjss__thesis-snapshot-api.html">thesis-snapshot-api</a></span>
         <span class="nv">notable</span>
@@ -289,7 +351,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-04</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-15" data-msgid="833" data-search="ivanstepanok/beacon-backend ivanstepanok beacon backend go backend api for crisis building‑damage reporting idempotent upserts, versioning, multi‑format export go backend &amp; apis ">
+    <article class="card" data-lang="go" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-15" data-msgid="833">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ivanstepanok__beacon-backend.html">beacon-backend</a></span>
         <span class="nv">notable</span>
@@ -301,7 +363,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-15</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-13" data-msgid="788" data-search="paulin011/mensa-koeln paulin011 mensa koeln flask api &amp; pwa for browsing cologne mensa menus live menu, diet filters, ratings, offline access python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-13" data-msgid="788">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/paulin011__mensa-koeln.html">mensa-koeln</a></span>
         <span class="nv">notable</span>
@@ -313,7 +375,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-13</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-10" data-msgid="747" data-search="stablerails/stablerails stablerails stablerails self-hosted non-custodial stablecoin payment server zero-key server, secure on-chain payments typescript backend &amp; apis ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-10" data-msgid="747">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/stablerails__stablerails.html">stablerails</a></span>
         <span class="nv">notable</span>
@@ -325,7 +387,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-10</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-07" data-msgid="685" data-search="goulartfelipe618-beep/transporte-executivo goulartfelipe618 beep transporte executivo fastapi reservation engine for transport partners full-featured booking system with api and admin ui python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-07" data-msgid="685">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/goulartfelipe618-beep__transporte-executivo.html">transporte-executivo</a></span>
         <span class="nv">notable</span>
@@ -337,7 +399,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-07" data-msgid="700" data-search="polytom868-pixel/siglab polytom868 pixel siglab siglab: on-chain finance research &amp; paper‑trading platform integrates market data, risk scoring, and interactive ui python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-07" data-msgid="700">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/polytom868-pixel__siglab.html">siglab</a></span>
         <span class="nv">notable</span>
@@ -349,7 +411,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="swift" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-05" data-msgid="632" data-search="giautm/vision-ocr giautm vision ocr swift ocr microservice using vision for on-device text extraction self‑hosted macos ocr with api, metrics, and graceful shutdown swift backend &amp; apis ">
+    <article class="card" data-lang="swift" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-05" data-msgid="632">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/giautm__vision-ocr.html">vision-ocr</a></span>
         <span class="nv">notable</span>
@@ -361,7 +423,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-05</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-01" data-msgid="576" data-search="uberbyte1805/poolprox2 uberbyte1805 poolprox2 self‑hosted proxy that pools multiple ai accounts behind an openai‑compatible api turns many provider accounts into one unified endpoint typescript backend &amp; apis ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-01" data-msgid="576">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/uberbyte1805__poolprox2.html">poolprox2</a></span>
         <span class="nv">notable</span>
@@ -373,7 +435,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-01</span>
       </div>
     </article>
-    <article class="card archived" data-lang="typescript" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-25" data-msgid="218" data-search="git-lfs-hub/gc git lfs hub gc gc admin worker for git lfs hub managing repo lifecycle automates soft‑delete and purge of lfs objects typescript backend &amp; apis ">
+    <article class="card archived" data-lang="typescript" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-25" data-msgid="218">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/git-lfs-hub__gc.html">gc</a></span>
         <span class="nv">notable</span>
@@ -385,7 +447,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-25</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-24" data-msgid="172" data-search="qa-aman/property-finder qa aman property finder ai‑powered property shortlist tool for city movers combines llm, maps, and sentiment in one api python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-24" data-msgid="172">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/qa-aman__property-finder.html">property-finder</a></span>
         <span class="nv">notable</span>
@@ -397,19 +459,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-08-08" data-msgid="1122" data-search="nexicturbo/creekready-iris-hacks-iv nexicturbo creekready iris hacks iv flask app that turns emergency alerts into household action plans deterministic, language‑aware plans from alerts python backend &amp; apis  bilingual emergency-preparedness featherless flask hackathon iris-hacks-iv responsible-ai">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/nexicturbo__creekready-iris-hacks-iv.html">creekready-iris-hacks-iv</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Flask app that turns emergency alerts into household action plans</p>
-      <p class="card-why">Deterministic, language‑aware plans from alerts</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">bilingual</span><span class="tag">emergency-preparedness</span></div>
-        <span class="card-when">2d ago</span>
-      </div>
-    </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-07-03" data-msgid="962" data-search="rakincik/derece-muro rakincik derece muro muro lms backend api – multi‑tenant education platform full‑featured .net 8 api with auth, caching, health checks typescript backend &amp; apis ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-07-03" data-msgid="962">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/rakincik__derece-muro.html">derece-muro</a></span>
         <span class="nv">notable</span>
@@ -421,7 +471,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-03</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-07-03" data-msgid="965" data-search="heidi3115/investment-bot heidi3115 investment bot ai-powered api that explains stock trades for beginners converts trade logs into clear, human‑readable reasons typescript backend &amp; apis ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-07-03" data-msgid="965">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/heidi3115__investment-bot.html">investment-bot</a></span>
         <span class="nv">notable</span>
@@ -433,7 +483,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-03</span>
       </div>
     </article>
-    <article class="card archived" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-27" data-msgid="915" data-search="news-labs/labs-core news labs labs core shared platform of reusable backend packages for saas products ready‑made auth, billing, cloudflare, and more typescript backend &amp; apis ">
+    <article class="card archived" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-27" data-msgid="915">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/news-labs__labs-core.html">labs-core</a></span>
         <span class="nv">notable</span>
@@ -445,31 +495,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-27</span>
       </div>
     </article>
-    <article class="card" data-lang="php" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-25" data-msgid="896" data-search="runapi-ai/suno-php runapi ai suno php php sdk for runapi suno, simplifying music‑generation api calls ready‑to‑use client with task handling helpers php backend &amp; apis  api composer packagist php runapi runapi-ai sdk suno suno-api">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/runapi-ai__suno-php.html">suno-php</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">PHP SDK for RunAPI Suno, simplifying music‑generation API calls</p>
-      <p class="card-why">Ready‑to‑use client with task handling helpers</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">PHP</span><span class="tag">api</span><span class="tag">composer</span></div>
-        <span class="card-when">2026-06-25</span>
-      </div>
-    </article>
-    <article class="card" data-lang="php" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-25" data-msgid="897" data-search="runapi-ai/wan-php runapi ai wan php php sdk for runapi wan, simplifying ai video generation calls easy integration of wan ai models in php php backend &amp; apis  api composer packagist php runapi runapi-ai sdk wan wan-api">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/runapi-ai__wan-php.html">wan-php</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">PHP SDK for RunAPI Wan, simplifying AI video generation calls</p>
-      <p class="card-why">Easy integration of Wan AI models in PHP</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">PHP</span><span class="tag">api</span><span class="tag">composer</span></div>
-        <span class="card-when">2026-06-25</span>
-      </div>
-    </article>
-    <article class="card" data-lang="c++" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-20" data-msgid="869" data-search="tidyhf/lostworlds-mightyquest tidyhf lostworlds mightyquest standalone private server for the mighty quest game enables playing after official servers shut down c++ backend &amp; apis ">
+    <article class="card" data-lang="c++" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-20" data-msgid="869">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tidyhf__lostworlds-mightyquest.html">lostworlds-mightyquest</a></span>
         <span class="nv">notable</span>
@@ -481,7 +507,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-20</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-15" data-msgid="829" data-search="jc031c/harbor jc031c harbor harbor: a local‑first personal agent framework for chat and task automation modular queue adapters and workers for home‑server agents python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-15" data-msgid="829">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jc031c__harbor.html">harbor</a></span>
         <span class="nv">notable</span>
@@ -493,7 +519,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-15</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-13" data-msgid="787" data-search="geekay-git/bookeepa-rev360-api geekay git bookeepa rev360 api api service syncing rev360 e‑invoices with quickbooks automates invoice sync between rev360 and quickbooks python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-13" data-msgid="787">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/geekay-git__bookeepa-rev360-api.html">bookeepa-rev360-api</a></span>
         <span class="nv">notable</span>
@@ -505,7 +531,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-13</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-09" data-msgid="730" data-search="kawsarbinsiraj/nest-js-starter kawsarbinsiraj nest js starter nestjs starter template with full-stack features including jwt auth, prisma, postgresql, and react client comprehensive full-stack starter with robust authentication and documentation typescript backend &amp; apis ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-09" data-msgid="730">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/kawsarbinsiraj__nest-js-starter.html">nest-js-starter</a></span>
         <span class="nv">notable</span>
@@ -517,7 +543,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-09</span>
       </div>
     </article>
-    <article class="card" data-lang="blade" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-09" data-msgid="731" data-search="tahsingold/n1problem tahsingold n1problem laravel n+1 query problem demo and solution shows n+1 query issue and eager loading fix blade backend &amp; apis ">
+    <article class="card" data-lang="blade" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-09" data-msgid="731">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tahsingold__n1problem.html">n1problem</a></span>
         <span class="nv">notable</span>
@@ -529,7 +555,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-09</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-07" data-msgid="679" data-search="lojik-ng/open-api-erp lojik ng open api erp headless erp api for autonomous ai agents full-featured, rbac-secured erp backend typescript backend &amp; apis ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-07" data-msgid="679">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/lojik-ng__open-api-erp.html">open-api-erp</a></span>
         <span class="nv">notable</span>
@@ -541,7 +567,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-07" data-msgid="682" data-search="lanredadev/agent-astro lanredadev agent astro fastapi astrology api delivering precise planetary positions via swiss ephemeris provides ready-to-use astrological calculations via a clean rest api python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-07" data-msgid="682">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/lanredadev__agent-astro.html">agent-astro</a></span>
         <span class="nv">notable</span>
@@ -553,7 +579,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-07" data-msgid="690" data-search="open-lending/solver-bot open lending solver bot arbitrum liquidation bot automating soft and hard liquidations runs profit‑focused defi liquidations automatically typescript backend &amp; apis ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-07" data-msgid="690">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/open-lending__solver-bot.html">solver-bot</a></span>
         <span class="nv">notable</span>
@@ -565,7 +591,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-06" data-msgid="678" data-search="jaylfc/hermes-phone jaylfc hermes phone voip/ivr bridge that gives ai agents a phone number via twilio turns any ai agent into a callable phone service python backend &amp; apis  ai-agent hermes-agent ivr local-llm ollama openai phone-agent twilio voice-agent voip">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-06" data-msgid="678">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jaylfc__hermes-phone.html">hermes-phone</a></span>
         <span class="nv">notable</span>
@@ -577,7 +603,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="c#" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-03" data-msgid="598" data-search="kkgosi170-png/capturetrade kkgosi170 png capturetrade tradecapture api – captures trades, enriches with rates, stores idempotently ready‑to‑run back‑office trade ingestion with idempotency c# backend &amp; apis ">
+    <article class="card" data-lang="c#" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-03" data-msgid="598">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/kkgosi170-png__capturetrade.html">CaptureTrade</a></span>
         <span class="nv">notable</span>
@@ -589,7 +615,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-03</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-02" data-msgid="597" data-search="satyam-344/store-intelligence-purplle-v2 satyam 344 store intelligence purplle v2 end‑to‑end retail analytics from cctv to live dashboard ready pipeline and ui for store insights python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-02" data-msgid="597">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/satyam-344__store-intelligence-purplle-v2.html">store-intelligence-purplle-v2</a></span>
         <span class="nv">notable</span>
@@ -601,7 +627,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-02</span>
       </div>
     </article>
-    <article class="card archived" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-06-01" data-msgid="566" data-search="hagyyyy-inc/wasulance-api hagyyyy inc wasulance api api backend for wasulance solves invoice reminders typescript backend &amp; apis ">
+    <article class="card archived" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-06-01" data-msgid="566">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/hagyyyy-inc__wasulance-api.html">wasulance-api</a></span>
         <span class="nv">notable</span>
@@ -613,7 +639,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-01</span>
       </div>
     </article>
-    <article class="card archived" data-lang="javascript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-31" data-msgid="504" data-search="roins-hub/campus-relay-server roins hub campus relay server campus relay server handling auth, device pairing, and websocket messaging provides ready‑to‑run backend for eduhermes devices javascript backend &amp; apis ">
+    <article class="card archived" data-lang="javascript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-31" data-msgid="504">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/roins-hub__campus-relay-server.html">campus-relay-server</a></span>
         <span class="nv">notable</span>
@@ -625,7 +651,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-31" data-msgid="513" data-search="allenkaiyzhang/personal-infra-tools allenkaiyzhang personal infra tools fastapi_message: registry‑driven helper for inter‑service fastapi calls simplifies cross‑service calls without hard‑coding urls python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-31" data-msgid="513">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/allenkaiyzhang__personal-infra-tools.html">personal-infra-tools</a></span>
         <span class="nv">notable</span>
@@ -637,7 +663,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-31" data-msgid="554" data-search="dola2164-png/storeintelligence dola2164 png storeintelligence fastapi store intelligence pipeline turning cctv video into live metrics turns video streams into actionable retail analytics python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-31" data-msgid="554">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/dola2164-png__storeintelligence.html">StoreIntelligence</a></span>
         <span class="nv">notable</span>
@@ -649,7 +675,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-30" data-msgid="434" data-search="realmopensource/wings realmopensource wings wings: a go‑based server control plane for gaming servers fast, secure api for server lifecycle and logs go backend &amp; apis ">
+    <article class="card" data-lang="go" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-30" data-msgid="434">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/realmopensource__wings.html">wings</a></span>
         <span class="nv">notable</span>
@@ -661,7 +687,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-29" data-msgid="336" data-search="stephnos/go-project stephnos go project orchid: a durable, event‑sourced go workflow engine deterministic replay &amp; worker leasing  backend &amp; apis ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-29" data-msgid="336">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/stephnos__go-project.html">go-project</a></span>
         <span class="nv">notable</span>
@@ -673,7 +699,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-29" data-msgid="355" data-search="serli/markdown-to-pdf-api serli markdown to pdf api node.js api that converts markdown to pdf, with optional s3 storage simple self‑hosted markdown‑to‑pdf service javascript backend &amp; apis ">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-29" data-msgid="355">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/serli__markdown-to-pdf-api.html">markdown-to-pdf-api</a></span>
         <span class="nv">notable</span>
@@ -685,7 +711,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-28" data-msgid="286" data-search="mapcolonies/retiler-new mapcolonies retiler new retiler: generates map tiles from wms/arcgis and stores them on s3 or fs automates metatile fetching and splitting for map services typescript backend &amp; apis ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-28" data-msgid="286">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mapcolonies__retiler-new.html">retiler-new</a></span>
         <span class="nv">notable</span>
@@ -697,7 +723,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-24" data-msgid="171" data-search="dns-king/private_research_copilot dns king private research copilot local rag platform for private research docs hybrid bm25+semantic search, no cloud python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-24" data-msgid="171">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/dns-king__private_research_copilot.html">private_research_copilot</a></span>
         <span class="nv">notable</span>
@@ -709,7 +735,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card archived" data-lang="typescript" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-31" data-msgid="544" data-search="devops-monk/stockmonk-api devops monk stockmonk api stockmonk api aggregates market sentiment and earnings data into a unified rest service provides ready‑to‑use buy‑signal endpoints typescript backend &amp; apis ">
+    <article class="card archived" data-lang="typescript" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-31" data-msgid="544">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/devops-monk__stockmonk-api.html">stockmonk-api</a></span>
         <span class="nv">worth a look</span>
@@ -721,7 +747,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="java" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-30" data-msgid="451" data-search="selcanagabalayeva/ordertracker-microservices selcanagabalayeva ordertracker microservices ordertracker: microservice e‑commerce order backend with jwt and webhooks ready‑to‑run order management via spring microservices java backend &amp; apis  docker docker-compose jwt-authentication spring spring-security">
+    <article class="card" data-lang="java" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-30" data-msgid="451">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/selcanagabalayeva__ordertracker-microservices.html">ordertracker-microservices</a></span>
         <span class="nv">worth a look</span>
@@ -733,7 +759,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="php" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-30" data-msgid="453" data-search="graphland-dev/waland-sdks graphland dev waland sdks waland sdk – client libraries for the whatsapp api provides ready‑to‑use node and php clients for whatsapp messaging php backend &amp; apis ">
+    <article class="card" data-lang="php" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-30" data-msgid="453">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/graphland-dev__waland-sdks.html">waland-sdks</a></span>
         <span class="nv">worth a look</span>
@@ -745,7 +771,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-30" data-msgid="455" data-search="shamilahmedkhan/spotterlabs shamilahmedkhan spotterlabs fuel route planner for truckers, auto‑geocodes stops and routes fast, offline‑friendly, django api  backend &amp; apis ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-30" data-msgid="455">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/shamilahmedkhan__spotterlabs.html">spotterLabs</a></span>
         <span class="nv">worth a look</span>
@@ -757,7 +783,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card archived" data-lang="rust" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-29" data-msgid="356" data-search="ibraiz11/options-scanner ibraiz11 options scanner rust‑polars options scanner with back‑test and llm‑driven trading combines analytics, simulation, and broker execution rust backend &amp; apis ">
+    <article class="card archived" data-lang="rust" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-29" data-msgid="356">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ibraiz11__options-scanner.html">options-scanner</a></span>
         <span class="nv">worth a look</span>
@@ -769,7 +795,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-27" data-msgid="279" data-search="samuelwellb-png/redes samuelwellb png redes real-time lab sensor monitoring with web dashboard tcp+http stack for sensor data  backend &amp; apis ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-27" data-msgid="279">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/samuelwellb-png__redes.html">Redes</a></span>
         <span class="nv">worth a look</span>
@@ -781,7 +807,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-27</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-26" data-msgid="221" data-search="orhankhan01911/project-tg-token orhankhan01911 project tg token a solution that streamlines access control it addresses telegram&#x27;s need for secure token-gating using existing frameworks, ensuring efficient implementation. python backend &amp; apis ">
+    <article class="card archived" data-lang="python" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-26" data-msgid="221">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/orhankhan01911__project-tg-token.html">project-tg-token</a></span>
         <span class="nv">worth a look</span>
@@ -793,7 +819,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-26</span>
       </div>
     </article>
-    <article class="card" data-lang="java" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-26" data-msgid="233" data-search="espinace/banking-platform espinace banking platform java spring boot banking platform api for accounts and transactions provides ready-to-run banking backend with docker support java backend &amp; apis  banking docker java microservices postegresql rest-api spring-boot">
+    <article class="card" data-lang="java" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-26" data-msgid="233">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/espinace__banking-platform.html">banking-platform</a></span>
         <span class="nv">worth a look</span>
@@ -805,7 +831,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-26</span>
       </div>
     </article>
-    <article class="card" data-lang="java" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-25" data-msgid="191" data-search="bytephoria/byte-companions-buffs bytephoria byte companions buffs bytecompanionsbuffs – adds configurable buffs to minecraft companions instant buff activation on equip java backend &amp; apis ">
+    <article class="card" data-lang="java" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-25" data-msgid="191">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/bytephoria__byte-companions-buffs.html">byte-companions-buffs</a></span>
         <span class="nv">worth a look</span>
@@ -817,7 +843,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-25</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-24" data-msgid="160" data-search="sanskarpan/fs-engine sanskarpan fs engine fs-engine: go-based ext2-like filesystem with react visualizer live fs visualizer and api for learning and testing go backend &amp; apis ">
+    <article class="card" data-lang="go" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-24" data-msgid="160">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/sanskarpan__fs-engine.html">fs-engine</a></span>
         <span class="nv">worth a look</span>
@@ -829,7 +855,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-24" data-msgid="169" data-search="spendpilot/spend-control-expense-service spendpilot spend control expense service expense microservice for claims, receipts, budgets, anomalies handles core expense logic in one api python backend &amp; apis ">
+    <article class="card archived" data-lang="python" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-24" data-msgid="169">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/spendpilot__spend-control-expense-service.html">spend-control-expense-service</a></span>
         <span class="nv">worth a look</span>
@@ -841,7 +867,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-24" data-msgid="170" data-search="spendpilot/spend-control-control-service spendpilot spend control control service api service for managing spend control operations provides centralized spend‑control backend python backend &amp; apis ">
+    <article class="card archived" data-lang="python" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-24" data-msgid="170">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/spendpilot__spend-control-control-service.html">spend-control-control-service</a></span>
         <span class="nv">worth a look</span>
@@ -853,7 +879,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-24" data-msgid="182" data-search="assemayb/rescounts-task assemayb rescounts task ticket purchase service with safe concurrency and idempotent retries handles concurrent sales reliably typescript backend &amp; apis ">
+    <article class="card" data-lang="typescript" data-novelty="5" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-24" data-msgid="182">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/assemayb__rescounts-task.html">rescounts-task</a></span>
         <span class="nv">worth a look</span>
@@ -865,7 +891,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="4" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-27" data-msgid="274" data-search="simbadmarino/tron-3009 simbadmarino tron 3009 tron erc-3009 token demo useful for testing  backend &amp; apis ">
+    <article class="card" data-lang="" data-novelty="4" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-27" data-msgid="274">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/simbadmarino__tron-3009.html">tron-3009</a></span>
         <span class="nv">worth a look</span>
@@ -877,7 +903,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-27</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="4" data-cat="Backend &amp; APIs" data-sub="" data-date="2026-05-25" data-msgid="207" data-search="deklerkwouter04/ecofleet_ai deklerkwouter04 ecofleet ai fleet access and repair management tool provides backend for vehicle fleet operations python backend &amp; apis ">
+    <article class="card" data-lang="python" data-novelty="4" data-cat="Backend &amp; APIs" data-sub="More" data-date="2026-05-25" data-msgid="207">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/deklerkwouter04__ecofleet_ai.html">EcoFleet_AI</a></span>
         <span class="nv">worth a look</span>
@@ -894,13 +920,13 @@ a:hover{text-decoration:underline}
 <script>
 (function(){
   var q=document.getElementById('q');
-  var chips=[].slice.call(document.querySelectorAll('#filters .chip'));
+  var chips=[].slice.call(document.querySelectorAll('#filters .chip,#subfilters .chip'));
   var sortChips=[].slice.call(document.querySelectorAll('.chip.sort'));
   var cards=[].slice.call(document.querySelectorAll('[data-section] .card'));
   var sections=[].slice.call(document.querySelectorAll('[data-section]'));
   var results=document.getElementById('searchresults');
   var noresults=document.getElementById('noresults');
-  var state={text:'',lang:'',novelty:0,sort:'best'};
+  var state={text:'',lang:'',sub:'',novelty:0,sort:'best'};
   var INDEX=null;   // загруженный search.json (ленивая загрузка при первом поиске)
 
   function cmp(a,b){
@@ -927,7 +953,8 @@ a:hover{text-decoration:underline}
     cards.forEach(function(c){
       var okL=!state.lang || c.dataset.lang===state.lang;
       var okN=!state.novelty || (parseInt(c.dataset.novelty||'0',10)>=state.novelty);
-      var ok=okL&&okN;
+      var okS=!state.sub || c.dataset.sub===state.sub;
+      var ok=okL&&okN&&okS;
       c.style.display=ok?'':'none';
       if(ok)shown++;
     });
@@ -955,6 +982,7 @@ a:hover{text-decoration:underline}
       summary:it.s||'', why:it.w||'', lang:it.l||'', novelty:it.n||0,
       badge:badgeOf(it.n),
       url:'p/'+jslug(owner)+'__'+jslug(name)+'.html',
+      x:(it.x||'').toLowerCase(),
       q:(repo+' '+flat+' '+(it.s||'')+' '+(it.w||'')+' '+(it.l||'')+' '+(it.x||'')).toLowerCase()
     };
   }
@@ -983,6 +1011,7 @@ a:hover{text-decoration:underline}
     var matched=INDEX.items.filter(function(it){
       if(t && (it.q||'').indexOf(t)===-1) return false;
       if(state.lang && (it.lang||'').toLowerCase()!==state.lang) return false;
+      if(state.sub && (it.x||'').indexOf(state.sub.toLowerCase())<0) return false;
       if(state.novelty && (it.novelty||0)<state.novelty) return false;
       return true;
     });
@@ -1024,6 +1053,9 @@ a:hover{text-decoration:underline}
       if(f==='lang'){
         chips.filter(function(x){return x.dataset.filter==='lang';}).forEach(function(x){x.classList.remove('on');});
         ch.classList.add('on');state.lang=v;
+      } else if(f==='sub'){
+        chips.filter(function(x){return x.dataset.filter==='sub';}).forEach(function(x){x.classList.remove('on');});
+        ch.classList.add('on');state.sub=v;
       } else if(f==='novelty'){
         ch.classList.toggle('on');
         state.novelty=ch.classList.contains('on')?parseInt(v,10):0;

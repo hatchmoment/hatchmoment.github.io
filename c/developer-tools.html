@@ -137,6 +137,9 @@ a:hover{text-decoration:underline}
 .hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
 .hero .metrics strong{color:var(--accent);font-weight:700}
 .hero .metric-sep{opacity:.4}
+.hero .metric-note{opacity:.55;font-size:11px}
+.filters-sub{margin-top:6px}
+.chip .chip-n{opacity:.5;font-size:10px;margin-left:3px}
 .hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
 .hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
 .hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
@@ -191,8 +194,14 @@ a:hover{text-decoration:underline}
   </div>
   <div class="filters" id="filters">
     <span class="chip on" data-filter="lang" data-val="">All languages</span>
-    <span class="chip" data-filter="lang" data-val="c">C</span><span class="chip" data-filter="lang" data-val="c#">C#</span><span class="chip" data-filter="lang" data-val="dockerfile">Dockerfile</span><span class="chip" data-filter="lang" data-val="go">Go</span><span class="chip" data-filter="lang" data-val="html">HTML</span><span class="chip" data-filter="lang" data-val="java">Java</span>
+    <span class="chip" data-filter="lang" data-val="typescript">TypeScript</span><span class="chip" data-filter="lang" data-val="python">Python</span><span class="chip" data-filter="lang" data-val="rust">Rust</span><span class="chip" data-filter="lang" data-val="javascript">JavaScript</span><span class="chip" data-filter="lang" data-val="go">Go</span><span class="chip" data-filter="lang" data-val="shell">Shell</span>
     <span class="chip" data-filter="novelty" data-val="7">rare finds</span>
+  </div>
+  <div class="filters filters-sub" id="subfilters">
+    <span class="chip on" data-filter="sub" data-val="">All kinds</span>
+    <span class="chip" data-filter="sub" data-val="CLI &amp; terminal">CLI &amp; terminal <span class="chip-n">4</span></span>
+    <span class="chip" data-filter="sub" data-val="API &amp; SDK tooling">API &amp; SDK tooling <span class="chip-n">1</span></span>
+    <span class="chip" data-filter="sub" data-val="More">More <span class="chip-n">122</span></span>
   </div>
   <div class="sortbar">
     <span class="sortlbl">sort:</span>
@@ -203,9 +212,86 @@ a:hover{text-decoration:underline}
   <div id="searchresults" style="display:none"></div>
   <div id="noresults" class="empty" style="display:none">Nothing matches — try a different search.</div>
   <section data-section>
-
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">CLI &amp; terminal</h2>
+      <span class="meta">4</span>
+    </div>
     <div class="grid">
-    <article class="card" data-lang="typescript" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-08-10" data-msgid="1175" data-search="apatureai/ui-graph apatureai ui graph deterministic scene graph for browser agents, fusing dom, accessibility, style, and text. traceable, conflict‑aware graph for agent prompts. typescript developer tools  accessibility ai-agents browser-agents dom scene-graph typescript">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="CLI &amp; terminal" data-date="2026-08-09" data-msgid="1168">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/berkaycaglar__ostrace.html">ostrace</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">ostrace streams, inspects, and exports iOS device logs across Windows, macOS, and Linux</p>
+      <p class="card-why">Delivers structured DEBUG/INFO logs with a GUI viewer, unlike syslog‑only tools</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">CLI &amp; terminal</span><span class="tag">cli</span><span class="tag">cross-platform</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="CLI &amp; terminal" data-date="2026-08-08" data-msgid="1125">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/juuzoe__bloatrail.html">bloatrail</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Rust-based disk analyzer that identifies and safely cleans developer artifacts</p>
+      <p class="card-why">Shows why space is used and offers safe removal</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Rust</span><span class="tag sub">CLI &amp; terminal</span><span class="tag">cli</span><span class="tag">disk-cleanup</span></div>
+        <span class="card-when">2d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="CLI &amp; terminal" data-date="2026-06-01" data-msgid="577">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/ironforgesoftware__junco.html">junco</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Junco: AI‑driven CLI that turns Markdown tickets into GitHub pull requests</p>
+      <p class="card-why">Automates ticket‑to‑PR workflow with AI</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag sub">CLI &amp; terminal</span><span class="tag">ai-agent</span><span class="tag">automation</span></div>
+        <span class="card-when">2026-06-01</span>
+      </div>
+    </article>
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="CLI &amp; terminal" data-date="2026-05-29" data-msgid="342">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/zaydiscold__squarespace-cli.html">squarespace-cli</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">CLIfor managing Squarespace commerce, orders, products, inventory via API</p>
+      <p class="card-why">Safe dry‑run CLI with MCP integration for Squarespace admins</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag sub">CLI &amp; terminal</span><span class="tag">api</span><span class="tag">cli</span></div>
+        <span class="card-when">2026-05-29</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">API &amp; SDK tooling</h2>
+      <span class="meta">1</span>
+    </div>
+    <div class="grid">
+    <article class="card archived" data-lang="zig" data-novelty="8" data-cat="Developer Tools" data-sub="API &amp; SDK tooling" data-date="2026-06-27" data-msgid="924">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/xirasm__zasmg-runtime-asm.html">zasmg-runtime-asm</a></span>
+        <span class="nv hi">rare find</span>
+      </div>
+      <p class="card-sum">Runtime assembler turning assembly strings into callable machine code</p>
+      <p class="card-why">Enables JIT assembly without external toolchains</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Zig</span><span class="tag sub">API &amp; SDK tooling</span><span class="tag">assembler-x86</span><span class="tag">codegen</span><span class="archived-tag">archived</span></div>
+        <span class="card-when">2026-06-27</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">More</h2>
+      <span class="meta">122</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="typescript" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-08-10" data-msgid="1175">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/apatureai__ui-graph.html">ui-graph</a></span>
         <span class="nv hi">rare find</span>
@@ -217,7 +303,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">today</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-08-09" data-msgid="1146" data-search="ores-otel/ores.otel.log ores otel ores.otel.log polyglot structured logger for web, edge, and server, unifying otel and loki unified, language-agnostic logging with otel support typescript developer tools  grafana logging loki opentelemetry otel polyglot prometheus supabase">
+    <article class="card" data-lang="typescript" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-08-09" data-msgid="1146">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ores-otel__ores.otel.log.html">ores.otel.log</a></span>
         <span class="nv hi">rare find</span>
@@ -229,7 +315,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="swift" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-08-09" data-msgid="1149" data-search="elliot7williams/ios-virtual-device-lab elliot7williams ios virtual device lab swiftui macos manager that turns vphone‑cli into a full‑featured ios vm lab brings a polished ui to complex vm ops swift developer tools  ios-virtualization macos swift swiftui vphone-cli">
+    <article class="card" data-lang="swift" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-08-09" data-msgid="1149">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/elliot7williams__ios-virtual-device-lab.html">ios-virtual-device-lab</a></span>
         <span class="nv hi">rare find</span>
@@ -241,7 +327,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-08-09" data-msgid="1153" data-search="tinkora/image_to_icns tinkora image to icns browser‑native tool that converts images into macos .icns icons locally runs fully in the browser, preserving privacy rust developer tools  developer-tools icns image-converter macos privacy rust tinkora webassembly">
+    <article class="card" data-lang="rust" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-08-09" data-msgid="1153">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tinkora__image_to_icns.html">image_to_icns</a></span>
         <span class="nv hi">rare find</span>
@@ -253,7 +339,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-08-08" data-msgid="1111" data-search="nickhac/altitude-upstream nickhac altitude upstream autonomous oss contribution bot that discovers gaps and submits prs daily automates fixes and documentation for high‑traffic llm repos python developer tools  ai-agents automation autonomous-agents bedrock github-api llm open-source python">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-08-08" data-msgid="1111">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nickhac__altitude-upstream.html">altitude-upstream</a></span>
         <span class="nv hi">rare find</span>
@@ -265,7 +351,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-08-08" data-msgid="1113" data-search="l7aromeo/meo-skia-canvas l7aromeo meo skia canvas gpu-accelerated, multi‑threaded canvas library for node &amp; rust fast, hdr‑ready canvas rendering with native skia rust developer tools  canvas gpu graphics image-processing napi neon-bindings node rust skia">
+    <article class="card" data-lang="rust" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-08-08" data-msgid="1113">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/l7aromeo__meo-skia-canvas.html">meo-skia-canvas</a></span>
         <span class="nv hi">rare find</span>
@@ -277,7 +363,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-08-07" data-msgid="1078" data-search="briar-systems/mach-shader briar systems mach shader mach shader math library mapping functions to spir-v glsl.std.450 ops direct spir-v instruction mapping for shader code  developer tools ">
+    <article class="card" data-lang="" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-08-07" data-msgid="1078">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/briar-systems__mach-shader.html">mach-shader</a></span>
         <span class="nv hi">rare find</span>
@@ -289,7 +375,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="html" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-07-04" data-msgid="977" data-search="shaqa3/git-dojo shaqa3 git dojo interactive offline git trainer for learning git commands self‑contained, test‑driven, no‑network git simulator html developer tools  education git github-pages interactive javascript katas learning no-dependencies offline tutorial version-control web-app">
+    <article class="card" data-lang="html" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-07-04" data-msgid="977">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/shaqa3__git-dojo.html">git-dojo</a></span>
         <span class="nv hi">rare find</span>
@@ -301,7 +387,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-04</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-06-30" data-msgid="940" data-search="ish-cs/buildcast ish cs buildcast buildcast: cli that predicts remaining build effort using calibrated probabilistic forecasts probabilistic forecasts with self‑validation javascript developer tools ">
+    <article class="card" data-lang="javascript" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-06-30" data-msgid="940">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ish-cs__buildcast.html">buildcast</a></span>
         <span class="nv hi">rare find</span>
@@ -313,19 +399,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-30</span>
       </div>
     </article>
-    <article class="card archived" data-lang="zig" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-06-27" data-msgid="924" data-search="xirasm/zasmg-runtime-asm xirasm zasmg runtime asm runtime assembler turning assembly strings into callable machine code enables jit assembly without external toolchains zig developer tools  assembler-x86 codegen dynamic-code-generation jit machine-code riscv runtime-assembler spirv x86-64 zig">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/xirasm__zasmg-runtime-asm.html">zasmg-runtime-asm</a></span>
-        <span class="nv hi">rare find</span>
-      </div>
-      <p class="card-sum">Runtime assembler turning assembly strings into callable machine code</p>
-      <p class="card-why">Enables JIT assembly without external toolchains</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Zig</span><span class="tag">assembler-x86</span><span class="tag">codegen</span><span class="archived-tag">archived</span></div>
-        <span class="card-when">2026-06-27</span>
-      </div>
-    </article>
-    <article class="card" data-lang="python" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="493" data-search="teamcache-dev/teamcache teamcache dev teamcache shared ai context cache saves tokens python developer tools ">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-05-31" data-msgid="493">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/teamcache-dev__teamcache.html">teamcache</a></span>
         <span class="nv hi">rare find</span>
@@ -337,7 +411,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="swift" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-05-26" data-msgid="220" data-search="appsent-co/react-native-watchos appsent co react native watchos build watchos apps with react, rendered as native swiftui. native swiftui rendering via jsi. swift developer tools ">
+    <article class="card" data-lang="swift" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-05-26" data-msgid="220">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/appsent-co__react-native-watchos.html">react-native-watchos</a></span>
         <span class="nv hi">rare find</span>
@@ -349,7 +423,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-26</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="8" data-cat="Developer Tools" data-sub="" data-date="2026-05-24" data-msgid="180" data-search="enricai/centella enricai centella centella: deterministic task orchestrator for claude code runs claude tasks in isolated worktrees, no api key python developer tools ">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="Developer Tools" data-sub="More" data-date="2026-05-24" data-msgid="180">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/enricai__centella.html">centella</a></span>
         <span class="nv hi">rare find</span>
@@ -361,7 +435,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-10" data-msgid="1173" data-search="569001773-wq/app-review-delta 569001773 wq app review delta appreviewdelta: ci tool to spot ios release‑review risks per pr differential static analysis, no checkout needed typescript developer tools  app-review app-store ci expo github-actions ios mobile-development react-native static-analysis">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-10" data-msgid="1173">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/569001773-wq__app-review-delta.html">app-review-delta</a></span>
         <span class="nv">notable</span>
@@ -373,7 +447,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">today</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-10" data-msgid="1179" data-search="apatureai/ui-dna apatureai ui dna ui-dna: deterministic design-token resolver for codebases abstains on ambiguous tokens, provides detailed diagnostics typescript developer tools  design-systems design-tokens design-tokens-community-group dtcg tailwindcss typescript">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-10" data-msgid="1179">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/apatureai__ui-dna.html">ui-dna</a></span>
         <span class="nv">notable</span>
@@ -385,7 +459,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">today</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-09" data-msgid="1155" data-search="leo91000/sheetom leo91000 sheetom sheetom provides a mutable cssom for node, bun, and deno to edit and serialize styles server‑side. enables browser‑like css manipulation without a dom. typescript developer tools  bun css cssom deno lightningcss nodejs stylesheet">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-09" data-msgid="1155">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/leo91000__sheetom.html">sheetom</a></span>
         <span class="nv">notable</span>
@@ -397,7 +471,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-09" data-msgid="1162" data-search="readoutlang/readoutlang readoutlang readoutlang readoutlang renders plain‑text diagram dsl into self‑contained interactive html zero‑dependency cli for live docs diagrams typescript developer tools  ai-agents charts dataviz diagrams documentation dsl llm markdown typescript zero-dependency">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-09" data-msgid="1162">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/readoutlang__readoutlang.html">readoutlang</a></span>
         <span class="nv">notable</span>
@@ -409,7 +483,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="slint" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-09" data-msgid="1164" data-search="rariux/atlas-ui rariux atlas ui atlas ui: rust &amp; slint design system with tokens, components, and responsive layouts. brings web‑style design to native rust apps. slint developer tools  components design-system gui native-ui rust slint ui">
+    <article class="card" data-lang="slint" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-09" data-msgid="1164">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/rariux__atlas-ui.html">Atlas-UI</a></span>
         <span class="nv">notable</span>
@@ -421,19 +495,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-09" data-msgid="1168" data-search="berkaycaglar/ostrace berkaycaglar ostrace ostrace streams, inspects, and exports ios device logs across windows, macos, and linux delivers structured debug/info logs with a gui viewer, unlike syslog‑only tools python developer tools  cli cross-platform debugging developer-tools ios iphone logging os-log pymobiledevice3 python syslog">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/berkaycaglar__ostrace.html">ostrace</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">ostrace streams, inspects, and exports iOS device logs across Windows, macOS, and Linux</p>
-      <p class="card-why">Delivers structured DEBUG/INFO logs with a GUI viewer, unlike syslog‑only tools</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">cli</span><span class="tag">cross-platform</span></div>
-        <span class="card-when">yesterday</span>
-      </div>
-    </article>
-    <article class="card" data-lang="swift" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-08" data-msgid="1108" data-search="peterrk/protocache-swift peterrk protocache swift protocache swift – zero‑copy protobuf serialization for swift fast, zero‑copy, no protobuf runtime dependency swift developer tools ">
+    <article class="card" data-lang="swift" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-08" data-msgid="1108">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/peterrk__protocache-swift.html">protocache-swift</a></span>
         <span class="nv">notable</span>
@@ -445,7 +507,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-08" data-msgid="1115" data-search="emerzon/review-rig emerzon review rig ai‑powered multi‑assistant code review pipeline combines multiple llm reviews into one evidence‑backed report python developer tools  ai-agents claude-code code-review codex developer-tools gemini-cli opencode">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-08" data-msgid="1115">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/emerzon__review-rig.html">review-rig</a></span>
         <span class="nv">notable</span>
@@ -457,19 +519,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-08" data-msgid="1125" data-search="juuzoe/bloatrail juuzoe bloatrail rust-based disk analyzer that identifies and safely cleans developer artifacts shows why space is used and offers safe removal rust developer tools  cli disk-cleanup disk-space disk-usage egui rust">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/juuzoe__bloatrail.html">bloatrail</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Rust-based disk analyzer that identifies and safely cleans developer artifacts</p>
-      <p class="card-why">Shows why space is used and offers safe removal</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Rust</span><span class="tag">cli</span><span class="tag">disk-cleanup</span></div>
-        <span class="card-when">2d ago</span>
-      </div>
-    </article>
-    <article class="card" data-lang="swift" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-08" data-msgid="1129" data-search="shiroyasha9/brioche shiroyasha9 brioche swiftui toast rack delivering stacked, timed notifications on macos one‑line api, native glass effect, fully tested state machine swift developer tools  liquid-glass macos notifications sonner swift swift-package swiftui toast">
+    <article class="card" data-lang="swift" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-08" data-msgid="1129">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/shiroyasha9__brioche.html">Brioche</a></span>
         <span class="nv">notable</span>
@@ -481,7 +531,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-08" data-msgid="1135" data-search="virtualonno/papertiger virtualonno papertiger local sqlite-based planning cli for ai‑agent engineering tasks keeps persistent task state across agent sessions rust developer tools  ai-agents planning rust sqlite">
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-08" data-msgid="1135">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/virtualonno__papertiger.html">papertiger</a></span>
         <span class="nv">notable</span>
@@ -493,7 +543,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-08" data-msgid="1142" data-search="go-widgets/window go widgets window pure-go x11 backend enabling cgo‑free go gui apps zero cgo, full protocol, robust tests go developer tools ">
+    <article class="card" data-lang="go" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-08" data-msgid="1142">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/go-widgets__window.html">window</a></span>
         <span class="nv">notable</span>
@@ -505,7 +555,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-07" data-msgid="1075" data-search="cstwist/codelens-wasm cstwist codelens wasm browser‑based ast visualizer that parses code via rust‑wasm fast, offline, no‑cdn ast viewer with monaco editor typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-07" data-msgid="1075">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/cstwist__codelens-wasm.html">CodeLens-Wasm</a></span>
         <span class="nv">notable</span>
@@ -517,7 +567,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-07" data-msgid="1076" data-search="rux-eth/rumpy-execution rux eth rumpy execution rust crypto portfolio optimizer &amp; backtester with cost-aware socp integrates realistic transaction costs into fast rust backtests rust developer tools  backtesting convex-optimization portfolio-optimization quantitative-finance rust trading">
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-07" data-msgid="1076">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/rux-eth__rumpy-execution.html">rumpy-execution</a></span>
         <span class="nv">notable</span>
@@ -529,7 +579,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="makefile" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-07" data-msgid="1077" data-search="theenglishcore/eng theenglishcore eng engling is a rust‑based interpreter that lets you code in plain english. executes english‑like scripts via a fast bytecode vm with repl and optional gui. makefile developer tools ">
+    <article class="card" data-lang="makefile" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-07" data-msgid="1077">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/theenglishcore__eng.html">eng</a></span>
         <span class="nv">notable</span>
@@ -541,7 +591,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="shell" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-07" data-msgid="1101" data-search="jinu1prakash/what-have-i-done jinu1prakash what have i done agentic skills framework that gates ai agent claims with evidence-based review prevents agents from declaring wrong work done via adversarial self-review shell developer tools  agent-reviewer ai skill-md skills subagent-driven-development superpowers">
+    <article class="card" data-lang="shell" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-07" data-msgid="1101">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jinu1prakash__what-have-i-done.html">what-have-i-done</a></span>
         <span class="nv">notable</span>
@@ -553,7 +603,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-04" data-msgid="1065" data-search="tan-o/vscode-manim-notebook tan o vscode manim notebook vs code extension for editing and rendering manim notebooks seamless manim animation workflow inside .manim.ipynb files typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-04" data-msgid="1065">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tan-o__vscode-manim-notebook.html">vscode-manim-notebook</a></span>
         <span class="nv">notable</span>
@@ -565,7 +615,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">6d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-08-02" data-msgid="1060" data-search="davidcreador/pi-code davidcreador pi code picode: desktop ai‑powered coding ide for developers integrates pi ai agent into a native electron ide typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-08-02" data-msgid="1060">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/davidcreador__pi-code.html">pi-code</a></span>
         <span class="nv">notable</span>
@@ -577,7 +627,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">1w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-07-28" data-msgid="1054" data-search="ydah/syntaxpad ydah syntaxpad syntaxpad: vs code extension for editing bison/yacc/lrama grammars with diagrams and refactorings live grammar visualizations and safe refactorings typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-07-28" data-msgid="1054">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ydah__syntaxpad.html">syntaxpad</a></span>
         <span class="nv">notable</span>
@@ -589,7 +639,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">1w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-07-20" data-msgid="1036" data-search="mpender08/jacobian-counterexample-structure mpender08 jacobian counterexample structure exact symbolic verification scripts for a three‑dimensional jacobian counterexample dual python/node checks ensure rigorous verification python developer tools ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-07-20" data-msgid="1036">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mpender08__jacobian-counterexample-structure.html">jacobian-counterexample-structure</a></span>
         <span class="nv">notable</span>
@@ -601,7 +651,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-07-15" data-msgid="1016" data-search="jasonkneen/unithread jasonkneen unithread unithread – unified true multithreading library for node and browsers provides real os threads via a single api javascript developer tools ">
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-07-15" data-msgid="1016">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jasonkneen__unithread.html">unithread</a></span>
         <span class="nv">notable</span>
@@ -613,7 +663,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="lean" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-28" data-msgid="928" data-search="random-fields/percolation random fields percolation lean 4 library formalizing percolation theory and random‑cluster model provides rigorous math proofs in lean lean developer tools ">
+    <article class="card" data-lang="lean" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-28" data-msgid="928">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/random-fields__percolation.html">percolation</a></span>
         <span class="nv">notable</span>
@@ -625,7 +675,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-28</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-27" data-msgid="912" data-search="inth3shadows/terse inth3shadows terse lossless-first compression layer for ai tool json outputs reduces token usage while keeping data readable python developer tools ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-27" data-msgid="912">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/inth3shadows__terse.html">terse</a></span>
         <span class="nv">notable</span>
@@ -637,7 +687,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-27</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-25" data-msgid="903" data-search="mjfwebb/zed-color-syntax-picker mjfwebb zed color syntax picker zed extension adding inline color swatches for hex literals shows and edits non‑css color codes directly javascript developer tools ">
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-25" data-msgid="903">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mjfwebb__zed-color-syntax-picker.html">zed-color-syntax-picker</a></span>
         <span class="nv">notable</span>
@@ -649,7 +699,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-25</span>
       </div>
     </article>
-    <article class="card archived" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-20" data-msgid="862" data-search="sadeqnotion1/svgpicker sadeqnotion1 svgpicker svgpicker extracts icons from codebases and suggests replacements from popular libraries quickly finds and swaps icons via iconify api typescript developer tools ">
+    <article class="card archived" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-20" data-msgid="862">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/sadeqnotion1__svgpicker.html">SVGpicker</a></span>
         <span class="nv">notable</span>
@@ -661,7 +711,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-20</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-20" data-msgid="871" data-search="seqizz/nocruft seqizz nocruft nocruft – cli to trace and list files created by nix-shell shows exact paths created, enabling easy cleanup rust developer tools  ebpf nix-shell">
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-20" data-msgid="871">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/seqizz__nocruft.html">nocruft</a></span>
         <span class="nv">notable</span>
@@ -673,7 +723,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-20</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-18" data-msgid="848" data-search="vizforge/plotir vizforge plotir plotir converts a single chart intent into vega‑lite and tableau files unified spec, multi‑output visualizations typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-18" data-msgid="848">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/vizforge__plotir.html">plotir</a></span>
         <span class="nv">notable</span>
@@ -685,7 +735,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-18</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-14" data-msgid="800" data-search="doclight-lab/sdk-core doclight lab sdk core doclight core sdk – lightweight observability for ai agents typed event schema &amp; async queue for agent telemetry typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-14" data-msgid="800">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/doclight-lab__sdk-core.html">sdk-core</a></span>
         <span class="nv">notable</span>
@@ -697,7 +747,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-14</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-13" data-msgid="784" data-search="samuelz12/prtokens samuelz12 prtokens cli to attribute ai coding token usage to github prs and post cost summary shows token counts and cost directly in pr comments typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-13" data-msgid="784">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/samuelz12__prtokens.html">prtokens</a></span>
         <span class="nv">notable</span>
@@ -709,7 +759,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-13</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-13" data-msgid="798" data-search="omry/stale-buffer-guard omry stale buffer guard vs code extension warns when your unsaved buffer is older than the file on disk prevents lost edits from external file changes javascript developer tools ">
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-13" data-msgid="798">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/omry__stale-buffer-guard.html">stale-buffer-guard</a></span>
         <span class="nv">notable</span>
@@ -721,7 +771,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-13</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-12" data-msgid="777" data-search="mohammedbasioni/scalpel mohammedbasioni scalpel scalpel: a local proxy that trims dead claude context to cut token costs reduces claude api token usage by pruning stale tool output typescript developer tools  anthropic claude-code llm prompt-cache proxy token-optimization">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-12" data-msgid="777">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mohammedbasioni__scalpel.html">scalpel</a></span>
         <span class="nv">notable</span>
@@ -733,7 +783,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-12</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-11" data-msgid="751" data-search="vinary-tree/duallity vinary tree duallity rust crate exposing levenshtein automata as wfsts for composition pipelines enables fuzzy matching to compose with other transducers rust developer tools ">
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-11" data-msgid="751">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/vinary-tree__duallity.html">duallity</a></span>
         <span class="nv">notable</span>
@@ -745,7 +795,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-11</span>
       </div>
     </article>
-    <article class="card" data-lang="c#" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-10" data-msgid="741" data-search="usepennington/ashcroft usepennington ashcroft ashcroft: c# library to generate open graph social cards declarative api with auto typography and cross‑platform rendering c# developer tools ">
+    <article class="card" data-lang="c#" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-10" data-msgid="741">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/usepennington__ashcroft.html">ashcroft</a></span>
         <span class="nv">notable</span>
@@ -757,7 +807,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-10</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-09" data-msgid="724" data-search="burtson-labs/bandit-agent-framework burtson labs bandit agent framework local‑first ai coding agent framework for terminal and editor workflows runs on any ollama model, keeps code local typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-09" data-msgid="724">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/burtson-labs__bandit-agent-framework.html">bandit-agent-framework</a></span>
         <span class="nv">notable</span>
@@ -769,7 +819,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-09</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-07" data-msgid="706" data-search="gvarad26/agentic-go-contributor gvarad26 agentic go contributor ai-powered agent that auto‑writes go prs from github issues generates real, validated go code changes automatically python developer tools ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-07" data-msgid="706">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/gvarad26__agentic-go-contributor.html">agentic-go-contributor</a></span>
         <span class="nv">notable</span>
@@ -781,7 +831,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-06" data-msgid="654" data-search="vvgool/cocos-ui vvgool cocos ui react‑style ui framework for cocos creator games declarative jsx ui with reactivity and animations typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-06" data-msgid="654">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/vvgool__cocos-ui.html">cocos-ui</a></span>
         <span class="nv">notable</span>
@@ -793,7 +843,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="typst" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-06" data-msgid="670" data-search="thangqd/myst thangqd myst myst article template for single-page articles with markdown, jupyter support, and pdf export reusable template with interactive html site and publication-ready pdf via typst typst developer tools ">
+    <article class="card" data-lang="typst" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-06" data-msgid="670">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/thangqd__myst.html">myst</a></span>
         <span class="nv">notable</span>
@@ -805,7 +855,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-05" data-msgid="629" data-search="dravr-ai/dravr-browser dravr ai dravr browser reusable headless-chrome automation primitives for multiple rust crates provides a battle-tested browser stack with anti-detection features rust developer tools ">
+    <article class="card" data-lang="rust" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-05" data-msgid="629">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/dravr-ai__dravr-browser.html">dravr-browser</a></span>
         <span class="nv">notable</span>
@@ -817,7 +867,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-05</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-01" data-msgid="562" data-search="alex-kaff/claude-wrap-mcp alex kaff claude wrap mcp mcp server to spawn and control claude code ai sessions cli tool for orchestrating claude code agents typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-01" data-msgid="562">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/alex-kaff__claude-wrap-mcp.html">claude-wrap-mcp</a></span>
         <span class="nv">notable</span>
@@ -829,7 +879,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-01</span>
       </div>
     </article>
-    <article class="card" data-lang="moonbit" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-01" data-msgid="571" data-search="dzmingli/moonbit-decimal dzmingli moonbit decimal moonbit arbitrary-precision decimal library for exact arithmetic provides ieee‑754‑2008 compliant decimal math in moonbit moonbit developer tools ">
+    <article class="card" data-lang="moonbit" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-06-01" data-msgid="571">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/dzmingli__moonbit-decimal.html">moonbit-decimal</a></span>
         <span class="nv">notable</span>
@@ -841,19 +891,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-01</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-06-01" data-msgid="577" data-search="ironforgesoftware/junco ironforgesoftware junco junco: ai‑driven cli that turns markdown tickets into github pull requests automates ticket‑to‑pr workflow with ai typescript developer tools  ai-agent automation cli coding-agent daemon developer-tools git llm pull-request task-queue typescript">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/ironforgesoftware__junco.html">junco</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Junco: AI‑driven CLI that turns Markdown tickets into GitHub pull requests</p>
-      <p class="card-why">Automates ticket‑to‑PR workflow with AI</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag">ai-agent</span><span class="tag">automation</span></div>
-        <span class="card-when">2026-06-01</span>
-      </div>
-    </article>
-    <article class="card" data-lang="" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-05-29" data-msgid="328" data-search="sswozon3/harness-kit sswozon3 harness kit harnesskit: cli to prep repos for ai coding agents automates ai‑ready repo setup  developer tools ">
+    <article class="card" data-lang="" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-05-29" data-msgid="328">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/sswozon3__harness-kit.html">harness-kit</a></span>
         <span class="nv">notable</span>
@@ -865,19 +903,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-05-29" data-msgid="342" data-search="zaydiscold/squarespace-cli zaydiscold squarespace cli clifor managing squarespace commerce, orders, products, inventory via api safe dry‑run cli with mcp integration for squarespace admins typescript developer tools  api cli commerce ecommerce mcp openapi squarespace typescript">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/zaydiscold__squarespace-cli.html">squarespace-cli</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">CLIfor managing Squarespace commerce, orders, products, inventory via API</p>
-      <p class="card-why">Safe dry‑run CLI with MCP integration for Squarespace admins</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag">api</span><span class="tag">cli</span></div>
-        <span class="card-when">2026-05-29</span>
-      </div>
-    </article>
-    <article class="card" data-lang="go" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-05-29" data-msgid="396" data-search="babashka/pod-babashka-gozxing babashka pod babashka gozxing babashka pod for qr code encode/decode using go adds qr support without java awt go developer tools  babashka clojure">
+    <article class="card" data-lang="go" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-05-29" data-msgid="396">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/babashka__pod-babashka-gozxing.html">pod-babashka-gozxing</a></span>
         <span class="nv">notable</span>
@@ -889,7 +915,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-05-28" data-msgid="288" data-search="mysterytown/cfx-escrow-bot mysterytown cfx escrow bot automates fivem/cfx escrow uploads via discord bot simplifies asset management for game developers javascript developer tools ">
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-05-28" data-msgid="288">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mysterytown__cfx-escrow-bot.html">cfx-escrow-bot</a></span>
         <span class="nv">notable</span>
@@ -901,7 +927,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-05-25" data-msgid="201" data-search="qordinate-ai/watchbench qordinate ai watchbench benchmark for evaluating event routing systems that decide which source events should wake downstream ai agents first practical benchmark for comparing event-driven agent architectures on the same data python developer tools  agents ai-agents benchmark hermes-agent openclaw">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-05-25" data-msgid="201">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/qordinate-ai__watchbench.html">watchbench</a></span>
         <span class="nv">notable</span>
@@ -913,7 +939,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-25</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-05-24" data-msgid="177" data-search="drgost1/tufan-blox-bridge drgost1 tufan blox bridge roblox studio ai bridge that syncs code, tracks git, and scans for backdoors all‑in‑one ai control, sync, git, security typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-05-24" data-msgid="177">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/drgost1__tufan-blox-bridge.html">Tufan-Blox-Bridge</a></span>
         <span class="nv">notable</span>
@@ -925,7 +951,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card archived" data-lang="go" data-novelty="7" data-cat="Developer Tools" data-sub="" data-date="2026-05-23" data-msgid="133" data-search="mjgomesvix/kero-datafinder mjgomesvix kero datafinder on-premise data discovery and classification engine with nlp for secure internal metadata scanning enterprise-grade zero-trust data scanner with built-in ml classification, runs fully offline go developer tools ">
+    <article class="card archived" data-lang="go" data-novelty="7" data-cat="Developer Tools" data-sub="More" data-date="2026-05-23" data-msgid="133">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mjgomesvix__kero-datafinder.html">kero-datafinder</a></span>
         <span class="nv">notable</span>
@@ -937,7 +963,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-23</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-07-17" data-msgid="1021" data-search="earlyadopter/project-cockpit earlyadopter project cockpit cockpit cli: unified dashboard for ai‑assisted project management live git/tmux status + safe actions from terminal typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-07-17" data-msgid="1021">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/earlyadopter__project-cockpit.html">project-cockpit</a></span>
         <span class="nv">notable</span>
@@ -949,7 +975,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-07-14" data-msgid="1013" data-search="nielspeter/eess nielspeter eess executable enforceable specification system that validates code, diagrams, and docs keeps architecture artifacts in sync with source typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-07-14" data-msgid="1013">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nielspeter__eess.html">eess</a></span>
         <span class="nv">notable</span>
@@ -961,7 +987,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-07-14" data-msgid="1015" data-search="gowtham-uj/reaperdevserver gowtham uj reaperdevserver self‑hosted dev server offering durable project pods and persistent terminals provides isolated, persistent dev environments with web ui javascript developer tools  agentic caddy dev-server docker nodejs self-hosted solidjs tmux web-terminal xterm">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-07-14" data-msgid="1015">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/gowtham-uj__reaperdevserver.html">ReaperDevServer</a></span>
         <span class="nv">notable</span>
@@ -973,7 +999,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-07-06" data-msgid="996" data-search="hermegeddon/symphony hermegeddon symphony typescript bridge syncing linear, kanban, and codex workflows local‑first orchestration layer for task management typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-07-06" data-msgid="996">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/hermegeddon__symphony.html">symphony</a></span>
         <span class="nv">notable</span>
@@ -985,7 +1011,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-06</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-07-06" data-msgid="997" data-search="yizhoupan3-debug/skill yizhoupan3 debug skill skill framework for claude/codex agents – routing, hooks, and tools rust‑based routing &amp; hook system for ai agents rust developer tools ">
+    <article class="card" data-lang="rust" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-07-06" data-msgid="997">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/yizhoupan3-debug__skill.html">skill</a></span>
         <span class="nv">notable</span>
@@ -997,7 +1023,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-06</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-07-05" data-msgid="995" data-search="wakenhq/waken-slack wakenhq waken slack slack integration library for waken ai agents real‑time slack source &amp; output for ai workflows python developer tools  agents ai python slack waken">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-07-05" data-msgid="995">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/wakenhq__waken-slack.html">waken-slack</a></span>
         <span class="nv">notable</span>
@@ -1009,7 +1035,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-05</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-07-02" data-msgid="951" data-search="benjamin0mar/learning-english-dev-cli benjamin0mar learning english dev cli cli that improves developers&#x27; english in commits and prs using ai ai-powered grammar fixes tailored to cefr levels rust developer tools ">
+    <article class="card" data-lang="rust" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-07-02" data-msgid="951">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/benjamin0mar__learning-english-dev-cli.html">learning-english-dev-cli</a></span>
         <span class="nv">notable</span>
@@ -1021,7 +1047,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-02</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-30" data-msgid="935" data-search="orbitalcommons/rizzma orbitalcommons rizzma rust plotting library mirroring matplotlib with webassembly support provides rust-native plotting and cross‑platform rendering rust developer tools ">
+    <article class="card" data-lang="rust" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-30" data-msgid="935">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/orbitalcommons__rizzma.html">rizzma</a></span>
         <span class="nv">notable</span>
@@ -1033,7 +1059,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-30</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-30" data-msgid="944" data-search="drpedapati/codex-threadctl drpedapati codex threadctl cli for managing codex desktop threads locally enables thread ops when ui tools fail go developer tools ">
+    <article class="card" data-lang="go" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-30" data-msgid="944">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/drpedapati__codex-threadctl.html">codex-threadctl</a></span>
         <span class="nv">notable</span>
@@ -1045,7 +1071,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-30</span>
       </div>
     </article>
-    <article class="card" data-lang="shell" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-27" data-msgid="908" data-search="betmoar/cc-status-plugin betmoar cc status plugin cc-status: compose claude code plugin statusline into a single bar auto-discovers and joins plugin segments without manual edits shell developer tools  claude-code claude-code-plugin framework plugin statusline">
+    <article class="card" data-lang="shell" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-27" data-msgid="908">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/betmoar__cc-status-plugin.html">cc-status-plugin</a></span>
         <span class="nv">notable</span>
@@ -1057,7 +1083,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-27</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-27" data-msgid="923" data-search="spoon-fed-programmer/composeusageaudit spoon fed programmer composeusageaudit static analyzer that tracks android compose component usage generates csv reports and a web viewer for component stats javascript developer tools ">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-27" data-msgid="923">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/spoon-fed-programmer__composeusageaudit.html">ComposeUsageAudit</a></span>
         <span class="nv">notable</span>
@@ -1069,7 +1095,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-27</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-25" data-msgid="899" data-search="gjczone/repo-inspect gjczone repo inspect repo-inspect: cli tool for focused code extraction for ai agents provides precise code snippets locally, no api keys rust developer tools ">
+    <article class="card" data-lang="rust" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-25" data-msgid="899">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/gjczone__repo-inspect.html">repo-inspect</a></span>
         <span class="nv">notable</span>
@@ -1081,7 +1107,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-25</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-24" data-msgid="894" data-search="davesheffer/workflow-radar davesheffer workflow radar live vs code dashboard for monitoring ai workflow status shows real‑time workflow progress in the editor typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-24" data-msgid="894">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/davesheffer__workflow-radar.html">workflow-radar</a></span>
         <span class="nv">notable</span>
@@ -1093,7 +1119,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-24</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-18" data-msgid="845" data-search="ariana-dot-dev/eve-box ariana dot dev eve box eve sandbox backend that runs on box storage bridges eve sandbox with box api typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-18" data-msgid="845">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ariana-dot-dev__eve-box.html">eve-box</a></span>
         <span class="nv">notable</span>
@@ -1105,7 +1131,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-18</span>
       </div>
     </article>
-    <article class="card" data-lang="php" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-14" data-msgid="799" data-search="symfinity/ux-blocks symfinity ux blocks php symfony library offering ui block registry schema and test helpers provides schema and phpunit assertions for ux components php developer tools  design-system registry symfony symfony-bundle twig-components">
+    <article class="card" data-lang="php" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-14" data-msgid="799">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/symfinity__ux-blocks.html">ux-blocks</a></span>
         <span class="nv">notable</span>
@@ -1117,7 +1143,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-14</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-14" data-msgid="804" data-search="olekpuchka/sfcc-agentic-plugin olekpuchka sfcc agentic plugin vscode extension that syncs claude/copilot config for sfcc projects keeps ai tooling consistent across projects typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-14" data-msgid="804">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/olekpuchka__sfcc-agentic-plugin.html">sfcc-agentic-plugin</a></span>
         <span class="nv">notable</span>
@@ -1129,7 +1155,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-14</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-11" data-msgid="753" data-search="0xtangerin3/superpowers-a 0xtangerin3 superpowers a adaptive workflow router for ai coding agents, controlling risk depth lightweight risk‑based routing for claude/codex plugins javascript developer tools ">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-11" data-msgid="753">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/0xtangerin3__superpowers-a.html">superpowers-a</a></span>
         <span class="nv">notable</span>
@@ -1141,7 +1167,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-11</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-11" data-msgid="766" data-search="uvoo/uvoo-hugo uvoo uvoo hugo hugo editor ui for authenticated web-based content editing go backend + react ui simplifies hugo site management go developer tools ">
+    <article class="card" data-lang="go" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-11" data-msgid="766">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/uvoo__uvoo-hugo.html">uvoo-hugo</a></span>
         <span class="nv">notable</span>
@@ -1153,7 +1179,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-11</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-10" data-msgid="740" data-search="riverwutt/page-mapping-visualizer riverwutt page mapping visualizer a javascript visualizer for buffer page mapping models, showing page allocation across sharding models. provides a clear, interactive visualization of complex page mapping algorithms. javascript developer tools ">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-10" data-msgid="740">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/riverwutt__page-mapping-visualizer.html">page-mapping-visualizer</a></span>
         <span class="nv">notable</span>
@@ -1165,7 +1191,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-10</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-10" data-msgid="748" data-search="1711wuchao/-claudecode 1711wuchao  claudecode minicode – lightweight terminal coding assistant for local development compact, extensible claude‑code‑like tool typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-10" data-msgid="748">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/1711wuchao__claudecode.html">-claudecode</a></span>
         <span class="nv">notable</span>
@@ -1177,7 +1203,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-10</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-09" data-msgid="727" data-search="kifreya/startype23 kifreya startype23 cli tool for visualizing file-type distribution in a directory useful for understanding file composition and disk usage python developer tools ">
+    <article class="card archived" data-lang="python" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-09" data-msgid="727">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/kifreya__startype23.html">startype23</a></span>
         <span class="nv">notable</span>
@@ -1189,7 +1215,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-09</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-09" data-msgid="736" data-search="anastejs/playwright-github-api anastejs playwright github api api test automation for github issues using playwright and pytest automates full github issue lifecycle testing via rest api python developer tools ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-09" data-msgid="736">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/anastejs__playwright-github-api.html">playwright-github-api</a></span>
         <span class="nv">notable</span>
@@ -1201,7 +1227,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-09</span>
       </div>
     </article>
-    <article class="card" data-lang="luau" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-08" data-msgid="712" data-search="krampuszc/lucide-icon-picker krampuszc lucide icon picker roblox studio plugin to browse and insert lucide icons quick icon selection inside roblox ui luau developer tools ">
+    <article class="card" data-lang="luau" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-08" data-msgid="712">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/krampuszc__lucide-icon-picker.html">Lucide-Icon-Picker</a></span>
         <span class="nv">notable</span>
@@ -1213,7 +1239,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-08</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-07" data-msgid="695" data-search="jaepil0514/image-pdf-converter jaepil0514 image pdf converter universal image &amp; pdf converter with chatgpt integration supporting 18+ formats fast, secure, and free file conversion with high-quality output typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-07" data-msgid="695">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jaepil0514__image-pdf-converter.html">image-pdf-converter</a></span>
         <span class="nv">notable</span>
@@ -1225,7 +1251,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-07" data-msgid="697" data-search="frankieew/leanmgr frankieew leanmgr leanmgr: cli to manage and clean lean .lake caches across projects provides safe, dry‑run cache cleanup for lean projects rust developer tools ">
+    <article class="card" data-lang="rust" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-07" data-msgid="697">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/frankieew__leanmgr.html">leanmgr</a></span>
         <span class="nv">notable</span>
@@ -1237,7 +1263,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-07" data-msgid="704" data-search="troop10rwc/kit troop10rwc kit shared ui and worker toolkit for vite‑hono‑workers apps provides ready‑made components and middleware for the stack typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-07" data-msgid="704">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/troop10rwc__kit.html">kit</a></span>
         <span class="nv">notable</span>
@@ -1249,7 +1275,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="shell" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-06" data-msgid="645" data-search="griffin-web-studio/external_projects-garage-git_sentinel griffin web studio external projects garage git sentinel local git sentinel: daily audit tool for uncommitted git repos solves data loss due to storage failure shell developer tools  mirrored-repository">
+    <article class="card" data-lang="shell" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-06" data-msgid="645">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/griffin-web-studio__external_projects-garage-git_sentinel.html">external_projects-garage-git_sentinel</a></span>
         <span class="nv">notable</span>
@@ -1261,7 +1287,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-06" data-msgid="648" data-search="rabiaakguller/restaurant-e2e-automation rabiaakguller restaurant e2e automation e2e test automation for restaurant dispatch panel using playwright implements thorough testing for login, forgot password, and order search flows javascript developer tools ">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-06" data-msgid="648">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/rabiaakguller__restaurant-e2e-automation.html">restaurant-e2e-automation</a></span>
         <span class="nv">notable</span>
@@ -1273,7 +1299,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-06" data-msgid="655" data-search="genrubiio/opencode-slave genrubiio opencode slave opencode-slave – autonomous task runner for opencode projects manages tasks, worktrees, and recovery via cli javascript developer tools ">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-06" data-msgid="655">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/genrubiio__opencode-slave.html">opencode-slave</a></span>
         <span class="nv">notable</span>
@@ -1285,7 +1311,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="shell" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-06" data-msgid="665" data-search="sharmaharish/wisdom-bytes sharmaharish wisdom bytes wisdom bytes delivers daily micro-lessons of meta-wisdom in the terminal unique blend of wisdom and terminal integration shell developer tools ">
+    <article class="card" data-lang="shell" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-06" data-msgid="665">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/sharmaharish__wisdom-bytes.html">wisdom-bytes</a></span>
         <span class="nv">notable</span>
@@ -1297,7 +1323,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card archived" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-05" data-msgid="639" data-search="logisec/instance logisec instance vs code extension syncing roblox studio data for local editing live sync of roblox datamodel into editable files typescript developer tools ">
+    <article class="card archived" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-05" data-msgid="639">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/logisec__instance.html">Instance</a></span>
         <span class="nv">notable</span>
@@ -1309,7 +1335,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-05</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-03" data-msgid="607" data-search="weixu94/agentsessionviewer weixu94 agentsessionviewer a fast viewer for ai agent sessions, parsing large transcripts efficiently optimized for performance, handling large files with ease typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-03" data-msgid="607">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/weixu94__agentsessionviewer.html">AgentSessionViewer</a></span>
         <span class="nv">notable</span>
@@ -1321,7 +1347,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-03</span>
       </div>
     </article>
-    <article class="card" data-lang="ruby" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-02" data-msgid="594" data-search="serpapi/ghost-repub serpapi ghost repub a ruby script to convert ghost blog posts to markdown for cross-posting simplifies republishing ghost blog posts to other platforms ruby developer tools ">
+    <article class="card" data-lang="ruby" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-02" data-msgid="594">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/serpapi__ghost-repub.html">ghost-repub</a></span>
         <span class="nv">notable</span>
@@ -1333,7 +1359,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-02</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-06-01" data-msgid="578" data-search="jrb00013/pdf-genesis jrb00013 pdf genesis pdf generator for research reports from markdown and json exports automates report generation with customizable pipeline and builder python developer tools ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-06-01" data-msgid="578">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jrb00013__pdf-genesis.html">pdf-genesis</a></span>
         <span class="nv">notable</span>
@@ -1345,7 +1371,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-01</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="517" data-search="perkycrow/eslint_config perkycrow eslint config shared eslint flat config with custom perkycrow rules provides ready‑to‑use linting and custom rules javascript developer tools ">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-31" data-msgid="517">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/perkycrow__eslint_config.html">eslint_config</a></span>
         <span class="nv">notable</span>
@@ -1357,7 +1383,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="555" data-search="burton-david/csvtriage burton david csvtriage csvtriage: robust csv loader that recovers from messy files detects encoding, fixes rows, reports all actions python developer tools ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-31" data-msgid="555">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/burton-david__csvtriage.html">csvtriage</a></span>
         <span class="nv">notable</span>
@@ -1369,7 +1395,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="dockerfile" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-30" data-msgid="402" data-search="typisttech/sbx-kits typisttech sbx kits a go-based toolkit for building and managing sandboxed environments with human and agent interaction capabilities. integrated human-agent workflows with sandboxing for secure experimentation. dockerfile developer tools ">
+    <article class="card" data-lang="dockerfile" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-30" data-msgid="402">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/typisttech__sbx-kits.html">sbx-kits</a></span>
         <span class="nv">notable</span>
@@ -1381,7 +1407,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-30" data-msgid="405" data-search="amareswer/trade_bot amareswer trade bot crypto trading bot with backtesting and risk management modular design with comprehensive risk controls and clear path to live trading python developer tools ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-30" data-msgid="405">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/amareswer__trade_bot.html">trade_bot</a></span>
         <span class="nv">notable</span>
@@ -1393,7 +1419,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-30" data-msgid="439" data-search="bibekpdl/uswds-mcp bibekpdl uswds mcp mcp server providing uswds component lookup for ai coding tools enables ai/ide access to uswds docs  developer tools ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-30" data-msgid="439">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/bibekpdl__uswds-mcp.html">uswds-mcp</a></span>
         <span class="nv">notable</span>
@@ -1405,7 +1431,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card archived" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-30" data-msgid="447" data-search="akira-toriyama/excalidraw-claude-code-setup akira toriyama excalidraw claude code setup docker‑powered excalidraw + claude code sync for vscode zero‑node, instant canvas sync  developer tools ">
+    <article class="card archived" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-30" data-msgid="447">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/akira-toriyama__excalidraw-claude-code-setup.html">excalidraw-claude-code-setup</a></span>
         <span class="nv">notable</span>
@@ -1417,7 +1443,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-29" data-msgid="361" data-search="vinilana/pi-extensions-aicoders vinilana pi extensions aicoders pi extensions for coding agent solves workflow issues  developer tools ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-29" data-msgid="361">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/vinilana__pi-extensions-aicoders.html">pi-extensions-aicoders</a></span>
         <span class="nv">notable</span>
@@ -1429,7 +1455,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-29" data-msgid="365" data-search="pavlealeksic/claude-prompter pavlealeksic claude prompter prompt coach for claude code improves prompt quality  developer tools ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-29" data-msgid="365">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/pavlealeksic__claude-prompter.html">claude-prompter</a></span>
         <span class="nv">notable</span>
@@ -1441,7 +1467,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-29" data-msgid="387" data-search="juddisjudd/pobpaser juddisjudd pobpaser pob-parser: fast library to handle path of building import codes zero‑dependency, cross‑language parsing and fetching  developer tools ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-29" data-msgid="387">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/juddisjudd__pobpaser.html">pobpaser</a></span>
         <span class="nv">notable</span>
@@ -1453,7 +1479,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="c" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-29" data-msgid="394" data-search="tigel-agm/oj_windows tigel agm oj windows windows-native high-performance json parser for ruby enables oj on msvc ruby builds c developer tools ">
+    <article class="card" data-lang="c" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-29" data-msgid="394">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tigel-agm__oj_windows.html">oj_windows</a></span>
         <span class="nv">notable</span>
@@ -1465,7 +1491,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-28" data-msgid="308" data-search="mstrelan/pantheon-uli mstrelan pantheon uli tui for drupal one-time login links simplifies pantheon site access  developer tools ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-28" data-msgid="308">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mstrelan__pantheon-uli.html">pantheon-uli</a></span>
         <span class="nv">notable</span>
@@ -1477,7 +1503,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-28" data-msgid="311" data-search="baberparweez/qwen-qode baberparweez qwen qode qwen qode: local ai coding assistant with browser ui and cli integrates llms for code tasks without gpu  developer tools ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-28" data-msgid="311">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/baberparweez__qwen-qode.html">Qwen-Qode</a></span>
         <span class="nv">notable</span>
@@ -1489,7 +1515,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-28" data-msgid="321" data-search="jinchiwei/dreamtheme jinchiwei dreamtheme a unified color theme suite for terminals and dev tools consistent palette across many apps, easy install  developer tools ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-28" data-msgid="321">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jinchiwei__dreamtheme.html">dreamtheme</a></span>
         <span class="nv">notable</span>
@@ -1501,7 +1527,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-27" data-msgid="257" data-search="erijor21930/freitag-contracts erijor21930 freitag contracts shared domain contract library for freitag elektrobau testline, enabling consistent json schemas across typescript and c# ensures type safety and validation across languages via hand‑curated zod and njsonschema generators typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-27" data-msgid="257">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/erijor21930__freitag-contracts.html">freitag-contracts</a></span>
         <span class="nv">notable</span>
@@ -1513,7 +1539,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-27</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-27" data-msgid="270" data-search="ganohabataki/sticky-notes-with-ai ganohabataki sticky notes with ai sticky note app with ai-powered voice input and automatic text summarization novel ai-powered voice input and automatic text summarization features  developer tools ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-27" data-msgid="270">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ganohabataki__sticky-notes-with-ai.html">Sticky-Notes-with-AI</a></span>
         <span class="nv">notable</span>
@@ -1525,7 +1551,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-27</span>
       </div>
     </article>
-    <article class="card archived" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-25" data-msgid="193" data-search="jigspec/secrets-manager jigspec secrets manager local-first secrets manager that encrypts and deploys .env files ai‑safe cli + ui for scoped secret distribution typescript developer tools ">
+    <article class="card archived" data-lang="typescript" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-25" data-msgid="193">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jigspec__secrets-manager.html">secrets-manager</a></span>
         <span class="nv">notable</span>
@@ -1537,7 +1563,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-25</span>
       </div>
     </article>
-    <article class="card" data-lang="java" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-25" data-msgid="197" data-search="tmbxgidel/gidel-jwt-core tmbxgidel gidel jwt core lightweight jwt library for key loading, registry, and token signing/verification simple api for managing jwt keys and services java developer tools ">
+    <article class="card" data-lang="java" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-25" data-msgid="197">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/tmbxgidel__gidel-jwt-core.html">gidel-jwt-core</a></span>
         <span class="nv">notable</span>
@@ -1549,7 +1575,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-25</span>
       </div>
     </article>
-    <article class="card" data-lang="swift" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-25" data-msgid="199" data-search="gitswifthq/traversio gitswifthq traversio native swift ssh client library for apple platforms full ssh, sftp, and forwarding api in swift swift developer tools  ssh swift">
+    <article class="card" data-lang="swift" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-25" data-msgid="199">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/gitswifthq__traversio.html">Traversio</a></span>
         <span class="nv">notable</span>
@@ -1561,7 +1587,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-25</span>
       </div>
     </article>
-    <article class="card archived" data-lang="c" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-24" data-msgid="163" data-search="splayer-dev/ffmpeg-min splayer dev ffmpeg min minimal rust ffmpeg wrapper for audio decoding and streaming self‑contained, no external ffmpeg deps c developer tools ">
+    <article class="card archived" data-lang="c" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-24" data-msgid="163">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/splayer-dev__ffmpeg-min.html">ffmpeg-min</a></span>
         <span class="nv">notable</span>
@@ -1573,7 +1599,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card" data-lang="shell" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-24" data-msgid="167" data-search="yruns/live-ins-wiki yruns live ins wiki lark-based llm wiki manager that stages, compiles, and tracks source provenance automates wiki node tree creation and source tracking shell developer tools ">
+    <article class="card" data-lang="shell" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-24" data-msgid="167">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/yruns__live-ins-wiki.html">live-ins-wiki</a></span>
         <span class="nv">notable</span>
@@ -1585,7 +1611,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="6" data-cat="Developer Tools" data-sub="" data-date="2026-05-23" data-msgid="141" data-search="sp5tls/rp-keyer sp5tls rp keyer firmware turning raspberry pi pico into a standalone cw morse keyer provides portable, hardware‑based morse keying rust developer tools ">
+    <article class="card" data-lang="rust" data-novelty="6" data-cat="Developer Tools" data-sub="More" data-date="2026-05-23" data-msgid="141">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/sp5tls__rp-keyer.html">rp-keyer</a></span>
         <span class="nv">notable</span>
@@ -1597,7 +1623,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-23</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="496" data-search="hhrhhrhhr/bamboo-cli hhrhhrhhr bamboo cli bamboo cli wraps ai coding tools, centralizing login and credentials unified credential handling for claude and codex typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-31" data-msgid="496">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/hhrhhrhhr__bamboo-cli.html">bamboo-cli</a></span>
         <span class="nv">worth a look</span>
@@ -1609,7 +1635,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="502" data-search="gramaziokohler/lamcp gramaziokohler lamcp lamcp – bridge letting llms control grasshopper in real time enables ai agents to manipulate rhino/grasshopper live python developer tools ">
+    <article class="card" data-lang="python" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-31" data-msgid="502">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/gramaziokohler__lamcp.html">lamcp</a></span>
         <span class="nv">worth a look</span>
@@ -1621,7 +1647,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="503" data-search="scu-maker-org/scumaker-wiki scu maker org scumaker wiki static site generator for scu maker wiki documentation generates a deployable html wiki from markdown python developer tools ">
+    <article class="card" data-lang="python" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-31" data-msgid="503">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/scu-maker-org__scumaker-wiki.html">scumaker-wiki</a></span>
         <span class="nv">worth a look</span>
@@ -1633,7 +1659,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="508" data-search="pedroksn/conversor_de_bases_em_c- pedroksn conversor de bases em c  base converter in c++ useful tool  developer tools ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-31" data-msgid="508">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/pedroksn__conversor_de_bases_em_c.html">CONVERSOR_DE_BASES_EM_C-</a></span>
         <span class="nv">worth a look</span>
@@ -1645,7 +1671,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-31" data-msgid="530" data-search="gataengine/observable gataengine observable a go library providing reactive observable primitives for state management lightweight, mobx‑style reactivity in go go developer tools ">
+    <article class="card" data-lang="go" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-31" data-msgid="530">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/gataengine__observable.html">observable</a></span>
         <span class="nv">worth a look</span>
@@ -1657,7 +1683,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-30" data-msgid="450" data-search="longlong007/z-lib longlong007 z lib cli tool to bulk download books from z‑library automates search, matching, and download  developer tools ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-30" data-msgid="450">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/longlong007__z-lib.html">z-lib</a></span>
         <span class="nv">worth a look</span>
@@ -1669,7 +1695,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-30" data-msgid="457" data-search="k3vin-h/metamorph k3vin h metamorph metamorph plugin refines claude code agents by learning your workflow offers data‑driven suggestions to improve agent files  developer tools ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-30" data-msgid="457">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/k3vin-h__metamorph.html">metamorph</a></span>
         <span class="nv">worth a look</span>
@@ -1681,7 +1707,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-28" data-msgid="285" data-search="sekaus/zed_batch_extensions sekaus zed batch extensions zed extension framework for developers to build and publish tools enables custom functionality in zed editor javascript developer tools ">
+    <article class="card" data-lang="javascript" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-28" data-msgid="285">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/sekaus__zed_batch_extensions.html">zed_batch_extensions</a></span>
         <span class="nv">worth a look</span>
@@ -1693,7 +1719,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-26" data-msgid="246" data-search="ssota-labs/youpd-skills ssota labs youpd skills a node-based skill kit for automating content creation workflows via llm agents integrates llm agents with sqlite-backed task state typescript developer tools ">
+    <article class="card" data-lang="typescript" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-26" data-msgid="246">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ssota-labs__youpd-skills.html">youpd-skills</a></span>
         <span class="nv">worth a look</span>
@@ -1705,7 +1731,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-26</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="5" data-cat="Developer Tools" data-sub="" data-date="2026-05-24" data-msgid="184" data-search="404notfound-ai/404nf-routeplan 404notfound ai 404nf routeplan a nexus agent plugin that offers grid‑based a*, rrt, and multi‑agent path planning with obstacle handling rich algorithm suite in a single, easy‑to‑integrate library python developer tools ">
+    <article class="card" data-lang="python" data-novelty="5" data-cat="Developer Tools" data-sub="More" data-date="2026-05-24" data-msgid="184">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/404notfound-ai__404nf-routeplan.html">404NF-RoutePlan</a></span>
         <span class="nv">worth a look</span>
@@ -1717,7 +1743,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card" data-lang="html" data-novelty="4" data-cat="Developer Tools" data-sub="" data-date="2026-05-28" data-msgid="302" data-search="openharmony-tpc/chromium_third_party_blink_webtests openharmony tpc chromium third party blink webtests web test framework improves web testing html developer tools ">
+    <article class="card" data-lang="html" data-novelty="4" data-cat="Developer Tools" data-sub="More" data-date="2026-05-28" data-msgid="302">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/openharmony-tpc__chromium_third_party_blink_webtests.html">chromium_third_party_blink_webtests</a></span>
         <span class="nv">worth a look</span>
@@ -1734,13 +1760,13 @@ a:hover{text-decoration:underline}
 <script>
 (function(){
   var q=document.getElementById('q');
-  var chips=[].slice.call(document.querySelectorAll('#filters .chip'));
+  var chips=[].slice.call(document.querySelectorAll('#filters .chip,#subfilters .chip'));
   var sortChips=[].slice.call(document.querySelectorAll('.chip.sort'));
   var cards=[].slice.call(document.querySelectorAll('[data-section] .card'));
   var sections=[].slice.call(document.querySelectorAll('[data-section]'));
   var results=document.getElementById('searchresults');
   var noresults=document.getElementById('noresults');
-  var state={text:'',lang:'',novelty:0,sort:'best'};
+  var state={text:'',lang:'',sub:'',novelty:0,sort:'best'};
   var INDEX=null;   // загруженный search.json (ленивая загрузка при первом поиске)
 
   function cmp(a,b){
@@ -1767,7 +1793,8 @@ a:hover{text-decoration:underline}
     cards.forEach(function(c){
       var okL=!state.lang || c.dataset.lang===state.lang;
       var okN=!state.novelty || (parseInt(c.dataset.novelty||'0',10)>=state.novelty);
-      var ok=okL&&okN;
+      var okS=!state.sub || c.dataset.sub===state.sub;
+      var ok=okL&&okN&&okS;
       c.style.display=ok?'':'none';
       if(ok)shown++;
     });
@@ -1795,6 +1822,7 @@ a:hover{text-decoration:underline}
       summary:it.s||'', why:it.w||'', lang:it.l||'', novelty:it.n||0,
       badge:badgeOf(it.n),
       url:'p/'+jslug(owner)+'__'+jslug(name)+'.html',
+      x:(it.x||'').toLowerCase(),
       q:(repo+' '+flat+' '+(it.s||'')+' '+(it.w||'')+' '+(it.l||'')+' '+(it.x||'')).toLowerCase()
     };
   }
@@ -1823,6 +1851,7 @@ a:hover{text-decoration:underline}
     var matched=INDEX.items.filter(function(it){
       if(t && (it.q||'').indexOf(t)===-1) return false;
       if(state.lang && (it.lang||'').toLowerCase()!==state.lang) return false;
+      if(state.sub && (it.x||'').indexOf(state.sub.toLowerCase())<0) return false;
       if(state.novelty && (it.novelty||0)<state.novelty) return false;
       return true;
     });
@@ -1864,6 +1893,9 @@ a:hover{text-decoration:underline}
       if(f==='lang'){
         chips.filter(function(x){return x.dataset.filter==='lang';}).forEach(function(x){x.classList.remove('on');});
         ch.classList.add('on');state.lang=v;
+      } else if(f==='sub'){
+        chips.filter(function(x){return x.dataset.filter==='sub';}).forEach(function(x){x.classList.remove('on');});
+        ch.classList.add('on');state.sub=v;
       } else if(f==='novelty'){
         ch.classList.toggle('on');
         state.novelty=ch.classList.contains('on')?parseInt(v,10):0;

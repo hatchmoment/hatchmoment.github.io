@@ -137,6 +137,9 @@ a:hover{text-decoration:underline}
 .hero .metrics{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:20px;font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) .82s forwards}
 .hero .metrics strong{color:var(--accent);font-weight:700}
 .hero .metric-sep{opacity:.4}
+.hero .metric-note{opacity:.55;font-size:11px}
+.filters-sub{margin-top:6px}
+.chip .chip-n{opacity:.5;font-size:10px;margin-left:3px}
 .hero .metrics-since{margin-top:8px;font-size:11px;opacity:.75}
 .hero .metric-info{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:4px;border-radius:50%;font-size:11px;color:var(--muted);opacity:.6;cursor:help;user-select:none;transition:opacity .15s,color .15s}
 .hero .metric-info:hover,.hero .metric-info:focus{opacity:1;color:var(--accent);outline:none}
@@ -191,8 +194,18 @@ a:hover{text-decoration:underline}
   </div>
   <div class="filters" id="filters">
     <span class="chip on" data-filter="lang" data-val="">All languages</span>
-    <span class="chip" data-filter="lang" data-val="c">C</span><span class="chip" data-filter="lang" data-val="c#">C#</span><span class="chip" data-filter="lang" data-val="go">Go</span><span class="chip" data-filter="lang" data-val="html">HTML</span><span class="chip" data-filter="lang" data-val="javascript">JavaScript</span><span class="chip" data-filter="lang" data-val="jupyter notebook">Jupyter Notebook</span>
+    <span class="chip" data-filter="lang" data-val="python">Python</span><span class="chip" data-filter="lang" data-val="typescript">TypeScript</span><span class="chip" data-filter="lang" data-val="javascript">JavaScript</span><span class="chip" data-filter="lang" data-val="jupyter notebook">Jupyter Notebook</span><span class="chip" data-filter="lang" data-val="html">HTML</span><span class="chip" data-filter="lang" data-val="go">Go</span>
     <span class="chip" data-filter="novelty" data-val="7">rare finds</span>
+  </div>
+  <div class="filters filters-sub" id="subfilters">
+    <span class="chip on" data-filter="sub" data-val="">All kinds</span>
+    <span class="chip" data-filter="sub" data-val="LLM apps &amp; agents">LLM apps &amp; agents <span class="chip-n">4</span></span>
+    <span class="chip" data-filter="sub" data-val="RAG &amp; search">RAG &amp; search <span class="chip-n">2</span></span>
+    <span class="chip" data-filter="sub" data-val="Computer vision">Computer vision <span class="chip-n">2</span></span>
+    <span class="chip" data-filter="sub" data-val="NLP &amp; speech">NLP &amp; speech <span class="chip-n">1</span></span>
+    <span class="chip" data-filter="sub" data-val="ML tooling &amp; MLOps">ML tooling &amp; MLOps <span class="chip-n">1</span></span>
+    <span class="chip" data-filter="sub" data-val="Model training">Model training <span class="chip-n">2</span></span>
+    <span class="chip" data-filter="sub" data-val="More">More <span class="chip-n">110</span></span>
   </div>
   <div class="sortbar">
     <span class="sortlbl">sort:</span>
@@ -205,10 +218,46 @@ a:hover{text-decoration:underline}
   <section data-section>
     <div class="sec">
       <h2 style="font-size:14px;opacity:.9">LLM apps &amp; agents</h2>
-      <span class="meta">1</span>
+      <span class="meta">4</span>
     </div>
     <div class="grid">
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="LLM apps &amp; agents" data-date="2026-05-23" data-msgid="143" data-search="maheshchebrolu-git/grademaster-pro maheshchebrolu git grademaster pro ai‑powered grading pipeline for canvas lms automates grading at scale python ai &amp; ml llm apps &amp; agents ai-grading automation google-gemini langgraph llm playwright pydantic python supabase">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="LLM apps &amp; agents" data-date="2026-08-10" data-msgid="1177">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/autonomous-ai__autonomous-tv.html">autonomous-tv</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">AI-powered platform that creates short drama episodes via chat</p>
+      <p class="card-why">Turns conversational prompts into fully rendered video episodes</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">LLM apps &amp; agents</span><span class="tag">ai-filmmaking</span><span class="tag">ai-video</span></div>
+        <span class="card-when">today</span>
+      </div>
+    </article>
+    <article class="card" data-lang="go" data-novelty="7" data-cat="AI &amp; ML" data-sub="LLM apps &amp; agents" data-date="2026-06-14" data-msgid="813">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/mike-diff__sesh.html">sesh</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">sesh: a minimal Go AI coding agent for LLM‑driven code tasks</p>
+      <p class="card-why">Zero‑dependency, extensible Go CLI for AI coding</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Go</span><span class="tag sub">LLM apps &amp; agents</span><span class="tag">agent-harness</span><span class="tag">agentic-coding</span></div>
+        <span class="card-when">2026-06-14</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="LLM apps &amp; agents" data-date="2026-06-10" data-msgid="743">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/felixyustian__perceivereason_apple_m5.html">PerceiveReason_Apple_M5</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">On-device perception‑to‑reasoning pipeline for Apple Silicon</p>
+      <p class="card-why">Combines Core ML vision with swappable LLMs for offline AI</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">LLM apps &amp; agents</span><span class="tag">antrophic</span><span class="tag">apple-silicon</span></div>
+        <span class="card-when">2026-06-10</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="LLM apps &amp; agents" data-date="2026-05-23" data-msgid="143">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/maheshchebrolu-git__grademaster-pro.html">grademaster-pro</a></span>
         <span class="nv">notable</span>
@@ -223,11 +272,142 @@ a:hover{text-decoration:underline}
     </div>
   </section>  <section data-section>
     <div class="sec">
-      <h2 style="font-size:14px;opacity:.9">More</h2>
-      <span class="meta">121</span>
+      <h2 style="font-size:14px;opacity:.9">RAG &amp; search</h2>
+      <span class="meta">2</span>
     </div>
     <div class="grid">
-    <article class="card" data-lang="typescript" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-10" data-msgid="1172" data-search="apatureai/sigil apatureai sigil dependency‑free typescript library for calibrated llm evaluation certificates statistical calibration, abstention thresholds, and drift monitoring in one package typescript ai &amp; ml  calibration conformal-prediction llm-evaluation model-evaluation typescript">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="RAG &amp; search" data-date="2026-08-07" data-msgid="1080">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/backblaze-b2-samples__clam-wsi-feature-extraction.html">clam-wsi-feature-extraction</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">B2-backed pipeline that tiles, segments, and embeds whole‑slide pathology images</p>
+      <p class="card-why">Runs CLAM‑style feature extraction on CPU, storing all data in B2</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag sub">RAG &amp; search</span><span class="tag">b2-labs</span><span class="tag">backblaze-b2</span></div>
+        <span class="card-when">3d ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="RAG &amp; search" data-date="2026-06-22" data-msgid="888">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/fazalrshah__mosaic.html">mosaic</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Local RAG indexer that guarantees every chunk is stored</p>
+      <p class="card-why">Verifies coverage to avoid silent indexing failures</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">RAG &amp; search</span><span class="tag">docling</span><span class="tag">embeddings</span></div>
+        <span class="card-when">2026-06-22</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">Computer vision</h2>
+      <span class="meta">2</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="Computer vision" data-date="2026-07-30" data-msgid="1056">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/aswanth-07__effiped-multi-camera-tracking.html">effiped-multi-camera-tracking</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Multi-camera pedestrian detection, tracking and re-identification system</p>
+      <p class="card-why">End‑to‑end CV pipeline with API and UI</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">Computer vision</span><span class="tag">computer-vision</span><span class="tag">convnext-v2</span></div>
+        <span class="card-when">1w ago</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="Computer vision" data-date="2026-05-30" data-msgid="408">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/robbealex__ai-in-healthcare-chest-disease-detection.html">AI-in-HealthCare-Chest-Disease-Detection</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">AI chest disease detector using X-rays with Streamlit web interface</p>
+      <p class="card-why">Complete working solution with pre-trained model and web UI</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">Computer vision</span><span class="tag">chest-xray</span><span class="tag">computer-vision</span></div>
+        <span class="card-when">2026-05-30</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">NLP &amp; speech</h2>
+      <span class="meta">1</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="NLP &amp; speech" data-date="2026-06-27" data-msgid="917">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/magomedcoder__stt-pipeline.html">stt-pipeline</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Offline speech-to-text and speaker diarization pipeline</p>
+      <p class="card-why">Combines Vosk and SpeechBrain for batch audio processing</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">NLP &amp; speech</span><span class="tag">diarization</span><span class="tag">python</span></div>
+        <span class="card-when">2026-06-27</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">ML tooling &amp; MLOps</h2>
+      <span class="meta">1</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="ML tooling &amp; MLOps" data-date="2026-08-09" data-msgid="1169">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/eigenreza__aquarisk-norway.html">aquarisk-norway</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Open research platform forecasting salmon‑lice risk in Norwegian aquaculture</p>
+      <p class="card-why">Data pipelines, Bayesian models, API, and map UI</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">ML tooling &amp; MLOps</span><span class="tag">aquaculture</span><span class="tag">bayesian-statistics</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">Model training</h2>
+      <span class="meta">2</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="Model training" data-date="2026-08-09" data-msgid="1159">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/zeta4lab__lora-loha-finetuning.html">lora-loha-finetuning</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">PyTorch LoHA adapter for LLM fine‑tuning with CLI and full pipeline</p>
+      <p class="card-why">Works without PEFT, end‑to‑end fine‑tuning</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">Model training</span><span class="tag">fine-tuning</span><span class="tag">llm</span></div>
+        <span class="card-when">yesterday</span>
+      </div>
+    </article>
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="Model training" data-date="2026-08-07" data-msgid="1074">
+      <div class="card-head">
+        <span class="card-name"><a href="https://hatchmoment.org/p/jreyenga__ebf.html">EBF</a></span>
+        <span class="nv">notable</span>
+      </div>
+      <p class="card-sum">Elliptical Basis Function interpolation library for smooth fits to scattered data</p>
+      <p class="card-why">Learns per-node anisotropic distance metrics</p>
+      <div class="card-foot">
+        <div class="card-tags"><span class="tag lang">Python</span><span class="tag sub">Model training</span><span class="tag">interpolation</span><span class="tag">radial-basis-function</span></div>
+        <span class="card-when">3d ago</span>
+      </div>
+    </article>
+    </div>
+  </section>  <section data-section>
+    <div class="sec">
+      <h2 style="font-size:14px;opacity:.9">More</h2>
+      <span class="meta">110</span>
+    </div>
+    <div class="grid">
+    <article class="card" data-lang="typescript" data-novelty="8" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-10" data-msgid="1172">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/apatureai__sigil.html">sigil</a></span>
         <span class="nv hi">rare find</span>
@@ -239,7 +419,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">today</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-10" data-msgid="1174" data-search="apatureai/judgment-engine apatureai judgment engine grounded vlm design reviewer that screenshots ui and validates findings filters hallucinations, gives precise, reproducible ui critiques typescript ai &amp; ml  code-review design-review llm-as-judge playwright typescript vision-language-model">
+    <article class="card" data-lang="typescript" data-novelty="8" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-10" data-msgid="1174">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/apatureai__judgment-engine.html">judgment-engine</a></span>
         <span class="nv hi">rare find</span>
@@ -251,7 +431,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">today</span>
       </div>
     </article>
-    <article class="card" data-lang="jupyter notebook" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-07-04" data-msgid="973" data-search="itscool2b/ig-work-2026 itscool2b ig work 2026 per-step integrated gradients analysis for diffusion-policy robotics models enables detailed attribution of vision, language, state inputs jupyter notebook ai &amp; ml ">
+    <article class="card" data-lang="jupyter notebook" data-novelty="8" data-cat="AI &amp; ML" data-sub="More" data-date="2026-07-04" data-msgid="973">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/itscool2b__ig-work-2026.html">ig-work-2026</a></span>
         <span class="nv hi">rare find</span>
@@ -263,7 +443,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-04</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-24" data-msgid="893" data-search="ytomar79/symqnet_quantum ytomar79 symqnet quantum symqnet: fast adaptive hamiltonian learning via amortized acquisition rl‑driven vae speeds quantum system identification python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-24" data-msgid="893">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ytomar79__symqnet_quantum.html">symqnet_quantum</a></span>
         <span class="nv hi">rare find</span>
@@ -275,7 +455,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-24</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-15" data-msgid="827" data-search="sagarnidhish/nmc-degradation-iscat-analysis sagarnidhish nmc degradation iscat analysis iscat‑based nmc battery degradation analysis pipeline comprehensive scripts for optical‑electrochemical data processing python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-15" data-msgid="827">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/sagarnidhish__nmc-degradation-iscat-analysis.html">nmc-degradation-iscat-analysis</a></span>
         <span class="nv hi">rare find</span>
@@ -287,7 +467,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-15</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-07" data-msgid="707" data-search="ritvikmaini/financial-metric-forecasting ritvikmaini financial metric forecasting leakage‑aware backtesting framework for financial metric forecasting ensures point‑in‑time validation on public finance data python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-07" data-msgid="707">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ritvikmaini__financial-metric-forecasting.html">financial-metric-forecasting</a></span>
         <span class="nv hi">rare find</span>
@@ -299,7 +479,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="rust" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-01" data-msgid="581" data-search="v-code01/phantom v code01 phantom phantom: zero-copy multi-agent llm kv-cache serving on apple silicon unified memory optimizes llm inference by sharing kv-cache across agents without copying rust ai &amp; ml ">
+    <article class="card" data-lang="rust" data-novelty="8" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-01" data-msgid="581">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/v-code01__phantom.html">phantom</a></span>
         <span class="nv hi">rare find</span>
@@ -311,7 +491,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-01</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-31" data-msgid="538" data-search="lightending/autospire lightending autospire ai mod for slay the spire 2 automates gameplay  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="8" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-31" data-msgid="538">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/lightending__autospire.html">autoSpire</a></span>
         <span class="nv hi">rare find</span>
@@ -323,7 +503,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-26" data-msgid="225" data-search="scriptedalchemy/open-claude-in-chrome scriptedalchemy open claude in chrome a functional open-source implementation of claude for seamless browser integration. offers reliable, customizable ai tools without restrictions. javascript ai &amp; ml ">
+    <article class="card" data-lang="javascript" data-novelty="8" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-26" data-msgid="225">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/scriptedalchemy__open-claude-in-chrome.html">open-claude-in-chrome</a></span>
         <span class="nv hi">rare find</span>
@@ -335,7 +515,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-26</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-26" data-msgid="241" data-search="gonglz/pems-gnn-traffic-forecasting gonglz pems gnn traffic forecasting end‑to‑end gnn traffic forecasting on pems sensor data full pipeline, multi‑gpu training, reproducible results python ai &amp; ml  distributed-training graph-neural-networks pems pytorch-geometric traffic-forecasting">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-26" data-msgid="241">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/gonglz__pems-gnn-traffic-forecasting.html">pems-gnn-traffic-forecasting</a></span>
         <span class="nv hi">rare find</span>
@@ -347,7 +527,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-26</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="8" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-25" data-msgid="194" data-search="astral-fate/diffspec-pbt-apart-research astral fate diffspec pbt apart research validates llm specs via cross-model pbt to catch intent drift fast, cheap spec validation without ground truth python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="8" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-25" data-msgid="194">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/astral-fate__diffspec-pbt-apart-research.html">DiffSpec-PBT-Apart-Research</a></span>
         <span class="nv hi">rare find</span>
@@ -359,7 +539,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-25</span>
       </div>
     </article>
-    <article class="card" data-lang="c#" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-10" data-msgid="1171" data-search="appsprout-dev/unsga3 appsprout dev unsga3 u-nsga-iii .net library for multi‑objective evolutionary optimization native c# moea with validated performance c# ai &amp; ml  csharp dotnet evolutionary-algorithms moea multi-objective nsga3 nuget optimization">
+    <article class="card" data-lang="c#" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-10" data-msgid="1171">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/appsprout-dev__unsga3.html">Unsga3</a></span>
         <span class="nv">notable</span>
@@ -371,19 +551,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">today</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-10" data-msgid="1177" data-search="autonomous-ai/autonomous-tv autonomous ai autonomous tv ai-powered platform that creates short drama episodes via chat turns conversational prompts into fully rendered video episodes python ai &amp; ml  ai-filmmaking ai-video claude generative-video short-drama text-to-video">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/autonomous-ai__autonomous-tv.html">autonomous-tv</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">AI-powered platform that creates short drama episodes via chat</p>
-      <p class="card-why">Turns conversational prompts into fully rendered video episodes</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">ai-filmmaking</span><span class="tag">ai-video</span></div>
-        <span class="card-when">today</span>
-      </div>
-    </article>
-    <article class="card" data-lang="javascript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-09" data-msgid="1150" data-search="ekipo/agentsys ekipo agentsys agentsys: a modular runtime orchestrating ai agents for automated code pipelines combines multiple ai agents into structured, persistent workflows javascript ai &amp; ml ">
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-09" data-msgid="1150">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ekipo__agentsys.html">agentsys</a></span>
         <span class="nv">notable</span>
@@ -395,7 +563,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-09" data-msgid="1151" data-search="slegarraga/codex-stage-orchestrator slegarraga codex stage orchestrator stage‑aware codex orchestrator that routes ai stages with evidence tracks model usage and enforces stage routing javascript ai &amp; ml  ai-agents codex developer-tools mcp observability open-source orchestration">
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-09" data-msgid="1151">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/slegarraga__codex-stage-orchestrator.html">codex-stage-orchestrator</a></span>
         <span class="nv">notable</span>
@@ -407,31 +575,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-09" data-msgid="1159" data-search="zeta4lab/lora-loha-finetuning zeta4lab lora loha finetuning pytorch loha adapter for llm fine‑tuning with cli and full pipeline works without peft, end‑to‑end fine‑tuning python ai &amp; ml  fine-tuning llm loha lora parameter-efficient-fine-tuning peft pytorch qwen">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/zeta4lab__lora-loha-finetuning.html">lora-loha-finetuning</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">PyTorch LoHA adapter for LLM fine‑tuning with CLI and full pipeline</p>
-      <p class="card-why">Works without PEFT, end‑to‑end fine‑tuning</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">fine-tuning</span><span class="tag">llm</span></div>
-        <span class="card-when">yesterday</span>
-      </div>
-    </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-09" data-msgid="1169" data-search="eigenreza/aquarisk-norway eigenreza aquarisk norway open research platform forecasting salmon‑lice risk in norwegian aquaculture data pipelines, bayesian models, api, and map ui python ai &amp; ml  aquaculture bayesian-statistics dash dbt fastapi machine-learning mlops norway python">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/eigenreza__aquarisk-norway.html">aquarisk-norway</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Open research platform forecasting salmon‑lice risk in Norwegian aquaculture</p>
-      <p class="card-why">Data pipelines, Bayesian models, API, and map UI</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">aquaculture</span><span class="tag">bayesian-statistics</span></div>
-        <span class="card-when">yesterday</span>
-      </div>
-    </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-09" data-msgid="1170" data-search="iarslan95/gridcast-nl iarslan95 gridcast nl dutch electricity load forecasting app with backtested, calibrated predictions real data, transparent backtest, confidence intervals python ai &amp; ml  backtesting data-science electricity-demand energy forecasting lightgbm netherlands python streamlit time-series">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-09" data-msgid="1170">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/iarslan95__gridcast-nl.html">gridcast-nl</a></span>
         <span class="nv">notable</span>
@@ -443,7 +587,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">yesterday</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-08" data-msgid="1127" data-search="luisacaotica/chaoticminimaxh3director_wip luisacaotica chaoticminimaxh3director wip vram‑safe timeline director for minimax h3 video generation in comfyui enables long clips on 8 gb gpus without oom python ai &amp; ml  comfy-ui comfyui comfyui-custom-node comfyui-node minimax-h3 vibe-coded vibe-coding">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-08" data-msgid="1127">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/luisacaotica__chaoticminimaxh3director_wip.html">ChaoticMinimaxH3Director_WIP</a></span>
         <span class="nv">notable</span>
@@ -455,31 +599,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-07" data-msgid="1074" data-search="jreyenga/ebf jreyenga ebf elliptical basis function interpolation library for smooth fits to scattered data learns per-node anisotropic distance metrics python ai &amp; ml  interpolation radial-basis-function regression scattered-data-interpolation surrogate-models tensorflow">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/jreyenga__ebf.html">EBF</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Elliptical Basis Function interpolation library for smooth fits to scattered data</p>
-      <p class="card-why">Learns per-node anisotropic distance metrics</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">interpolation</span><span class="tag">radial-basis-function</span></div>
-        <span class="card-when">3d ago</span>
-      </div>
-    </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-07" data-msgid="1080" data-search="backblaze-b2-samples/clam-wsi-feature-extraction backblaze b2 samples clam wsi feature extraction b2-backed pipeline that tiles, segments, and embeds whole‑slide pathology images runs clam‑style feature extraction on cpu, storing all data in b2 typescript ai &amp; ml  b2-labs backblaze-b2 cloudstorage computational-pathology digital-pathology embeddings fastapi feature-extraction histopathology medical-imaging multiple-instance-learning nextjs object-storage openslide python pytorch s3 sample-app whole-slide-imaging">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/backblaze-b2-samples__clam-wsi-feature-extraction.html">clam-wsi-feature-extraction</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">B2-backed pipeline that tiles, segments, and embeds whole‑slide pathology images</p>
-      <p class="card-why">Runs CLAM‑style feature extraction on CPU, storing all data in B2</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">TypeScript</span><span class="tag">b2-labs</span><span class="tag">backblaze-b2</span></div>
-        <span class="card-when">3d ago</span>
-      </div>
-    </article>
-    <article class="card" data-lang="html" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-07" data-msgid="1098" data-search="seraphinerenard/skills seraphinerenard skills 36 machine-checked agent skills for ml and ai consulting with a rigorous conformance protocol rigorous conformance protocol with numbered gates, executable checkers, and structured delivery blocks html ai &amp; ml ">
+    <article class="card" data-lang="html" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-07" data-msgid="1098">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/seraphinerenard__skills.html">skills</a></span>
         <span class="nv">notable</span>
@@ -491,7 +611,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-07" data-msgid="1100" data-search="suvirrathore/micrograd-from-scratch suvirrathore micrograd from scratch from‑scratch reverse‑mode autodiff engine (scalar &amp; numpy tensor) with optimizers and experiments educational yet functional autodiff toolkit python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-07" data-msgid="1100">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/suvirrathore__micrograd-from-scratch.html">micrograd-from-scratch</a></span>
         <span class="nv">notable</span>
@@ -503,19 +623,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-07-30" data-msgid="1056" data-search="aswanth-07/effiped-multi-camera-tracking aswanth 07 effiped multi camera tracking multi-camera pedestrian detection, tracking and re-identification system end‑to‑end cv pipeline with api and ui python ai &amp; ml  computer-vision convnext-v2 fastapi multi-object-tracking person-reidentification pytorch react research-portfolio">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/aswanth-07__effiped-multi-camera-tracking.html">effiped-multi-camera-tracking</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Multi-camera pedestrian detection, tracking and re-identification system</p>
-      <p class="card-why">End‑to‑end CV pipeline with API and UI</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">computer-vision</span><span class="tag">convnext-v2</span></div>
-        <span class="card-when">1w ago</span>
-      </div>
-    </article>
-    <article class="card" data-lang="javascript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-07-01" data-msgid="945" data-search="madhushreeray30/invictus-advisory madhushreeray30 invictus advisory ai-driven financial triage service for small businesses structured advice via llm with fallback logic javascript ai &amp; ml ">
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-07-01" data-msgid="945">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/madhushreeray30__invictus-advisory.html">invictus-advisory</a></span>
         <span class="nv">notable</span>
@@ -527,7 +635,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-01</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-30" data-msgid="938" data-search="hcltech-robotics/cosmos-3-h-surgical-simulator hcltech robotics cosmos 3 h surgical simulator webrtc‑enabled surgical robot simulator powered by cosmos‑3 ai runs action‑conditioned ai model for realistic surgery demos javascript ai &amp; ml ">
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-30" data-msgid="938">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/hcltech-robotics__cosmos-3-h-surgical-simulator.html">cosmos-3-h-surgical-simulator</a></span>
         <span class="nv">notable</span>
@@ -539,7 +647,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-30</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-28" data-msgid="931" data-search="chuanhuafan9-boop/clova_project chuanhuafan9 boop clova project clova: closed‑loop visual assistant for tool usage and updates combines llm reasoning with visual tool execution python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-28" data-msgid="931">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/chuanhuafan9-boop__clova_project.html">CLOVA_project</a></span>
         <span class="nv">notable</span>
@@ -551,19 +659,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-28</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-27" data-msgid="917" data-search="magomedcoder/stt-pipeline magomedcoder stt pipeline offline speech-to-text and speaker diarization pipeline combines vosk and speechbrain for batch audio processing python ai &amp; ml  diarization python speechbrain stt vosk">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/magomedcoder__stt-pipeline.html">stt-pipeline</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Offline speech-to-text and speaker diarization pipeline</p>
-      <p class="card-why">Combines Vosk and SpeechBrain for batch audio processing</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">diarization</span><span class="tag">python</span></div>
-        <span class="card-when">2026-06-27</span>
-      </div>
-    </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-25" data-msgid="901" data-search="ahmzakif-dev/kayzeeocr ahmzakif dev kayzeeocr kayzeeocr: layout detection and structured ocr using qwen2.5-vl-2b end‑to‑end ocr with json output for 17 document element types python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-25" data-msgid="901">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ahmzakif-dev__kayzeeocr.html">KayzeeOCR</a></span>
         <span class="nv">notable</span>
@@ -575,19 +671,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-25</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-22" data-msgid="888" data-search="fazalrshah/mosaic fazalrshah mosaic local rag indexer that guarantees every chunk is stored verifies coverage to avoid silent indexing failures python ai &amp; ml  docling embeddings llm local-first milvus rag retrieval-augmented-generation vector-database">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/fazalrshah__mosaic.html">mosaic</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">Local RAG indexer that guarantees every chunk is stored</p>
-      <p class="card-why">Verifies coverage to avoid silent indexing failures</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">docling</span><span class="tag">embeddings</span></div>
-        <span class="card-when">2026-06-22</span>
-      </div>
-    </article>
-    <article class="card archived" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-20" data-msgid="858" data-search="abbycrm/project-c abbycrm project c secure self‑hosted console for ai image generation &amp; composio integration encrypts api keys server‑side, google sso, ready‑to‑run typescript ai &amp; ml ">
+    <article class="card archived" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-20" data-msgid="858">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/abbycrm__project-c.html">PROJECT-C</a></span>
         <span class="nv">notable</span>
@@ -599,7 +683,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-20</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-20" data-msgid="860" data-search="mmattar18/foot_predict mmattar18 foot predict explainable ai football match predictor with chain‑of‑thought reasoning provides transparent predictions with data‑driven reasoning python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-20" data-msgid="860">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mmattar18__foot_predict.html">foot_predict</a></span>
         <span class="nv">notable</span>
@@ -611,7 +695,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-20</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-20" data-msgid="872" data-search="john-iles/ytanalyser john iles ytanalyser llm-powered web app for natural-language q&amp;a on youtube channel data secure llm queries via cloudflare worker, static react ui typescript ai &amp; ml ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-20" data-msgid="872">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/john-iles__ytanalyser.html">YTAnalyser</a></span>
         <span class="nv">notable</span>
@@ -623,7 +707,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-20</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-19" data-msgid="855" data-search="yoannfradin-sudo/tabcl-gui yoannfradin sudo tabcl gui desktop gui for tabicl to train and forecast tabular models easy visual interface for tabicl with llm constraints python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-19" data-msgid="855">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/yoannfradin-sudo__tabcl-gui.html">Tabcl-Gui</a></span>
         <span class="nv">notable</span>
@@ -635,7 +719,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-19</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-18" data-msgid="849" data-search="saudfaruki/llemma-contrastive-encoder saudfaruki llemma contrastive encoder contrastive encoder trainer for llemma‑7b on lean proof pairs ready‑to‑run pipeline for gpu/apple‑silicon training python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-18" data-msgid="849">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/saudfaruki__llemma-contrastive-encoder.html">llemma-contrastive-encoder</a></span>
         <span class="nv">notable</span>
@@ -647,7 +731,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-18</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-17" data-msgid="840" data-search="assessllc/forgewright assessllc forgewright forgewright: a web workbench for designing, analyzing, and refining llm prompts discovery, scaffold editing, and reverse analysis in one ui  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-17" data-msgid="840">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/assessllc__forgewright.html">Forgewright</a></span>
         <span class="nv">notable</span>
@@ -659,7 +743,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-17</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-15" data-msgid="826" data-search="jackdonaldson-surge/afm-safety-studio jackdonaldson surge afm safety studio afm safety studio builds safety test trajectories for apple foundation models enables proactive tool-use safety labeling for afm python ai &amp; ml ">
+    <article class="card archived" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-15" data-msgid="826">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jackdonaldson-surge__afm-safety-studio.html">afm-safety-studio</a></span>
         <span class="nv">notable</span>
@@ -671,19 +755,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-15</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-14" data-msgid="813" data-search="mike-diff/sesh mike diff sesh sesh: a minimal go ai coding agent for llm‑driven code tasks zero‑dependency, extensible go cli for ai coding go ai &amp; ml  agent-harness agentic-coding agentic-workflow ai-agent code-generation coding-agent llm">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/mike-diff__sesh.html">sesh</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">sesh: a minimal Go AI coding agent for LLM‑driven code tasks</p>
-      <p class="card-why">Zero‑dependency, extensible Go CLI for AI coding</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Go</span><span class="tag">agent-harness</span><span class="tag">agentic-coding</span></div>
-        <span class="card-when">2026-06-14</span>
-      </div>
-    </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-14" data-msgid="819" data-search="noemisavelkoul/mastersthesis noemisavelkoul mastersthesis bayesian lag selection tool for var models implements thesis with cmdstan integration python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-14" data-msgid="819">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/noemisavelkoul__mastersthesis.html">MastersThesis</a></span>
         <span class="nv">notable</span>
@@ -695,7 +767,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-14</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-13" data-msgid="781" data-search="houndsight-ai/houndsight-node houndsight ai houndsight node node.js sdk for ai agent governance and audit trails enables policy‑enforced, tamper‑evident ai runs typescript ai &amp; ml ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-13" data-msgid="781">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/houndsight-ai__houndsight-node.html">houndsight-node</a></span>
         <span class="nv">notable</span>
@@ -707,7 +779,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-13</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-13" data-msgid="795" data-search="sahilgoury7/dental-clinic-outbound sahilgoury7 dental clinic outbound ai-powered outbound calling agent for dental clinics automates calls with llm, stt, tts integration python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-13" data-msgid="795">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/sahilgoury7__dental-clinic-outbound.html">dental-clinic-outbound</a></span>
         <span class="nv">notable</span>
@@ -719,7 +791,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-13</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-12" data-msgid="774" data-search="sameermaree/studioai sameermaree studioai studioai – local ai‑powered video and animation studio all‑in‑one local content creation without external apis typescript ai &amp; ml ">
+    <article class="card" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-12" data-msgid="774">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/sameermaree__studioai.html">studioai</a></span>
         <span class="nv">notable</span>
@@ -731,7 +803,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-12</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-12" data-msgid="776" data-search="dfl24-tech/crypto-consumer-protection-policy-simulation dfl24 tech crypto consumer protection policy simulation agent-based crypto policy simulation platform for stress-testing regulations provides realistic policy impact analysis with adaptive adversaries python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-12" data-msgid="776">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/dfl24-tech__crypto-consumer-protection-policy-simulation.html">Crypto-Consumer-Protection-Policy-Simulation</a></span>
         <span class="nv">notable</span>
@@ -743,7 +815,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-12</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-11" data-msgid="764" data-search="benmalaga/bee-colony-loss-forecast benmalaga bee colony loss forecast reproducible benchmark for forecasting u.s. honey‑bee colony loss data, code, and leaderboard for honest out‑of‑sample testing python ai &amp; ml  benchmark colony-loss forecasting honey-bees pre-registration reproducible-research time-series usda-nass">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-11" data-msgid="764">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/benmalaga__bee-colony-loss-forecast.html">bee-colony-loss-forecast</a></span>
         <span class="nv">notable</span>
@@ -755,19 +827,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-11</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-10" data-msgid="743" data-search="felixyustian/perceivereason_apple_m5 felixyustian perceivereason apple m5 on-device perception‑to‑reasoning pipeline for apple silicon combines core ml vision with swappable llms for offline ai python ai &amp; ml  antrophic apple-silicon claude core-ml coremltools foundation-models ios mobilenetv3 model-quantization neural-engine on-device-ai on-device-ml swift swiftui vision-framework wwdc2026">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/felixyustian__perceivereason_apple_m5.html">PerceiveReason_Apple_M5</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">On-device perception‑to‑reasoning pipeline for Apple Silicon</p>
-      <p class="card-why">Combines Core ML vision with swappable LLMs for offline AI</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">antrophic</span><span class="tag">apple-silicon</span></div>
-        <span class="card-when">2026-06-10</span>
-      </div>
-    </article>
-    <article class="card archived" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-09" data-msgid="734" data-search="icnatspell/olive-arena icnatspell olive arena olive-arena: automates model optimization for huggingface models using microsoft olive streamlines model quantization and benchmarking python ai &amp; ml ">
+    <article class="card archived" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-09" data-msgid="734">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/icnatspell__olive-arena.html">olive-arena</a></span>
         <span class="nv">notable</span>
@@ -779,7 +839,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-09</span>
       </div>
     </article>
-    <article class="card archived" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-08" data-msgid="722" data-search="uncertainty-johnna/tamaya uncertainty johnna tamaya tamaya is a full-stack ai diary service for emotional well-being and loneliness mitigation combines fastapi backend with vite/react frontend, using naver clova ai and pgvector typescript ai &amp; ml ">
+    <article class="card archived" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-08" data-msgid="722">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/uncertainty-johnna__tamaya.html">Tamaya</a></span>
         <span class="nv">notable</span>
@@ -791,7 +851,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-08</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-07" data-msgid="688" data-search="leinay633-maker/deepresearch-agent leinay633 maker deepresearch agent deepresearch agent: llm‑powered research assistant with citation checking end‑to‑end research, retrieval, and citation verification python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-07" data-msgid="688">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/leinay633-maker__deepresearch-agent.html">deepresearch-agent</a></span>
         <span class="nv">notable</span>
@@ -803,7 +863,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card archived" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-07" data-msgid="696" data-search="hsr-projects/kodaai hsr projects kodaai kodaai: privacy-first ai search &amp; chat app with multi-model support offers search-augmented chat with cited answers and customizable models typescript ai &amp; ml ">
+    <article class="card archived" data-lang="typescript" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-07" data-msgid="696">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/hsr-projects__kodaai.html">KodaAI</a></span>
         <span class="nv">notable</span>
@@ -815,7 +875,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-06" data-msgid="660" data-search="mansour-elcheikh/agent-reliability-kit mansour elcheikh agent reliability kit ai-sdlc governance kit for predictable agent work tool-agnostic, yaml-driven governance engine with sdlc factory javascript ai &amp; ml ">
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-06" data-msgid="660">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mansour-elcheikh__agent-reliability-kit.html">agent-reliability-kit</a></span>
         <span class="nv">notable</span>
@@ -827,7 +887,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-04" data-msgid="624" data-search="z7lab/markdownkb z7lab markdownkb self‑hosted ai‑powered markdown knowledge base with hybrid search combines vector + keyword search with chat ui python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-04" data-msgid="624">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/z7lab__markdownkb.html">markdownkb</a></span>
         <span class="nv">notable</span>
@@ -839,7 +899,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-04</span>
       </div>
     </article>
-    <article class="card" data-lang="shell" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-03" data-msgid="606" data-search="kazzyapi/anneal kazzyapi anneal anneal is a cli tool that captures and recalls agent mistakes, promoting recurring patterns into version-controlled rules. solves the problem of agents repeating mistakes by capturing and recalling lessons learned. shell ai &amp; ml ">
+    <article class="card" data-lang="shell" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-03" data-msgid="606">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/kazzyapi__anneal.html">anneal</a></span>
         <span class="nv">notable</span>
@@ -851,7 +911,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-03</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-02" data-msgid="590" data-search="jmeslie15/video-analysis jmeslie15 video analysis ai-powered video analysis pipeline for local object detection and scene understanding combines owlv2 and local llm for adaptable video analysis without external ai services python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-02" data-msgid="590">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jmeslie15__video-analysis.html">video-analysis</a></span>
         <span class="nv">notable</span>
@@ -863,7 +923,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-02</span>
       </div>
     </article>
-    <article class="card" data-lang="shell" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-01" data-msgid="583" data-search="fuller-horizons/fhskillz fuller horizons fhskillz ai prompt engineering tool that turns vague goals into effective, verifiable prompts or stops when ai is not the right tool solves common prompting failures with a thoughtful, multi-phase approach shell ai &amp; ml ">
+    <article class="card" data-lang="shell" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-01" data-msgid="583">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/fuller-horizons__fhskillz.html">FHSkillz</a></span>
         <span class="nv">notable</span>
@@ -875,7 +935,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-01</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-31" data-msgid="473" data-search="edwinjhlee/awesome-meme edwinjhlee awesome meme ai meme generator for agents with 30 templates easy integration for ai humor python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-31" data-msgid="473">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/edwinjhlee__awesome-meme.html">awesome-meme</a></span>
         <span class="nv">notable</span>
@@ -887,7 +947,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-31" data-msgid="494" data-search="pigman-labs/pigman pigman labs pigman jepa-based world-model agent scaffold for ai research end‑to‑end training and evaluation of a jepa world model python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-31" data-msgid="494">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/pigman-labs__pigman.html">pigman</a></span>
         <span class="nv">notable</span>
@@ -899,7 +959,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-30" data-msgid="401" data-search="pbrickner2024/finally-ai pbrickner2024 finally ai ai-powered trading workstation with live market data and natural language trading combines real-time streaming, portfolio simulation, and llm trading assistant in one interface python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-30" data-msgid="401">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/pbrickner2024__finally-ai.html">finally-ai</a></span>
         <span class="nv">notable</span>
@@ -911,19 +971,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-30" data-msgid="408" data-search="robbealex/ai-in-healthcare-chest-disease-detection robbealex ai in healthcare chest disease detection ai chest disease detector using x-rays with streamlit web interface complete working solution with pre-trained model and web ui python ai &amp; ml  chest-xray computer-vision covid-19 deep-learning keras machine-learning medical-imaging python streamlit tensorflow transfer-learning">
-      <div class="card-head">
-        <span class="card-name"><a href="https://hatchmoment.org/p/robbealex__ai-in-healthcare-chest-disease-detection.html">AI-in-HealthCare-Chest-Disease-Detection</a></span>
-        <span class="nv">notable</span>
-      </div>
-      <p class="card-sum">AI chest disease detector using X-rays with Streamlit web interface</p>
-      <p class="card-why">Complete working solution with pre-trained model and web UI</p>
-      <div class="card-foot">
-        <div class="card-tags"><span class="tag lang">Python</span><span class="tag">chest-xray</span><span class="tag">computer-vision</span></div>
-        <span class="card-when">2026-05-30</span>
-      </div>
-    </article>
-    <article class="card" data-lang="" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-30" data-msgid="456" data-search="wanjun-hd/tracedoc wanjun hd tracedoc local rag‑powered clinical assistant with streamlit ui searchable medical evidence with ai analysis  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-30" data-msgid="456">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/wanjun-hd__tracedoc.html">TraceDoc</a></span>
         <span class="nv">notable</span>
@@ -935,7 +983,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="jupyter notebook" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-29" data-msgid="371" data-search="shrinivaslab/2026_tyagi_boodry_idp_design shrinivaslab 2026 tyagi boodry idp design idp design tool physics-guided jupyter notebook ai &amp; ml ">
+    <article class="card" data-lang="jupyter notebook" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-29" data-msgid="371">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/shrinivaslab__2026_tyagi_boodry_idp_design.html">2026_tyagi_boodry_idp_design</a></span>
         <span class="nv">notable</span>
@@ -947,7 +995,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-28" data-msgid="301" data-search="mattdweigand-sketch/trust-layer mattdweigand sketch trust layer evidence-first workflow kit for auditable ai deliverables enforces source-backed claims javascript ai &amp; ml  ai audit evidence office provenance source-grounded verification">
+    <article class="card" data-lang="javascript" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-28" data-msgid="301">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mattdweigand-sketch__trust-layer.html">trust-layer</a></span>
         <span class="nv">notable</span>
@@ -959,7 +1007,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="c" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-27" data-msgid="264" data-search="s4uce-offender/goon-lang s4uce offender goon lang a learning-focused language for teaching programming design principles it clearly aims to educate developers about language design through a toy language, offering structured examples and exercises. c ai &amp; ml ">
+    <article class="card" data-lang="c" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-27" data-msgid="264">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/s4uce-offender__goon-lang.html">goon-lang</a></span>
         <span class="nv">notable</span>
@@ -971,7 +1019,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-27</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-27" data-msgid="271" data-search="nitin-scholar/live-traffic-routing-using-cnn nitin scholar live traffic routing using cnn smart traffic routing system solves traffic congestion  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-27" data-msgid="271">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nitin-scholar__live-traffic-routing-using-cnn.html">live-traffic-routing-using-cnn</a></span>
         <span class="nv">notable</span>
@@ -983,7 +1031,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-27</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-26" data-msgid="235" data-search="qarteu/tool-calling-research-project qarteu tool calling research project evaluates indirect prompt injection in llm email agents with tool-call logging and detection mechanisms. tests email agent security against hidden malicious instructions. python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="7" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-26" data-msgid="235">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/qarteu__tool-calling-research-project.html">tool-calling-research-project</a></span>
         <span class="nv">notable</span>
@@ -995,7 +1043,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-26</span>
       </div>
     </article>
-    <article class="card" data-lang="go" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-08" data-msgid="1123" data-search="grevix/vera grevix vera vera: sandbox that cryptographically verifies ai agent task completion stops ai agents from cheating with false success claims go ai &amp; ml  agent-infrastructure ai-agents autonomous-agents dev-tools evidence-graph llm-verification sandbox">
+    <article class="card" data-lang="go" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-08" data-msgid="1123">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/grevix__vera.html">vera</a></span>
         <span class="nv">notable</span>
@@ -1007,7 +1055,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-07" data-msgid="1097" data-search="aliklabs/klabs-chatbot aliklabs klabs chatbot reusable website ai chatbot platform with laravel backend and next.js front‑end ready‑to‑run knowledge‑grounded chatbot solution typescript ai &amp; ml ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-07" data-msgid="1097">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/aliklabs__klabs-chatbot.html">klabs-chatbot</a></span>
         <span class="nv">notable</span>
@@ -1019,7 +1067,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">3d ago</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-04" data-msgid="1066" data-search="jessfrt/tnu jessfrt tnu deterministic, explainable multilingual translation via numeric ontology provides traceable semantic matches across languages python ai &amp; ml ">
+    <article class="card archived" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-04" data-msgid="1066">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jessfrt__tnu.html">TNU</a></span>
         <span class="nv">notable</span>
@@ -1031,7 +1079,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">6d ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-08-02" data-msgid="1059" data-search="rbcaglobalsg/codi-agent rbcaglobalsg codi agent codi agent: korean ai coding companion that evolves via conversation provides multi‑platform korean ai coding assistance python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-08-02" data-msgid="1059">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/rbcaglobalsg__codi-agent.html">codi-agent</a></span>
         <span class="nv">notable</span>
@@ -1043,7 +1091,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">1w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-07-28" data-msgid="1052" data-search="finxlab/har-cev finxlab har cev open-source implementation of har-cev for zero‑shot realized variance forecasting ready‑to‑run finance forecasting models with baselines and backtests python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-07-28" data-msgid="1052">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/finxlab__har-cev.html">HAR-CEV</a></span>
         <span class="nv">notable</span>
@@ -1055,7 +1103,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">1w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-07-25" data-msgid="1046" data-search="jacfruit404/medscribe jacfruit404 medscribe medscribe: ai‑driven ocr and llm tool to extract and structure medical records. combines ocr and llm for quick, editable medical data extraction. python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-07-25" data-msgid="1046">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/jacfruit404__medscribe.html">MedScribe</a></span>
         <span class="nv">notable</span>
@@ -1067,7 +1115,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-07-23" data-msgid="1040" data-search="taehyeonglim/paper-scout taehyeonglim paper scout paper-scout: claude code plugin for automated literature discovery aggregates multiple scholarly apis into deterministic search python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-07-23" data-msgid="1040">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/taehyeonglim__paper-scout.html">paper-scout</a></span>
         <span class="nv">notable</span>
@@ -1079,7 +1127,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2w ago</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-07-08" data-msgid="1002" data-search="arthurhardman/previsor-imoveis arthurhardman previsor imoveis real estate price predictor with ml api and web ui end‑to‑end azure‑deployed ml model with explainability python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-07-08" data-msgid="1002">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/arthurhardman__previsor-imoveis.html">previsor-imoveis</a></span>
         <span class="nv">notable</span>
@@ -1091,7 +1139,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-08</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-07-04" data-msgid="972" data-search="goghi48/ryden-ranker goghi48 ryden ranker fastapi service that ranks place recommendations using a scikit‑learn model ready‑to‑run ranking api with synthetic data and tests python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-07-04" data-msgid="972">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/goghi48__ryden-ranker.html">ryden-ranker</a></span>
         <span class="nv">notable</span>
@@ -1103,7 +1151,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-04</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-07-04" data-msgid="980" data-search="meizisong888/basecall-rna-deletion meizisong888 basecall rna deletion deletion‑aware rna nanopore basecalling with student model training training and evaluation scripts for accurate rna basecalling python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-07-04" data-msgid="980">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/meizisong888__basecall-rna-deletion.html">basecall-rna-deletion</a></span>
         <span class="nv">notable</span>
@@ -1115,7 +1163,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-04</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-07-02" data-msgid="959" data-search="qmatyanlab/gnn_mc_disordered_magnets qmatyanlab gnn mc disordered magnets gnn-driven monte carlo framework for magnetic alloy simulations combines graph neural nets with mc to study ordering python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-07-02" data-msgid="959">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/qmatyanlab__gnn_mc_disordered_magnets.html">GNN_MC_Disordered_Magnets</a></span>
         <span class="nv">notable</span>
@@ -1127,7 +1175,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-07-02</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-30" data-msgid="942" data-search="padmajeet-mhaske/multi-region-llm-handoff padmajeet mhaske multi region llm handoff framework for evaluating multi‑region llm agent handoff performance runs realistic distributed llm experiments with docker python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-30" data-msgid="942">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/padmajeet-mhaske__multi-region-llm-handoff.html">multi-region-llm-handoff</a></span>
         <span class="nv">notable</span>
@@ -1139,7 +1187,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-30</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-28" data-msgid="926" data-search="mwirelabs/ne-agent mwirelabs ne agent terminal ai assistant for northeast indian languages, runs locally local llm with language id and vector search python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-28" data-msgid="926">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mwirelabs__ne-agent.html">ne-agent</a></span>
         <span class="nv">notable</span>
@@ -1151,7 +1199,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-28</span>
       </div>
     </article>
-    <article class="card archived" data-lang="rust" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-27" data-msgid="909" data-search="faangbait/rbp-train faangbait rbp train rust toolkit for optimal poker strategies and ai training fast hand evaluator and mccfr solver for poker ai rust ai &amp; ml ">
+    <article class="card archived" data-lang="rust" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-27" data-msgid="909">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/faangbait__rbp-train.html">rbp-train</a></span>
         <span class="nv">notable</span>
@@ -1163,7 +1211,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-27</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-23" data-msgid="891" data-search="visualaikhu/personadrive visualaikhu personadrive personadrive: controllable trajectory prediction with multi-dimensional driving personas adds persona conditioning to trajectory models python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-23" data-msgid="891">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/visualaikhu__personadrive.html">PersonaDrive</a></span>
         <span class="nv">notable</span>
@@ -1175,7 +1223,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-23</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-21" data-msgid="876" data-search="nuffin/hermes-skill-graph nuffin hermes skill graph hermes skill-graph plugin adds searchable knowledge graph for agent skills typed relationships improve skill discovery python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-21" data-msgid="876">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nuffin__hermes-skill-graph.html">hermes-skill-graph</a></span>
         <span class="nv">notable</span>
@@ -1187,7 +1235,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-21</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-20" data-msgid="864" data-search="mikatachan/laplace mikatachan laplace admission control &amp; idle model reaper for shared local llm servers manages memory, priorities, and external tenants python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-20" data-msgid="864">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mikatachan__laplace.html">laplace</a></span>
         <span class="nv">notable</span>
@@ -1199,7 +1247,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-20</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-20" data-msgid="868" data-search="habiboffdev/oqim-platform-review habiboffdev oqim platform review ai-driven multi-tenant commerce platform for chat‑based sales agents autonomous sales bots with human‑style chat and owner approval python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-20" data-msgid="868">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/habiboffdev__oqim-platform-review.html">oqim-platform-review</a></span>
         <span class="nv">notable</span>
@@ -1211,7 +1259,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-20</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-17" data-msgid="841" data-search="riteshmaheshwari/asktruefoundry-agent riteshmaheshwari asktruefoundry agent truefoundry‑focused rag server for answering docs queries provides grounded answers with source urls python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-17" data-msgid="841">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/riteshmaheshwari__asktruefoundry-agent.html">AskTrueFoundry-Agent</a></span>
         <span class="nv">notable</span>
@@ -1223,7 +1271,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-17</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-17" data-msgid="843" data-search="yuigawada/zina yuigawada zina zina detects and edits hallucinated text in multimodal llm outputs fine-grained hallucination tagging and correction python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-17" data-msgid="843">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/yuigawada__zina.html">ZINA</a></span>
         <span class="nv">notable</span>
@@ -1235,7 +1283,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-17</span>
       </div>
     </article>
-    <article class="card" data-lang="html" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-16" data-msgid="834" data-search="joshuajackai/content-pilot joshuajackai content pilot browser‑based ai tool that turns transcripts into seo‑ready content assets single‑file, no‑server, bring‑your‑own‑key design html ai &amp; ml ">
+    <article class="card" data-lang="html" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-16" data-msgid="834">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/joshuajackai__content-pilot.html">content-pilot</a></span>
         <span class="nv">notable</span>
@@ -1247,7 +1295,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-16</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-14" data-msgid="809" data-search="dayne6666/every_agent dayne6666 every agent langgraph-based ai agent framework with sandbox execution manages sandbox lifecycle, integrates web search &amp; file upload python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-14" data-msgid="809">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/dayne6666__every_agent.html">every_agent</a></span>
         <span class="nv">notable</span>
@@ -1259,7 +1307,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-14</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-13" data-msgid="793" data-search="lohithvattam1628/tulusi-akka-project lohithvattam1628 tulusi akka project ai-powered web app that analyzes csv/excel data via natural language combines gemini ai with streamlit for instant data insights python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-13" data-msgid="793">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/lohithvattam1628__tulusi-akka-project.html">Tulusi-akka-project</a></span>
         <span class="nv">notable</span>
@@ -1271,7 +1319,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-13</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-11" data-msgid="756" data-search="hamza-malik05/policypipeline hamza malik05 policypipeline local gpu-accelerated pipeline that extracts policy text from pdfs runs entirely offline, no cloud apis needed python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-11" data-msgid="756">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/hamza-malik05__policypipeline.html">PolicyPipeline</a></span>
         <span class="nv">notable</span>
@@ -1283,7 +1331,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-11</span>
       </div>
     </article>
-    <article class="card archived" data-lang="typescript" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-11" data-msgid="761" data-search="nprimm1992-ui/jensen nprimm1992 ui jensen jensen: ai‑powered knowledge‑graph platform for client‑specific insights integrates embeddings, llm chat, and supabase for live knowledge graphs typescript ai &amp; ml ">
+    <article class="card archived" data-lang="typescript" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-11" data-msgid="761">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nprimm1992-ui__jensen.html">Jensen</a></span>
         <span class="nv">notable</span>
@@ -1295,7 +1343,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-11</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-11" data-msgid="765" data-search="msingi-ai/sauti-tts-v2 msingi ai sauti tts v2 swahili tts pipeline for data prep, baseline evaluation, and fine‑tuning end‑to‑end workflow for building swahili speech synthesis models python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-11" data-msgid="765">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/msingi-ai__sauti-tts-v2.html">sauti-tts-v2</a></span>
         <span class="nv">notable</span>
@@ -1307,7 +1355,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-11</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-09" data-msgid="725" data-search="subinvan-design/math- subinvan design math  ai studio app for running math quizzes locally provides a working ai studio app with local deployment typescript ai &amp; ml ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-09" data-msgid="725">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/subinvan-design__math.html">math-</a></span>
         <span class="nv">notable</span>
@@ -1319,7 +1367,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-09</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-09" data-msgid="729" data-search="kdh-isaac/biomedical-agent-teams-codex-marketplace kdh isaac biomedical agent teams codex marketplace biomedical agent teams codex marketplace plugin for local codex desktop exposes biomedical-agent-teams skill with 35 agent prompts and more python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-09" data-msgid="729">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/kdh-isaac__biomedical-agent-teams-codex-marketplace.html">biomedical-agent-teams-codex-marketplace</a></span>
         <span class="nv">notable</span>
@@ -1331,7 +1379,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-09</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-09" data-msgid="732" data-search="nemo-forge/nano-agent nemo forge nano agent offline llm agent runtime for edge devices runs locally on jetson/raspberry pi without cloud python ai &amp; ml ">
+    <article class="card archived" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-09" data-msgid="732">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/nemo-forge__nano-agent.html">nano-agent</a></span>
         <span class="nv">notable</span>
@@ -1343,7 +1391,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-09</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-09" data-msgid="738" data-search="expertadvsa-maker/professional-1 expertadvsa maker professional 1 ai studio app for running and deploying ai models locally simplifies local deployment of ai models with gemini api integration typescript ai &amp; ml ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-09" data-msgid="738">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/expertadvsa-maker__professional-1.html">Professional-1</a></span>
         <span class="nv">notable</span>
@@ -1355,7 +1403,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-09</span>
       </div>
     </article>
-    <article class="card" data-lang="jupyter notebook" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-07" data-msgid="705" data-search="hereditary-eu/eeglass hereditary eu eeglass eeglas: an explainable eeg dashboard for dementia classification combines explainable ai with an interactive ui for clinicians jupyter notebook ai &amp; ml ">
+    <article class="card" data-lang="jupyter notebook" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-07" data-msgid="705">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/hereditary-eu__eeglass.html">EEGlass</a></span>
         <span class="nv">notable</span>
@@ -1367,7 +1415,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-07</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-06" data-msgid="662" data-search="l1n-ker/gnss-urban-pnt-minilab l1n ker gnss urban pnt minilab gnss urban pnt learning portfolio for robust pseudorange positioning and leo-like aiding demonstrates robust pseudorange positioning and simplified leo-like ranging-source aiding python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-06" data-msgid="662">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/l1n-ker__gnss-urban-pnt-minilab.html">gnss-urban-pnt-minilab</a></span>
         <span class="nv">notable</span>
@@ -1379,7 +1427,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="javascript" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-06" data-msgid="664" data-search="milapskhasi/bipin-petroleum-co. milapskhasi bipin petroleum co. ai studio app for running ai models locally simplifies local ai app development javascript ai &amp; ml ">
+    <article class="card" data-lang="javascript" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-06" data-msgid="664">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/milapskhasi__bipin-petroleum-co..html">Bipin-Petroleum-Co.</a></span>
         <span class="nv">notable</span>
@@ -1391,7 +1439,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card" data-lang="typescript" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-06" data-msgid="666" data-search="112b01210-dev/-3a_-_-2026- 112b01210 dev  3a    2026  ai studio app for remote healthcare management implements ai-powered healthcare management locally typescript ai &amp; ml ">
+    <article class="card" data-lang="typescript" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-06" data-msgid="666">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/112b01210-dev__3a_-_-2026.html">-3A_-_-2026-</a></span>
         <span class="nv">notable</span>
@@ -1403,7 +1451,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card archived" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-06" data-msgid="668" data-search="ts825360/agent-memory-simulation-system ts825360 agent memory simulation system multi-agent simulation system for modeling conversations and memories simulates agent interactions, memory formation, and relation mapping  ai &amp; ml ">
+    <article class="card archived" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-06" data-msgid="668">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ts825360__agent-memory-simulation-system.html">Agent-Memory-Simulation-System</a></span>
         <span class="nv">notable</span>
@@ -1415,7 +1463,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-06</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-05" data-msgid="628" data-search="datthanhly/fast-pikan datthanhly fast pikan fast-pikan: a physics-informed neural network solver implements pikan for solving pdes python ai &amp; ml ">
+    <article class="card archived" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-05" data-msgid="628">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/datthanhly__fast-pikan.html">Fast-PIKAN</a></span>
         <span class="nv">notable</span>
@@ -1427,7 +1475,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-05</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-03" data-msgid="608" data-search="aetox-skills/docstruct aetox skills docstruct ai agent skill for clear, non-duplicated project documentation teaches agents to create token-efficient docs  ai &amp; ml  agent-skills agents-md-checker ai-agents claude-skills codex-skills cursor-rules developer-tools documentation documentation-architecture-c4-model-petroapp markdown">
+    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-03" data-msgid="608">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/aetox-skills__docstruct.html">docstruct</a></span>
         <span class="nv">notable</span>
@@ -1439,7 +1487,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-03</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-02" data-msgid="586" data-search="liamtarzy-lgtm/ai-adoption-visualizer liamtarzy lgtm ai adoption visualizer ai adoption visualizer generates interactive charts for automation adoption and fte displacement provides useful insights into ai adoption trends and impacts python ai &amp; ml ">
+    <article class="card archived" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-02" data-msgid="586">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/liamtarzy-lgtm__ai-adoption-visualizer.html">ai-adoption-visualizer</a></span>
         <span class="nv">notable</span>
@@ -1451,7 +1499,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-02</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-06-01" data-msgid="569" data-search="lif18/alphazero-micro-chess-tif360 lif18 alphazero micro chess tif360 alphazero‑style micro‑chess engine with beam‑search inference runs a compact gpt‑2 model with search for strong play python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-06-01" data-msgid="569">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/lif18__alphazero-micro-chess-tif360.html">AlphaZero-Micro-Chess-TIF360</a></span>
         <span class="nv">notable</span>
@@ -1463,7 +1511,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-06-01</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-31" data-msgid="511" data-search="salmakhaled89/tic-tac-toe-ai-game salmakhaled89 tic tac toe ai game tic-tac-toe ai game unbeatable ai opponent  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-31" data-msgid="511">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/salmakhaled89__tic-tac-toe-ai-game.html">Tic-Tac-Toe-AI-Game</a></span>
         <span class="nv">notable</span>
@@ -1475,7 +1523,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-31" data-msgid="529" data-search="qincheng0928/projectairsim-uav-multimodal-trajectory-prediction qincheng0928 projectairsim uav multimodal trajectory prediction uav multimodal trajectory prediction framework for projectairsim provides ready‑to‑use 3d trajectory forecasting  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-31" data-msgid="529">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/qincheng0928__projectairsim-uav-multimodal-trajectory-prediction.html">Projectairsim-UAV-Multimodal-Trajectory-Prediction</a></span>
         <span class="nv">notable</span>
@@ -1487,7 +1535,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-30" data-msgid="424" data-search="mohamedaminesani-ui/toonify-ai mohamedaminesani ui toonify ai ai-powered photo toonifier energizing photos  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-30" data-msgid="424">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mohamedaminesani-ui__toonify-ai.html">toonify-ai</a></span>
         <span class="nv">notable</span>
@@ -1499,7 +1547,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-29" data-msgid="323" data-search="eeeboshi/agent-platform eeeboshi agent platform ai agent platform with fastapi &amp; gradio for multi‑tool interactions combines llamaindex agents, rest api, and web ui  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-29" data-msgid="323">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/eeeboshi__agent-platform.html">Agent-Platform</a></span>
         <span class="nv">notable</span>
@@ -1511,7 +1559,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-29" data-msgid="345" data-search="aruntharun1996/langgraph-content-generation aruntharun1996 langgraph content generation langgraph-powered content generator using google gemini self‑correcting llm pipeline with evaluation loop python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-29" data-msgid="345">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/aruntharun1996__langgraph-content-generation.html">Langgraph-content-generation</a></span>
         <span class="nv">notable</span>
@@ -1523,7 +1571,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-29</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-28" data-msgid="289" data-search="dhytpodd-lab/free-claude-functional-on-ollama-api dhytpodd lab free claude functional on ollama api proxy server that routes claude code api traffic to many ai providers lets claude code use free, local or alternative models  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-28" data-msgid="289">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/dhytpodd-lab__free-claude-functional-on-ollama-api.html">Free-Claude-Functional-on-Ollama-API</a></span>
         <span class="nv">notable</span>
@@ -1535,7 +1583,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-28" data-msgid="303" data-search="ce-forge/turkish-kokoro ce forge turkish kokoro turkish tts model working tts model  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-28" data-msgid="303">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/ce-forge__turkish-kokoro.html">turkish-kokoro</a></span>
         <span class="nv">notable</span>
@@ -1547,7 +1595,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-28" data-msgid="312" data-search="abdullahh-sheikhh/white-blood-cell-classification-using-naive-bayes abdullahh sheikhh white blood cell classification using naive bayes white blood cell classifier accurate wbc classification  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-28" data-msgid="312">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/abdullahh-sheikhh__white-blood-cell-classification-using-naive-bayes.html">white-blood-cell-classification-using-naive-bayes</a></span>
         <span class="nv">notable</span>
@@ -1559,7 +1607,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-25" data-msgid="203" data-search="enxt-ai/mca enxt ai mca financial pdf extractor using llms and embeddings end‑to‑end pipeline for structured data python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-25" data-msgid="203">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/enxt-ai__mca.html">MCA</a></span>
         <span class="nv">notable</span>
@@ -1571,7 +1619,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-25</span>
       </div>
     </article>
-    <article class="card" data-lang="jupyter notebook" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-25" data-msgid="213" data-search="mariabankestad/gp-boundary-bias mariabankestad gp boundary bias diagnostic toolkit for gp boundary bias in bayesian optimisation shows how variance inflation skews acquisition jupyter notebook ai &amp; ml ">
+    <article class="card" data-lang="jupyter notebook" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-25" data-msgid="213">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/mariabankestad__gp-boundary-bias.html">gp-boundary-bias</a></span>
         <span class="nv">notable</span>
@@ -1583,7 +1631,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-25</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-24" data-msgid="159" data-search="fzzsteam/jellyfish fzzsteam jellyfish ai-powered short drama production studio end‑to‑end workflow for script to video python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="6" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-24" data-msgid="159">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/fzzsteam__jellyfish.html">Jellyfish</a></span>
         <span class="nv">notable</span>
@@ -1595,7 +1643,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-24</span>
       </div>
     </article>
-    <article class="card archived" data-lang="html" data-novelty="5" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-31" data-msgid="476" data-search="meher1294/magnus-radar meher1294 magnus radar a solution for optimizing urban traffic flow addresses real-world congestion with data-driven insights and efficient routing. html ai &amp; ml ">
+    <article class="card archived" data-lang="html" data-novelty="5" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-31" data-msgid="476">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/meher1294__magnus-radar.html">magnus-radar</a></span>
         <span class="nv">worth a look</span>
@@ -1607,7 +1655,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-31" data-msgid="477" data-search="qfhu0ng/agentic-rl-rollout qfhu0ng agentic rl rollout an innovative approach to agentic llm systems. demonstrates practical implementation of ai-driven decision-making.  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-31" data-msgid="477">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/qfhu0ng__agentic-rl-rollout.html">agentic-rl-rollout</a></span>
         <span class="nv">worth a look</span>
@@ -1619,7 +1667,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-31</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-30" data-msgid="470" data-search="lemmaiot-tech/aeoncrypt-bot lemmaiot tech aeoncrypt bot ai chatbot with real‑time rag for pdfs and docs fastapi, websocket, faiss, groq  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-30" data-msgid="470">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/lemmaiot-tech__aeoncrypt-bot.html">AeonCrypt-Bot</a></span>
         <span class="nv">worth a look</span>
@@ -1631,7 +1679,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-30</span>
       </div>
     </article>
-    <article class="card" data-lang="" data-novelty="5" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-28" data-msgid="316" data-search="michae6345-crypto/pinnns michae6345 crypto pinnns physics-informed neural network training with precision and optimizer switching enables efficient, accurate pinn experiments  ai &amp; ml ">
+    <article class="card" data-lang="" data-novelty="5" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-28" data-msgid="316">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/michae6345-crypto__pinnns.html">PInnns</a></span>
         <span class="nv">worth a look</span>
@@ -1643,7 +1691,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-28</span>
       </div>
     </article>
-    <article class="card archived" data-lang="python" data-novelty="5" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-26" data-msgid="239" data-search="thmsbnsn/xerxes-agent thmsbnsn xerxes agent an ai-powered solution enhancing productivity valid application addressing automation needs python ai &amp; ml ">
+    <article class="card archived" data-lang="python" data-novelty="5" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-26" data-msgid="239">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/thmsbnsn__xerxes-agent.html">xerxes-agent</a></span>
         <span class="nv">worth a look</span>
@@ -1655,7 +1703,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-26</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="5" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-25" data-msgid="211" data-search="karunakarmalkagalla/pdf-q-a-app karunakarmalkagalla pdf q a app ai pdf q&amp;a app that answers questions from uploaded pdfs combines rag with gemini for instant answers python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="5" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-25" data-msgid="211">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/karunakarmalkagalla__pdf-q-a-app.html">PDF-Q-A-APP</a></span>
         <span class="nv">worth a look</span>
@@ -1667,7 +1715,7 @@ a:hover{text-decoration:underline}
         <span class="card-when">2026-05-25</span>
       </div>
     </article>
-    <article class="card" data-lang="python" data-novelty="4" data-cat="AI &amp; ML" data-sub="" data-date="2026-05-24" data-msgid="185" data-search="troxid/cobalt_alpha troxid cobalt alpha ai agent for scientific calculations using local llms functional prototype with actual code, not just educational demo python ai &amp; ml ">
+    <article class="card" data-lang="python" data-novelty="4" data-cat="AI &amp; ML" data-sub="More" data-date="2026-05-24" data-msgid="185">
       <div class="card-head">
         <span class="card-name"><a href="https://hatchmoment.org/p/troxid__cobalt_alpha.html">cobalt_alpha</a></span>
         <span class="nv">worth a look</span>
@@ -1684,13 +1732,13 @@ a:hover{text-decoration:underline}
 <script>
 (function(){
   var q=document.getElementById('q');
-  var chips=[].slice.call(document.querySelectorAll('#filters .chip'));
+  var chips=[].slice.call(document.querySelectorAll('#filters .chip,#subfilters .chip'));
   var sortChips=[].slice.call(document.querySelectorAll('.chip.sort'));
   var cards=[].slice.call(document.querySelectorAll('[data-section] .card'));
   var sections=[].slice.call(document.querySelectorAll('[data-section]'));
   var results=document.getElementById('searchresults');
   var noresults=document.getElementById('noresults');
-  var state={text:'',lang:'',novelty:0,sort:'best'};
+  var state={text:'',lang:'',sub:'',novelty:0,sort:'best'};
   var INDEX=null;   // загруженный search.json (ленивая загрузка при первом поиске)
 
   function cmp(a,b){
@@ -1717,7 +1765,8 @@ a:hover{text-decoration:underline}
     cards.forEach(function(c){
       var okL=!state.lang || c.dataset.lang===state.lang;
       var okN=!state.novelty || (parseInt(c.dataset.novelty||'0',10)>=state.novelty);
-      var ok=okL&&okN;
+      var okS=!state.sub || c.dataset.sub===state.sub;
+      var ok=okL&&okN&&okS;
       c.style.display=ok?'':'none';
       if(ok)shown++;
     });
@@ -1745,6 +1794,7 @@ a:hover{text-decoration:underline}
       summary:it.s||'', why:it.w||'', lang:it.l||'', novelty:it.n||0,
       badge:badgeOf(it.n),
       url:'p/'+jslug(owner)+'__'+jslug(name)+'.html',
+      x:(it.x||'').toLowerCase(),
       q:(repo+' '+flat+' '+(it.s||'')+' '+(it.w||'')+' '+(it.l||'')+' '+(it.x||'')).toLowerCase()
     };
   }
@@ -1773,6 +1823,7 @@ a:hover{text-decoration:underline}
     var matched=INDEX.items.filter(function(it){
       if(t && (it.q||'').indexOf(t)===-1) return false;
       if(state.lang && (it.lang||'').toLowerCase()!==state.lang) return false;
+      if(state.sub && (it.x||'').indexOf(state.sub.toLowerCase())<0) return false;
       if(state.novelty && (it.novelty||0)<state.novelty) return false;
       return true;
     });
@@ -1814,6 +1865,9 @@ a:hover{text-decoration:underline}
       if(f==='lang'){
         chips.filter(function(x){return x.dataset.filter==='lang';}).forEach(function(x){x.classList.remove('on');});
         ch.classList.add('on');state.lang=v;
+      } else if(f==='sub'){
+        chips.filter(function(x){return x.dataset.filter==='sub';}).forEach(function(x){x.classList.remove('on');});
+        ch.classList.add('on');state.sub=v;
       } else if(f==='novelty'){
         ch.classList.toggle('on');
         state.novelty=ch.classList.contains('on')?parseInt(v,10):0;
