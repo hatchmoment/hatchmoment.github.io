@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>grademaster-pro — AI‑powered grading pipeline for Canvas LMS · hatchmoment</title>
-<meta name="description" content="AI‑powered grading pipeline for Canvas LMS — Automates grading at scale">
-<link rel="canonical" href="https://hatchmoment.org/p/maheshchebrolu-git__grademaster-pro.html">
+<title>judgment-engine — Grounded VLM design reviewer that screenshots UI and validates findings · hatchmoment</title>
+<meta name="description" content="Grounded VLM design reviewer that screenshots UI and validates findings — Filters hallucinations, gives precise, reproducible UI critiques">
+<link rel="canonical" href="https://hatchmoment.org/p/apatureai__judgment-engine.html">
 <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%230a0f1a'/&gt;&lt;text y='.9em' x='50' font-size='62' text-anchor='middle'&gt;🥚&lt;/text&gt;&lt;/svg&gt;">
-<meta property="og:title" content="grademaster-pro — AI‑powered grading pipeline for Canvas LMS · hatchmoment">
+<meta property="og:title" content="judgment-engine — Grounded VLM design reviewer that screenshots UI and validates findings · hatchmoment">
 <meta name="theme-color" content="#0a0f1a">
-<meta property="og:description" content="AI‑powered grading pipeline for Canvas LMS — Automates grading at scale">
+<meta property="og:description" content="Grounded VLM design reviewer that screenshots UI and validates findings — Filters hallucinations, gives precise, reproducible UI critiques">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://hatchmoment.org/p/maheshchebrolu-git__grademaster-pro.html">
+<meta property="og:url" content="https://hatchmoment.org/p/apatureai__judgment-engine.html">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -157,7 +157,7 @@ a:hover{text-decoration:underline}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "grademaster-pro", "codeRepository": "https://github.com/maheshchebrolu-git/grademaster-pro", "description": "AI‑powered grading pipeline for Canvas LMS", "programmingLanguage": "Python", "applicationCategory": "Apps & Productivity / Automation", "keywords": "ai-grading, automation, google-gemini, langgraph, llm, playwright, pydantic, python, supabase"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "judgment-engine", "codeRepository": "https://github.com/apatureai/judgment-engine", "description": "Grounded VLM design reviewer that screenshots UI and validates findings", "programmingLanguage": "TypeScript", "applicationCategory": "AI & ML", "keywords": "code-review, design-review, llm-as-judge, playwright, typescript, vision-language-model"}</script>
 <script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -179,17 +179,17 @@ a:hover{text-decoration:underline}
     <span class="brand"><a href="https://hatchmoment.org">hatchmoment<span class="dot">.</span></a></span>
     <span class="slogan">scored by care · not by stars</span>
   </header>
-  <nav class="crumb"><a href="../">home</a> / <a href="../c/apps-productivity.html">Apps &amp; Productivity</a> / grademaster-pro</nav>
+  <nav class="crumb"><a href="../">home</a> / <a href="../c/ai-ml.html">AI &amp; ML</a> / judgment-engine</nav>
   <div class="proj-hero">
-    <h1>grademaster-pro</h1>
-    <p class="proj-sum">AI‑powered grading pipeline for Canvas LMS</p>
-    <div class="proj-badges"><span class="b">notable</span><span class="b">Python</span><span class="b"><a href="../c/apps-productivity.html" style="color:inherit">✦ Apps &amp; Productivity · Automation</a></span></div>
+    <h1>judgment-engine</h1>
+    <p class="proj-sum">Grounded VLM design reviewer that screenshots UI and validates findings</p>
+    <div class="proj-badges"><span class="b">rare find</span><span class="b">TypeScript</span><span class="b"><a href="../c/ai-ml.html" style="color:inherit">🧠 AI &amp; ML</a></span></div>
   </div>
   
-  <p class="proj-details">GradeMaster‑Pro harvests student submissions, converts them to PDF, runs Gemini Batch for multimodal grading, validates outputs with LangGraph and Pydantic, logs audit data in Supabase, and delivers grades back to Canvas—all without manual corrections. It targets TAs and instructors in large courses, offering a fully automated, cost‑efficient alternative to manual SpeedGrader workflows.</p>
-  <div class="card-tags" style="margin-bottom:24px"><span class="tag">ai-grading</span><span class="tag">automation</span><span class="tag">google-gemini</span><span class="tag">langgraph</span><span class="tag">llm</span><span class="tag">playwright</span><span class="tag">pydantic</span><span class="tag">python</span><span class="tag">supabase</span></div>
-  <a class="proj-cta" href="https://github.com/maheshchebrolu-git/grademaster-pro" target="_blank" rel="noopener">View on GitHub →</a>
-  <p style="margin-top:18px;font-size:12.5px;color:var(--muted);font-family:'Space Mono',monospace">maheshchebrolu-git/grademaster-pro</p>
+  <p class="proj-details">It runs headless Chromium to capture deterministic screenshots and DOM geometry, then queries a vision‑language model to critique the UI against your design system. Findings that reference routes or elements not captured are automatically dropped, ensuring grounded, actionable feedback. The repo ships a Rust crate for perceptual duplicate detection and calibration tooling, making it CI‑ready. It’s aimed at teams that want reliable, AI‑driven design reviews.</p>
+  <div class="card-tags" style="margin-bottom:24px"><span class="tag">code-review</span><span class="tag">design-review</span><span class="tag">llm-as-judge</span><span class="tag">playwright</span><span class="tag">typescript</span><span class="tag">vision-language-model</span></div>
+  <a class="proj-cta" href="https://github.com/apatureai/judgment-engine" target="_blank" rel="noopener">View on GitHub →</a>
+  <p style="margin-top:18px;font-size:12.5px;color:var(--muted);font-family:'Space Mono',monospace">apatureai/judgment-engine</p>
   <footer class="foot">
     <div class="note">quality over hype · craft over clout</div>
     <div>Fresh open-source, caught the moment it hatches. Follow on <a href="https://t.me/hatchmoment">Telegram</a> · partnerships &amp; advertising: <a href="mailto:hatchmoment@mailfence.com">hatchmoment@mailfence.com</a></div>
