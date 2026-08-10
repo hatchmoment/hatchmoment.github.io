@@ -160,7 +160,7 @@ a:hover{text-decoration:underline}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "watchbench", "codeRepository": "https://github.com/qordinate-ai/watchbench", "description": "Benchmark for evaluating event routing systems that decide which source events should wake downstream AI agents", "programmingLanguage": "Python", "applicationCategory": "Developer Tools", "keywords": "agents, ai-agents, benchmark, hermes-agent, openclaw"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "watchbench", "codeRepository": "https://github.com/qordinate-ai/watchbench", "description": "Benchmark for evaluating event routing systems that decide which source events should wake downstream AI agents", "programmingLanguage": "Python", "applicationCategory": "Developer Tools / Testing", "keywords": "agents, ai-agents, benchmark, hermes-agent, openclaw"}</script>
 <script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -186,7 +186,7 @@ a:hover{text-decoration:underline}
   <div class="proj-hero">
     <h1>watchbench</h1>
     <p class="proj-sum">Benchmark for evaluating event routing systems that decide which source events should wake downstream AI agents</p>
-    <div class="proj-badges"><span class="b">notable</span><span class="b">Python</span><span class="b"><a href="../c/developer-tools.html" style="color:inherit">🛠 Developer Tools</a></span></div>
+    <div class="proj-badges"><span class="b">notable</span><span class="b">Python</span><span class="b"><a href="../c/developer-tools.html" style="color:inherit">🛠 Developer Tools · Testing</a></span></div>
   </div>
   
   <p class="proj-details">WatchBench provides a synthetic email stream dataset with 500 events and 20 watch intents to evaluate different approaches to event routing - determining which events should trigger downstream agent actions. It includes multiple candidate adapters (oracle, LLM polling, OpenClaw, Watchline API) and measures precision, recall, F1, latency, source/agent calls, and token usage. Designed for developers building event-driven AI agent systems who need to compare routing strategies. The benchmark reveals concrete cost differences (e.g., 68.2% fewer source calls, 91% fewer tokens) between approaches.</p>
