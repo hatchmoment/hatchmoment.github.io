@@ -1,56 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://hatchmoment.org/</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-2.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-3.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-4.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-5.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-6.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-7.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-8.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-9.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-10.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-11.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-12.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-13.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-14.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-15.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-16.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-17.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-18.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-19.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-20.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-21.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-22.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-23.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-24.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-25.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-26.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-27.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-28.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-29.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-30.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-31.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-32.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-33.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-34.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-35.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-36.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-37.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-38.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-39.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/feed-40.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/c/ai-ml.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/c/apps-productivity.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/c/backend-apis.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/c/data-databases.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/c/devops-infra.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/c/developer-tools.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/c/hardware-embedded.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/c/other.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/c/security-privacy.html</loc><lastmod>2026-08-09</lastmod></url>
-  <url><loc>https://hatchmoment.org/c/web-frontend.html</loc><lastmod>2026-08-09</lastmod></url>
+  <url><loc>https://hatchmoment.org/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-2.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-3.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-4.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-5.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-6.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-7.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-8.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-9.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-10.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-11.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-12.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-13.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-14.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-15.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-16.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-17.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-18.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-19.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-20.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-21.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-22.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-23.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-24.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-25.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-26.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-27.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-28.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-29.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-30.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-31.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-32.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-33.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-34.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-35.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-36.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-37.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-38.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-39.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/feed-40.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/c/ai-ml.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/c/apps-productivity.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/c/backend-apis.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/c/data-databases.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/c/devops-infra.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/c/developer-tools.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/c/hardware-embedded.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/c/other.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/c/security-privacy.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/c/web-frontend.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/p/apatureai__sigil.html</loc><lastmod>2026-08-10</lastmod></url>
   <url><loc>https://hatchmoment.org/p/ores-otel__ores.otel.log.html</loc><lastmod>2026-08-09</lastmod></url>
   <url><loc>https://hatchmoment.org/p/elliot7williams__ios-virtual-device-lab.html</loc><lastmod>2026-08-09</lastmod></url>
   <url><loc>https://hatchmoment.org/p/tinkora__image_to_icns.html</loc><lastmod>2026-08-09</lastmod></url>
@@ -103,6 +104,8 @@
   <url><loc>https://hatchmoment.org/p/bingliangwithbots__thermalright-ai-hydronous-r1-screen-customizer.html</loc><lastmod>2026-05-24</lastmod></url>
   <url><loc>https://hatchmoment.org/p/mokouliszt__fre800slmp.html</loc><lastmod>2026-05-24</lastmod></url>
   <url><loc>https://hatchmoment.org/p/enricai__centella.html</loc><lastmod>2026-05-24</lastmod></url>
+  <url><loc>https://hatchmoment.org/p/appsprout-dev__unsga3.html</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://hatchmoment.org/p/569001773-wq__app-review-delta.html</loc><lastmod>2026-08-10</lastmod></url>
   <url><loc>https://hatchmoment.org/p/ul0gic__swift-mitm.html</loc><lastmod>2026-08-09</lastmod></url>
   <url><loc>https://hatchmoment.org/p/hyuga611__llm-safe-sql.html</loc><lastmod>2026-08-09</lastmod></url>
   <url><loc>https://hatchmoment.org/p/ekipo__agentsys.html</loc><lastmod>2026-08-09</lastmod></url>
