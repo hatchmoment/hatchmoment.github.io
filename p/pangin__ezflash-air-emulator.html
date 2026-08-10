@@ -160,7 +160,7 @@ a:hover{text-decoration:underline}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ezflash-air-emulator", "codeRepository": "https://github.com/pangin/ezflash-air-emulator", "description": "Headless EZ-FLASH Air emulator for testing GBA kernels", "programmingLanguage": "C", "applicationCategory": "Hardware \u0026 Embedded"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ezflash-air-emulator", "codeRepository": "https://github.com/pangin/ezflash-air-emulator", "description": "Headless EZ-FLASH Air emulator for testing GBA kernels", "programmingLanguage": "C", "applicationCategory": "Hardware \u0026 Embedded / Retro \u0026 hobby"}</script>
 <script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -186,7 +186,7 @@ a:hover{text-decoration:underline}
   <div class="proj-hero">
     <h1>ezflash-air-emulator</h1>
     <p class="proj-sum">Headless EZ-FLASH Air emulator for testing GBA kernels</p>
-    <div class="proj-badges"><span class="b">rare find</span><span class="b">C</span><span class="b"><a href="../c/hardware-embedded.html" style="color:inherit">🔌 Hardware &amp; Embedded</a></span></div>
+    <div class="proj-badges"><span class="b">rare find</span><span class="b">C</span><span class="b"><a href="../c/hardware-embedded.html" style="color:inherit">🔌 Hardware &amp; Embedded · Retro &amp; hobby</a></span></div>
   </div>
   
   <p class="proj-details">It emulates the EZ-FLASH Air cartridge (FPGA registers, SD card, NOR flash) on top of the mGBA emulator, letting the Korean kernel boot, navigate menus, and verify persistence without real hardware. Developers supply a kernel binary and the harness intercepts GBA bus accesses, simulates SD/FAT images, and runs scenario scripts that assert framebuffer pixels and NOR state. This is ideal for firmware developers and CI pipelines needing automated, hardware‑free validation. Compared to manual testing, it provides fully reproducible, headless checks integrated into CI.</p>

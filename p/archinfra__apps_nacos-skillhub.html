@@ -160,7 +160,7 @@ a:hover{text-decoration:underline}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "apps_nacos-skillhub", "codeRepository": "https://github.com/archinfra/apps_nacos-skillhub", "description": "Offline .run installer for Nacos, enabling air‑gapped Docker/K8s deployment", "programmingLanguage": "Shell", "applicationCategory": "DevOps \u0026 Infra"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "apps_nacos-skillhub", "codeRepository": "https://github.com/archinfra/apps_nacos-skillhub", "description": "Offline .run installer for Nacos, enabling air‑gapped Docker/K8s deployment", "programmingLanguage": "Shell", "applicationCategory": "DevOps \u0026 Infra / Containers \u0026 orchestration"}</script>
 <script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -186,7 +186,7 @@ a:hover{text-decoration:underline}
   <div class="proj-hero">
     <h1>apps_nacos-skillhub</h1>
     <p class="proj-sum">Offline .run installer for Nacos, enabling air‑gapped Docker/K8s deployment</p>
-    <div class="proj-badges"><span class="b">notable</span><span class="b">Shell</span><span class="b"><a href="../c/devops-infra.html" style="color:inherit">📦 DevOps &amp; Infra</a></span></div>
+    <div class="proj-badges"><span class="b">notable</span><span class="b">Shell</span><span class="b"><a href="../c/devops-infra.html" style="color:inherit">📦 DevOps &amp; Infra · Containers &amp; orchestration</a></span></div>
   </div>
   
   <p class="proj-details">It solves the pain of deploying Nacos in air‑gapped environments by bundling the required Docker image and Kubernetes manifests into a single self‑extracting .run package. The build script pulls the specified Nacos server image, saves it into the payload, and the installer script loads the image, tags it, pushes to a private registry, and applies the manifests. This is aimed at DevOps engineers who need reproducible, offline installations of Nacos on both amd64 and arm64 clusters. Compared to manual image export/import, it automates the whole workflow and integrates registry credentials and authentication token handling.</p>

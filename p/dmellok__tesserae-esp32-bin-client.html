@@ -160,7 +160,7 @@ a:hover{text-decoration:underline}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "tesserae-esp32-bin-client", "codeRepository": "https://github.com/dmellok/tesserae-esp32-bin-client", "description": "Battery‑powered ESP32 firmware that pulls .bin frames via MQTT and paints a 13.3\" e‑paper panel", "programmingLanguage": "C", "applicationCategory": "Hardware \u0026 Embedded"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "tesserae-esp32-bin-client", "codeRepository": "https://github.com/dmellok/tesserae-esp32-bin-client", "description": "Battery‑powered ESP32 firmware that pulls .bin frames via MQTT and paints a 13.3\" e‑paper panel", "programmingLanguage": "C", "applicationCategory": "Hardware \u0026 Embedded / IoT"}</script>
 <script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -186,7 +186,7 @@ a:hover{text-decoration:underline}
   <div class="proj-hero">
     <h1>tesserae-esp32-bin-client</h1>
     <p class="proj-sum">Battery‑powered ESP32 firmware that pulls .bin frames via MQTT and paints a 13.3&quot; e‑paper panel</p>
-    <div class="proj-badges"><span class="b">rare find</span><span class="b">C</span><span class="b"><a href="../c/hardware-embedded.html" style="color:inherit">🔌 Hardware &amp; Embedded</a></span></div>
+    <div class="proj-badges"><span class="b">rare find</span><span class="b">C</span><span class="b"><a href="../c/hardware-embedded.html" style="color:inherit">🔌 Hardware &amp; Embedded · IoT</a></span></div>
   </div>
   
   <p class="proj-details">The firmware runs on an ESP32‑S3 paired with a Waveshare 13.3&quot; Spectra E6 e‑paper panel. It wakes on a timer, connects to WiFi, pulls a retained MQTT message containing a URL to a panel‑native 4‑bpp .bin frame, downloads it, and paints the display before returning to deep sleep. Designed for months of battery life, it optimizes power by skipping WiFi during panel refresh and using retained MQTT to avoid polling. Ideal for photo frames, dashboards, or any low‑update display that needs to stay on a single Li‑Po cell.</p>

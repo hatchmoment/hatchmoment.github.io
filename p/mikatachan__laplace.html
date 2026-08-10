@@ -160,7 +160,7 @@ a:hover{text-decoration:underline}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "laplace", "codeRepository": "https://github.com/mikatachan/laplace", "description": "Admission control \u0026 idle model reaper for shared local LLM servers", "programmingLanguage": "Python", "applicationCategory": "AI \u0026 ML"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "laplace", "codeRepository": "https://github.com/mikatachan/laplace", "description": "Admission control \u0026 idle model reaper for shared local LLM servers", "programmingLanguage": "Python", "applicationCategory": "AI \u0026 ML / Local / on-device LLM"}</script>
 <script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -186,7 +186,7 @@ a:hover{text-decoration:underline}
   <div class="proj-hero">
     <h1>laplace</h1>
     <p class="proj-sum">Admission control &amp; idle model reaper for shared local LLM servers</p>
-    <div class="proj-badges"><span class="b">notable</span><span class="b">Python</span><span class="b"><a href="../c/ai-ml.html" style="color:inherit">🧠 AI &amp; ML</a></span></div>
+    <div class="proj-badges"><span class="b">notable</span><span class="b">Python</span><span class="b"><a href="../c/ai-ml.html" style="color:inherit">🧠 AI &amp; ML · Local / on-device LLM</a></span></div>
   </div>
   
   <p class="proj-details">Laplace provides priority‑aware admission and automatic unloading of idle or externally‑loaded models on a single local LLM inference server (e.g., LM Studio, Ollama). It watches the server’s model status, queues requests by tier, and periodically sweeps unused models, even those loaded by other processes. This helps developers running multiple agents or jobs avoid OOM and latency issues on memory‑constrained machines. It’s aimed at AI engineers and DevOps folks who self‑host LLMs and need smarter resource sharing.</p>
