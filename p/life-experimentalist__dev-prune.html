@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>autonomous-tv — AI-powered platform that creates short drama episodes via chat · hatchmoment</title>
-<meta name="description" content="AI-powered platform that creates short drama episodes via chat — Turns conversational prompts into fully rendered video episodes">
-<link rel="canonical" href="https://hatchmoment.org/p/autonomous-ai__autonomous-tv.html">
+<title>dev-prune — dev-prune: CLI tool that safely deletes rebuildable build artifacts to free disk space. · hatchmoment</title>
+<meta name="description" content="dev-prune: CLI tool that safely deletes rebuildable build artifacts to free disk space. — Ensures only lockfile‑rebuildable files are removed.">
+<link rel="canonical" href="https://hatchmoment.org/p/life-experimentalist__dev-prune.html">
 <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%230a0f1a'/&gt;&lt;text y='.9em' x='50' font-size='62' text-anchor='middle'&gt;🥚&lt;/text&gt;&lt;/svg&gt;">
-<meta property="og:title" content="autonomous-tv — AI-powered platform that creates short drama episodes via chat · hatchmoment">
+<meta property="og:title" content="dev-prune — dev-prune: CLI tool that safely deletes rebuildable build artifacts to free disk space. · hatchmoment">
 <meta name="theme-color" content="#0a0f1a">
-<meta property="og:description" content="AI-powered platform that creates short drama episodes via chat — Turns conversational prompts into fully rendered video episodes">
+<meta property="og:description" content="dev-prune: CLI tool that safely deletes rebuildable build artifacts to free disk space. — Ensures only lockfile‑rebuildable files are removed.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://hatchmoment.org/p/autonomous-ai__autonomous-tv.html">
+<meta property="og:url" content="https://hatchmoment.org/p/life-experimentalist__dev-prune.html">
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -160,7 +160,7 @@ a:hover{text-decoration:underline}
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.hero .egg,.hero h1,.hero .tag,.hero .lede,.hero .sub,.hero .pillrow,.eggwrap{animation:none!important;opacity:1}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "autonomous-tv", "codeRepository": "https://github.com/autonomous-ai/autonomous-tv", "description": "AI-powered platform that creates short drama episodes via chat", "programmingLanguage": "Python", "applicationCategory": "Creative \u0026 media / Video \u0026 animation", "keywords": "ai-filmmaking, ai-video, claude, generative-video, short-drama, text-to-video"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "dev-prune", "codeRepository": "https://github.com/Life-Experimentalist/dev-prune", "description": "dev-prune: CLI tool that safely deletes rebuildable build artifacts to free disk space.", "programmingLanguage": "Rust", "applicationCategory": "Developer Tools / CLI \u0026 terminal", "keywords": "cleanup, cli, developer-tools, devtools, disk-space, monorepo, node-modules, rust"}</script>
 <script data-goatcounter="https://hatchmoment.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -182,17 +182,17 @@ a:hover{text-decoration:underline}
     <span class="brand"><a href="https://hatchmoment.org">hatchmoment<span class="dot">.</span></a></span>
     <span class="slogan">scored by care · not by stars</span>
   </header>
-  <nav class="crumb"><a href="../">home</a> / <a href="../c/creative-media.html">Creative &amp; media</a> / autonomous-tv</nav>
+  <nav class="crumb"><a href="../">home</a> / <a href="../c/developer-tools.html">Developer Tools</a> / dev-prune</nav>
   <div class="proj-hero">
-    <h1>autonomous-tv</h1>
-    <p class="proj-sum">AI-powered platform that creates short drama episodes via chat</p>
-    <div class="proj-badges"><span class="b">notable</span><span class="b">Python</span><span class="b"><a href="../c/creative-media.html" style="color:inherit">🎨 Creative &amp; media · Video &amp; animation</a></span></div>
+    <h1>dev-prune</h1>
+    <p class="proj-sum">dev-prune: CLI tool that safely deletes rebuildable build artifacts to free disk space.</p>
+    <div class="proj-badges"><span class="b">notable</span><span class="b">Rust</span><span class="b"><a href="../c/developer-tools.html" style="color:inherit">🛠 Developer Tools · CLI &amp; terminal</a></span></div>
   </div>
-  <div class="archived-notice"><strong>This project was removed, hidden or re-uploaded by its author.</strong> The description is kept here as a snapshot of the idea — search for it manually on the author’s page.</div>
-  <p class="proj-details">It lets users describe a drama premise, then generates a series bible, casts, storyboards, and renders video using multiple providers, handling lip‑sync, subtitles, and music. The system combines a React web UI, a Python episode pipeline, and Claude Code skills to orchestrate the end‑to‑end production. It targets creators and developers who want automated video content without manual editing. Unlike simple text‑to‑video demos, it offers iterative control and a full production workflow.</p>
-  <div class="card-tags" style="margin-bottom:24px"><span class="tag">ai-filmmaking</span><span class="tag">ai-video</span><span class="tag">claude</span><span class="tag">generative-video</span><span class="tag">short-drama</span><span class="tag">text-to-video</span></div>
-  <a class="proj-cta" href="https://github.com/autonomous-ai" target="_blank" rel="noopener">Visit author’s GitHub →</a>
-  <p style="margin-top:18px;font-size:12.5px;color:var(--muted);font-family:'Space Mono',monospace">autonomous-ai/autonomous-tv</p>
+  
+  <p class="proj-details">dev-prune scans registered Git repositories for large, idle directories like node_modules, .venv, target, and vendor. It verifies that each directory can be regenerated from its lockfile before deleting it, guaranteeing safety. The tool runs as a single Rust binary with background scheduling, catering to developers who want to reclaim storage without risking broken builds. Its multi‑platform support and prebuilt binaries make it easy to adopt compared to ad‑hoc scripts.</p>
+  <div class="card-tags" style="margin-bottom:24px"><span class="tag">cleanup</span><span class="tag">cli</span><span class="tag">developer-tools</span><span class="tag">devtools</span><span class="tag">disk-space</span><span class="tag">monorepo</span><span class="tag">node-modules</span><span class="tag">rust</span></div>
+  <a class="proj-cta" href="https://github.com/Life-Experimentalist/dev-prune" target="_blank" rel="noopener">View on GitHub →</a>
+  <p style="margin-top:18px;font-size:12.5px;color:var(--muted);font-family:'Space Mono',monospace">Life-Experimentalist/dev-prune</p>
   <footer class="foot">
     <div class="note">quality over hype · craft over clout</div>
     <div>Fresh open-source, caught the moment it hatches. Follow on <a href="https://t.me/hatchmoment">Telegram</a> · partnerships &amp; advertising: <a href="mailto:hatchmoment@mailfence.com">hatchmoment@mailfence.com</a></div>
